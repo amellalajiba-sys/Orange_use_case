@@ -12,7 +12,7 @@ Run:
 """
 
 import re
-from pipeline.db import get_connection, get_signals_for_vertical, link_signal_to_opportunity
+from exploratory_work_siegried.pipeline.db import get_connection, get_signals_for_vertical, link_signal_to_opportunity
 
 STOPWORDS = {"and", "the", "for", "with", "of", "in", "on", "a", "an", "to", "x"}
 

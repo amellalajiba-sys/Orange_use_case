@@ -17,12 +17,12 @@ stored, never just the total -- that's what makes the score explainable.
 
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
-from pipeline.db import get_connection, get_signals_for_vertical, insert_score, insert_right_to_win_score
-from pipeline.config import (
+from exploratory_work_siegried.pipeline.db import get_connection, get_signals_for_vertical, insert_score, insert_right_to_win_score
+from exploratory_work_siegried.pipeline.config import (
     ORANGE_BUSINESS_ASSETS, PORTFOLIO_DISTANCE, ANALYST_RECOGNITION,
     CUSTOMER_REFERENCES, CAPABILITY_STATS,
 )
-from llm.llm_client import get_llm_json
+from exploratory_work_siegried.llm.llm_client import get_llm_json
 
 # Reweighted 2026-08-17 from the brief's 30/20/20/15/15 starting point.
 # Rationale (methodological, not results-driven -- checked before seeing how

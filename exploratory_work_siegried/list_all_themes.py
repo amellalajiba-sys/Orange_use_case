@@ -13,8 +13,8 @@ Run:
 """
 
 from datetime import datetime, timezone
-from pipeline.db import get_connection
-from pipeline.analyze import extract_themes
+from exploratory_work_siegried.pipeline.db import get_connection
+from exploratory_work_siegried.pipeline.analyze import extract_themes
 
 OUTPUT_PATH = "candidate_opportunity_spaces.md"
 

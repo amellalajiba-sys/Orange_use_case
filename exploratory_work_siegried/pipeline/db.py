@@ -5,7 +5,7 @@ Three tables: signals, opportunity_spaces, scores (+ a link table).
 
 import sqlite3
 from datetime import datetime, timezone
-from pipeline.config import DB_PATH
+from exploratory_work_siegried.pipeline.config import DB_PATH
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS signals (

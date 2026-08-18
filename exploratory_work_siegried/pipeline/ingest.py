@@ -13,7 +13,7 @@ import urllib.parse
 import feedparser
 import requests
 
-from pipeline.config import (
+from exploratory_work_siegried.pipeline.config import (
     GOOGLE_NEWS_QUERIES,
     GDELT_QUERIES,
     ENABLE_GDELT,
@@ -26,7 +26,7 @@ from pipeline.config import (
     ENABLE_NEWSAPI_AI,
     NEWSAPI_AI_QUERIES,
 )
-from pipeline.db import get_connection, init_db, insert_signal
+from exploratory_work_siegried.pipeline.db import get_connection, init_db, insert_signal
 
 GDELT_DOC_URL = "https://api.gdeltproject.org/api/v2/doc/doc"
 HN_ALGOLIA_URL = "https://hn.algolia.com/api/v1/search"

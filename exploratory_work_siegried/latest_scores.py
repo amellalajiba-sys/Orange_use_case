@@ -7,7 +7,7 @@ Run:
     python latest_scores.py
 """
 
-from pipeline.db import get_connection
+from exploratory_work_siegried.pipeline.db import get_connection
 
 conn = get_connection()
 rows = conn.execute("""
