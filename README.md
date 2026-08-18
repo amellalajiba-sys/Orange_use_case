@@ -45,12 +45,10 @@ once the limit resets.
 
 ## ⚠️ Opportunity spaces are not decided yet — this needs a team call
 
-Four opportunity spaces (OS001-004) are already registered and scored, but **they were picked by one
-person as a way to test the pipeline end-to-end, not as a team decision.** The LLM actually found 14
-candidate Use Case × Technology patterns across our 3 verticals — the full unfiltered list is in
+Four opportunity spaces (OS001-004) are already registered and scored, but they were picked by me as a way to test the pipeline end-to-end. The LLM actually found 14 candidate Use Case × Technology patterns across our 3 verticals — the full unfiltered list is in
 `candidate_opportunity_spaces.md`, regenerate anytime with `python list_all_themes.py`.
 
-**Before treating any score as final, the team should:** look at all 14 candidates together, decide
+**Before treating any score as final, we should:** look at all 14 candidates together, decide
 which to keep (any mix of the 4 already-scored ones, new ones from the list, or a swap), then re-run
 steps 4-7 below on the final list.
 
@@ -125,8 +123,6 @@ scoring caps.
 **`latest_scores.py`** / **`export_summary.py`** — read the most recent score per opportunity space;
 `export_summary.py` writes `opportunity_spaces_summary.md`, the file to bring to a meeting.
 
-**`mockup.js`** — a standalone React dashboard mockup, not wired to the real database.
-
 **`.gitignore`** — excludes `.env`, `radar.db`, Python caches, and logs from Git.
 
 ## Scoring methodology
@@ -144,12 +140,11 @@ because "is the market hot" and "can we sell this today" are different questions
 0.15 x strategic_relevance      (LLM: fit against the real Orange Business API catalog)
 ```
 
-The brief's starting weights were 30/20/20/15/15. We moved 5 points from `novelty_momentum` (15% →
+The brief's starting weights were 30/20/20/15/15. I moved 5 points from `novelty_momentum` (15% →
 10%) to `evidence_quality` (20% → 25%), decided *before* looking at how it would move the ranking:
 `novelty_momentum`'s proxy only means something once signals are spread over weeks or months, and every
 opportunity space has landed at ~3.3 on it regardless of topic so far since all data was ingested in
-one short window. **This reweighting was a solo decision — confirm with the team (and against the
-brief, if weighting is meant to be fixed) before treating it as final.**
+one short window. **This reweighting was a solo decision — we confirm together before treating it as final.**
 
 `MARKET_SIGNAL_CAP` (150) and `SOURCE_DIVERSITY_CAP` (50) were recalibrated from placeholder values
 (20 / 8) once real volume existed to measure against — re-run `calibrate_caps.py` whenever ingest
@@ -221,7 +216,7 @@ candidates found — see the warning at the top of this README.
   citing the 2+ keyword matches in discussion.
 - TED and NewsAPI.ai are wired in but contribute little so far.
 - No verified Public Sector customer reference yet in `CUSTOMER_REFERENCES`.
-- Weight/cap changes and the evidence wiring were made solo — confirm with the team before finalizing.
+- Weight/cap changes and the evidence wiring were made solo, to confirm.
 - `dedupe_signals.py`'s similarity threshold (0.85) is a judgment call — review its report before
   applying, don't trust it blindly.
 
