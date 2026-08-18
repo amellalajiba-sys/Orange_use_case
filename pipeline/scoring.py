@@ -16,6 +16,7 @@ stored, never just the total -- that's what makes the score explainable.
 """
 
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from pipeline.db import get_connection, get_signals_for_vertical, insert_score, insert_right_to_win_score
 from pipeline.config import (
     ORANGE_BUSINESS_ASSETS, PORTFOLIO_DISTANCE, ANALYST_RECOGNITION,
@@ -67,20 +68,91 @@ def source_diversity(signals) -> float:
     return min(10.0, (len(distinct_sources) / SOURCE_DIVERSITY_CAP) * 10)
 
 
+# Novelty: a signal older than this contributes ~0 novelty. 90 days, not 1
+# year -- with the current no-key/free sources, GDELT's rolling window caps
+# around ~3 months and RSS feeds (Google News, vendor blogs, HN) have no
+# historical backfill at all, only "now". Only arXiv, Semantic Scholar and
+# TED carry real deep-past dates. A 1-year window would need paid historical
+# news APIs and would also flatten novelty (almost everything would look
+# equally "not new"). Revisit with the team if that tradeoff changes.
+# Momentum: need at least this many days of spread across signals before
+# splitting into a recent/older window means anything -- below this, momentum
+# is neutral (5.0) rather than a number computed on noise.
+NOVELTY_WINDOW_DAYS = 90
+MOMENTUM_MIN_SPAN_DAYS = 7
+
+
+def _parse_signal_date(signal):
+    """
+    Best-effort real-world date for a signal: prefer published_date (when the
+    thing actually happened) over collected_at (when ingest.py happened to
+    run) -- novelty should reflect how fresh the news itself is, not our
+    scrape schedule. Falls back to collected_at since published_date's format
+    varies across the 9 sources (RFC 822 RSS, ISO from arXiv/Semantic
+    Scholar/TED, GDELT's compact seendate) and is sometimes missing entirely.
+    Returns a tz-aware datetime, or None if nothing parseable was found.
+    """
+    for raw in (signal["published_date"], signal["collected_at"]):
+        if not raw:
+            continue
+        raw = raw.strip()
+        dt = None
+        try:
+            dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        except ValueError:
+            pass
+        if dt is None:
+            try:
+                dt = parsedate_to_datetime(raw)  # RFC 822, e.g. Google News / vendor RSS
+            except (ValueError, TypeError):
+                pass
+        if dt is None:
+            try:
+                dt = datetime.strptime(raw, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)  # GDELT seendate
+            except ValueError:
+                pass
+        if dt is not None:
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt
+    return None
+
+
 def novelty_momentum(signals) -> float:
     """
-    0-10: naive proxy = share of signals collected in the most recent third
-    of the observed window vs. the rest. Replace with a real time-series
-    comparison (e.g. GDELT TimelineVol week-over-week) once you have more data.
+    0-10, average of two sub-components (per brief section 5):
+      - novelty: how fresh the signals are on average (younger avg age = higher)
+      - momentum: share of signals falling in the more recent half of the
+        observed date span vs. the older half (more weighted to "now" = higher)
+    Both need real date spread to mean anything -- with everything ingested in
+    one short window (see README known limitations), momentum stays neutral
+    (5.0) until MOMENTUM_MIN_SPAN_DAYS of spread actually exists.
     """
     if not signals:
         return 0.0
-    dates = sorted(s["collected_at"] for s in signals if s["collected_at"])
-    if len(dates) < 3:
-        return 5.0  # not enough data to judge momentum yet -- neutral score
-    third = max(1, len(dates) // 3)
-    recent_share = third / len(dates)
-    return round(recent_share * 10, 2)
+
+    now = datetime.now(timezone.utc)
+    ages_days = []
+    for s in signals:
+        dt = _parse_signal_date(s)
+        if dt is not None:
+            ages_days.append((now - dt).total_seconds() / 86400)
+
+    if not ages_days:
+        return 5.0  # no parseable dates at all -- neutral default, not a real judgment
+
+    avg_age = sum(ages_days) / len(ages_days)
+    novelty_score = max(0.0, min(10.0, 10 - (avg_age / NOVELTY_WINDOW_DAYS) * 10))
+
+    span_days = max(ages_days) - min(ages_days) if len(ages_days) > 1 else 0
+    if len(ages_days) < 3 or span_days < MOMENTUM_MIN_SPAN_DAYS:
+        momentum_score = 5.0  # not enough time-series spread yet -- neutral, not computed on noise
+    else:
+        midpoint_age = span_days / 2  # smaller age = more recent
+        recent_count = sum(1 for a in ages_days if a <= midpoint_age)
+        momentum_score = round(10 * recent_count / len(ages_days), 2)
+
+    return round((novelty_score + momentum_score) / 2, 2)
 
 
 EVIDENCE_QUALITY_SYSTEM_PROMPT = """You are scoring the credibility and relevance of

@@ -6,17 +6,28 @@ Edit SOURCES to add/remove feeds without touching ingest.py.
 DB_PATH = "radar.db"
 
 # --- Google News RSS: one entry per (vertical, query) pair you want to track ---
-# Add/remove queries as you validate which verticals you're covering.
+# 3-4 queries per vertical, not 1 -- a single narrow query biases every
+# downstream theme toward that one niche (e.g. Manufacturing was only ever
+# returning 5G/edge-vision signals, so that's the only kind of theme the LLM
+# could ever find). More queries = more signal volume, more source diversity,
+# and candidate OS that actually reflect the vertical instead of one query.
 GOOGLE_NEWS_QUERIES = [
     {"vertical": "Manufacturing", "query": "private 5G edge AI manufacturing safety"},
+    {"vertical": "Manufacturing", "query": "predictive maintenance manufacturing AI"},
+    {"vertical": "Manufacturing", "query": "supply chain automation digital twin manufacturing"},
+    {"vertical": "Manufacturing", "query": "industrial IoT OT cybersecurity"},
+
     {"vertical": "Finance & Insurance", "query": "agentic AI insurance claims automation"},
+    {"vertical": "Finance & Insurance", "query": "AI fraud detection banking"},
+    {"vertical": "Finance & Insurance", "query": "regtech compliance automation financial services"},
+    {"vertical": "Finance & Insurance", "query": "cloud modernization digital banking"},
+
     {"vertical": "Public Sector", "query": "sovereign cloud EU government data"},
+    {"vertical": "Public Sector", "query": "AI public sector citizen services"},
+    {"vertical": "Public Sector", "query": "government zero trust cybersecurity"},
+    {"vertical": "Public Sector", "query": "smart city IoT infrastructure government"},
 ]
 
-# --- GDELT DOC 2.0 API: same query set, used for momentum/volume ---
-# GDELT rate-limits aggressively (sometimes for 15-20+ min after repeated calls).
-# Set to False to skip it entirely without touching ingest.py -- you don't
-# need it to make progress, the other sources already cover the taxonomy.
 ENABLE_GDELT = True
 GDELT_QUERIES = GOOGLE_NEWS_QUERIES  # reuse the same queries for consistency
 
@@ -39,26 +50,39 @@ VENDOR_FEEDS = [
 ]
 
 # --- Hacker News (Algolia API, no key) ---
-HN_QUERIES = ["private 5G", "agentic AI insurance", "sovereign cloud"]
+HN_QUERIES = [
+    "private 5G", "predictive maintenance manufacturing",
+    "agentic AI insurance", "fraud detection banking",
+    "sovereign cloud", "zero trust government",
+]
 
 # --- Competitor tracking (market_move / buying_signal) ---
 # Same Google News + GDELT fetchers, just naming the direct competitors of
 # Orange Business Europe explicitly so their moves show up as their own signals.
+# Widened alongside GOOGLE_NEWS_QUERIES -- OR'ing in a second topic per
+# vertical so competitor watch isn't stuck on the same single niche either.
 COMPETITORS = ["NTT", "AT&T Business", "Vodafone Business", "BT Business",
                "Deutsche Telekom", "Colt Technology", "Verizon Business"]
 
 COMPETITOR_QUERIES = [
-    {"vertical": "Manufacturing", "query": f"({' OR '.join(COMPETITORS)}) private 5G manufacturing"},
-    {"vertical": "Finance & Insurance", "query": f"({' OR '.join(COMPETITORS)}) AI insurance"},
-    {"vertical": "Public Sector", "query": f"({' OR '.join(COMPETITORS)}) sovereign cloud government"},
+    {"vertical": "Manufacturing", "query": f"({' OR '.join(COMPETITORS)}) (private 5G manufacturing OR predictive maintenance)"},
+    {"vertical": "Finance & Insurance", "query": f"({' OR '.join(COMPETITORS)}) (AI insurance OR fraud detection banking)"},
+    {"vertical": "Public Sector", "query": f"({' OR '.join(COMPETITORS)}) (sovereign cloud government OR zero trust)"},
 ]
 
 # --- Scientific articles: arXiv (free, no key) ---
 # arXiv covers CS/AI/networking preprints -- good proof of technical maturity.
+# Widened to match GOOGLE_NEWS_QUERIES' topic spread per vertical.
 ARXIV_QUERIES = [
     {"vertical": "Manufacturing", "query": "edge computer vision industrial safety"},
+    {"vertical": "Manufacturing", "query": "predictive maintenance machine learning"},
+    {"vertical": "Manufacturing", "query": "industrial IoT cybersecurity"},
+
     {"vertical": "Finance & Insurance", "query": "agentic AI claims automation"},
+    {"vertical": "Finance & Insurance", "query": "fraud detection machine learning finance"},
+
     {"vertical": "Public Sector", "query": "sovereign cloud data governance"},
+    {"vertical": "Public Sector", "query": "zero trust government cybersecurity"},
 ]
 
 # --- Scientific articles: Semantic Scholar (free, no key for light use) ---
@@ -198,3 +222,34 @@ SIGNAL_TYPES = [
     "tech_maturity",
     "proof_signal",
 ]
+
+# --- Vertical / Use Case / Technology taxonomy (brief Phase 0) ---
+# Draft starting point taken directly from the brief's example lists -- this is
+# Gaetan's territory (Documentation Specialist, phases 0 & 3) to own and refine,
+# not a solo decision. Wired into analyze.py's theme extraction so candidate OS
+# use these exact labels instead of the LLM inventing its own each run.
+TAXONOMY_VERTICALS = [
+    "Manufacturing", "Retail", "Finance", "Public Sector", "Healthcare",
+    "Defense", "Automotive", "Fast Moving Consumer Goods", "Industry",
+    "IT and Services",
+]
+
+TAXONOMY_USE_CASES = [
+    "Energy Optimization", "Demand Forecasting", "IT Operations Automation",
+    "Imaging Analytics", "Network Modernization & SD-WAN",
+    "Cloud Infrastructure Modernization", "Cyber Defence & Zero Trust",
+    "Customer Experience", "Employee Experience", "Operational Excellence",
+    "Digital Infrastructure", "Data Sovereignty", "Cybersecurity",
+]
+
+TAXONOMY_TECHNOLOGIES = [
+    "Cloud Data Platform", "IoT Platforms", "Computer Vision",
+    "Machine Learning", "Generative AI", "Network & SD-WAN", "Cloud",
+    "Cybersecurity", "5G", "IoT", "AI",
+]
+
+# Phase 3 curation: technology values too generic to be a real Opportunity
+# Space on their own (brief explicitly calls out "AI", "Cloud", "Cybersecurity"
+# as reject-on-sight). Checked case-insensitively against the LLM's raw
+# technology string.
+GENERIC_TECHNOLOGY_TERMS = {"ai", "cloud", "cybersecurity"}

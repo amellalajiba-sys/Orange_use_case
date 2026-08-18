@@ -16,8 +16,11 @@ Run directly for a full pass over all verticals:
     python -m pipeline.analyze
 """
 
+import re
 from collections import Counter
+from difflib import SequenceMatcher
 from pipeline.db import get_connection
+from pipeline.config import TAXONOMY_USE_CASES, TAXONOMY_TECHNOLOGIES, GENERIC_TECHNOLOGY_TERMS
 from llm.llm_client import get_llm_json
 
 
@@ -81,15 +84,78 @@ An Opportunity Space = Vertical x Use Case x Technology, and must be SPECIFIC
 (e.g. "Manufacturing x Energy Optimization x Computer Vision"), never a generic
 theme like "AI in industry" or "Cloud adoption".
 
+Here are example Use Case and Technology values already validated for Orange
+Business -- prefer these when a signal clearly fits one. They are a starting
+point, not an exhaustive list: if a recurring pattern across signals is real
+and specific but doesn't fit any of these well, propose a new specific label
+instead of forcing a bad-fit match.
+
+Use Case (examples):
+{use_case_list}
+
+Technology (examples):
+{technology_list}
+
 Read the signal titles below and identify 3-6 recurring, specific Use Case x
-Technology combinations. Reject anything too generic or supported by only one
-vague signal.
+Technology combinations, each one supported by multiple distinct signals.
 
 Respond with ONLY a JSON array, no preamble, no markdown fences:
 [
-  {"use_case": "...", "technology": "...", "supporting_signal_count": <int>,
-   "rationale": "<one sentence: why this is a real, specific pattern>"}
+  {{"use_case": "...", "technology": "...", "supporting_signal_count": <int>,
+   "rationale": "<one sentence: why this is a real, specific pattern>"}}
 ]"""
+
+
+def _curate_themes(themes):
+    """
+    Phase 3 curation -- operates ONLY on candidate Opportunity Space labels
+    (this function's `themes` input), never on the `signals` table. A signal
+    mentioning "AI" stays in the database untouched; what gets dropped here is
+    a candidate OS whose entire technology value IS just "AI" -- too vague to
+    be a sellable, specific Opportunity Space (right-to-win can't map a bare
+    "AI" to a specific Orange asset). Applied after the LLM proposes themes
+    (defense-in-depth -- the prompt already asks it to avoid generic terms,
+    but per the project's own lesson, weak LLMs pattern-match instructions
+    unreliably, so never trust prompt compliance alone):
+
+    1. Drop themes whose technology is a bare generic term (config.GENERIC_TECHNOLOGY_TERMS)
+    2. Merge near-duplicate themes (same use_case, near-identical technology
+       string) -- same fuzzy-match approach as dedupe_signals.py, keeping the
+       one with the higher supporting_signal_count.
+    """
+    kept = []
+    dropped_generic = 0
+    for t in themes:
+        tech = (t.get("technology") or "").strip().lower()
+        if tech in GENERIC_TECHNOLOGY_TERMS:
+            dropped_generic += 1
+            continue
+        kept.append(t)
+
+    def _key(t):
+        return re.sub(r"\s+", " ", f"{t.get('use_case', '')} {t.get('technology', '')}".lower()).strip()
+
+    merged = []
+    used = [False] * len(kept)
+    for i, t in enumerate(kept):
+        if used[i]:
+            continue
+        group = [t]
+        used[i] = True
+        for j in range(i + 1, len(kept)):
+            if used[j]:
+                continue
+            if SequenceMatcher(None, _key(t), _key(kept[j])).ratio() >= 0.85:
+                group.append(kept[j])
+                used[j] = True
+        best = max(group, key=lambda x: x.get("supporting_signal_count", 0) or 0)
+        merged.append(best)
+
+    if dropped_generic or len(merged) < len(themes):
+        print(f"[curate_themes] {dropped_generic} generic dropped, "
+              f"{len(themes) - dropped_generic - len(merged)} near-duplicates merged, "
+              f"{len(merged)} themes kept")
+    return merged
 
 
 def extract_themes(conn, vertical, max_signals=40):
@@ -108,12 +174,16 @@ def extract_themes(conn, vertical, max_signals=40):
 
     titles = "\n".join(f"- [{r['signal_type']}] {r['title']}" for r in rows)
     prompt = f"Vertical: {vertical}\n\nSignals:\n{titles}"
+    system_prompt = THEME_EXTRACTION_SYSTEM_PROMPT.format(
+        use_case_list="\n".join(f"- {u}" for u in TAXONOMY_USE_CASES),
+        technology_list="\n".join(f"- {t}" for t in TAXONOMY_TECHNOLOGIES),
+    )
 
-    result = get_llm_json(prompt, system_prompt=THEME_EXTRACTION_SYSTEM_PROMPT)
+    result = get_llm_json(prompt, system_prompt=system_prompt)
     if not result or not isinstance(result, list):
         print(f"[{vertical}] theme extraction failed or returned nothing usable")
         return []
-    return result
+    return _curate_themes(result)
 
 
 def run_full_analysis():
