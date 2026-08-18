@@ -221,3 +221,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+radar.db
+radar.db-journal
