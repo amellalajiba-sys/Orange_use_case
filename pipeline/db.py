@@ -114,14 +114,25 @@ def get_signals_for_vertical(conn, vertical_hint, since_iso=None):
 
 
 def upsert_opportunity_space(conn, label, vertical, use_case, technology):
+    """
+    Insert a new opportunity space, or refresh an existing one under the same
+    label. FIXED 2026-08-19: previously only touched `last_refreshed` on an
+    existing label, silently leaving stale vertical/use_case/technology in
+    place -- so re-running create_opportunity_spaces.py with fresh themes
+    updated the console output but not what was actually stored/scored.
+    Now updates all four fields, so a label always reflects the theme it was
+    last assigned to.
+    """
     now = datetime.now(timezone.utc).isoformat()
     existing = conn.execute(
         "SELECT id FROM opportunity_spaces WHERE label = ?", (label,)
     ).fetchone()
     if existing:
         conn.execute(
-            "UPDATE opportunity_spaces SET last_refreshed = ? WHERE id = ?",
-            (now, existing["id"]),
+            """UPDATE opportunity_spaces
+               SET vertical = ?, use_case = ?, technology = ?, last_refreshed = ?
+               WHERE id = ?""",
+            (vertical, use_case, technology, now, existing["id"]),
         )
         conn.commit()
         return existing["id"]

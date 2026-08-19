@@ -5,7 +5,6 @@ https://www.orange-business.com/en/business-needs/digital-work-experience
 https://www.orange-business.com/en/business-needs/scalable-responsive-secure-digital-infrastructure
 https://www.orange-business.com/en/business-needs/operational-experience-optimize-industry-digitizing-processes
 https://www.orange-business.com/en/business-needs/customer-experience
-https://www.orange-business.com/en/business-needs/operational-experience-optimize-industry-digitizing-processes
 https://www.orange-business.com/en/business-needs/secure-enterprise
 https://newsapi.ai/dashboard?tab=home
 https://docs.ted.europa.eu/api/latest/index.html -->
