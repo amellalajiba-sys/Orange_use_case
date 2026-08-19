@@ -14,8 +14,23 @@ Two steps, matching the brief's "Signal Collection -> Theme Extraction" flow:
 Run directly for a full pass over all verticals:
 
     python -m pipeline.analyze
+
+
+
+
+IRENE (Wed 19, 19:10)
+=====================
+
+    - changed THEME_EXTRACTION_SYSTEM_PROMPT (now stricted to taxonomy given);
+    - implemented 'classified' and 'emerging' differentiation in extract_themes()
+      and adapted return;
+    - added save_emerging_themes() to make it return output for signals_discovery.py (JSON file);
+    - updated run_full_analysis() to make it save emerging terms.
+
 """
 
+import json
+import os
 import re
 from collections import Counter
 from difflib import SequenceMatcher
@@ -79,39 +94,35 @@ def dump_titles(conn, vertical=None, signal_type=None, limit=100):
 
 # ---------- Step 2: LLM-assisted theme extraction ----------
 
-THEME_EXTRACTION_SYSTEM_PROMPT = """You are analyzing market signals (news, research
-papers, vendor announcements, regulation) collected for one business vertical, to spot
-candidate Opportunity Spaces for a B2B telecom/cloud provider (Orange Business).
+THEME_EXTRACTION_SYSTEM_PROMPT = """
+Identify 3-6 recurring, specific Use Case x Technology combinations, 
+each supported by MULTIPLE distinct signals (minimum 3).
 
-An Opportunity Space = Vertical x Use Case x Technology, and must be SPECIFIC
-(e.g. "Manufacturing x Energy Optimization x Computer Vision"), never a generic
-theme like "AI in industry" or "Cloud adoption".
+For each combination:
+- If it fits the official lists → classify it
+- If it doesn't fit → mark it as emerging
 
-Here are example Use Case and Technology values already validated for Orange
-Business -- prefer these when a signal clearly fits one. They are a starting
-point, not an exhaustive list: if a recurring pattern across signals is real
-and specific but doesn't fit any of these well, propose a new specific label
-instead of forcing a bad-fit match.
+Ignore one-off signals — they are not patterns.
 
-Use Case (examples):
+Official Use Cases:
 {use_case_list}
 
-Technology (examples, established):
+Official Technologies:
 {technology_list}
 
-Emerging technologies (less proven, but real if the signals actually support
-them -- actively watch for these rather than defaulting to the established
-list above just because it's more familiar):
-{emerging_technology_list}
-
-Read the signal titles below and identify 3-6 recurring, specific Use Case x
-Technology combinations, each one supported by multiple distinct signals.
-
-Respond with ONLY a JSON array, no preamble, no markdown fences:
+Respond with ONLY a JSON array:
 [
-  {{"use_case": "...", "technology": "...", "supporting_signal_count": <int>,
-   "rationale": "<one sentence: why this is a real, specific pattern>"}}
-]"""
+    {{
+        "use_case": "official_use_case or null",
+        "technology": "official_technology or null",
+        "emerging_use_case": "proposed new use case or null",
+        "emerging_technology": "proposed new technology or null",
+        "is_classified": true/false,
+        "supporting_signal_count": <int>,
+        "rationale": "<one sentence>"
+    }}
+]
+"""
 
 
 def _curate_themes(themes):
@@ -167,9 +178,15 @@ def _curate_themes(themes):
 
 
 def extract_themes(conn, vertical, max_signals=40):
-    """Ask the LLM to turn raw signal titles into candidate Opportunity
-    Spaces for one vertical. Returns a list of dicts, or [] if nothing
-    usable came back (e.g. LLM unreachable, or too few signals)."""
+    """Asks the LLM to turn raw signal titles into candidate Opportunity
+    Spaces for one vertical. 
+    Returns a dict with two lists:
+    {
+        "classified": [...],   # terms that match the official taxonomy
+        "emerging": [...]      # terms that don't match, proposed as new
+    }
+    Returns {"classified": [], "emerging": []} if nothing usable came back.
+    """
     rows = conn.execute(
         "SELECT signal_type, title FROM signals WHERE vertical_hint = ? "
         "ORDER BY collected_at DESC LIMIT ?",
@@ -178,7 +195,7 @@ def extract_themes(conn, vertical, max_signals=40):
 
     if len(rows) < 5:
         print(f"[{vertical}] only {len(rows)} signals -- too few for reliable theme extraction, skipping")
-        return []
+        return {"classified": [], "emerging": []}
 
     titles = "\n".join(f"- [{r['signal_type']}] {r['title']}" for r in rows)
     prompt = f"Vertical: {vertical}\n\nSignals:\n{titles}"
@@ -189,10 +206,80 @@ def extract_themes(conn, vertical, max_signals=40):
     )
 
     result = get_llm_json(prompt, system_prompt=system_prompt)
+
+    # DEBUG: Print raw result
+    print(f"[DEBUG] Raw LLM response for {vertical}:")
+    print(result)
+    print("-" * 40)
+
     if not result or not isinstance(result, list):
         print(f"[{vertical}] theme extraction failed or returned nothing usable")
-        return []
-    return _curate_themes(result)
+        return {"classified": [], "emerging": []}
+
+    classified = []
+    emerging = []
+
+    for item in result:
+        # check if it is classified
+        if item.get("is_classified") and item.get("use_case") and item.get("technology"):
+            # Build a clean dict for curation
+            classified.append({
+                "use_case": item["use_case"],
+                "technology": item["technology"],
+                "supporting_signal_count": item.get("supporting_signal_count", 0),
+                "rationale": item.get("rationale", "")
+            })
+        elif not item.get("is_classified"):
+            # This is an emerging term
+            emerging.append({
+                "vertical": vertical,
+                "emerging_use_case": item.get("emerging_use_case"),
+                "emerging_technology": item.get("emerging_technology"),
+                "rationale": item.get("rationale", ""),
+                "supporting_signal_count": item.get("supporting_signal_count", 0)
+            })
+
+    # Only keep themes with at least 3 signals
+    classified = [t for t in classified if t.get("supporting_signal_count", 0) >= 3]
+    emerging = [t for t in emerging if t.get("supporting_signal_count", 0) >= 3]
+
+    # Apply curation ONLY to classified terms
+    curated_classified = _curate_themes(classified)
+
+    print(f"[{vertical}] {len(curated_classified)} classified themes, {len(emerging)} emerging terms")
+    
+    return {"classified": curated_classified, "emerging": emerging}
+
+
+def save_emerging_themes(emerging_terms):
+    """Save emerging terms to a JSON file for processing by signals_discovery.py."""
+
+    output_path = "emerging_themes.json"
+    
+    # Load existing data if file exists
+    if os.path.exists(output_path):
+        with open(output_path, "r") as f:
+            try:
+                existing = json.load(f)
+            except json.JSONDecodeError:
+                existing = []
+    else:
+        existing = []
+    
+    # Add new terms (avoid duplicates)
+    existing_terms = {(e.get("vertical"), e.get("emerging_use_case"), e.get("emerging_technology")) 
+                      for e in existing}
+    
+    for term in emerging_terms:
+        key = (term.get("vertical"), term.get("emerging_use_case"), term.get("emerging_technology"))
+        if key not in existing_terms:
+            existing.append(term)
+            existing_terms.add(key)
+    
+    with open(output_path, "w") as f:
+        json.dump(existing, f, indent=2)
+    
+    print(f"Saved {len(emerging_terms)} emerging terms to {output_path}")
 
 
 def run_full_analysis():
@@ -203,13 +290,26 @@ def run_full_analysis():
         "SELECT DISTINCT vertical_hint FROM signals WHERE vertical_hint IS NOT NULL"
     ).fetchall()]
 
+    all_emerging = []  # To collect all emerging terms across verticals
+
     for vertical in verticals:
         print(f"\n{'=' * 60}\nTheme extraction: {vertical}\n{'=' * 60}")
-        themes = extract_themes(conn, vertical)
-        for t in themes:
+        result = extract_themes(conn, vertical)
+
+        for t in result.get("classified", []):
             print(f"  -> {vertical} x {t.get('use_case')} x {t.get('technology')} "
                   f"({t.get('supporting_signal_count')} signals)")
             print(f"     {t.get('rationale')}")
+
+        # Collect emerging terms
+        for e in result.get("emerging", []):
+            print(f"  [EMERGING] {vertical} x {e.get('emerging_use_case')} x {e.get('emerging_technology')} "
+                  f"({e.get('supporting_signal_count')} signals)")
+            all_emerging.append(e)
+
+    # Save all emerging terms
+    if all_emerging:
+        save_emerging_themes(all_emerging)
 
     conn.close()
 

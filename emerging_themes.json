@@ -1,0 +1,65 @@
+[
+  {
+    "vertical": "Manufacturing",
+    "emerging_use_case": "Industrial Digital Twin & Automation",
+    "emerging_technology": "Digital Twins",
+    "rationale": "Signals for industrial process control, command\u2011and\u2011control systems, advanced machinery, transformers, and large\u2011scale construction suggest a push toward digital\u2011twin\u2011enabled manufacturing optimization.",
+    "supporting_signal_count": 8
+  },
+  {
+    "vertical": "Manufacturing",
+    "emerging_use_case": "Medical Imaging Procurement",
+    "emerging_technology": "",
+    "rationale": "Procurement of CT and MRI scanners does not fit existing use\u2011case/technology categories and represents a distinct medical\u2011equipment buying pattern.",
+    "supporting_signal_count": 1
+  },
+  {
+    "vertical": "Manufacturing",
+    "emerging_use_case": "Post\u2011Quantum Cryptography Testing Infrastructure",
+    "emerging_technology": "Quantum\u2011safe Cryptography",
+    "rationale": "Deployment of a European testing infrastructure for PQC is an emerging quantum\u2011safe cryptography use case.",
+    "supporting_signal_count": 1
+  },
+  {
+    "vertical": "Manufacturing",
+    "emerging_use_case": "Strategic Communications & Advertising Consultancy",
+    "emerging_technology": "Generative AI",
+    "rationale": "Repeated advertising consultancy signals indicate an emerging use case for AI\u2011driven strategic communications.",
+    "supporting_signal_count": 4
+  },
+  {
+    "vertical": "Manufacturing",
+    "emerging_use_case": "",
+    "emerging_technology": "Edge AI",
+    "rationale": "Command and control system for hydropower plants requires real\u2011time edge AI processing, an emerging technology for operational excellence.",
+    "supporting_signal_count": 2
+  },
+  {
+    "vertical": "Public Sector",
+    "emerging_use_case": "Infrastructure Planning & Management",
+    "emerging_technology": "Digital Twins",
+    "rationale": "Architectural, construction, and engineering services suggest emerging use of digital twins for planning complex public infrastructure.",
+    "supporting_signal_count": 2
+  },
+  {
+    "vertical": "Manufacturing",
+    "emerging_use_case": "Industrial Process Optimization",
+    "emerging_technology": "IoT Platforms",
+    "rationale": "Signals from Germany (industrial process\u2011control services) and Finland (propylene\u2011glycol recycling system and high\u2011voltage transformers) indicate a pattern of deploying IoT\u2011enabled solutions to optimise manufacturing processes.",
+    "supporting_signal_count": 3
+  },
+  {
+    "vertical": "Finance & Insurance",
+    "emerging_use_case": null,
+    "emerging_technology": "Robotic Process Automation (RPA)",
+    "rationale": "Repeated UiPath license purchases together with SaaS portfolio\u2011management tooling point to growing adoption of RPA for automating IT operations.",
+    "supporting_signal_count": 3
+  },
+  {
+    "vertical": "Finance & Insurance",
+    "emerging_use_case": null,
+    "emerging_technology": "IoT Platforms",
+    "rationale": "Patient\u2011monitoring systems, smart waste\u2011skip solutions, and aerosol in\u2011situ instruments reflect a trend toward IoT\u2011enabled operational improvements.",
+    "supporting_signal_count": 3
+  }
+]
