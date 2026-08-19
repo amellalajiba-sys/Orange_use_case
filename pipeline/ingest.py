@@ -71,7 +71,7 @@ def fetch_gdelt(conn, vertical, query, signal_type="trend", max_records=25, time
         "timespan": timespan,
         "sort": "hybridrel",
     }
-    resp = requests.get(GDELT_DOC_URL, params=params, headers=GDELT_HEADERS, timeout=20)
+    resp = requests.get(GDELT_DOC_URL, params=params, headers=GDELT_HEADERS, timeout=30)
     if resp.status_code == 429:
         print("[GDELT] rate-limited -- skipping this query (don't rerun the pipeline immediately, wait 15-20 min)")
         return 0
@@ -308,7 +308,7 @@ def run_full_refresh():
     if ENABLE_GDELT:
         for q in GDELT_QUERIES:
             safe_run(f"GDELT / {q['vertical']}", fetch_gdelt, conn, q["vertical"], q["query"])
-            time.sleep(12)  # GDELT rate-limits aggressively -- space out consecutive calls
+            time.sleep(15)  # GDELT rate-limits aggressively -- space out consecutive calls
     else:
         print("[GDELT] disabled in config.py (ENABLE_GDELT = False) -- skipping")
 
@@ -327,7 +327,7 @@ def run_full_refresh():
 
     for q in SEMANTIC_SCHOLAR_QUERIES:
         safe_run(f"Semantic Scholar / {q['vertical']}", fetch_semantic_scholar, conn, q["vertical"], q["query"])
-        time.sleep(4)  # unauthenticated Semantic Scholar limit is strict (~1 req / few seconds)
+        time.sleep(8)  
 
     for q in TED_QUERIES:
         safe_run(f"TED / {q['vertical']}", fetch_ted, conn, q["vertical"], q["query"])

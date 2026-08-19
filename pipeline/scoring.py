@@ -17,7 +17,10 @@ stored, never just the total -- that's what makes the score explainable.
 
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
-from pipeline.db import get_connection, get_signals_for_vertical, insert_score, insert_right_to_win_score
+from pipeline.db import (
+    get_connection, get_signals_for_vertical, insert_score, insert_right_to_win_score,
+    get_opportunity_spaces, get_latest_run_id,
+)
 from pipeline.config import (
     ORANGE_BUSINESS_ASSETS, PORTFOLIO_DISTANCE, ANALYST_RECOGNITION,
     CUSTOMER_REFERENCES, CAPABILITY_STATS,
@@ -320,9 +323,26 @@ def score_opportunity_space(conn, opportunity_space_row):
     return sub_scores, round(total, 2)
 
 
-def score_all_opportunity_spaces():
+def score_all_opportunity_spaces(run_id=None):
+    """
+    Scores every opportunity space in one run. CHANGED 2026-08-19: since
+    opportunity_spaces now keeps every run's history (see db.py), this no
+    longer does a bare `SELECT * FROM opportunity_spaces` -- that would
+    re-score every run ever created, every time you run this, appending
+    duplicate score rows onto old runs for no reason. Defaults to the
+    LATEST run (same behavior as before this change, from the caller's
+    point of view); pass an explicit run_id to (re-)score an older run
+    instead, e.g. `score_all_opportunity_spaces(run_id="2026-08-10T09:00:00+00:00")`.
+    """
     conn = get_connection()
-    spaces = conn.execute("SELECT * FROM opportunity_spaces").fetchall()
+    if run_id is None:
+        run_id = get_latest_run_id(conn)
+    if run_id is None:
+        print("No opportunity spaces found -- run create_opportunity_spaces.py first.")
+        conn.close()
+        return
+    print(f"Scoring run: {run_id}")
+    spaces = get_opportunity_spaces(conn, run_id=run_id)
     for space in spaces:
         sub_scores, total = score_opportunity_space(conn, space)
 
