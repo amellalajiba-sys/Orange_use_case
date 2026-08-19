@@ -19,9 +19,9 @@ Run directly for a full pass over all verticals:
 import re
 from collections import Counter
 from difflib import SequenceMatcher
-from exploratory_work_siegried.pipeline.db import get_connection
-from exploratory_work_siegried.pipeline.config import TAXONOMY_USE_CASES, TAXONOMY_TECHNOLOGIES, GENERIC_TECHNOLOGY_TERMS
-from exploratory_work_siegried.llm.llm_client import get_llm_json
+from pipeline.db import get_connection
+from pipeline.config import TAXONOMY_USE_CASES, TAXONOMY_TECHNOLOGIES, GENERIC_TECHNOLOGY_TERMS
+from llm.llm_client import get_llm_json
 
 
 # ---------- Step 1: quick exploration, no LLM ----------
