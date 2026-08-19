@@ -13,7 +13,7 @@ import urllib.parse
 import feedparser
 import requests
 
-from exploratory_work_siegried.pipeline.config import (
+from pipeline.config import (
     GOOGLE_NEWS_QUERIES,
     GDELT_QUERIES,
     ENABLE_GDELT,
@@ -26,7 +26,7 @@ from exploratory_work_siegried.pipeline.config import (
     ENABLE_NEWSAPI_AI,
     NEWSAPI_AI_QUERIES,
 )
-from exploratory_work_siegried.pipeline.db import get_connection, init_db, insert_signal
+from pipeline.db import get_connection, init_db, insert_signal
 
 GDELT_DOC_URL = "https://api.gdeltproject.org/api/v2/doc/doc"
 HN_ALGOLIA_URL = "https://hn.algolia.com/api/v1/search"
@@ -308,7 +308,7 @@ def run_full_refresh():
     if ENABLE_GDELT:
         for q in GDELT_QUERIES:
             safe_run(f"GDELT / {q['vertical']}", fetch_gdelt, conn, q["vertical"], q["query"])
-            time.sleep(8)  # GDELT rate-limits aggressively -- space out consecutive calls
+            time.sleep(12)  # GDELT rate-limits aggressively -- space out consecutive calls
     else:
         print("[GDELT] disabled in config.py (ENABLE_GDELT = False) -- skipping")
 

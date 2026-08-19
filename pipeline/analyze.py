@@ -19,9 +19,12 @@ Run directly for a full pass over all verticals:
 import re
 from collections import Counter
 from difflib import SequenceMatcher
-from exploratory_work_siegried.pipeline.db import get_connection
-from exploratory_work_siegried.pipeline.config import TAXONOMY_USE_CASES, TAXONOMY_TECHNOLOGIES, GENERIC_TECHNOLOGY_TERMS
-from exploratory_work_siegried.llm.llm_client import get_llm_json
+from pipeline.db import get_connection
+from pipeline.config import (
+    TAXONOMY_USE_CASES, TAXONOMY_TECHNOLOGIES, TAXONOMY_TECHNOLOGIES_EMERGING,
+    GENERIC_TECHNOLOGY_TERMS,
+)
+from llm.llm_client import get_llm_json
 
 
 # ---------- Step 1: quick exploration, no LLM ----------
@@ -93,8 +96,13 @@ instead of forcing a bad-fit match.
 Use Case (examples):
 {use_case_list}
 
-Technology (examples):
+Technology (examples, established):
 {technology_list}
+
+Emerging technologies (less proven, but real if the signals actually support
+them -- actively watch for these rather than defaulting to the established
+list above just because it's more familiar):
+{emerging_technology_list}
 
 Read the signal titles below and identify 3-6 recurring, specific Use Case x
 Technology combinations, each one supported by multiple distinct signals.
@@ -177,6 +185,7 @@ def extract_themes(conn, vertical, max_signals=40):
     system_prompt = THEME_EXTRACTION_SYSTEM_PROMPT.format(
         use_case_list="\n".join(f"- {u}" for u in TAXONOMY_USE_CASES),
         technology_list="\n".join(f"- {t}" for t in TAXONOMY_TECHNOLOGIES),
+        emerging_technology_list="\n".join(f"- {t}" for t in TAXONOMY_TECHNOLOGIES_EMERGING),
     )
 
     result = get_llm_json(prompt, system_prompt=system_prompt)

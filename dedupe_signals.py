@@ -21,7 +21,7 @@ Run:
 import sys
 import re
 from difflib import SequenceMatcher
-from exploratory_work_siegried.pipeline.db import get_connection
+from pipeline.db import get_connection
 
 SIMILARITY_THRESHOLD = 0.85  # 0-1, higher = stricter match required
 

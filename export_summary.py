@@ -9,7 +9,7 @@ Run (after scoring.py and link_signals.py have both been run at least once):
 """
 
 from datetime import datetime, timezone
-from exploratory_work_siegried.pipeline.db import get_connection
+from pipeline.db import get_connection
 
 OUTPUT_PATH = "opportunity_spaces_summary.md"
 
