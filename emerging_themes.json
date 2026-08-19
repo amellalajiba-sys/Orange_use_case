@@ -61,5 +61,26 @@
     "emerging_technology": "IoT Platforms",
     "rationale": "Patient\u2011monitoring systems, smart waste\u2011skip solutions, and aerosol in\u2011situ instruments reflect a trend toward IoT\u2011enabled operational improvements.",
     "supporting_signal_count": 3
+  },
+  {
+    "vertical": "Manufacturing",
+    "emerging_use_case": null,
+    "emerging_technology": "Quantum-safe Cryptography",
+    "rationale": "Signals include a European PQC testing infrastructure, a dedicated cybersecurity platform, and a secure Digital Euro SDK, all indicating demand for quantum\u2011resistant security solutions.",
+    "supporting_signal_count": 3
+  },
+  {
+    "vertical": "Finance & Insurance",
+    "emerging_use_case": "Risk & Fraud Management",
+    "emerging_technology": null,
+    "rationale": "Several German banking service procurements focus on digital\u2011euro risk and fraud detection, a clear pattern for AI\u2011driven fraud analytics.",
+    "supporting_signal_count": 3
+  },
+  {
+    "vertical": "Public Sector",
+    "emerging_use_case": "Citizen Participation Platforms",
+    "emerging_technology": null,
+    "rationale": "The Dynamic Purchasing System calls for digital platform setup, moderation, analysis and facilitation of participatory processes, all of which rely on scalable cloud data services.",
+    "supporting_signal_count": 7
   }
 ]
