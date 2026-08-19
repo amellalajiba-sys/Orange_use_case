@@ -94,35 +94,41 @@ def dump_titles(conn, vertical=None, signal_type=None, limit=100):
 
 # ---------- Step 2: LLM-assisted theme extraction ----------
 
-THEME_EXTRACTION_SYSTEM_PROMPT = """
-Identify 3-6 recurring, specific Use Case x Technology combinations, 
-each supported by MULTIPLE distinct signals (minimum 3).
+# THEME EXTRACTION WITH ORIGINAL PROMPT
 
-For each combination:
-- If it fits the official lists → classify it
-- If it doesn't fit → mark it as emerging
+THEME_EXTRACTION_SYSTEM_PROMPT = """You are analyzing market signals (news, research
+papers, vendor announcements, regulation) collected for one business vertical, to spot
+candidate Opportunity Spaces for a B2B telecom/cloud provider (Orange Business).
 
-Ignore one-off signals — they are not patterns.
+An Opportunity Space = Vertical x Use Case x Technology, and must be SPECIFIC
+(e.g. "Manufacturing x Energy Optimization x Computer Vision"), never a generic
+theme like "AI in industry" or "Cloud adoption".
 
-Official Use Cases:
+Here are example Use Case and Technology values already validated for Orange
+Business -- prefer these when a signal clearly fits one. They are a starting
+point, not an exhaustive list: if a recurring pattern across signals is real
+and specific but doesn't fit any of these well, propose a new specific label
+instead of forcing a bad-fit match.
+
+Use Case (examples):
 {use_case_list}
 
-Official Technologies:
+Technology (examples, established):
 {technology_list}
 
-Respond with ONLY a JSON array:
+Emerging technologies (less proven, but real if the signals actually support
+them -- actively watch for these rather than defaulting to the established
+list above just because it's more familiar):
+{emerging_technology_list}
+
+Read the signal titles below and identify 3-6 recurring, specific Use Case x
+Technology combinations, each one supported by multiple distinct signals.
+
+Respond with ONLY a JSON array, no preamble, no markdown fences:
 [
-    {{
-        "use_case": "official_use_case or null",
-        "technology": "official_technology or null",
-        "emerging_use_case": "proposed new use case or null",
-        "emerging_technology": "proposed new technology or null",
-        "is_classified": true/false,
-        "supporting_signal_count": <int>,
-        "rationale": "<one sentence>"
-    }}
-]
-"""
+  {{"use_case": "...", "technology": "...", "supporting_signal_count": <int>,
+   "rationale": "<one sentence: why this is a real, specific pattern>"}}
+]"""
 
 
 def _curate_themes(themes):
