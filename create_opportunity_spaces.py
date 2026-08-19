@@ -8,7 +8,7 @@ on existing labels instead of duplicating):
     python create_opportunity_spaces.py
 """
 
-from exploratory_work_siegried.pipeline.db import init_db, get_connection, upsert_opportunity_space
+from pipeline.db import init_db, get_connection, upsert_opportunity_space
 
 CANDIDATES = [
     ("OS001", "Public Sector", "Sovereign citizen data hosting", "Sovereign cloud + GPU inference"),
