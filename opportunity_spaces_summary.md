@@ -1,242 +1,250 @@
 # Innovation Radar — Opportunity Spaces Summary
-_Generated 2026-08-19 10:07 UTC_
+_Generated 2026-08-19 06:27 UTC_
 
 | OS | Attractiveness | Right-to-win | Distance |
 |---|---|---|---|
-| OS003 | 8.72/10 | 8.0/10 | L1 |
-| OS001 | 8.57/10 | 8.0/10 | L1 |
-| OS008 | 8.21/10 | 6.0/10 | L3 |
-| OS009 | 8.21/10 | 8.0/10 | L1 |
-| OS010 | 8.21/10 | 5.0/10 | L3 |
-| OS005 | 7.99/10 | 8.0/10 | L1 |
-| OS002 | 7.97/10 | 5.0/10 | L3 |
-| OS007 | 7.84/10 | 7.0/10 | L1 |
-| OS004 | 7.69/10 | 7.0/10 | L1 |
-| OS006 | 7.69/10 | 8.0/10 | L1 |
+| OS005 | 8.95/10 | 7.0/10 | L1 |
+| OS007 | 8.95/10 | 5.0/10 | L3 |
+| OS008 | 8.95/10 | 8.0/10 | L1 |
+| OS002 | 8.46/10 | 8.0/10 | L1 |
+| OS006 | 8.35/10 | 8.0/10 | L1 |
+| OS001 | 7.96/10 | 8.0/10 | L1 |
+| OS003 | 7.68/10 | 7.0/10 | L1 |
+| OS004 | 7.53/10 | 6.0/10 | L3 |
 
-## OS003 — Manufacturing × Process Control Automation × IoT Platforms
+## OS005 — Public Sector × Energy Optimization × IoT Platforms
 
-**Attractiveness: 8.72/10**
+**Attractiveness: 8.95/10**
 - Market signal strength: 10.0
 - Source diversity: 10.0
-- Evidence quality: 7.0 — The list contains several specific, industry‑relevant announcements from diverse sources (analyst reports, reputable tech news outlets, and some vendor press releases), though many items are vendor‑centric or promotional, limiting the overall credibility.
-- Novelty / momentum: 4.67
-- Strategic relevance: 10.0 — Directly extends API M2M for IoT Connect Express by providing IoT connectivity for manufacturing process control automation
+- Evidence quality: 8.0 — The signals are largely specific and relevant to EU sovereign cloud trends, drawing from a diverse mix of reputable media, analyst reports, and policy sources, though some are vendor‑focused press releases that slightly lower overall credibility.
+- Novelty / momentum: 4.54
+- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express (Data, IA & IoT) for building energy optimization IoT solutions in the public sector
 
-**Right-to-win: 8.0/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Live Identity Verify, API Incident
-- Multiple existing Orange Business APIs (IoT connectivity, cloud, SD‑WAN and security) can be combined to address manufacturing process‑control IoT platforms, but they are not yet packaged as a single offering.
+**Right-to-win: 7.0/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco
+- Orange Business already offers IoT connectivity, cloud hosting, and SD‑WAN services that can be bundled to build an energy‑optimization platform for the public sector, but no ready‑made offering exists yet.
 
-**Grounding signals (8):**
-- [trend] Hacker News: Europe built sovereign clouds to escape US control. Forgot about the processors (2026-05-16T11:43:45Z)
-- [market_move] IoT Business News: Industrial AI Shifts Focus from Predictive Maintenance to Knowledge Preservation - IoT Business News (Tue, 16 Jun 2026 07:00:00 GMT)
-- [market_move] IoT News: Shell expands predictive maintenance programme with C3 AI - IoT News (Fri, 05 Jun 2026 09:01:09 GMT)
-- [market_move] IoT Analytics: The $1 trillion industrial downtime problem is becoming a knowledge problem—can AI mitigate it? - IoT Analytics (Mon, 15 Jun 2026 07:00:00 GMT)
-- [market_move] Design News: Digital Twins & Intelligent Automation Create Autonomous Smart Manufacturing - Design News (Thu, 08 Jan 2026 08:00:00 GMT)
-- [market_move] Accenture: Accenture to Strengthen Capabilities for Software and Automation Solutions from Siemens Digital Industries with Acquisition of Industries eXcellence Group - Accenture (Wed, 17 Jun 2026 07:00:00 GMT)
-- [market_move] Metrology and Quality News: Accenture Strengthen Software and Automation Capabilities with Acquisition of Industries eXcellence Group - Metrology and Quality News (Tue, 23 Jun 2026 07:00:00 GMT)
-- [buying_signal] TED - {'fra': ['Elia Asset'], 'nld': ['Elia Asset'], 'eng': ['Elia Asset']}: Belgium – Electrical apparatus for switching or protecting electrical circuits – FA Protection Automation & Control Cubicles SPACS 3 Bis - 2027 (2024-05-27Z)
+**Grounding signals (16):**
+- [market_move] Amazon Web Services (AWS): Build an agentic AI healthcare claims pipeline with Amazon Bedrock and AWS HealthLake | Artificial Intelligence - Amazon Web Services (AWS) (Mon, 29 Jun 2026 07:00:00 GMT)
+- [market_move] TradingView: AI agents for insurers: IT service provider adesso acquires leading AI claims platform omni:us - TradingView (Wed, 12 Aug 2026 08:00:04 GMT)
+- [market_move] Salesforce: The Complete Guide to Agentic AI in Insurance - Salesforce (Thu, 23 Apr 2026 07:07:16 GMT)
+- [market_move] Insurance Business: IAG bets on agentic AI where conduct risk is highest - Insurance Business (Mon, 27 Jul 2026 07:00:00 GMT)
+- [market_move] PR Newswire: Duck Creek Launches Insurance-Native Agentic AI Platform and Unveils New Applications to Transform Underwriting and Claims - PR Newswire (Tue, 28 Apr 2026 07:00:00 GMT)
+- [market_move] IBM: How AI is rewiring life and annuity claims: From cost center to strategic advantage - IBM (Mon, 18 May 2026 07:00:00 GMT)
+- [market_move] Reinsurance News: Duck Creek introduces insurance-focused Agentic AI Platform with new underwriting and claims tools - Reinsurance News (Wed, 29 Apr 2026 07:00:00 GMT)
+- [market_move] CNBC: EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC (Thu, 07 May 2026 07:00:00 GMT)
+- [tech_maturity] Microsoft Azure Blog: The Economics of Agent Optimization: From pilots to measurable returns (Wed, 12 Aug 2026 16:00:00 +0000)
+- [market_move] IoT For All: How Cellular IoT Connectivity Is Transforming Smart Cities: Market Trends and Forecast to 2035 - IoT For All (Tue, 27 Jan 2026 08:00:00 GMT)
+- [market_move] Homeland Security Today: IoT Devices Make Municipal Infrastructure an Easy Target for Cyberattackers - Homeland Security Today (Wed, 25 Feb 2026 08:00:00 GMT)
+- [market_move] Fact.MR: 5G IoT Market Size, Share & Forecast to 2036 - Fact.MR (Tue, 03 Mar 2026 08:00:00 GMT)
+- [market_move] IOT Insider: Nigeria signs smart cities IoT deal for 50,000 AI-enabled solar streetlights doubling as distributed AI data centres - IOT Insider (Tue, 05 May 2026 07:00:00 GMT)
+- [market_move] Shoolini University: IoT Careers: Bridging the Physical and Digital World - Shoolini University (Fri, 10 Apr 2026 07:00:00 GMT)
+- [market_move] StateTech Magazine: What Is IoT Architecture, and How Does It Enable Smart Cities? - StateTech Magazine (Wed, 16 Jun 2021 07:00:00 GMT)
+- [proof_signal] arXiv: Deep Academic Survey: Stateful Agentic Closed-Loop Paradigm for Academic Survey Automation (2026-08-18T17:29:00Z)
 
-## OS001 — Manufacturing × Predictive Maintenance × Edge AI
+## OS007 — Public Sector × Network Modernization & SD‑WAN × 5G
 
-**Attractiveness: 8.57/10**
+**Attractiveness: 8.95/10**
 - Market signal strength: 10.0
 - Source diversity: 10.0
-- Evidence quality: 7.0 — The signals are largely relevant to private 5G and industrial AI, drawing from a mix of vendor announcements, reputable tech media, and an analyst report, though many are duplicate press releases which lowers overall credibility diversity.
-- Novelty / momentum: 4.67
-- Strategic relevance: 9.0 — Extends API M2M for IoT Connect Express (Data, IA & IoT) by applying its IoT connectivity to manufacturing predictive maintenance at the edge
+- Evidence quality: 8.0 — The signals are largely specific and relevant to EU sovereign cloud trends, drawing from a diverse mix of reputable media, analyst reports, and policy sources, though some are vendor‑centric press releases that slightly lower overall credibility.
+- Novelty / momentum: 4.54
+- Strategic relevance: 10.0 — Directly aligns with API Flexible SDWAN Cisco, the Orange Business product for SD‑WAN network modernization.
+
+**Right-to-win: 5.0/10 [L3]**
+- Matched assets: API Flexible SDWAN Cisco, API Mobile Suite
+- Existing SD‑WAN and mobile assets exist but lack a dedicated 5G transport capability, requiring a new or acquired 5G offering to meet the public‑sector network modernization need.
+
+**Grounding signals (16):**
+- [market_move] Amazon Web Services (AWS): Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS) (Tue, 04 Aug 2026 07:00:00 GMT)
+- [market_move] CNBC: EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC (Thu, 07 May 2026 07:00:00 GMT)
+- [market_move] Lawfare: The EU Cloud and AI Development Act - Lawfare (Wed, 24 Jun 2026 07:00:00 GMT)
+- [market_move] Jones Day: Dutch Government Blocks U.S. Acquisition of Cloud Provider, Signaling Heightened Focus on EU Digital Sovereignty - Jones Day (Wed, 03 Jun 2026 10:38:36 GMT)
+- [market_move] Business Wire: Rubrik Security Cloud Launches on the AWS European Sovereign Cloud - Business Wire (Wed, 08 Jul 2026 07:00:00 GMT)
+- [market_move] Computerworld: EU’s cloud sovereignty push leaves room for US hyperscalers - Computerworld (Mon, 08 Jun 2026 07:00:00 GMT)
+- [tech_maturity] AWS News Blog: AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026) (Mon, 13 Jul 2026 16:18:20 +0000)
+- [tech_maturity] Microsoft Azure Blog: Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools (Thu, 06 Aug 2026 15:00:00 +0000)
+- [tech_maturity] Cisco Blog: Monitoring beyond SNMP: Turning your network into a sensor (Thu, 13 Aug 2026 16:38:11 +0000)
+- [trend] Hacker News: AWS Private 5G – Build Your Own Private Mobile Network (2022-08-12T12:12:32Z)
+- [trend] Hacker News: Using a private 5G network to support coverage of the King's Coronation (2023-05-06T22:15:30Z)
+- [trend] Hacker News: Using a Private 5G Network to Broadcast the Coronation (2023-05-10T22:06:29Z)
+- [buying_signal] TED - {'deu': ['Bundesministerium für Wirtschaft und Energie']}: Germany – IT services: consulting, software development, Internet and support – Bereitstellung von Cloud-Services für den Betrieb der Förderzentrale Deutschland (FZD) (2025-11-24+01:00)
+- [market_move] Google Cloud Press Corner: DICT and Google Cloud Partner on Multi-Year AI and Cybersecurity Initiatives to Deliver Next-Generation Citizen Services - Google Cloud Press Corner (Sun, 21 Jun 2026 07:00:00 GMT)
+- [market_move] Federal News Network: Trump admin focuses on ‘zero trust 2.0,’ cybersecurity efficiencies - Federal News Network (Wed, 16 Jul 2025 07:00:00 GMT)
+- [tech_maturity] Cisco Blog: How Cisco and Auvik simplify network modernization for AI (Tue, 18 Aug 2026 15:00:15 +0000)
+
+## OS008 — Public Sector × Energy Optimization × IoT Platforms
+
+**Attractiveness: 8.95/10**
+- Market signal strength: 10.0
+- Source diversity: 10.0
+- Evidence quality: 8.0 — The signals are highly relevant to EU sovereign cloud trends and come from a broad mix of credible media, analyst reports, regulatory commentary, and industry sources, though some are vendor‑centric press releases that slightly lower overall credibility.
+- Novelty / momentum: 4.54
+- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express (Data, IA & IoT) for building energy optimization IoT solutions in the public sector.
 
 **Right-to-win: 8.0/10 [L1]**
 - Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco
-- Predictive maintenance at the edge can be addressed by bundling Orange's IoT connectivity, cloud analytics, and SD‑WAN networking APIs, though no single pre‑packaged offer exists yet.
+- Orange already offers IoT connectivity, cloud hosting, and secure SD‑WAN that can be bundled to build an energy‑optimization IoT platform for the public sector, though no dedicated product exists yet.
 
 **Grounding signals (8):**
-- [market_move] PlasticsToday: AI Predictive Maintenance Gains Traction in Manufacturing Plants - PlasticsToday (Fri, 17 Jul 2026 07:00:00 GMT)
-- [market_move] Pulse 2.0: CAI Software Acquires LLumin To Bring AI-Powered Predictive Maintenance Into The Factory Floor - Pulse 2.0 (Fri, 14 Aug 2026 14:29:15 GMT)
-- [market_move] IBM: The Role of AI in Predictive Maintenance - IBM (Wed, 28 Jan 2026 08:00:00 GMT)
-- [market_move] IoT Business News: Industrial AI Shifts Focus from Predictive Maintenance to Knowledge Preservation - IoT Business News (Tue, 16 Jun 2026 07:00:00 GMT)
-- [market_move] ABB: The role of AI in predictive maintenance - ABB (Wed, 27 May 2026 07:00:00 GMT)
-- [market_move] Snowflake: AI-Powered Predictive Maintenance on Snowflake - Snowflake (Mon, 02 Feb 2026 08:00:00 GMT)
-- [market_move] IoT News: Shell expands predictive maintenance programme with C3 AI - IoT News (Fri, 05 Jun 2026 09:01:09 GMT)
-- [market_move] EE Times: Edge AI Is Forcing a Rethink of Predictive Maintenance Architecture - EE Times (Wed, 08 Apr 2026 12:48:39 GMT)
+- [market_move] CNBC: EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC (Thu, 07 May 2026 07:00:00 GMT)
+- [tech_maturity] Microsoft Azure Blog: The Economics of Agent Optimization: From pilots to measurable returns (Wed, 12 Aug 2026 16:00:00 +0000)
+- [market_move] IoT For All: How Cellular IoT Connectivity Is Transforming Smart Cities: Market Trends and Forecast to 2035 - IoT For All (Tue, 27 Jan 2026 08:00:00 GMT)
+- [market_move] Homeland Security Today: IoT Devices Make Municipal Infrastructure an Easy Target for Cyberattackers - Homeland Security Today (Wed, 25 Feb 2026 08:00:00 GMT)
+- [market_move] Fact.MR: 5G IoT Market Size, Share & Forecast to 2036 - Fact.MR (Tue, 03 Mar 2026 08:00:00 GMT)
+- [market_move] IOT Insider: Nigeria signs smart cities IoT deal for 50,000 AI-enabled solar streetlights doubling as distributed AI data centres - IOT Insider (Tue, 05 May 2026 07:00:00 GMT)
+- [market_move] Shoolini University: IoT Careers: Bridging the Physical and Digital World - Shoolini University (Fri, 10 Apr 2026 07:00:00 GMT)
+- [market_move] StateTech Magazine: What Is IoT Architecture, and How Does It Enable Smart Cities? - StateTech Magazine (Wed, 16 Jun 2021 07:00:00 GMT)
 
-## OS008 — Public Sector × Cyber Defence & Zero Trust × Agentic AI
+## OS002 — Manufacturing × Operational Excellence × IoT Platforms
 
-**Attractiveness: 8.21/10**
+**Attractiveness: 8.46/10**
 - Market signal strength: 10.0
 - Source diversity: 10.0
-- Evidence quality: 8.0 — The set includes multiple credible, diverse sources (major media, analyst reports, policy analyses) with specific EU sovereign cloud content, though a few items are vendor‑centric press releases.
-- Novelty / momentum: 4.59
-- Strategic relevance: 5.0 — Broadly fits Orange Business security domain (e.g., API Incident, API Live Identity Verify) but no specific API directly matches the zero‑trust/agentic AI focus.
-
-**Right-to-win: 6.0/10 [L3]**
-- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco
-- Orange has identity, incident and SD‑WAN security APIs that address parts of a Zero Trust stack, but lacks the Agentic AI capability needed for a full cyber‑defence solution, requiring new development.
-
-**Grounding signals (8):**
-- [market_move] Technology Magazine: Carahsoft Strengthens Public Sector Cybersecurity Through Key Cybersecurity and Zero Trust Government Events in 2026 - Technology Magazine (Tue, 18 Aug 2026 04:01:30 GMT)
-- [market_move] National Security Agency (NSA) (.gov): NSA Launches Zero Trust Implementation Guidelines Resource Webpage - National Security Agency (NSA) (.gov) (Thu, 28 May 2026 07:00:00 GMT)
-- [market_move] Cybersecurity Dive: US agencies promote zero-trust practices for operational technology networks - Cybersecurity Dive (Thu, 30 Apr 2026 07:00:00 GMT)
-- [market_move] StateScoop: Maryland unveils statewide zero-trust cybersecurity policy - StateScoop (Tue, 24 Feb 2026 08:00:00 GMT)
-- [market_move] DXC Technology: From legacy to leadership: Achieving Zero Trust cybersecurity in government with AI - DXC Technology (Tue, 10 Feb 2026 08:00:00 GMT)
-- [market_move] FedScoop: For agencies, zero trust and TIC 3.0 are now mission requirements - FedScoop (Thu, 26 Mar 2026 07:00:00 GMT)
-- [market_move] Homeland Security Today: CISA and U.S. Government Partners Unveil Guide to Accelerate Zero Trust Adoption in Operational Technology - Homeland Security Today (Thu, 30 Apr 2026 07:00:00 GMT)
-- [trend] breakingdefense.com: Agentic AI turning Zero Trust cybersecurity  on its head   (20260811T144500Z)
-
-## OS009 — Public Sector × Cyber Defence & Zero Trust × Sovereign Cloud
-
-**Attractiveness: 8.21/10**
-- Market signal strength: 10.0
-- Source diversity: 10.0
-- Evidence quality: 8.0 — The signals are largely relevant to EU sovereign cloud trends and come from a diverse mix of reputable media, analyst reports, and regulatory commentary, though some are vendor‑driven press releases that slightly lower overall credibility.
-- Novelty / momentum: 4.59
-- Strategic relevance: 5.0 — Broadly aligns with API Cloud Avenue (Cloud) and API Incident (Security) but no specific matching API
+- Evidence quality: 6.0 — The signals are relevant to private 5G and edge AI in B2B, but are dominated by vendor press releases and repeat coverage, with limited independent analyst or regulator sources, reducing overall credibility.
+- Novelty / momentum: 4.63
+- Strategic relevance: 10.0 — Directly extends API M2M for IoT Connect Express to enable manufacturing operational excellence IoT platforms
 
 **Right-to-win: 8.0/10 [L1]**
-- Matched assets: API Cloud Avenue, API Live Identity Verify, API Live Identity Captcha, API Incident, API Flexible SDWAN Cisco
-- Orange already offers cloud, identity, security and SD‑WAN assets that together meet public‑sector zero‑trust sovereign‑cloud needs, but they are not yet packaged as a single offering.
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Live Identity Verify, API Incident
+- Orange Business already offers IoT connectivity, cloud, SD‑WAN and security APIs that together can meet a manufacturing operational‑excellence IoT platform, but they are not yet packaged as a single offering.
 
-**Grounding signals (8):**
+**Grounding signals (16):**
+- [market_move] Tech Monitor: Bringing intelligence to the factory floor: Private 5G and edge computing* - Tech Monitor (Fri, 06 Mar 2026 00:56:06 GMT)
+- [market_move] Telecoms Tech News: Verizon deploys Ericsson private 5G edge networks worldwide - Telecoms Tech News (Tue, 16 Jun 2026 07:00:00 GMT)
+- [market_move] ARC Advisory Group: Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory Group (Fri, 10 Apr 2026 07:00:00 GMT)
+- [market_move] AI Magazine: Cargill: Deploying Robotics and Edge AI with NTT Data - AI Magazine (Fri, 06 Mar 2026 08:00:00 GMT)
+- [market_move] Computer Weekly: NTT Data, Ericsson team to scale private 5G, physical AI for enterprises - Computer Weekly (Fri, 27 Feb 2026 08:00:00 GMT)
+- [market_move] Mobile Europe: NTT DATA, Ericsson partner on private 5G, edge and physical AI - Mobile Europe (Fri, 27 Feb 2026 08:00:00 GMT)
+- [market_move] RCR Wireless News: Private 5G and generative AI in Industry 4.0 – a match made at the edge - RCR Wireless News (Fri, 03 Oct 2025 07:00:00 GMT)
+- [market_move] IoT Business News: Industrial AI Shifts Focus from Predictive Maintenance to Knowledge Preservation - IoT Business News (Tue, 16 Jun 2026 07:00:00 GMT)
+- [market_move] IoT News: Shell expands predictive maintenance programme with C3 AI - IoT News (Fri, 05 Jun 2026 09:01:09 GMT)
+- [market_move] IoT Analytics: The $1 trillion industrial downtime problem is becoming a knowledge problem—can AI mitigate it? - IoT Analytics (Mon, 15 Jun 2026 07:00:00 GMT)
+- [market_move] Accenture: Accenture to Strengthen Capabilities for Software and Automation Solutions from Siemens Digital Industries with Acquisition of Industries eXcellence Group - Accenture (Wed, 17 Jun 2026 07:00:00 GMT)
+- [market_move] Metrology and Quality News: Accenture Strengthen Software and Automation Capabilities with Acquisition of Industries eXcellence Group - Metrology and Quality News (Tue, 23 Jun 2026 07:00:00 GMT)
+- [market_move] Pulse 2.0: Accenture To Acquire Industries eXcellence Group From Engineering Group - Pulse 2.0 (Thu, 18 Jun 2026 07:00:00 GMT)
+- [market_move] FOCUS ON Business: Operational technology (OT) firewall market projected to reach USD 3.19 billion by 2034 - FOCUS ON Business (Mon, 17 Aug 2026 13:18:07 GMT)
+- [market_move] Industrial Cyber: Nozomi’s Plante says CISOs must rethink OT and IoT security as old models fail converged industrial environments - Industrial Cyber (Thu, 25 Jun 2026 07:00:00 GMT)
+- [proof_signal] 2025 International Conference on Intelligent Innovations in Engineering and Technology (ICIIET): Immune-Inspired Malware Detection Algorithm for Edge-Based Industrial IoT Cybersecurity Protection (2025-12-04)
+
+## OS006 — Public Sector × Operational Excellence × Digital Twins
+
+**Attractiveness: 8.35/10**
+- Market signal strength: 10.0
+- Source diversity: 10.0
+- Evidence quality: 8.0 — The signals are largely specific and relevant to EU sovereign cloud trends, drawing from a diverse mix of reputable media, analyst reports, and policy sources, though some are vendor‑focused press releases that slightly lower overall credibility.
+- Novelty / momentum: 4.54
+- Strategic relevance: 6.0 — The digital twin concept aligns with API M2M for IoT Connect Express (Data, IA & IoT) as it would leverage IoT data streams, though no dedicated digital‑twin API currently exists.
+
+**Right-to-win: 8.0/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco
+- A digital‑twin solution for the public sector can be assembled by bundling Orange Business' IoT connectivity, cloud platform, and SD‑WAN services, which together cover data ingestion, processing, and secure transport without requiring new capabilities.
+
+**Grounding signals (16):**
+- [market_move] Amazon Web Services (AWS): Build an agentic AI healthcare claims pipeline with Amazon Bedrock and AWS HealthLake | Artificial Intelligence - Amazon Web Services (AWS) (Mon, 29 Jun 2026 07:00:00 GMT)
+- [market_move] Salesforce: The Complete Guide to Agentic AI in Insurance - Salesforce (Thu, 23 Apr 2026 07:07:16 GMT)
+- [market_move] Insurance Business: IAG bets on agentic AI where conduct risk is highest - Insurance Business (Mon, 27 Jul 2026 07:00:00 GMT)
+- [market_move] PR Newswire: Duck Creek Launches Insurance-Native Agentic AI Platform and Unveils New Applications to Transform Underwriting and Claims - PR Newswire (Tue, 28 Apr 2026 07:00:00 GMT)
+- [market_move] Deloitte: Deloitte launches new paper on scaling agentic AI in life insurance - Deloitte (Wed, 06 May 2026 07:00:00 GMT)
+- [market_move] Reinsurance News: Duck Creek introduces insurance-focused Agentic AI Platform with new underwriting and claims tools - Reinsurance News (Wed, 29 Apr 2026 07:00:00 GMT)
+- [market_move] Jones Day: Dutch Government Blocks U.S. Acquisition of Cloud Provider, Signaling Heightened Focus on EU Digital Sovereignty - Jones Day (Wed, 03 Jun 2026 10:38:36 GMT)
+- [trend] Hacker News: "Sovereign cloud"? A Trojan Horse at Europe's digital gates (2025-06-30T08:34:11Z)
+- [market_move] Yahoo Finance UK: RegTech Industry Research Report 2025-2035: $115.5 Bn Market Accelerates as Financial Sector Digital Transformation and Rising Regulatory Demands Drive Adoption of AI-Enabled Compliance Solutions - Yahoo Finance UK (Tue, 18 Nov 2025 08:00:00 GMT)
+- [market_move] The World Economic Forum: Why AI needs digital public infrastructure to deliver for citizens - The World Economic Forum (Fri, 17 Apr 2026 07:00:00 GMT)
+- [market_move] Cybersecurity Dive: US agencies promote zero-trust practices for operational technology networks - Cybersecurity Dive (Thu, 30 Apr 2026 07:00:00 GMT)
+- [market_move] Homeland Security Today: CISA and U.S. Government Partners Unveil Guide to Accelerate Zero Trust Adoption in Operational Technology - Homeland Security Today (Thu, 30 Apr 2026 07:00:00 GMT)
+- [market_move] Government Technology Agency of Singapore: The digital nervous system: Powering a responsive Smart Nation - Government Technology Agency of Singapore (Fri, 06 Feb 2026 08:00:00 GMT)
+- [market_move] Shoolini University: IoT Careers: Bridging the Physical and Digital World - Shoolini University (Fri, 10 Apr 2026 07:00:00 GMT)
+- [trend] Hacker News: Primary Purpose of Business Monitoring in Agentic AI Systems? (2025-10-28T12:38:41Z)
+- [proof_signal] International journal of science research and technology: Designing Secure Sovereign Cloud Architectures for Enterprise Data Analytics and Digital Transformation (2023-10-11)
+
+## OS001 — Manufacturing × IT Operations Automation × Cloud Data Platform
+
+**Attractiveness: 7.96/10**
+- Market signal strength: 10.0
+- Source diversity: 10.0
+- Evidence quality: 7.0 — The list contains several specific, industry‑relevant announcements from credible outlets (analyst reports, established tech media) but is weighted toward vendor press releases and a few opinion pieces, limiting its overall objectivity.
+- Novelty / momentum: 4.63
+- Strategic relevance: 5.0 — Broadly fits the API Cloud Avenue (Cloud) offering for a cloud data platform, but no specific Orange Business asset directly addresses manufacturing IT operations automation
+
+**Right-to-win: 8.0/10 [L1]**
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Evolution Platform
+- Manufacturing IT Ops automation requires cloud, connectivity and IoT data ingestion, which can be delivered by bundling existing Cloud, SD‑WAN and IoT APIs, though no single product currently offers a ready‑made data platform.
+
+**Grounding signals (16):**
+- [market_move] NTT, Inc.: Private 5G: Building AI data centers starts with better wireless - NTT, Inc. (Thu, 30 Jul 2026 07:00:00 GMT)
+- [market_move] NTT Data: NTT DATA and Ericsson Team Up to Scale Private 5G and Physical AI for Enterprises - NTT Data (Wed, 25 Feb 2026 08:00:00 GMT)
+- [market_move] Investing News Network: NTT DATA and Ericsson Team Up to Scale Private 5G and Physical AI for Enterprises - Investing News Network (Thu, 26 Feb 2026 08:00:00 GMT)
+- [market_move] AI Magazine: Cargill: Deploying Robotics and Edge AI with NTT Data - AI Magazine (Fri, 06 Mar 2026 08:00:00 GMT)
+- [market_move] Computer Weekly: NTT Data, Ericsson team to scale private 5G, physical AI for enterprises - Computer Weekly (Fri, 27 Feb 2026 08:00:00 GMT)
+- [market_move] Mobile Europe: NTT DATA, Ericsson partner on private 5G, edge and physical AI - Mobile Europe (Fri, 27 Feb 2026 08:00:00 GMT)
+- [market_move] Amazon Web Services (AWS): Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS) (Tue, 04 Aug 2026 07:00:00 GMT)
+- [market_move] CNBC: EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC (Thu, 07 May 2026 07:00:00 GMT)
 - [market_move] Business Wire: Rubrik Security Cloud Launches on the AWS European Sovereign Cloud - Business Wire (Wed, 08 Jul 2026 07:00:00 GMT)
 - [market_move] Cyber Magazine: TCS Brings SovereignSecure Cloud to EU for AI Data Security - Cyber Magazine (Wed, 27 May 2026 07:00:00 GMT)
 - [market_move] Data Center Dynamics: EU Commission selects four cloud providers under €180m sovereign cloud tender - Data Center Dynamics (Sun, 19 Apr 2026 07:00:00 GMT)
-- [market_move] euractiv.com: Commission's sovereign cloud plan doesn't push US hyperscalers out - euractiv.com (Wed, 03 Jun 2026 07:00:00 GMT)
-- [market_move] Precedence Research: Sovereign Cloud Market Size to Hit USD 651.43 Billion by 2035 - Precedence Research (Mon, 15 Jun 2026 07:00:00 GMT)
-- [market_move] Finextra Research: What is sovereign cloud? - Finextra Research (Tue, 02 Jun 2026 07:00:00 GMT)
-- [market_move] IEEE Spectrum: EU’s Sovereign Cloud Ambitions Face Major Hurdles - IEEE Spectrum (Tue, 17 Mar 2026 11:06:43 GMT)
-- [trend] Hacker News: Show HN: TPA – A Zero-Trust Protocol for Sovereign Governance (2026-02-02T23:52:32Z)
+- [trend] Hacker News: Airbus to migrate critical apps to a sovereign Euro cloud (2025-12-20T08:36:52Z)
+- [trend] Hacker News: SAP splashes €20B on Euro sovereign cloud push (2025-09-05T09:13:25Z)
+- [market_move] Light Reading: NTT Data and Google Cloud partnership targets agentic AI, sovereign cloud - Light Reading (Wed, 13 Aug 2025 07:00:00 GMT)
+- [proof_signal] International journal of science research and technology: Designing Secure Sovereign Cloud Architectures for Enterprise Data Analytics and Digital Transformation (2023-10-11)
+- [proof_signal] International journal of future innovative science and technology: Hybrid Sovereign Cloud Framework for Artificial Intelligence Powered Enterprise Analytics and Secure Data Integration (2022-09-14)
 
-## OS010 — Public Sector × Data Sovereignty × Quantum‑safe Cryptography
+## OS003 — Finance & Insurance × Risk & Fraud Management × Machine Learning
 
-**Attractiveness: 8.21/10**
+**Attractiveness: 7.68/10**
 - Market signal strength: 10.0
 - Source diversity: 10.0
-- Evidence quality: 8.0 — The signals are largely specific and relevant to EU sovereign cloud trends, drawing from a diverse mix of reputable media, analyst reports, and regulatory commentary, though some are vendor‑centric press releases that slightly lower overall credibility.
-- Novelty / momentum: 4.59
-- Strategic relevance: 5.0 — The concept aligns with Orange Business security offerings (e.g., API Live Identity Captcha/Verify) but no specific API directly addresses quantum‑safe cryptography or data sovereignty.
+- Evidence quality: 7.0 — The signals are largely relevant to agentic AI in insurance and come from a mix of credible sources (major cloud vendors, consulting firms, industry news outlets, and analyst research), though many are vendor‑centric press releases which lowers overall credibility.
+- Novelty / momentum: 4.83
+- Strategic relevance: 3.0 — No Orange Business API directly targets finance risk or fraud ML, only loosely related security APIs such as Live Identity Verify, so the fit is weak.
 
-**Right-to-win: 5.0/10 [L3]**
-- Matched assets: API Live Identity Verify, API Live Identity Captcha, API Incident, API Cloud Avenue
-- Existing security and cloud APIs provide a foundation, but quantum‑safe cryptography is not yet covered, requiring a new capability to meet data‑sovereignty requirements for the public sector.
+**Right-to-win: 7.0/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Live Identity Captcha, API Live Identity Verify, API Incident
+- Orange Business can combine its AI‑enabled IoT data API with identity‑verification and security APIs to build a fraud‑detection offering, but no pre‑packaged solution currently exists.
 
-**Grounding signals (8):**
-- [market_move] Amazon Web Services (AWS): Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS) (Tue, 04 Aug 2026 07:00:00 GMT)
-- [market_move] CNBC: EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC (Thu, 07 May 2026 07:00:00 GMT)
-- [market_move] Jones Day: Dutch Government Blocks U.S. Acquisition of Cloud Provider, Signaling Heightened Focus on EU Digital Sovereignty - Jones Day (Wed, 03 Jun 2026 10:38:36 GMT)
-- [market_move] Computerworld: EU’s cloud sovereignty push leaves room for US hyperscalers - Computerworld (Mon, 08 Jun 2026 07:00:00 GMT)
-- [market_move] Cyber Magazine: TCS Brings SovereignSecure Cloud to EU for AI Data Security - Cyber Magazine (Wed, 27 May 2026 07:00:00 GMT)
-- [market_move] Market Data Forecast: Europe Public Cloud Market Size, Share and Analysis, 2034 - Market Data Forecast (Fri, 24 Jul 2026 07:00:00 GMT)
-- [proof_signal] 2025 International Conference on Informatics, Multimedia, Cyber and Information System (ICIMCIS): Digital Sovereignty in Malaysia’s National Data Governance (2025-12-03)
-- [trend] digitaljournal.com: EY Canada grows its quantum capability to keep data in the country (20260805T011500Z)
+**Grounding signals (14):**
+- [market_move] Insurance Business: IAG bets on agentic AI where conduct risk is highest - Insurance Business (Mon, 27 Jul 2026 07:00:00 GMT)
+- [tech_maturity] Microsoft Azure Blog: External key management for Azure Managed HSM is now in public preview (Tue, 07 Jul 2026 16:00:00 +0000)
+- [tech_maturity] Cisco Blog: Monitoring beyond SNMP: Turning your network into a sensor (Thu, 13 Aug 2026 16:38:11 +0000)
+- [trend] Hacker News: Show HN: Pingu Unchained an Unrestricted LLM for High-Risk AI Security Research (2025-11-07T21:06:04Z)
+- [proof_signal] arXiv: What Do Compliance Detectors Read? An Audit of Activation Probes and Guard Models (2026-08-17T17:37:07Z)
+- [market_move] Breaking AC News: 7 Best Companies Building AI-Powered Compliance and Risk Management Platforms - Breaking AC News (Mon, 17 Aug 2026 21:16:35 GMT)
+- [market_move] PR Newswire: CUBE ACQUIRES SILICON VALLEY REGTECH, 4CRISK, DELIVERING NEXT GENERATION COMPLIANCE AND RISK MAPPING AUTOMATION - PR Newswire (Thu, 19 Feb 2026 08:00:00 GMT)
+- [market_move] The Economic Times: Global Fintech Fest 2026: How RegTech is redefining financial compliance for banks, fintechs and digital f - The Economic Times (Fri, 14 Aug 2026 07:00:00 GMT)
+- [market_move] FinTech Global: From reactive to proactive: the future of RegTech compliance - FinTech Global (Tue, 31 Mar 2026 07:00:00 GMT)
+- [market_move] FinTech Global: 9 risk management solutions that should be on your RegTech radar in 2026 - FinTech Global (Fri, 15 May 2026 07:00:00 GMT)
+- [trend] Hacker News: Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer (2024-04-23T17:19:59Z)
+- [buying_signal] TED - {'eng': ['European Central Bank']}: Germany – Banking services – Digital euro - Risk and Fraud Management component (2024-01-03Z)
+- [buying_signal] TED - {'eng': ['European Central Bank']}: Germany – Banking services – Digital euro - Risk and Fraud Management (2024-01-04Z)
+- [buying_signal] TED - {'eng': ['European Central Bank']}: Germany – Banking services – Digital euro - Risk and Fraud Management (2024-01-29Z)
 
-## OS005 — Finance & Insurance × Core Banking Modernization × Cloud Data Platform
+## OS004 — Finance & Insurance × IT Operations Automation × Robotic Process Automation
 
-**Attractiveness: 7.99/10**
+**Attractiveness: 7.53/10**
 - Market signal strength: 10.0
 - Source diversity: 10.0
 - Evidence quality: 7.0 — The signals are relevant and come from a mix of credible sources (major cloud providers, consulting firms, industry analysts, and reputable media), though many are vendor‑centric announcements which lowers the overall objectivity.
-- Novelty / momentum: 4.87
-- Strategic relevance: 5.0 — Broadly aligns with API Cloud Avenue (Cloud) as a generic cloud platform, but no specific Orange Business asset directly addresses core banking modernization.
+- Novelty / momentum: 4.83
+- Strategic relevance: 2.0 — No specific Orange Business API directly addresses Finance & Insurance IT Operations Automation or RPA; the closest domain (e.g., API Incident) is only tangentially related.
 
-**Right-to-win: 8.0/10 [L1]**
-- Matched assets: API Cloud Avenue, API Evolution Platform, API Core Information, API Live Identity Verify
-- Core banking modernization on a cloud data platform can be met by bundling Orange Business' Cloud Avenue, Evolution Platform and related security APIs, though no single pre‑packaged offer currently exists.
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: API Evolution Platform, API Incident, API Maintenance, API Ordering et Order Tracking, API Core Information, API View Bill
+- Orange Business can combine several existing APIs to automate IT operations, but lacks a dedicated RPA engine, requiring a new capability to deliver a full RPA solution for finance & insurance.
 
-**Grounding signals (8):**
-- [market_move] PR Newswire: CIMB Niaga and Virtusa Complete a First-of-Its-Kind Modernization on Pega Cloud to Enhance Customer Banking Experiences in Indonesia - PR Newswire (Thu, 26 Feb 2026 08:00:00 GMT)
-- [market_move] Broadcom: ING Selects VMware Cloud Foundation 9.0 as Strategic Platform for Private Cloud Modernization - Broadcom (Tue, 02 Dec 2025 08:00:00 GMT)
-- [market_move] PR Newswire UK: SBS positioned as a Leader in the SPARK Matrix™: Digital Banking Platform 2026 by QKS Group - PR Newswire UK (Tue, 28 Jul 2026 07:53:00 GMT)
-- [market_move] Fortune Business Insights: Core Banking Software Market Size, Share | Forecast [2034] - Fortune Business Insights (Mon, 27 Jul 2026 07:00:00 GMT)
-- [market_move] QA Financial: Erste Digital’s cloud shift elevates QA in banking innovation - QA Financial (Wed, 28 Jan 2026 08:00:00 GMT)
-- [market_move] IBM: 2025 The voice of the makers: Core banking modernization and AI enterprise-wide - IBM (Mon, 22 Sep 2025 07:00:00 GMT)
-- [market_move] Kyndryl: Kyndryl supports cloud modernization of SBI Sumishin Net Bank’s core banking system - Kyndryl (Wed, 25 Feb 2026 08:00:00 GMT)
-- [trend] propakistani.pk: DIB Pakistan Embarks on a Temenos Core Banking Modernization Program with Systems Limited (20260730T140000Z)
-
-## OS002 — Manufacturing × Cyber Defence & Zero Trust × Quantum‑safe Cryptography
-
-**Attractiveness: 7.97/10**
-- Market signal strength: 10.0
-- Source diversity: 10.0
-- Evidence quality: 7.0 — The list contains several specific, industry‑relevant announcements from diverse sources (analyst reports, reputable tech news outlets, and some vendor press releases), though many items are vendor‑centric or promotional, limiting the overall credibility.
-- Novelty / momentum: 4.67
-- Strategic relevance: 5.0 — Broadly fits Orange Business security domain (e.g., API Incident) but no specific API addresses quantum‑safe cryptography or zero‑trust for manufacturing.
-
-**Right-to-win: 5.0/10 [L3]**
-- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Cloud Avenue
-- Orange Business has strong security and network assets for zero‑trust, but lacks a quantum‑safe cryptography capability, requiring development of a new offering.
-
-**Grounding signals (8):**
-- [market_move] Industrial Cyber: Nozomi’s Plante says CISOs must rethink OT and IoT security as old models fail converged industrial environments - Industrial Cyber (Thu, 25 Jun 2026 07:00:00 GMT)
-- [trend] Hacker News: I read the federal government’s Zero-Trust Memo so you don’t have to (2022-01-27T15:06:29Z)
-- [trend] Hacker News: Summary of the USA federal government's zero-trust memo (2024-08-17T14:42:02Z)
-- [trend] Hacker News: US Government’s ‘zero trust’ roadmap calls time on perimeter-based paradigm (2022-01-28T19:46:44Z)
-- [trend] Hacker News: Moving the U.S. Government Toward Zero Trust Cybersecurity Principles (2022-05-10T23:46:35Z)
-- [trend] Hacker News: Moving the U.S. Government Toward Zero Trust Cybersecurity Principles [pdf] (2022-01-26T23:33:49Z)
-- [trend] Hacker News: Moving the U.S. Government Towards Zero Trust Cybersecurity Principles (2021-09-08T07:08:41Z)
-- [trend] Hacker News: Show HN: TPA – A Zero-Trust Protocol for Sovereign Governance (2026-02-02T23:52:32Z)
-
-## OS007 — Finance & Insurance × IT Operations Automation × Machine Learning
-
-**Attractiveness: 7.84/10**
-- Market signal strength: 10.0
-- Source diversity: 10.0
-- Evidence quality: 7.0 — The signals are largely specific and relevant to agentic AI in insurance, drawing from a mix of credible sources (major cloud providers, consulting firms, industry news outlets, and research firms), though many are vendor‑centric press releases which slightly lowers overall credibility.
-- Novelty / momentum: 4.87
-- Strategic relevance: 4.0 — No specific Orange Business API directly matches Finance & Insurance IT Ops automation with ML; only loosely related to API Cloud Avenue (Cloud) and API Incident, so fit is limited.
-
-**Right-to-win: 7.0/10 [L1]**
-- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Evolution Platform
-- No single asset covers Finance‑IT Ops automation with ML, but a bundle of Cloud Avenue (cloud hosting), M2M Connect Express (AI/ML data services) and Evolution Platform (workflow capabilities) can be combined to meet the need.
-
-**Grounding signals (5):**
+**Grounding signals (15):**
+- [market_move] Qualcomm: Qualcomm Brings On‑Premises Industrial AI and Connectivity to a Siemens Factory Model at MWC Barcelona - Qualcomm (Sun, 01 Mar 2026 08:00:00 GMT)
+- [market_move] Fierce Network: Industrial AI could be salve for ailing private network market - Fierce Network (Tue, 06 Jan 2026 08:00:00 GMT)
+- [market_move] ARC Advisory Group: Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory Group (Fri, 10 Apr 2026 07:00:00 GMT)
+- [trend] Hacker News: Industry Brief: Private 5G for Manufacturing and Industrial Sites [pdf] (2026-07-29T00:44:26Z)
+- [trend] Hacker News: Show HN: Goodfault: insurance for AI agents and robots (2026-08-07T08:29:49Z)
+- [proof_signal] arXiv: $τ_0$-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation (2026-08-17T17:59:11Z)
+- [buying_signal] TED - {'eng': ['Skien Kommune']}: Norway – Industrial process control equipment and remote-control equipment – Skien municipality - Water and Sewage operational control - Framework agreement and maintenance contract excluding equipment - Prequalification (2023-11-06Z)
+- [buying_signal] TED - {'eng': ['Skien Kommune', 'Sweco Norge AS (Hovedenhet)']}: Norway – Industrial process control equipment and remote-control equipment – Skien municipality - Water and Sewage operational control - Framework agreement and maintenance contract excluding equipment - Prequalification (2023-11-23Z)
+- [market_move] IoT Business News: Industrial AI Shifts Focus from Predictive Maintenance to Knowledge Preservation - IoT Business News (Tue, 16 Jun 2026 07:00:00 GMT)
+- [market_move] IoT Analytics: The $1 trillion industrial downtime problem is becoming a knowledge problem—can AI mitigate it? - IoT Analytics (Mon, 15 Jun 2026 07:00:00 GMT)
 - [market_move] PR Newswire: CUBE ACQUIRES SILICON VALLEY REGTECH, 4CRISK, DELIVERING NEXT GENERATION COMPLIANCE AND RISK MAPPING AUTOMATION - PR Newswire (Thu, 19 Feb 2026 08:00:00 GMT)
 - [market_move] TechAfrica News: Absa Kenya Invests $31 Million in Technology, Automates 71% of Operations - TechAfrica News (Wed, 29 Jul 2026 07:00:00 GMT)
-- [trend] Hacker News: Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer (2024-04-23T17:19:59Z)
+- [trend] Hacker News: Launch HN: Dyneti (YC W19) – Helping apps stop fraud and process payments faster (2019-02-12T17:56:14Z)
 - [proof_signal] arXiv: Deep Academic Survey: Stateful Agentic Closed-Loop Paradigm for Academic Survey Automation (2026-08-18T17:29:00Z)
 - [buying_signal] TED - {'deu': ['Technische Universität Ilmenau']}: Germany – Office automation software package – Cloudleistungen für ein Prozessmanagementsystem (2024-01-29Z)
-
-## OS004 — Finance & Insurance × Financial Crimes Detection × Generative AI
-
-**Attractiveness: 7.69/10**
-- Market signal strength: 10.0
-- Source diversity: 10.0
-- Evidence quality: 7.0 — The signals are relevant and come from a mix of credible sources (major cloud providers, consulting firms, industry analysts, and reputable media), though many are vendor‑centric announcements which lowers the overall objectivity.
-- Novelty / momentum: 4.87
-- Strategic relevance: 3.0 — No specific Orange Business API directly addresses financial crime detection; the closest are security APIs like Live Identity Verify, but they do not match the generative AI fraud use case.
-
-**Right-to-win: 7.0/10 [L1]**
-- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Live Identity Verify, API Incident
-- Existing cloud, AI‑enabled IoT and security APIs can be combined to build a financial‑crime detection solution, but Orange does not yet offer a pre‑packaged offering for this use case.
-
-**Grounding signals (8):**
-- [market_move] Global Banking & Finance Review: From Fraud Detection to Fraud Creation: How AI Is Arming Both Banks and Criminals - Global Banking & Finance Review (Thu, 13 Aug 2026 14:11:37 GMT)
-- [market_move] Nature: AI-driven financial fraud detection in Pakistan’s banking sector: bridging strategic intent and operational implementation - Nature (Tue, 05 May 2026 07:00:00 GMT)
-- [market_move] bankingsupervision.europa.eu: AI’s impact on banking: use cases for credit scoring and fraud detection - bankingsupervision.europa.eu (Thu, 20 Nov 2025 08:00:00 GMT)
-- [market_move] Thomson Reuters: AI-powered fraud: 5 trends financial institutions need to understand in 2026 - Thomson Reuters (Tue, 17 Feb 2026 08:00:00 GMT)
-- [market_move] IEEE Computer Society: How AI Is Transforming Fraud Detection in Financial Transactions - IEEE Computer Society (Mon, 24 Nov 2025 08:00:00 GMT)
-- [market_move] Coursera: AI in Fraud Detection: Real-World Use Cases Across Industries - Coursera (Tue, 17 Feb 2026 08:00:00 GMT)
-- [market_move] Boston Consulting Group: Agentic AI Will Industrialize Financial Scams. Are Banks Ready? - Boston Consulting Group (Thu, 11 Jun 2026 07:00:00 GMT)
-- [market_move] Guidehouse: Responsible Integration of GenAI Solutions in Financial Crimes Compliance - Guidehouse (Thu, 26 Sep 2024 07:00:00 GMT)
-
-## OS006 — Finance & Insurance × Digital Banking Customer Experience × Generative AI
-
-**Attractiveness: 7.69/10**
-- Market signal strength: 10.0
-- Source diversity: 10.0
-- Evidence quality: 7.0 — The signals are largely specific and relevant to agentic AI in insurance, drawing from a mix of credible sources (major cloud providers, consulting firms, industry news outlets, and analyst research), though many are vendor‑centric press releases which slightly lowers overall credibility.
-- Novelty / momentum: 4.87
-- Strategic relevance: 3.0 — No specific Orange Business API directly addresses generative AI for digital banking CX; the idea only loosely aligns with generic Cloud (API Cloud Avenue) or client relation APIs but lacks a clear matching asset.
-
-**Right-to-win: 8.0/10 [L1]**
-- Matched assets: API Evolution Platform, API Cloud Avenue, API M2M for IoT Connect Express, API Live Identity Verify, API Contact Everyone
-- Existing APIs for client relationship, cloud, AI, identity verification and collaboration can be bundled to create a generative‑AI‑enhanced digital banking experience, requiring no new standalone offering.
-
-**Grounding signals (8):**
-- [market_move] PR Newswire: CIMB Niaga and Virtusa Complete a First-of-Its-Kind Modernization on Pega Cloud to Enhance Customer Banking Experiences in Indonesia - PR Newswire (Thu, 26 Feb 2026 08:00:00 GMT)
-- [market_move] IBM: Modernizing digital banking with APIs - IBM (Wed, 25 Mar 2026 21:58:19 GMT)
-- [market_move] PR Newswire UK: SBS positioned as a Leader in the SPARK Matrix™: Digital Banking Platform 2026 by QKS Group - PR Newswire UK (Tue, 28 Jul 2026 07:53:00 GMT)
-- [market_move] QA Financial: Erste Digital’s cloud shift elevates QA in banking innovation - QA Financial (Wed, 28 Jan 2026 08:00:00 GMT)
-- [market_move] FutureCIO: CIMB Niaga and Virtusa complete Pega Cloud modernisation to enhance customer banking experiences in Indonesia - FutureCIO (Tue, 03 Mar 2026 08:00:00 GMT)
-- [market_move] news.laodong.vn: AI, cloud computing and digital banking are shaping the financial industry - news.laodong.vn (Fri, 07 Aug 2026 13:18:47 GMT)
-- [market_move] Digital Pakistan: DIB Pakistan Launches Core Banking Modernisation Programme - Digital Pakistan (Tue, 04 Aug 2026 07:00:00 GMT)
-- [buying_signal] TED - {'eng': ['European Central Bank']}: Germany – Banking services – Digital euro - Risk and Fraud Management component (2024-01-03Z)

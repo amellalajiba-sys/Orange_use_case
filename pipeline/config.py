@@ -3,17 +3,6 @@ Central configuration for the Innovation Radar signal pipeline.
 Edit SOURCES to add/remove feeds without touching ingest.py.
 """
 
-from dotenv import load_dotenv
-
-# FIXED 2026-08-19: previously .env was only loaded as a side effect of
-# importing llm/llm_client.py -- so running `python -m pipeline.ingest` alone
-# (which never imports llm_client) never loaded .env at all, silently
-# leaving NEWSAPI_AI_KEY (and any other .env key) unset for that run even
-# when the key was correctly set in .env. config.py is imported by every
-# entry point (ingest.py, analyze.py, scoring.py, db.py), so loading here
-# guarantees .env is read no matter which script runs first.
-load_dotenv()
-
 DB_PATH = "radar.db"
 
 # --- Google News RSS: one entry per (vertical, query) pair you want to track ---

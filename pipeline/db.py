@@ -145,25 +145,6 @@ def upsert_opportunity_space(conn, label, vertical, use_case, technology):
     return cur.lastrowid
 
 
-def wipe_opportunity_spaces(conn):
-    """
-    Deletes every row from opportunity_spaces and everything that references
-    it (opportunity_signals, scores, right_to_win_scores). Called by
-    create_opportunity_spaces.py before repopulating, so a label (e.g.
-    "OS005") can never end up reused for a different Vertical x Use Case x
-    Technology while old grounding links / scores from the PREVIOUS theme
-    under that same id are still attached -- that silent mismatch is what
-    contaminated opportunity_spaces_summary.md's "grounding signals" before
-    this existed. Every full re-run (create_opportunity_spaces.py ->
-    scoring.py -> link_signals.py -> export_summary.py) now starts clean.
-    """
-    conn.execute("DELETE FROM opportunity_signals")
-    conn.execute("DELETE FROM scores")
-    conn.execute("DELETE FROM right_to_win_scores")
-    conn.execute("DELETE FROM opportunity_spaces")
-    conn.commit()
-
-
 def link_signal_to_opportunity(conn, opportunity_space_id, signal_id):
     conn.execute(
         """INSERT OR IGNORE INTO opportunity_signals (opportunity_space_id, signal_id)
