@@ -1,0 +1,4 @@
+feedparser
+requests
+groq
+python-dotenv
