@@ -30,12 +30,13 @@ Run:
     python create_opportunity_spaces.py
 """
 
-from pipeline.db import init_db, get_connection, insert_opportunity_space, new_run_id
+from pipeline.db import init_db, get_connection, insert_opportunity_space, new_run_id, wipe_opportunity_spaces
 from pipeline.analyze import extract_themes
 
 if __name__ == "__main__":
     init_db()  # safe to re-run -- CREATE TABLE IF NOT EXISTS + a one-time migration only, no data loss
     conn = get_connection()
+    #wipe_opportunity_spaces(conn)
 
     run_id = new_run_id()
     print(f"Starting new run: {run_id}")
@@ -44,8 +45,8 @@ if __name__ == "__main__":
         "SELECT DISTINCT vertical_hint FROM signals WHERE vertical_hint IS NOT NULL"
     ).fetchall()]
 
-    counter = 1
-    total = 0
+    counter = conn.execute("SELECT COUNT(*) FROM opportunity_spaces").fetchall()[0][0] + 1
+    total_added = 0
     for vertical in verticals:
         print(f"\nExtracting themes for {vertical}...")
         themes = extract_themes(conn, vertical)
@@ -53,15 +54,18 @@ if __name__ == "__main__":
             print(f"[{vertical}] no themes extracted (too few signals, or LLM call failed) -- skipping")
             continue
         for t in themes:
-            label = f"OS{counter:03d}"
             use_case = t.get("use_case", "?")
             technology = t.get("technology", "?")
-            os_id = insert_opportunity_space(conn, run_id, label, vertical, use_case, technology)
-            print(f"  {label} (id={os_id}): {vertical} x {use_case} x {technology}")
-            counter += 1
-            total += 1
+            output = conn.execute(f"SELECT COUNT (*) FROM opportunity_spaces WHERE vertical = '{vertical}' AND use_case = '{use_case}' AND technology = '{technology}'").fetchall()[0][0]
+            print(f"output : {output}")
+            if not output:
+                label = f"OS{counter:03d}"
+                os_id = insert_opportunity_space(conn, run_id, label, vertical, use_case, technology)
+                print(f"  {label} (id={os_id}): {vertical} x {use_case} x {technology}")
+                counter += 1
+                total_added += 1
 
     conn.close()
-    print(f"\n{total} opportunity spaces registered across {len(verticals)} verticals.")
+    print(f"\n{total_added} new opportunity spaces registered across {len(verticals)} verticals.")
     print(f"Run id: {run_id}")
     print("Next: run scoring.py and link_signals.py (they default to this latest run automatically).")

@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pipeline.db import (
     get_connection, get_signals_for_vertical, insert_score, insert_right_to_win_score,
-    get_opportunity_spaces, get_latest_run_id,
+    get_all_opportunity_spaces
 )
 from pipeline.config import (
     ORANGE_BUSINESS_ASSETS, PORTFOLIO_DISTANCE, ANALYST_RECOGNITION,
@@ -323,37 +323,33 @@ def score_opportunity_space(conn, opportunity_space_row):
     return sub_scores, round(total, 2)
 
 
-def score_all_opportunity_spaces(run_id=None):
+def score_all_opportunity_spaces():
     """
-    Scores every opportunity space in one run. CHANGED 2026-08-19: since
-    opportunity_spaces now keeps every run's history (see db.py), this no
-    longer does a bare `SELECT * FROM opportunity_spaces` -- that would
-    re-score every run ever created, every time you run this, appending
-    duplicate score rows onto old runs for no reason. Defaults to the
-    LATEST run (same behavior as before this change, from the caller's
-    point of view); pass an explicit run_id to (re-)score an older run
-    instead, e.g. `score_all_opportunity_spaces(run_id="2026-08-10T09:00:00+00:00")`.
+    Scores every opportunity space if they have not been computed yet.
     """
     conn = get_connection()
-    if run_id is None:
-        run_id = get_latest_run_id(conn)
-    if run_id is None:
+    if conn.execute("SELECT COUNT(*) FROM opportunity_spaces").fetchall()[0][0] == 0 :
         print("No opportunity spaces found -- run create_opportunity_spaces.py first.")
         conn.close()
         return
-    print(f"Scoring run: {run_id}")
-    spaces = get_opportunity_spaces(conn, run_id=run_id)
+    spaces = get_all_opportunity_spaces(conn)
     for space in spaces:
-        sub_scores, total = score_opportunity_space(conn, space)
+        sub_scores = {}
+        total = 0
+        if not conn.execute(f"SELECT COUNT (*) FROM scores WHERE opportunity_space_id = '{space["id"]}'").fetchall()[0][0]:
+            sub_scores, total = score_opportunity_space(conn, space)
 
         distance, rtw_score, assets, rtw_justification = llm_right_to_win(
             space["vertical"], space["use_case"], space["technology"]
         )
-        insert_right_to_win_score(conn, space["id"], distance, rtw_score, assets, rtw_justification)
+        if rtw_score != 0. and not conn.execute(f"SELECT COUNT (*) FROM right_to_win_scores WHERE opportunity_space_id = '{space["id"]}'").fetchall()[0][0]:
+            insert_right_to_win_score(conn, space["id"], distance, rtw_score, assets, rtw_justification)
 
         print(f"{space['label']} ({space['vertical']} x {space['use_case']} x {space['technology']})")
-        print(f"  Attractiveness: {total}/10  {sub_scores}")
-        print(f"  Right-to-win:   {rtw_score}/10  [{distance}] assets: {assets or 'none'}")
+        if total : 
+            print(f"  Attractiveness: {total}/10  {sub_scores}")
+        if rtw_score:
+            print(f"  Right-to-win:   {rtw_score}/10  [{distance}] assets: {assets or 'none'}")
         print(f"  -> {rtw_justification}")
     conn.close()
 
