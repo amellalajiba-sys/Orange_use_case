@@ -82,5 +82,47 @@
     "emerging_technology": null,
     "rationale": "The Dynamic Purchasing System calls for digital platform setup, moderation, analysis and facilitation of participatory processes, all of which rely on scalable cloud data services.",
     "supporting_signal_count": 7
+  },
+  {
+    "vertical": "Manufacturing",
+    "emerging_use_case": "Manufacturing Process Automation",
+    "emerging_technology": "Agentic AI",
+    "rationale": "Repeated mentions of Siemens\u2019s self\u2011verifying agentic AI workflows for semiconductor/PCB design and LLM\u2011based gate\u2011mediated diffusion models indicate emerging autonomous AI for factory automation.",
+    "supporting_signal_count": 2
+  },
+  {
+    "vertical": "Finance & Insurance",
+    "emerging_use_case": "Fraud Detection",
+    "emerging_technology": null,
+    "rationale": "Multiple signals report AI/ML\u2011driven solutions to shorten payment fraud detection and a major acquisition targeting fraud prevention.",
+    "supporting_signal_count": 2
+  },
+  {
+    "vertical": "Public Sector",
+    "emerging_use_case": null,
+    "emerging_technology": "Agentic AI",
+    "rationale": "Multiple public\u2011sector alerts discuss Agentic AI reshaping zero\u2011trust security, indicating a converging demand for AI\u2011driven trust enforcement.",
+    "supporting_signal_count": 3
+  },
+  {
+    "vertical": "Public Sector",
+    "emerging_use_case": null,
+    "emerging_technology": "Sovereign Cloud Security",
+    "rationale": "Announcements of national PKI, a Europe\u2011focused sovereign\u2011cloud platform, and G\u2011Cloud growth all point to a public\u2011sector push for cloud services that guarantee data residency and sovereignty.",
+    "supporting_signal_count": 3
+  },
+  {
+    "vertical": "Public Sector",
+    "emerging_use_case": null,
+    "emerging_technology": "Zero Trust File Protection",
+    "rationale": "Recent releases of zero\u2011trust file\u2011protection solutions and policy moves demanding zero\u2011trust VPNs show a pattern of tightening file\u2011level trust controls in government IT.",
+    "supporting_signal_count": 3
+  },
+  {
+    "vertical": "Public Sector",
+    "emerging_use_case": null,
+    "emerging_technology": "FedRAMP\u2011Level Cloud Compliance",
+    "rationale": "FedRAMP High certifications and defense\u2011grade CUI protection partnerships signal growing public\u2011sector adoption of compliant cloud security frameworks.",
+    "supporting_signal_count": 2
   }
 ]
