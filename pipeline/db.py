@@ -292,6 +292,15 @@ def get_opportunity_spaces(conn, run_id=None):
     ).fetchall()
 
 
+def get_all_opportunity_spaces(conn):
+    """
+    Get opportunity spaces for all runs.
+    """
+    return conn.execute(
+        "SELECT * FROM opportunity_spaces ORDER BY label"
+    ).fetchall()
+
+
 def list_runs(conn):
     """
     All distinct run_ids on file, most recent first, with a count of how
@@ -331,16 +340,20 @@ def wipe_opportunity_spaces(conn):
     MANUAL RESET TOOL -- no longer called automatically by
     create_opportunity_spaces.py. Deletes EVERY run's opportunity spaces and
     everything that references them (opportunity_signals, scores,
-    right_to_win_scores), not just the latest one. Use this only when you
+    right_to_win_scores), not just the latest one, and reset the indices. Use this only when you
     deliberately want to erase all history (e.g. the taxonomy changed so
     fundamentally that old runs are no longer meaningful to compare against).
     For normal use, just re-run create_opportunity_spaces.py -- it now adds a
     new run alongside old ones instead of replacing them.
     """
     conn.execute("DELETE FROM opportunity_signals")
+    conn.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'opportunity_signals';")
     conn.execute("DELETE FROM scores")
+    conn.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'scores';")
     conn.execute("DELETE FROM right_to_win_scores")
+    conn.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'right_to_win_scores';")
     conn.execute("DELETE FROM opportunity_spaces")
+    conn.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'opportunity_spaces';")
     conn.commit()
 
 
