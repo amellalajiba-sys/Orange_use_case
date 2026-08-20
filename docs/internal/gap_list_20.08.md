@@ -2,20 +2,21 @@
 
 ## 📊 Complete Gaps Table
 
-| **Feature / Requirement**                 | **Current Status** | **Where It's Missing** | **Required By**    |
-| ----------------------------------------- | ------------------ | ---------------------- | ------------------ |
-| **Persona filtering**                     | ❌ Not implemented  | Dashboard              | Brief, Page 5 & 6  |
-| **Geography filtering**                   | ❌ Not implemented  | Dashboard              | Brief, Page 5 & 13 |
-| **Persona + vertical ranking**            | ❌ Not implemented  | Scoring logic          | Brief, Page 5      |
-| **Persona in OS definition**              | ❌ Not tracked      | OS table               | Brief, Page 5 & 6  |
-| **Persona-specific acceptance criteria**  | ❌ Not implemented  | Dashboard/UX           | Brief, Page 13     |
-| **Time horizon logic (Now, Next, Later)** | ❌ Not implemented  | OS table / Scoring     | Brief, Page 19     |
-| **Urgency scoring component**             | ❌ Not implemented  | Scoring logic          | Brief, Page 16     |
-| **Recommended next action per OS**        | ❌ Not implemented  | OS table / Dashboard   | Brief, Page 16     |
-| **Geography in OS definition**            | ❌ Not tracked      | OS table               | Brief, Page 5 & 13 |
-| **Signal type taxonomy fully used**       | ⚠️ Partially       | Dashboard filtering    | Brief, Page 16     |
-| **Watchlist logic**                       | ⚠️ Planned         | Not yet implemented    | Brief, Page 19     |
-| **Right-to-win internal data**            | ⚠️ Partial         | Scoring logic          | Brief, Page 18     |
+| **Feature / Requirement**                 | **Current Status**  | **Where It's Missing** | **Required By**    |
+| ----------------------------------------- | ------------------- | ---------------------- | ------------------ |
+| **Persona filtering**                     | ❌ Not implemented  | Dashboard             | Brief, Page 5 & 6  |
+| **Geography filtering**                   | ❌ Not implemented  | Dashboard             | Brief, Page 5 & 13 |
+| **Domain filtering**                      | ❌ Not implemented  | Dashboard             |                    |
+| **Persona + vertical ranking**            | ❌ Not implemented  | Scoring logic         | Brief, Page 5      |
+| **Persona in OS definition**              | ❌ Not tracked      | OS table              | Brief, Page 5 & 6  |
+| **Persona-specific acceptance criteria**  | ❌ Not implemented  | Dashboard/UX          | Brief, Page 13     |
+| **Time horizon logic (Now, Next, Later)** | ❌ Not implemented  | OS table / Scoring    | Brief, Page 19     |
+| **Urgency scoring component**             | ❌ Not implemented  | Scoring logic         | Brief, Page 16     |
+| **Recommended next action per OS**        | ❌ Not implemented  | OS table / Dashboard  | Brief, Page 16     |
+| **Geography in OS definition**            | ❌ Not tracked      | OS table              | Brief, Page 5 & 13 |
+| **Signal type taxonomy fully used**       | ⚠️ Partially        | Dashboard filtering   | Brief, Page 16     |
+| **Watchlist logic**                       | ⚠️ Planned          | Not yet implemented   | Brief, Page 19     |
+| **Right-to-win internal data**            | ⚠️ Partial          | Scoring logic         | Brief, Page 18     |
 
 ---
 
