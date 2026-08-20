@@ -83,6 +83,20 @@ CREATE TABLE IF NOT EXISTS right_to_win_scores (
     computed_at TEXT NOT NULL,
     FOREIGN KEY (opportunity_space_id) REFERENCES opportunity_spaces(id)
 );
+
+CREATE TABLE IF NOT EXISTS watchlist (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    vertical TEXT NOT NULL,
+    emerging_use_case TEXT,
+    emerging_technology TEXT,
+    rationale TEXT,
+    supporting_signal_count INTEGER DEFAULT 0,
+    first_seen TEXT NOT NULL,
+    last_seen TEXT NOT NULL,
+    frequency INTEGER DEFAULT 1,
+    run_id TEXT,
+    UNIQUE(vertical, emerging_use_case, emerging_technology)
+);
 """
 
 

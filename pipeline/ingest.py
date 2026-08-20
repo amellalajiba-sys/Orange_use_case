@@ -308,7 +308,7 @@ def run_full_refresh():
     if ENABLE_GDELT:
         for q in GDELT_QUERIES:
             safe_run(f"GDELT / {q['vertical']}", fetch_gdelt, conn, q["vertical"], q["query"])
-            time.sleep(15)  # GDELT rate-limits aggressively -- space out consecutive calls
+            time.sleep(30)  # GDELT rate-limits aggressively -- space out consecutive calls
     else:
         print("[GDELT] disabled in config.py (ENABLE_GDELT = False) -- skipping")
 
