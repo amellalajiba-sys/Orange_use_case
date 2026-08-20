@@ -97,6 +97,21 @@ CREATE TABLE IF NOT EXISTS watchlist (
     run_id TEXT,
     UNIQUE(vertical, emerging_use_case, emerging_technology)
 );
+
+CREATE TABLE IF NOT EXISTS proposals (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    vertical TEXT NOT NULL,
+    proposed_use_case TEXT,
+    proposed_technology TEXT,
+    frequency INTEGER NOT NULL,
+    first_seen TEXT NOT NULL,
+    last_seen TEXT NOT NULL,
+    status TEXT DEFAULT 'pending',
+    reviewed_at TEXT,
+    reviewed_by TEXT,
+    run_id TEXT,
+    UNIQUE(vertical, proposed_use_case, proposed_technology)
+);
 """
 
 
