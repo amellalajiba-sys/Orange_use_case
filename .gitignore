@@ -1,3 +1,8 @@
+# FOR THE TEAM
+# put here your md files with whatever you are using/documenting exetera
+# (write a clear title for each file pls)
+# docs/internal/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -216,3 +221,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+radar.db
+radar.db-journal
