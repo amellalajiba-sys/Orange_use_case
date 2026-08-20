@@ -9,11 +9,22 @@ Run (after scoring.py and link_signals.py have both been run at least once):
 """
 
 from datetime import datetime, timezone
-from exploratory_work_siegried.pipeline.db import get_connection
+from pipeline.db import get_connection, get_latest_run_id
 
 OUTPUT_PATH = "opportunity_spaces_summary.md"
 
+# CHANGED 2026-08-19: scoped to the latest run only (see db.py). With run
+# history now preserved instead of wiped on every create_opportunity_spaces.py
+# run, an unfiltered query here would mix opportunity spaces from every past
+# run into one summary -- including old, possibly-superseded labels. Pass a
+# different run_id below (e.g. from pipeline.db.list_runs()) to export an
+# older run instead of the latest one.
 conn = get_connection()
+run_id = get_latest_run_id(conn)
+if run_id is None:
+    print("No opportunity spaces found -- run create_opportunity_spaces.py first.")
+    conn.close()
+    raise SystemExit
 
 spaces = conn.execute("""
     SELECT os.*, s.total_score, s.market_signal_strength, s.source_diversity,
@@ -25,12 +36,13 @@ spaces = conn.execute("""
         AND s.computed_at = (SELECT MAX(computed_at) FROM scores WHERE opportunity_space_id = os.id)
     JOIN right_to_win_scores r ON r.opportunity_space_id = os.id
         AND r.computed_at = (SELECT MAX(computed_at) FROM right_to_win_scores WHERE opportunity_space_id = os.id)
+    WHERE os.run_id = ?
     ORDER BY s.total_score DESC
-""").fetchall()
+""", (run_id,)).fetchall()
 
 lines = [
     "# Innovation Radar — Opportunity Spaces Summary",
-    f"_Generated {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}_",
+    f"_Generated {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')} · run {run_id}_",
     "",
     "| OS | Attractiveness | Right-to-win | Distance |",
     "|---|---|---|---|",

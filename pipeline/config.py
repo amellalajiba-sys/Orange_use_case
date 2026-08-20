@@ -3,6 +3,17 @@ Central configuration for the Innovation Radar signal pipeline.
 Edit SOURCES to add/remove feeds without touching ingest.py.
 """
 
+from dotenv import load_dotenv
+
+# FIXED 2026-08-19: previously .env was only loaded as a side effect of
+# importing llm/llm_client.py -- so running `python -m pipeline.ingest` alone
+# (which never imports llm_client) never loaded .env at all, silently
+# leaving NEWSAPI_AI_KEY (and any other .env key) unset for that run even
+# when the key was correctly set in .env. config.py is imported by every
+# entry point (ingest.py, analyze.py, scoring.py, db.py), so loading here
+# guarantees .env is read no matter which script runs first.
+load_dotenv()
+
 DB_PATH = "radar.db"
 
 # --- Google News RSS: one entry per (vertical, query) pair you want to track ---
@@ -28,6 +39,10 @@ GOOGLE_NEWS_QUERIES = [
     {"vertical": "Public Sector", "query": "smart city IoT infrastructure government"},
 ]
 
+# --- GDELT DOC 2.0 API: same query set, used for momentum/volume ---
+# GDELT rate-limits aggressively (sometimes for 15-20+ min after repeated calls).
+# Set to False to skip it entirely without touching ingest.py -- you don't
+# need it to make progress, the other sources already cover the taxonomy.
 ENABLE_GDELT = True
 GDELT_QUERIES = GOOGLE_NEWS_QUERIES  # reuse the same queries for consistency
 
@@ -246,6 +261,16 @@ TAXONOMY_TECHNOLOGIES = [
     "Cloud Data Platform", "IoT Platforms", "Computer Vision",
     "Machine Learning", "Generative AI", "Network & SD-WAN", "Cloud",
     "Cybersecurity", "5G", "IoT", "AI",
+]
+
+# Emerging -- less established than the list above, but real patterns worth
+# catching if signals actually support them. Kept as a separate list (not
+# merged into TAXONOMY_TECHNOLOGIES) so the extraction prompt can flag these
+# as "watch for something like this too" rather than presenting them as
+# equally proven as Cloud/5G/etc.
+TAXONOMY_TECHNOLOGIES_EMERGING = [
+    "Agentic AI", "Digital Twins", "Edge AI", "Quantum-safe Cryptography",
+    "Synthetic Data",
 ]
 
 # Phase 3 curation: technology values too generic to be a real Opportunity

@@ -12,7 +12,10 @@ Run:
 """
 
 import re
-from exploratory_work_siegried.pipeline.db import get_connection, get_signals_for_vertical, link_signal_to_opportunity
+from pipeline.db import (
+    get_connection, get_signals_for_vertical, link_signal_to_opportunity,
+    get_opportunity_spaces, get_latest_run_id,
+)
 
 STOPWORDS = {"and", "the", "for", "with", "of", "in", "on", "a", "an", "to", "x"}
 
@@ -42,7 +45,13 @@ def link_top_signals(conn, os_row, top_n=8):
 
 if __name__ == "__main__":
     conn = get_connection()
-    spaces = conn.execute("SELECT * FROM opportunity_spaces").fetchall()
+    run_id = get_latest_run_id(conn)
+    if run_id is None:
+        print("No opportunity spaces found -- run create_opportunity_spaces.py first.")
+        conn.close()
+        raise SystemExit
+    print(f"Linking signals for run: {run_id}")
+    spaces = get_opportunity_spaces(conn, run_id=run_id)
     for os_row in spaces:
         top = link_top_signals(conn, os_row)
         print(f"{os_row['label']} ({os_row['use_case']} x {os_row['technology']}): linked {len(top)} signals")

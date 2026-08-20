@@ -9,7 +9,7 @@ Run:
     python calibrate_caps.py
 """
 
-from exploratory_work_siegried.pipeline.db import get_connection, get_signals_for_vertical
+from pipeline.db import get_connection, get_signals_for_vertical
 
 conn = get_connection()
 verticals = [r["vertical"] for r in conn.execute("SELECT DISTINCT vertical FROM opportunity_spaces").fetchall()]

@@ -13,7 +13,7 @@ import urllib.parse
 import feedparser
 import requests
 
-from exploratory_work_siegried.pipeline.config import (
+from pipeline.config import (
     GOOGLE_NEWS_QUERIES,
     GDELT_QUERIES,
     ENABLE_GDELT,
@@ -26,7 +26,7 @@ from exploratory_work_siegried.pipeline.config import (
     ENABLE_NEWSAPI_AI,
     NEWSAPI_AI_QUERIES,
 )
-from exploratory_work_siegried.pipeline.db import get_connection, init_db, insert_signal
+from pipeline.db import get_connection, init_db, insert_signal
 
 GDELT_DOC_URL = "https://api.gdeltproject.org/api/v2/doc/doc"
 HN_ALGOLIA_URL = "https://hn.algolia.com/api/v1/search"
@@ -71,7 +71,7 @@ def fetch_gdelt(conn, vertical, query, signal_type="trend", max_records=25, time
         "timespan": timespan,
         "sort": "hybridrel",
     }
-    resp = requests.get(GDELT_DOC_URL, params=params, headers=GDELT_HEADERS, timeout=20)
+    resp = requests.get(GDELT_DOC_URL, params=params, headers=GDELT_HEADERS, timeout=30)
     if resp.status_code == 429:
         print("[GDELT] rate-limited -- skipping this query (don't rerun the pipeline immediately, wait 15-20 min)")
         return 0
@@ -308,7 +308,7 @@ def run_full_refresh():
     if ENABLE_GDELT:
         for q in GDELT_QUERIES:
             safe_run(f"GDELT / {q['vertical']}", fetch_gdelt, conn, q["vertical"], q["query"])
-            time.sleep(8)  # GDELT rate-limits aggressively -- space out consecutive calls
+            time.sleep(30)  # GDELT rate-limits aggressively -- space out consecutive calls
     else:
         print("[GDELT] disabled in config.py (ENABLE_GDELT = False) -- skipping")
 
@@ -327,7 +327,7 @@ def run_full_refresh():
 
     for q in SEMANTIC_SCHOLAR_QUERIES:
         safe_run(f"Semantic Scholar / {q['vertical']}", fetch_semantic_scholar, conn, q["vertical"], q["query"])
-        time.sleep(4)  # unauthenticated Semantic Scholar limit is strict (~1 req / few seconds)
+        time.sleep(8)  
 
     for q in TED_QUERIES:
         safe_run(f"TED / {q['vertical']}", fetch_ted, conn, q["vertical"], q["query"])
