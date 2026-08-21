@@ -1,6 +1,4 @@
-# Innovation Radar — Signal-Driven Opportunity Detection
-
-Prepared for Orange Business by BeCode cohort BXL-Gebru-1 (GenAI Development specialization).
+# Innovation Radar — Signal-Driven Opportunity Detection: Explanations
 
 ## Executive summary
 
@@ -13,16 +11,12 @@ obvious, and scores each one on two independent axes:
 - **Right-to-win** — can Orange Business sell this today, using the existing API/asset catalog, or does it
   require a partner or new capability?
 
-TO DO DO CHECK:
-A Power BI dashboard turns the scored opportunities into a decision tool the team can use in client
-conversations, and a Streamlit app offers a lighter, role-based view of the same data.
-
 ## Recent pipeline changes (read before the next run)
 
 A few fixes are listed here so everyone knows what changed and why before touching the pipeline again.
 - **Ran the missing schema migration.** The promoted `radar.db` predated the `buyer_persona` column split
   and was missing it. Fixed by running `python -m pipeline.db`, which applies any pending `ALTER TABLE`
-  migrations without touching existing data. 
+  migrations without touching existing data.
 - **Lowered two thresholds given the time left before the presentation:**
   - `analyze.py`: minimum signals required before attempting theme extraction, `5` → `3`.
   - `config.py`: `RECURRING_THEME_PROMOTION_THRESHOLD`, `3` → `2`.
@@ -33,31 +27,42 @@ A few fixes are listed here so everyone knows what changed and why before touchi
   proposes before they're tracked: drops themes whose technology is a bare generic term (e.g. "AI" alone),
   and fuzzy-matches near-duplicate themes together, keeping the one with more supporting signals. This
   came out of a parallel branch that also explored an open-taxonomy prompt + a separate
-  `emerging_themes.json` file for tracking out-of-taxonomy terms — that part wasn't merged, since the
-  closed-taxonomy JSON contract and the `recurring_themes` table are what `radar_cli.py`, `db.py`. The curation logic
-  itself was keept and is now in the shared `analyze.py`.
+  `emerging_themes.json` file for tracking out-of-taxonomy terms — that JSON approach wasn't merged as its
+  own mechanism, since the closed-taxonomy contract and the `recurring_themes` table are what `radar_cli.py`
+  and `db.py` are built around. The curation logic itself was kept and is now in the shared `analyze.py`.
+  The genuinely strong candidates that JSON file had already found (6 full Vertical × Use Case × Technology
+  themes with real supporting signal counts) were promoted through the normal `recurring_themes` →
+  `radar_cli.py promote` path instead — see OS029–OS034 below.
+  
 None of this changes the taxonomy, the scoring formulas, or the CLI commands — same `radar_cli.py all`
 workflow as before.
 
 ## All opportunity spaces identified
 
-27 opportunity spaces, regenerated from the corrected `radar.db` (`radar_cli.py link` + `summary`),
-sorted by attractiveness. Full grounding signals per OS are in `opportunity_spaces_summary.md`.
+34 opportunity spaces: the original 27 from `radar.db`, plus 6 more (OS029–OS034) promoted from a
+teammate's `emerging_themes.json` prototype via the standard `recurring_themes` → `radar_cli.py promote`
+path. Sorted by attractiveness. Full grounding signals per OS are in `opportunity_spaces_summary.md`.
 
 | OS | Vertical | Use Case | Technology | Attractiveness | Right-to-win | Distance |
 |---|---|---|---|---|---|---|
+| OS033 | Manufacturing | Industrial Process Optimization | IoT Platforms | 8.54 | 8.0 | L1 |
 | OS009 | Finance & Insurance | Cloud Infrastructure Modernization | Cloud | 8.53 | 9.0 | L0 |
 | OS015 | Public Sector | Digital Infrastructure | IoT Platforms | 8.52 | 8.0 | L1 |
+| OS028 | Public Sector | Digital Infrastructure | Cloud Data Platform | 8.47 | 8.0 | L1 |
 | OS005 | Manufacturing | Energy Optimization | IoT Platforms | 8.28 | 6.0 | L3 |
 | OS016 | Manufacturing | Network Modernization & SD-WAN | 5G | 8.28 | 8.0 | L1 |
 | OS018 | Finance & Insurance | Network Modernization & SD-WAN | Network & SD-WAN | 8.28 | 9.0 | L0 |
 | OS013 | Public Sector | Data Sovereignty | Cloud | 8.17 | 6.0 | L3 |
+| OS032 | Public Sector | Infrastructure Planning & Management | Digital Twins | 8.02 | 7.0 | L1 |
+| OS029 | Manufacturing | Industrial Digital Twin & Automation | Digital Twins | 7.99 | 6.0 | L3 |
+| OS034 | Manufacturing | Manufacturing Process Automation | Agentic AI | 7.99 | 6.0 | L3 |
 | OS001 | Public Sector | Sovereign citizen data hosting | Sovereign cloud + GPU inference | 7.92 | 5.0 | L3 |
 | OS002 | Manufacturing | Fire and hazard detection | Edge computer vision | 7.83 | 6.0 | L3 |
 | OS003 | Finance & Insurance | Conduct-risk / compliance monitoring | AI surveillance of communications | 7.78 | 6.0 | L3 |
 | OS010 | Finance & Insurance | Cybersecurity | Machine Learning | 7.78 | 5.0 | L3 |
 | OS014 | Public Sector | Cyber Defense & Zero Trust | Cybersecurity | 7.77 | 8.0 | L1 |
 | OS006 | Manufacturing | Operational Excellence | Machine Learning | 7.68 | 7.0 | L1 |
+| OS031 | Manufacturing | Strategic Communications & Advertising Consultancy | Generative AI | 7.54 | 6.0 | L2 |
 | OS004 | Manufacturing | Remote-controlled industrial robots | Vision-guided teleoperation | 7.53 | 8.0 | L1 |
 | OS007 | Manufacturing | Cyber Defense & Zero Trust | Cybersecurity | 7.53 | 7.0 | L1 |
 | OS008 | Manufacturing | Imaging Analytics | Computer Vision | 7.53 | 6.0 | L3 |
@@ -65,6 +70,7 @@ sorted by attractiveness. Full grounding signals per OS are in `opportunity_spac
 | OS012 | Finance & Insurance | IT Operations Automation | Machine Learning | 7.48 | 5.0 | L3 |
 | OS019 | Manufacturing | Operational Excellence | Edge Computing | 7.43 | 8.0 | L1 |
 | OS017 | Finance & Insurance | IT Operations Automation | Agentic AI | 7.33 | 5.0 | L3 |
+| OS030 | Manufacturing | Post-Quantum Cryptography Testing Infrastructure | Quantum-safe Cryptography | 7.09 | 5.0 | L3 |
 | OS020 | Public Sector | Cloud Infrastructure Modernization | Cloud | 7.02 | 0.0 | L4 |
 | OS023 | Public Sector | Digital Infrastructure | Cloud | 7.02 | 0.0 | L4 |
 | OS024 | Public Sector | Data Sovereignty | Cloud Data Platform | 7.02 | 0.0 | L4 |
@@ -74,7 +80,7 @@ sorted by attractiveness. Full grounding signals per OS are in `opportunity_spac
 | OS026 | Retail | Contact Centre Automation | Agentic AI | 4.08 | 0.0 | L4 |
 | OS027 | Healthcare | Data Sovereignty | Cloud | 4.04 | 0.0 | L4 |
 
-**Note — the OS001/OS013/OS024 triple-duplicate is confirmed in this data**: all three describe "Public
+**Note — the OS001/OS013/OS024 triple-duplicat**: all three describe "Public
 Sector data sovereignty" under different labels (7.92/L3/5.0, 8.17/L3/6.0, 7.02/L4/0.0). **OS013 has both
 the highest attractiveness and the highest right-to-win of the three.** OS024's score should not be read
 as "objectively weaker" — its `evidence_quality`, `strategic_relevance`, and right-to-win justification all
@@ -83,11 +89,18 @@ read "LLM scoring unavailable, neutral default used," meaning it was never actua
 label matches the official taxonomy exactly and its right-to-win justification cites one clean matched
 asset (API Cloud Avenue) without overstating what Orange currently offers, while OS001's justification
 notes that "GPU inference is not a current specific feature" — the label promises more than the portfolio
-currently backs.
+currently backs
+
+**Note — OS029–OS034 are new, promoted from a teammate's `emerging_themes.json` exploration** (see changelog
+above). OS033 and OS032 in particular are strong enough to be worth a look for the shortlist: OS033
+(Manufacturing × Industrial Process Optimization × IoT Platforms, 8.54/L1/8.0) is the single highest
+attractiveness of all 34 OS, and OS032 (Public Sector × Infrastructure Planning &
+Management × Digital Twins, 8.02/L1/7.0) is a genuinely different Public Sector angle from the
+data-sovereignty cluster.
 
 ## Final selection for the Orange pitch (4 OS — 10-minute slot)
 
-*10 minutes covers 4 OS well, not 15 or 27. Everything above stays as backup material for Q&A.*
+10 minutes covers 4 OS well, not 15 or 34. Everything above stays as backup material for Q&A.
 
 | OS ID | Vertical | Use Case | Technology | Attractiveness | Right-to-win | Why this one |
 |---|---|---|---|---|---|---|
@@ -97,11 +110,7 @@ Team must sign off on this exact 4 before the presentation — see checklist bel
 
 ## Decisions needed from the team
 
-- [ ] **Confirm the 4-OS shortlist.** 
-- [ ] **Delete OS001 and OS024** (keep OS013 as the canonical Public Sector data-sovereignty entry):
-  ```bash
-  python radar_cli.py delete OS001 OS024
-  ```
+- [ ] **Confirm the 4-OS shortlist.**
 - [ ] ** BUT: Re-score OS024 properly** before deleting it!!!!
 - [ ] **Healthcare coverage.** Only one candidate (OS027, attractiveness 4.04, L4/0.0 — no right-to-win at
   all) — leave out of the pitch given the 10-minute limit and the weak score; mention only if Orange asks
@@ -145,9 +154,7 @@ any pending schema migrations safely, without touching existing data (see change
 
 ### Dashboard
 
-```bash
-python -m streamlit run app/streamlit_app.py --server.address=127.0.0.1
-```
+STREAMLIT
 
 The Power BI dashboard (`dashboard/powerbi/`) connects to `radar.db` via ODBC and offers five pages:
 Decision Matrix, Score Breakdown, Why/Justification, Evidence, and Coverage.
@@ -210,7 +217,7 @@ Orange_use_case/
 ├── llm/
 │   └── llm_client.py          # provider-agnostic LLM client (Groq → OpenRouter → Ollama)
 ├── app/
-│   └── streamlit_app.py       
+│   
 ├── dashboard/
 │       └── innovation_radar_dashboard.pbix   # main client-facing deliverable
 ├── radar_cli.py                # create, promote, watchlist, calibrate, dedupe, link, summary, all
@@ -221,11 +228,8 @@ Orange_use_case/
 
 ## Current scope & roadmap
 
-- The dashboard doesn't yet generate a downloadable PDF one-pager per opportunity space, and there's no
-  competitor matrix or team-conviction workflow — scoped as a follow-up phase.
 - **The "Public Sector data sovereignty" opportunity was registered three times** (OS001, OS013, OS024)
-  under different labels before the deduplication check was added — resolved above by keeping OS013 as the
-  canonical entry (highest attractiveness and right-to-win of the three, once OS024 is properly re-scored);
+  under different labels before the deduplication check was added, OS024 need to be re-scored;
   `radar_cli.py create`/`promote` now warn on this pattern going forward.
 - `novelty_momentum` becomes meaningful once ingest has run over several weeks rather than a short window.
 - TED and NewsAPI.ai are wired in but currently contribute limited signal volume — visible in the lower

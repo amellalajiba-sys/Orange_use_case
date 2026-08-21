@@ -329,8 +329,7 @@ def score_all_opportunity_spaces(force=False):
         distance, rtw_score, assets, rtw_justification = llm_right_to_win(
             space["vertical"], space["use_case"], space["technology"]
         )
-        if rtw_score != 0. and not conn.execute(f"SELECT COUNT (*) FROM right_to_win_scores WHERE opportunity_space_id = '{space["id"]}'").fetchall()[0][0]:
-            insert_right_to_win_score(conn, space["id"], distance, rtw_score, assets, rtw_justification)
+        insert_right_to_win_score(conn, space["id"], distance, rtw_score, assets, rtw_justification)
 
         print(f"{space['label']} ({space['vertical']} x {space['use_case']} x {space['technology']})")
         print(f"  Attractiveness: {total}/10  {sub_scores}")
