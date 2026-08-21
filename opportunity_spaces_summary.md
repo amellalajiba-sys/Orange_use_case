@@ -1,5 +1,5 @@
 # Innovation Radar — Opportunity Spaces Summary
-_Generated 2026-08-21 11:56 UTC_
+_Generated 2026-08-21 12:35 UTC_
 
 | OS | Attractiveness | Right-to-win | Distance |
 |---|---|---|---|
@@ -37,6 +37,11 @@ _Generated 2026-08-21 11:56 UTC_
 | OS032 | 8.02/10 | 7.0/10 | L1 |
 | OS033 | 8.54/10 | 8.0/10 | L1 |
 | OS034 | 7.99/10 | 6.0/10 | L3 |
+| OS035 | 4.32/10 | 6.0/10 | L3 |
+| OS036 | 4.74/10 | 7.0/10 | L1 |
+| OS037 | 4.29/10 | 6.0/10 | L3 |
+| OS038 | 7.03/10 | 5.0/10 | L3 |
+| OS039 | 8.77/10 | 7.0/10 | L3 |
 
 ## OS001 — Public Sector × Sovereign citizen data hosting × Sovereign cloud + GPU inference
 
@@ -814,3 +819,115 @@ _Generated 2026-08-21 11:56 UTC_
 - [PlasticsToday] AI Predictive Maintenance Gains Traction in Manufacturing Plants - PlasticsToday
 - [MarketsandMarkets] UK Artificial Intelligence in Manufacturing Market Size, Share,Trends, Growth Analysis Report, 2030 - MarketsandMarkets
 - [Design News] Digital Twins & Intelligent Automation Create Autonomous Smart Manufacturing - Design News
+
+## OS035 — Healthcare × Cyber Defense & Zero Trust × Cybersecurity
+
+**Attractiveness: 4.32/10**
+- Market signal strength: 4.8
+- Source diversity: 1.4666666666666668
+- Evidence quality: 6.0 — The signals are specific and from credible vendor sources (AWS, Microsoft) and relevant to B2B AI/cloud innovation, but they are largely single‑source marketing announcements with limited independent analyst or regulator input.
+- Novelty / momentum: 3.33
+- Strategic relevance: 5.0 — Broadly aligns with Orange Business security assets such as API Incident and API Live Identity Verify, but no specific product targets healthcare‑focused zero‑trust or cyber‑defense
+
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco
+- Existing security APIs and SD‑WAN provide a foundation, but a dedicated Zero‑Trust/cyber‑defense platform for healthcare must be built or acquired.
+
+**Grounding signals (8):**
+- [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
+- [Hacker News] I read the federal government’s Zero-Trust Memo so you don’t have to
+- [Hacker News] Summary of the USA federal government's zero-trust memo
+- [Hacker News] US Government’s ‘zero trust’ roadmap calls time on perimeter-based paradigm
+- [Hacker News] Moving the U.S. Government Toward Zero Trust Cybersecurity Principles
+- [Hacker News] Show HN: TPA – A Zero-Trust Protocol for Sovereign Governance
+- [Cisco Blog] Healthcare AI Must Earn Trust Before Adoption
+- [Cisco Blog] Trust and Talent: The Real AI Lessons from a Day at the McLaren Technology Centre
+
+## OS036 — Transportation and Logistics × Supply Chain Visibility × IoT Platforms
+
+**Attractiveness: 4.74/10**
+- Market signal strength: 4.942857142857143
+- Source diversity: 2.1333333333333333
+- Evidence quality: 4.0 — The signals are specific but come mainly from vendor blogs (AWS, Microsoft) with limited independent analyst or regulator sources, reducing overall credibility despite relevance to cloud AI services.
+- Novelty / momentum: 3.29
+- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express, an existing IoT platform offering that can be extended for transportation and supply‑chain visibility.
+
+**Right-to-win: 7.0/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco
+- Supply‑chain visibility can be delivered by bundling existing IoT connectivity, cloud and SD‑WAN assets, but Orange Business does not yet offer a packaged solution for this use‑case.
+
+**Grounding signals (8):**
+- [GlobeNewswire] Supply Chain Technology Innovators Honored in 5th Annual SupplyTech Breakthrough Awards Program - GlobeNewswire
+- [IoT For All] Securing the Aerospace Supply Chain: IoT, Quality Management, and Compliance - IoT For All
+- [IoT Business News] Wialon Brings Fleet Management Queries Into ChatGPT With Native App - IoT Business News
+- [FreightWaves] How IoT and AI are shifting freight from reactive to predictive - FreightWaves
+- [AIMultiple] 40 IoT Applications & Use Cases - AIMultiple
+- [Bisinfotech] From Tracking to Predictive Intelligence: Pushpank Kaushik on the IoT–AI Revolution in Fleet Management - Bisinfotech
+- [Supply Chain Brain] How IoT and AI Are Modernizing Rail Efficiency and Asset Tracking - Supply Chain Brain
+- [Supply Chain Digital] Top 10: IoT Solutions - Supply Chain Digital
+
+## OS037 — Transportation and Logistics × Predictive Maintenance × Machine Learning
+
+**Attractiveness: 4.29/10**
+- Market signal strength: 4.942857142857143
+- Source diversity: 2.1333333333333333
+- Evidence quality: 4.0 — The signals are specific but come almost exclusively from vendor blogs (AWS, Microsoft) with limited independent analyst or regulator sources, reducing overall credibility despite relevance to cloud AI services.
+- Novelty / momentum: 3.29
+- Strategic relevance: 7.0 — Extends API M2M for IoT Connect Express (Data, IA & IoT) which provides the IoT connectivity and data platform needed for predictive maintenance in transportation and logistics.
+
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco
+- Orange Business can supply IoT data collection, cloud hosting and network connectivity, but lacks a ready‑made predictive‑maintenance machine‑learning service, requiring an adjacent capability to be built.
+
+**Grounding signals (5):**
+- [Hacker News] Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer
+- [FreightWaves] How IoT and AI are shifting freight from reactive to predictive - FreightWaves
+- [Bisinfotech] From Tracking to Predictive Intelligence: Pushpank Kaushik on the IoT–AI Revolution in Fleet Management - Bisinfotech
+- [Precedence Research] Machine-to-machine (M2M) Connections Market Size to Hit USD 81.94 Billion by 2035 - Precedence Research
+- [arXiv] Catching the Rug: Early Prediction of Fraudulent Memecoins on Solana via Machine Learning
+
+## OS038 — Finance & Insurance × Demand Forecasting × Agentic AI
+
+**Attractiveness: 7.03/10**
+- Market signal strength: 10.0
+- Source diversity: 9.733333333333334
+- Evidence quality: 7.0 — The signals are relevant and come from a mix of credible sources (major cloud providers, consulting firms, industry news outlets, and research firms), but many are vendor‑centric press releases, reducing overall objectivity.
+- Novelty / momentum: 3.31
+- Strategic relevance: 0.0 — None of the listed Orange Business APIs directly address finance demand forecasting or Agentic AI, so there is no specific matching asset.
+
+**Right-to-win: 5.0/10 [L3]**
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express
+- Demand forecasting with agentic AI requires analytics/AI capabilities not present in the current API catalog, only cloud and data ingestion assets exist, so a new capability must be built.
+
+**Grounding signals (8):**
+- [Amazon Web Services (AWS)] Build an agentic AI healthcare claims pipeline with Amazon Bedrock and AWS HealthLake | Artificial Intelligence - Amazon Web Services (AWS)
+- [Salesforce] The Complete Guide to Agentic AI in Insurance - Salesforce
+- [Insurance Business] IAG bets on agentic AI where conduct risk is highest - Insurance Business
+- [PR Newswire] Duck Creek Launches Insurance-Native Agentic AI Platform and Unveils New Applications to Transform Underwriting and Claims - PR Newswire
+- [Deloitte] Deloitte launches new paper on scaling agentic AI in life insurance - Deloitte
+- [Reinsurance News] Duck Creek introduces insurance-focused Agentic AI Platform with new underwriting and claims tools - Reinsurance News
+- [Market.us] Agentic AI Insurance Market Size | CAGR of 32.2% - Market.us
+- [arXiv] An Agentic Approach for Active Data Collection, Travel Behavior Modeling, and Weather-Sensitive Demand Prediction
+
+## OS039 — Public Sector × Network Modernization & SD-WAN × 5G
+
+**Attractiveness: 8.77/10**
+- Market signal strength: 9.8
+- Source diversity: 8.733333333333333
+- Evidence quality: 9.0 — The signals come from a wide mix of credible sources—including major media, analyst firms, legal and policy experts, and industry publications—and all directly address EU sovereign cloud and data‑sovereignty trends relevant to B2B innovation.
+- Novelty / momentum: 3.32
+- Strategic relevance: 10.0 — Directly extends the API Flexible SDWAN Cisco offering for network modernization in the public sector
+
+**Right-to-win: 7.0/10 [L3]**
+- Matched assets: API Flexible SDWAN Cisco, API Eligibility
+- Orange Business already offers SD‑WAN (API Flexible SDWAN Cisco) and has proven public‑sector WAN expertise, but lacks a native 5G service, requiring an adjacent capability.
+
+**Grounding signals (8):**
+- [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
+- [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
+- [Cisco Blog] Monitoring beyond SNMP: Turning your network into a sensor
+- [Hacker News] AWS Private 5G – Build Your Own Private Mobile Network
+- [Hacker News] Using a private 5G network to support coverage of the King's Coronation
+- [Hacker News] Using a Private 5G Network to Broadcast the Coronation
+- [Federal News Network] Trump admin focuses on ‘zero trust 2.0,’ cybersecurity efficiencies - Federal News Network
+- [Cisco Blog] How Cisco and Auvik simplify network modernization for AI
