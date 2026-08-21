@@ -5,11 +5,26 @@ Signal ingestion: pulls from each configured source and writes into the
     python -m pipeline.ingest
 
 Requires: feedparser, requests  (pip install feedparser requests)
+
+LOGGING
+-------
+Every run mirrors everything printed to the console into a timestamped file
+under logs/ (created automatically, e.g. logs/ingest_2026-08-20_1735.log).
+This matters because safe_run() below deliberately swallows exceptions and
+only prints a one-line summary per source -- without a persisted log, that
+information is gone the moment the terminal closes. It's what lets you
+answer "why did today's run collect fewer signals than yesterday's" days
+later instead of only at the moment it happened.
+logs/ is already covered by .gitignore's `*.log` rule -- these are meant to
+stay local, not get committed.
 """
 
 import os
+import sys
 import time
 import urllib.parse
+from datetime import datetime
+
 import feedparser
 import requests
 
@@ -22,9 +37,8 @@ from pipeline.config import (
     COMPETITOR_QUERIES,
     ARXIV_QUERIES,
     SEMANTIC_SCHOLAR_QUERIES,
-    TED_QUERIES,
-    ENABLE_NEWSAPI_AI,
-    NEWSAPI_AI_QUERIES,
+    REGULATION_QUERIES,
+    BUYING_SIGNAL_QUERIES,
 )
 from pipeline.db import get_connection, init_db, insert_signal
 
@@ -32,8 +46,45 @@ GDELT_DOC_URL = "https://api.gdeltproject.org/api/v2/doc/doc"
 HN_ALGOLIA_URL = "https://hn.algolia.com/api/v1/search"
 ARXIV_API_URL = "https://export.arxiv.org/api/query"
 SEMANTIC_SCHOLAR_URL = "https://api.semanticscholar.org/graph/v1/paper/search"
-TED_SEARCH_URL = "https://api.ted.europa.eu/v3/notices/search"
-NEWSAPI_AI_URL = "https://eventregistry.org/api/v1/article/getArticles"
+
+LOGS_DIR = "logs"
+
+
+class _Tee:
+    """Writes to two streams at once (console + log file). Used to mirror
+    every print() in this module into a persisted file without having to
+    rewrite every print() call as a logger call."""
+
+    def __init__(self, *streams):
+        self.streams = streams
+
+    def write(self, data):
+        for s in self.streams:
+            s.write(data)
+            s.flush()  # flush immediately -- a run that gets killed mid-way
+                       # (e.g. Ctrl+C during a GDELT rate-limit wait) still
+                       # leaves a readable partial log instead of an empty file
+
+    def flush(self):
+        for s in self.streams:
+            s.flush()
+
+
+def _start_logging():
+    """Creates logs/ if needed and starts mirroring stdout to a timestamped
+    file. Returns (log_path, original_stdout) so the caller can restore
+    stdout when done -- see run_full_refresh()'s try/finally."""
+    os.makedirs(LOGS_DIR, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H%M")
+    log_path = os.path.join(LOGS_DIR, f"ingest_{timestamp}.log")
+    log_file = open(log_path, "a", encoding="utf-8")
+    original_stdout = sys.stdout
+    sys.stdout = _Tee(original_stdout, log_file)
+    print(f"=== Ingest run started {datetime.now().isoformat()} -- log: {log_path} ===\n")
+    return log_path, log_file, original_stdout
+
+
+
 
 
 # ---------- Google News RSS (market_move / trend / buying_signal) ----------
@@ -71,7 +122,8 @@ def fetch_gdelt(conn, vertical, query, signal_type="trend", max_records=25, time
         "timespan": timespan,
         "sort": "hybridrel",
     }
-    resp = requests.get(GDELT_DOC_URL, params=params, headers=GDELT_HEADERS, timeout=30)
+    resp = requests.get(GDELT_DOC_URL, params=params, headers=GDELT_HEADERS, timeout=20
+    )
     if resp.status_code == 429:
         print("[GDELT] rate-limited -- skipping this query (don't rerun the pipeline immediately, wait 15-20 min)")
         return 0
@@ -146,7 +198,7 @@ def fetch_hacker_news(conn, query, signal_type="trend", max_items=10, vertical_h
 def fetch_arxiv(conn, vertical, query, signal_type="proof_signal", max_results=10):
     # arXiv's search syntax needs boolean operators between terms -- a bare
     # space-separated phrase like "all:edge computer vision safety" often
-    # returns 0 results. Join significant words with AND instead.
+    # returns 0 results. Join significant words with OR instead.
     terms = query.split()
     search_query = " OR ".join(f"all:{t}" for t in terms)
     params = {
@@ -199,147 +251,65 @@ def fetch_semantic_scholar(conn, vertical, query, signal_type="proof_signal", li
     return count
 
 
-# ---------- TED (Tenders Electronic Daily) -- EU public procurement notices ----------
-# Search API v3, free and keyless for search/retrieval. A published tender naming
-# a technology is a stronger buying_signal than a news article speculating about it.
-
-def fetch_ted(conn, vertical, query, signal_type="buying_signal", max_results=15):
-    # Anonymous, keyless read access -- no EU Login / API key needed for search.
-    # An exact-phrase match on the whole query almost never appears verbatim in
-    # a tender title, so narrow to the 2 longest (most specific) words instead,
-    # ANDed together -- narrow enough to stay relevant, loose enough to match.
-    terms = sorted(query.split(), key=len, reverse=True)[:2]
-    search_expr = " AND ".join(f'FT~"{t}"' for t in terms)
-    body = {
-        "query": search_expr,
-        "fields": ["publication-number", "notice-title", "buyer-name", "buyer-country", "publication-date"],
-        "limit": max_results,
-        "scope": "ACTIVE",
-        "paginationMode": "ITERATION",
-    }
-    resp = requests.post(TED_SEARCH_URL, json=body, headers={"Content-Type": "application/json"}, timeout=20)
-    resp.raise_for_status()
-    data = resp.json()
-    count = 0
-    if not data.get("notices"):
-        print(f"[TED] 0 notices matched query: {search_expr}")
-    for notice in data.get("notices", []):
-        pub_number = notice.get("publication-number")
-        title = notice.get("notice-title")
-        # notice-title can come back as a dict keyed by language code
-        if isinstance(title, dict):
-            title = title.get("eng") or next(iter(title.values()), None)
-        if not title or not pub_number:
-            continue
-        buyer = notice.get("buyer-name")
-        if isinstance(buyer, list):
-            buyer = buyer[0] if buyer else None
-        buyer_country = notice.get("buyer-country")
-        added = insert_signal(
-            conn,
-            source_name=f"TED - {buyer}" if buyer else "TED",
-            source_url=f"https://ted.europa.eu/en/notice/-/detail/{pub_number}",
-            signal_type=signal_type,
-            title=title,
-            summary=f"Buyer country: {buyer_country}" if buyer_country else None,
-            published_date=notice.get("publication-date"),
-            vertical_hint=vertical,
-        )
-        count += added
-    return count
-
-
-# ---------- NewsAPI.ai / Event Registry (market_move, broader multilingual coverage) ----------
-# Needs NEWSAPI_AI_KEY in .env (free tier: 2,000 tokens/month, https://newsapi.ai).
-# Self-skips (returns 0, no crash) if the key isn't set.
-
-def fetch_newsapi_ai(conn, vertical, query, signal_type="market_move", max_items=15):
-    api_key = os.environ.get("NEWSAPI_AI_KEY")
-    if not api_key:
-        print("[NewsAPI.ai] NEWSAPI_AI_KEY not set in .env -- skipping")
-        return 0
-    params = {
-        "action": "getArticles",
-        "keyword": query,
-        "lang": "eng",
-        "articlesSortBy": "date",
-        "articlesCount": max_items,
-        "resultType": "articles",
-        "apiKey": api_key,
-    }
-    resp = requests.get(NEWSAPI_AI_URL, params=params, timeout=20)
-    resp.raise_for_status()
-    data = resp.json()
-    articles = data.get("articles", {}).get("results", [])
-    count = 0
-    for a in articles:
-        added = insert_signal(
-            conn,
-            source_name=(a.get("source") or {}).get("title", "NewsAPI.ai"),
-            source_url=a.get("url"),
-            signal_type=signal_type,
-            title=a.get("title"),
-            summary=(a.get("body") or "")[:500] or None,
-            published_date=a.get("date"),
-            vertical_hint=vertical,
-        )
-        count += added
-    return count
-
-
 def run_full_refresh():
-    init_db()
-    conn = get_connection()
-    total = 0
+    log_path, log_file, original_stdout = _start_logging()
+    try:
+        init_db()
+        conn = get_connection()
+        total = 0
 
-    def safe_run(label, fn, *args, **kwargs):
-        """Run one source; log and continue if it fails, never crash the whole refresh."""
-        nonlocal total
-        try:
-            n = fn(*args, **kwargs)
-            print(f"[{label}] +{n} new signals")
-            total += n
-        except Exception as e:
-            print(f"[{label}] FAILED ({e}) -- skipping, continuing with other sources")
+        def safe_run(label, fn, *args, **kwargs):
+            """Run one source; log and continue if it fails, never crash the whole refresh."""
+            nonlocal total
+            try:
+                n = fn(*args, **kwargs)
+                print(f"[{label}] +{n} new signals")
+                total += n
+            except Exception as e:
+                print(f"[{label}] FAILED ({e}) -- skipping, continuing with other sources")
 
-    for q in GOOGLE_NEWS_QUERIES:
-        safe_run(f"Google News / {q['vertical']}", fetch_google_news, conn, q["vertical"], q["query"])
+        for q in GOOGLE_NEWS_QUERIES:
+            safe_run(f"Google News / {q['vertical']}", fetch_google_news, conn, q["vertical"], q["query"])
 
-    if ENABLE_GDELT:
-        for q in GDELT_QUERIES:
-            safe_run(f"GDELT / {q['vertical']}", fetch_gdelt, conn, q["vertical"], q["query"])
-            time.sleep(30)  # GDELT rate-limits aggressively -- space out consecutive calls
-    else:
-        print("[GDELT] disabled in config.py (ENABLE_GDELT = False) -- skipping")
+        if ENABLE_GDELT:
+            for q in GDELT_QUERIES:
+                safe_run(f"GDELT / {q['vertical']}", fetch_gdelt, conn, q["vertical"], q["query"])
+                time.sleep(45)  # GDELT rate-limits aggressively -- space out consecutive calls
+        else:
+            print("[GDELT] disabled in config.py (ENABLE_GDELT = False) -- skipping")
 
-    for feed in VENDOR_FEEDS:
-        safe_run(f"Vendor / {feed['name']}", fetch_vendor_feed, conn, feed["name"], feed["url"])
+        for feed in VENDOR_FEEDS:
+            safe_run(f"Vendor / {feed['name']}", fetch_vendor_feed, conn, feed["name"], feed["url"])
 
-    for q in HN_QUERIES:
-        safe_run(f"Hacker News / '{q}'", fetch_hacker_news, conn, q)
+        for q in HN_QUERIES:
+            safe_run(f"Hacker News / '{q}'", fetch_hacker_news, conn, q)
 
-    for q in COMPETITOR_QUERIES:
-        safe_run(f"Competitor watch / {q['vertical']}", fetch_google_news,
-                  conn, q["vertical"], q["query"], signal_type="market_move")
+        for q in COMPETITOR_QUERIES:
+            safe_run(f"Competitor watch / {q['vertical']}", fetch_google_news,
+                      conn, q["vertical"], q["query"], signal_type="market_move")
 
-    for q in ARXIV_QUERIES:
-        safe_run(f"arXiv / {q['vertical']}", fetch_arxiv, conn, q["vertical"], q["query"])
+        for q in ARXIV_QUERIES:
+            safe_run(f"arXiv / {q['vertical']}", fetch_arxiv, conn, q["vertical"], q["query"])
 
-    for q in SEMANTIC_SCHOLAR_QUERIES:
-        safe_run(f"Semantic Scholar / {q['vertical']}", fetch_semantic_scholar, conn, q["vertical"], q["query"])
-        time.sleep(8)  
+        for q in REGULATION_QUERIES:
+            safe_run(f"Regulation (EUR-Lex) / {q['vertical']}", fetch_google_news,
+                      conn, q["vertical"], q["query"], signal_type="regulation")
 
-    for q in TED_QUERIES:
-        safe_run(f"TED / {q['vertical']}", fetch_ted, conn, q["vertical"], q["query"])
+        for q in BUYING_SIGNAL_QUERIES:
+            safe_run(f"Buying signal (TED) / {q['vertical']}", fetch_google_news,
+                      conn, q["vertical"], q["query"], signal_type="buying_signal")
 
-    if ENABLE_NEWSAPI_AI:
-        for q in NEWSAPI_AI_QUERIES:
-            safe_run(f"NewsAPI.ai / {q['vertical']}", fetch_newsapi_ai, conn, q["vertical"], q["query"])
-    else:
-        print("[NewsAPI.ai] disabled in config.py (ENABLE_NEWSAPI_AI = False) -- skipping")
+        for q in SEMANTIC_SCHOLAR_QUERIES:
+            safe_run(f"Semantic Scholar / {q['vertical']}", fetch_semantic_scholar, conn, q["vertical"], q["query"])
+            time.sleep(20)  # unauthenticated Semantic Scholar limit is strict (~1 req / few seconds)
 
-    conn.close()
-    print(f"\nTotal new signals collected: {total}")
+        conn.close()
+        print(f"\nTotal new signals collected: {total}")
+        print(f"\n=== Ingest run finished {datetime.now().isoformat()} ===")
+    finally:
+        sys.stdout = original_stdout
+        log_file.close()
+        print(f"Log written: {log_path}")
 
 
 if __name__ == "__main__":
