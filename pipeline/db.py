@@ -3,8 +3,8 @@ SQLite schema + helper functions for the Innovation Radar.
 Tables: signals, opportunity_spaces, opportunity_signals (link), scores,
 right_to_win_scores, watchlist_terms, recurring_themes.
 
-CHANGES IN THIS REVISION
--------------------------
+CHANGES IN THIS REVISION (SIEGRIED radar_cli - 21.08)
+-----------------------------------------------------
 - get_all_opportunity_spaces(): a teammate's contribution, adopted as-is.
   Scoring used to only ever look at "the latest run_id's" opportunity
   spaces (get_latest_opportunity_spaces). Once opportunity spaces can be
