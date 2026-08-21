@@ -1,27 +1,27 @@
 # Innovation Radar — Opportunity Spaces Summary
-_Generated 2026-08-21 08:15 UTC_
+_Generated 2026-08-21 11:08 UTC_
 
 | OS | Attractiveness | Right-to-win | Distance |
 |---|---|---|---|
-| OS001 | 7.77/10 | 0.0/10 | L4 |
-| OS002 | 7.03/10 | 0.0/10 | L4 |
-| OS003 | 7.28/10 | 0.0/10 | L4 |
-| OS004 | 7.03/10 | 0.0/10 | L4 |
-| OS005 | 7.03/10 | 0.0/10 | L4 |
-| OS006 | 7.03/10 | 0.0/10 | L4 |
-| OS007 | 7.03/10 | 0.0/10 | L4 |
-| OS008 | 7.03/10 | 0.0/10 | L4 |
-| OS009 | 7.28/10 | 0.0/10 | L4 |
-| OS010 | 7.28/10 | 0.0/10 | L4 |
-| OS011 | 7.28/10 | 0.0/10 | L4 |
-| OS012 | 7.28/10 | 0.0/10 | L4 |
-| OS013 | 7.02/10 | 0.0/10 | L4 |
-| OS014 | 7.02/10 | 0.0/10 | L4 |
-| OS015 | 7.02/10 | 0.0/10 | L4 |
-| OS016 | 7.03/10 | 0.0/10 | L4 |
-| OS017 | 7.28/10 | 0.0/10 | L4 |
-| OS018 | 7.28/10 | 0.0/10 | L4 |
-| OS019 | 7.03/10 | 0.0/10 | L4 |
+| OS001 | 7.92/10 | 5.0/10 | L3 |
+| OS002 | 7.83/10 | 6.0/10 | L3 |
+| OS003 | 7.78/10 | 6.0/10 | L3 |
+| OS004 | 7.53/10 | 8.0/10 | L1 |
+| OS005 | 8.28/10 | 6.0/10 | L3 |
+| OS006 | 7.68/10 | 7.0/10 | L1 |
+| OS007 | 7.53/10 | 7.0/10 | L1 |
+| OS008 | 7.53/10 | 6.0/10 | L3 |
+| OS009 | 8.53/10 | 9.0/10 | L0 |
+| OS010 | 7.78/10 | 5.0/10 | L3 |
+| OS011 | 7.53/10 | 5.0/10 | L2 |
+| OS012 | 7.48/10 | 5.0/10 | L3 |
+| OS013 | 8.17/10 | 6.0/10 | L3 |
+| OS014 | 7.77/10 | 8.0/10 | L1 |
+| OS015 | 8.52/10 | 8.0/10 | L1 |
+| OS016 | 8.28/10 | 8.0/10 | L1 |
+| OS017 | 7.33/10 | 5.0/10 | L3 |
+| OS018 | 8.28/10 | 9.0/10 | L0 |
+| OS019 | 7.43/10 | 8.0/10 | L1 |
 | OS020 | 7.02/10 | 0.0/10 | L4 |
 | OS021 | 4.26/10 | 0.0/10 | L4 |
 | OS022 | 4.26/10 | 0.0/10 | L4 |
@@ -29,21 +29,27 @@ _Generated 2026-08-21 08:15 UTC_
 | OS024 | 7.02/10 | 0.0/10 | L4 |
 | OS025 | 4.08/10 | 0.0/10 | L4 |
 | OS026 | 4.08/10 | 0.0/10 | L4 |
-| OS027 | 4.05/10 | 0.0/10 | L4 |
+| OS027 | 4.04/10 | 0.0/10 | L4 |
 | OS028 | 7.02/10 | 0.0/10 | L4 |
+| OS029 | 7.99/10 | 6.0/10 | L3 |
+| OS030 | 7.09/10 | 5.0/10 | L3 |
+| OS031 | 7.54/10 | 6.0/10 | L2 |
+| OS032 | 8.02/10 | 7.0/10 | L1 |
+| OS033 | 8.54/10 | 8.0/10 | L1 |
+| OS034 | 8.24/10 | 0.0/10 | L4 |
 
 ## OS001 — Public Sector × Sovereign citizen data hosting × Sovereign cloud + GPU inference
 
-**Attractiveness: 7.77/10**
-- Market signal strength: 9.8
-- Source diversity: 8.733333333333333
-- Evidence quality: 8.0 — The signals come from a diverse mix of reputable media, analyst reports, and policy sources that are directly relevant to EU sovereign cloud initiatives, though a few are vendor‑driven press releases which slightly lowers overall credibility.
-- Novelty / momentum: 3.32
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.92/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 5.0/10 [L3]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
@@ -57,16 +63,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS002 — Manufacturing × Fire and hazard detection × Edge computer vision (Raspberry Pi class)
 
-**Attractiveness: 7.03/10**
-- Market signal strength: 10.0
-- Source diversity: 8.466666666666667
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.83/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Tech Monitor] Bringing intelligence to the factory floor: Private 5G and edge computing* - Tech Monitor
@@ -80,16 +86,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS003 — Finance & Insurance × Conduct-risk / compliance monitoring × AI surveillance of communications
 
-**Attractiveness: 7.28/10**
-- Market signal strength: 10.0
-- Source diversity: 9.733333333333334
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.78/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Insurance Business] IAG bets on agentic AI where conduct risk is highest - Insurance Business
@@ -103,16 +109,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS004 — Manufacturing × Remote-controlled industrial robots × Vision-guided teleoperation
 
-**Attractiveness: 7.03/10**
-- Market signal strength: 10.0
-- Source diversity: 8.466666666666667
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.53/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 8.0/10 [L1]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Qualcomm] Qualcomm Brings On‑Premises Industrial AI and Connectivity to a Siemens Factory Model at MWC Barcelona - Qualcomm
@@ -126,16 +132,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS005 — Manufacturing × Energy Optimization × IoT Platforms
 
-**Attractiveness: 7.03/10**
-- Market signal strength: 10.0
-- Source diversity: 8.466666666666667
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 8.28/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
@@ -149,16 +155,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS006 — Manufacturing × Operational Excellence × Machine Learning
 
-**Attractiveness: 7.03/10**
-- Market signal strength: 10.0
-- Source diversity: 8.466666666666667
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.68/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 7.0/10 [L1]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [arXiv] Q-based Variational Inverse Reinforcement Learning
@@ -172,16 +178,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS007 — Manufacturing × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 7.03/10**
-- Market signal strength: 10.0
-- Source diversity: 8.466666666666667
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.53/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 7.0/10 [L1]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
@@ -195,16 +201,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS008 — Manufacturing × Imaging Analytics × Computer Vision
 
-**Attractiveness: 7.03/10**
-- Market signal strength: 10.0
-- Source diversity: 8.466666666666667
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.53/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (7):**
 - [IoT Analytics] The $1 trillion industrial downtime problem is becoming a knowledge problem—can AI mitigate it? - IoT Analytics
@@ -217,16 +223,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS009 — Finance & Insurance × Cloud Infrastructure Modernization × Cloud
 
-**Attractiveness: 7.28/10**
-- Market signal strength: 10.0
-- Source diversity: 9.733333333333334
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 8.53/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 9.0/10 [L0]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
@@ -240,16 +246,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS010 — Finance & Insurance × Cybersecurity × Machine Learning
 
-**Attractiveness: 7.28/10**
-- Market signal strength: 10.0
-- Source diversity: 9.733333333333334
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.78/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 5.0/10 [L3]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
@@ -263,16 +269,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS011 — Finance & Insurance × Customer Experience × Generative AI
 
-**Attractiveness: 7.28/10**
-- Market signal strength: 10.0
-- Source diversity: 9.733333333333334
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.53/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 5.0/10 [L2]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (6):**
 - [PR Newswire] CIMB Niaga and Virtusa Complete a First-of-Its-Kind Modernization on Pega Cloud to Enhance Customer Banking Experiences in Indonesia - PR Newswire
@@ -284,16 +290,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS012 — Finance & Insurance × IT Operations Automation × Machine Learning
 
-**Attractiveness: 7.28/10**
-- Market signal strength: 10.0
-- Source diversity: 9.733333333333334
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.48/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 5.0/10 [L3]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [PR Newswire] CUBE ACQUIRES SILICON VALLEY REGTECH, 4CRISK, DELIVERING NEXT GENERATION COMPLIANCE AND RISK MAPPING AUTOMATION - PR Newswire
@@ -307,16 +313,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS013 — Public Sector × Data Sovereignty × Cloud
 
-**Attractiveness: 7.02/10**
-- Market signal strength: 9.8
-- Source diversity: 8.733333333333333
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.32
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 8.17/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
@@ -330,16 +336,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS014 — Public Sector × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 7.02/10**
-- Market signal strength: 9.8
-- Source diversity: 8.733333333333333
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.32
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.77/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 8.0/10 [L1]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Technology Magazine] Carahsoft Strengthens Public Sector Cybersecurity Through Key Cybersecurity and Zero Trust Government Events in 2026 - Technology Magazine
@@ -353,16 +359,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS015 — Public Sector × Digital Infrastructure × IoT Platforms
 
-**Attractiveness: 7.02/10**
-- Market signal strength: 9.8
-- Source diversity: 8.733333333333333
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.32
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 8.52/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 8.0/10 [L1]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
@@ -376,16 +382,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS016 — Manufacturing × Network Modernization & SD-WAN × 5G
 
-**Attractiveness: 7.03/10**
-- Market signal strength: 10.0
-- Source diversity: 8.466666666666667
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 8.28/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 8.0/10 [L1]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Fierce Network] Industrial AI could be salve for ailing private network market - Fierce Network
@@ -399,16 +405,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS017 — Finance & Insurance × IT Operations Automation × Agentic AI
 
-**Attractiveness: 7.28/10**
-- Market signal strength: 10.0
-- Source diversity: 9.733333333333334
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.33/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 5.0/10 [L3]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Amazon Web Services (AWS)] Build an agentic AI healthcare claims pipeline with Amazon Bedrock and AWS HealthLake | Artificial Intelligence - Amazon Web Services (AWS)
@@ -422,16 +428,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS018 — Finance & Insurance × Network Modernization & SD-WAN × Network & SD-WAN
 
-**Attractiveness: 7.28/10**
-- Market signal strength: 10.0
-- Source diversity: 9.733333333333334
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 8.28/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 9.0/10 [L0]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
@@ -445,16 +451,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS019 — Manufacturing × Operational Excellence × Edge Computing
 
-**Attractiveness: 7.03/10**
-- Market signal strength: 10.0
-- Source diversity: 8.466666666666667
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 7.43/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 8.0/10 [L1]**
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Tech Monitor] Bringing intelligence to the factory floor: Private 5G and edge computing* - Tech Monitor
@@ -469,15 +475,15 @@ _Generated 2026-08-21 08:15 UTC_
 ## OS020 — Public Sector × Cloud Infrastructure Modernization × Cloud
 
 **Attractiveness: 7.02/10**
-- Market signal strength: 9.8
-- Source diversity: 8.733333333333333
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.32
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
 **Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
@@ -492,15 +498,15 @@ _Generated 2026-08-21 08:15 UTC_
 ## OS021 — Energy × Grid Optimization × IoT Platforms
 
 **Attractiveness: 4.26/10**
-- Market signal strength: 5.2285714285714295
-- Source diversity: 1.7999999999999998
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
 **Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
@@ -515,15 +521,15 @@ _Generated 2026-08-21 08:15 UTC_
 ## OS022 — Energy × Grid Optimization × Edge Computing
 
 **Attractiveness: 4.26/10**
-- Market signal strength: 5.2285714285714295
-- Source diversity: 1.7999999999999998
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
 **Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
@@ -538,15 +544,15 @@ _Generated 2026-08-21 08:15 UTC_
 ## OS023 — Public Sector × Digital Infrastructure × Cloud
 
 **Attractiveness: 7.02/10**
-- Market signal strength: 9.8
-- Source diversity: 8.733333333333333
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.32
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
 **Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
@@ -561,15 +567,15 @@ _Generated 2026-08-21 08:15 UTC_
 ## OS024 — Public Sector × Data Sovereignty × Cloud Data Platform
 
 **Attractiveness: 7.02/10**
-- Market signal strength: 9.8
-- Source diversity: 8.733333333333333
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.32
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
 **Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
@@ -584,15 +590,15 @@ _Generated 2026-08-21 08:15 UTC_
 ## OS025 — Retail × Customer Experience × Agentic AI
 
 **Attractiveness: 4.08/10**
-- Market signal strength: 4.714285714285714
-- Source diversity: 1.6666666666666665
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
 **Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [NVIDIA Blog] NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI
@@ -607,15 +613,15 @@ _Generated 2026-08-21 08:15 UTC_
 ## OS026 — Retail × Contact Centre Automation × Agentic AI
 
 **Attractiveness: 4.08/10**
-- Market signal strength: 4.714285714285714
-- Source diversity: 1.6666666666666665
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.33
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
 **Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [NVIDIA Blog] NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI
@@ -629,16 +635,16 @@ _Generated 2026-08-21 08:15 UTC_
 
 ## OS027 — Healthcare × Data Sovereignty × Cloud
 
-**Attractiveness: 4.05/10**
-- Market signal strength: 4.742857142857143
-- Source diversity: 1.4666666666666668
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 3.31
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+**Attractiveness: 4.04/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
 
 **Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+- Matched assets: restored from README table -- re-score for full justification
+- Restored from the original README's opportunity spaces table, generated in an earlier successful scoring run. Sub-score breakdown and asset justification need a real re-score (pipeline.scoring) once Groq quota is available again.
 
 **Grounding signals (8):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
@@ -672,3 +678,139 @@ _Generated 2026-08-21 08:15 UTC_
 - [Data Center Dynamics] EU Commission selects four cloud providers under €180m sovereign cloud tender - Data Center Dynamics
 - [Hacker News] "Sovereign cloud"? A Trojan Horse at Europe's digital gates
 - [International journal of science research and technology] Designing Secure Sovereign Cloud Architectures for Enterprise Data Analytics and Digital Transformation
+
+## OS029 — Manufacturing × Industrial Digital Twin & Automation × Digital Twins
+
+**Attractiveness: 7.99/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
+
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: restored from prior successful run -- re-score for full justification
+- Restored from a successful scoring pass minutes before a rate-limit-interrupted --force run overwrote it with a neutral default. Total/right-to-win/distance are real; sub-score breakdown and asset justification need a real re-score once quota allows.
+
+**Grounding signals (8):**
+- [Quality Magazine] How Digital Twins Are Helping Manufacturers Double Down on Quality - Quality Magazine
+- [Technology Magazine] Accenture: Redefining Digital Twins and Factory AI - Technology Magazine
+- [Design News] Digital Twins & Intelligent Automation Create Autonomous Smart Manufacturing - Design News
+- [Global Trade Magazine] How AI and Digital Twins Are Revolutionizing Global Supply Chain Management in 2026 - Global Trade Magazine
+- [Accenture] Accenture to Strengthen Capabilities for Software and Automation Solutions from Siemens Digital Industries with Acquisition of Industries eXcellence Group - Accenture
+- [Manufacturing Digital Magazine] Accenture, Siemens & IndX: Digital Twins and Factory AI - Manufacturing Digital Magazine
+- [TechHQ] Siemens Realize LIVE 2026: Intelligence Center X and digital twins - TechHQ
+- [AIMultiple] 25 Digital Twin Applications/ Use Cases by Industry - AIMultiple
+
+## OS030 — Manufacturing × Post-Quantum Cryptography Testing Infrastructure × Quantum-safe Cryptography
+
+**Attractiveness: 7.09/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
+
+**Right-to-win: 5.0/10 [L3]**
+- Matched assets: restored from prior successful run -- re-score for full justification
+- Restored from a successful scoring pass minutes before a rate-limit-interrupted --force run overwrote it with a neutral default. Total/right-to-win/distance are real; sub-score breakdown and asset justification need a real re-score once quota allows.
+
+**Grounding signals (7):**
+- [NVIDIA Blog] Securing the Infrastructure of Intelligence
+- [arXiv] Nearly Sample-Optimal Estimators for Quantum Rényi and Tsallis Entropies
+- [arXiv] Quantum Geometric Tensor Preconditioning for Stable Training of Recurrent Neural Quantum States
+- [arXiv] The Polyglot's Dilemma: Conformance Testing a Dozen Specs in as Many Languages
+- [TED - {'eng': ['European Cybersecurity Industrial, Technology and Research Competence Centre']}] Romania – IT services: consulting, software development, Internet and support – Deployment of a European testing infrastructure for the transition to PQC in different usage domains
+- [arXiv] ADEPT: Accelerating Dexterity via Pre-Training and Post-Training using Reinforcement Learning
+- [arXiv] State--Generator Geometry of Open Quantum Systems: Compatibility and Covariant Transport
+
+## OS031 — Manufacturing × Strategic Communications & Advertising Consultancy × Generative AI
+
+**Attractiveness: 7.54/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
+
+**Right-to-win: 6.0/10 [L2]**
+- Matched assets: restored from prior successful run -- re-score for full justification
+- Restored from a successful scoring pass minutes before a rate-limit-interrupted --force run overwrote it with a neutral default. Total/right-to-win/distance are real; sub-score breakdown and asset justification need a real re-score once quota allows.
+
+**Grounding signals (7):**
+- [RCR Wireless News] Private 5G and generative AI in Industry 4.0 – a match made at the edge - RCR Wireless News
+- [TED - {'eng': ['Bergen kommune']}] Norway-Bergen: Research and development consultancy services
+- [TED - {'eng': ['Business Finland Oy']}] Finland – Research and development consultancy services – Market Intelligence Services
+- [TED - {'eng': ['INNLANDET FYLKESKOMMUNE']}] Norway – Advertising consultancy services – Strategic communication, PR and consultancy services for the Innlandet Vocational College.
+- [TED - {'eng': ['European Commission, DG DIGIT - Digital Services', 'Court of Justice of the European Union', 'EDPS - European Data Protection Supervisor', 'EP - European Parliament', 'European Court of Auditors', 'European External Action Service (EEAS)', 'Agence Exécutive du Conseil Européen de la Recherche', 'European Education and Culture Executive Agency (EACEA)', 'European Innovation Council and SMEs Executive Agency (EISMEA)', 'European Research Executive Agency (REA)', 'Health and Digital Executive Agency (HaDEA)', 'Agency for Support for BEREC (BEREC Office)', 'Authority for Anti-Money Laundering and Countering the Financing of Terrorism', 'Chips Joint Undertaking', 'Circular Bio-based Europe Joint Undertaking', 'Clean Aviation Joint Undertaking', 'Clean Hydrogen Joint Undertaking', 'Community Plant Variety Office', 'ESA - Euratom Supply Agency', 'EUDA - European Union Drugs Agency', 'EUI - European University Institute', 'European Agency for Safety and Health at Work (EU-OSHA)', 'European Border and Coast Guard Agency (FRONTEX)', 'European Centre for Disease Prevention and Control', 'European Centre for the Development of Vocational Training', 'European Chemicals Agency', 'European Cybersecurity Industrial, Technology and Research Competence Centre', 'European Defence Agency', 'European Environment Agency (EEA)', 'European Food Safety Authority', 'European High-Performance Computing Joint Undertaking', 'European Institute for Gender Equality', 'European Insurance and Occupational Pensions Authority', 'European Investment Bank', 'European Investment Fund', 'European Labour Authority (ELA)', 'European Medicines Agency', 'European Public Prosecutor’s Office', 'European Schools', 'European Securities and Markets Authority', 'European Training Foundation (ETF)', 'European Union Agency For Law Enforcement Training', 'European Union Agency for Asylum', 'European Union Agency for Criminal Justice Cooperation (Eurojust)', 'European Union Agency for Cybersecurity (ENISA)', 'European Union Agency for Fundamental Rights', 'European Union Agency for Law Enforcement Cooperation', 'European Union Agency for Railways', 'European Union Agency for the Operational Management of Large-Scale IT Systems in the Area of Freedom, Security and Justice (eu-LISA)', 'European Union Aviation Safety Agency', 'European Union Intellectual Property Office', 'F4E - Fusion for Energy Joint Undertaking', 'Global Health EDCTP3 Joint Undertaking', 'Innovative Health Initiative Joint Undertaking (IHI JU)', 'SESAR3 Joint Undertaking', 'SNS JU - Smart Networks and Services Joint Undertaking', 'Translation Centre for the Bodies of the European Union', 'Committee of the Regions of the European Union', 'European Economic and Social Committee']}] Belgium, Luxembourg, Latvia, Germany, France, Italy, Spain, Poland, Sweden, Greece, Finland, Romania, Denmark, Lithuania, Slovakia, Netherlands, Hungary, Malta, Austria, Estonia – IT services: consulting, software development, Internet and support – High-level advice and consultancy services (HACS)
+- [arXiv] Enhancing EBSD throughput of battery electrode materials using super-resolution generative adversarial networks
+- [RCR Wireless News] Private 5G and generative AI in Industry 4.0 – a match made at the edge - RCR Wireless News
+
+## OS032 — Public Sector × Infrastructure Planning & Management × Digital Twins
+
+**Attractiveness: 8.02/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
+
+**Right-to-win: 7.0/10 [L1]**
+- Matched assets: restored from prior successful run -- re-score for full justification
+- Restored from a successful scoring pass minutes before a rate-limit-interrupted --force run overwrote it with a neutral default. Total/right-to-win/distance are real; sub-score breakdown and asset justification need a real re-score once quota allows.
+
+**Grounding signals (8):**
+- [Jones Day] Dutch Government Blocks U.S. Acquisition of Cloud Provider, Signaling Heightened Focus on EU Digital Sovereignty - Jones Day
+- [Microsoft Azure Blog] External key management for Azure Managed HSM is now in public preview
+- [NVIDIA Blog] Securing the Infrastructure of Intelligence
+- [Hacker News] "Sovereign cloud"? A Trojan Horse at Europe's digital gates
+- [The World Economic Forum] Why AI needs digital public infrastructure to deliver for citizens - The World Economic Forum
+- [Frontiers] Integrating sustainable urban governance and smart infrastructure for resilient cities - Frontiers
+- [Homeland Security Today] IoT Devices Make Municipal Infrastructure an Easy Target for Cyberattackers - Homeland Security Today
+- [Microsoft] How cities build resilient infrastructure with trusted AI - Microsoft
+
+## OS033 — Manufacturing × Industrial Process Optimization × IoT Platforms
+
+**Attractiveness: 8.54/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
+
+**Right-to-win: 8.0/10 [L1]**
+- Matched assets: restored from prior successful run -- re-score for full justification
+- Restored from a successful scoring pass minutes before a rate-limit-interrupted --force run overwrote it with a neutral default. Total/right-to-win/distance are real; sub-score breakdown and asset justification need a real re-score once quota allows.
+
+**Grounding signals (8):**
+- [IoT Business News] Industrial AI Shifts Focus from Predictive Maintenance to Knowledge Preservation - IoT Business News
+- [IoT Analytics] The $1 trillion industrial downtime problem is becoming a knowledge problem—can AI mitigate it? - IoT Analytics
+- [Industrial Cyber] Nozomi’s Plante says CISOs must rethink OT and IoT security as old models fail converged industrial environments - Industrial Cyber
+- [Industrial Cyber] Zscaler warns industrial operations face mounting risk as IoT, OT attacks surge across energy, manufacturing sectors - Industrial Cyber
+- [2025 7th International Congress on Human-Computer Interaction, Optimization and Robotic Applications (ICHORA)] Enhancing Industrial IoT Cybersecurity with Explainable AI: A SHAP and LIME-Based Intrusion Detection Methodology
+- [IEEE Computational Intelligence Magazine] AI in Industrial IoT Cybersecurity [Industrial and Governmental Activities]
+- [IEEE Access] Evaluating Manifold Learning Techniques for Dimensionality Reduction on Industrial IoT Cybersecurity Data
+- [2025 10th International Conference on Smart and Sustainable Technologies (SpliTech)] Industrial IoT cybersecurity: a bibliometric analysis
+
+## OS034 — Manufacturing × Manufacturing Process Automation × Agentic AI
+
+**Attractiveness: 8.24/10**
+- Market signal strength: None
+- Source diversity: None
+- Evidence quality: None — None
+- Novelty / momentum: None
+- Strategic relevance: None — None
+
+**Right-to-win: 0.0/10 [L4]**
+- Matched assets: restored from prior successful run -- re-score for full justification
+- Restored from a successful scoring pass minutes before a rate-limit-interrupted --force run overwrote it with a neutral default. Total/right-to-win/distance are real; sub-score breakdown and asset justification need a real re-score once quota allows.
+
+**Grounding signals (8):**
+- [NVIDIA Blog] NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI
+- [Cisco Blog] Meet Instant Attack Verification: Agentic AI for Tier-1 and Tier-2 SOC investigation
+- [Hacker News] Industry Brief: Private 5G for Manufacturing and Industrial Sites [pdf]
+- [Hacker News] Show HN: Agentic interface for mainframes and COBOL
+- [arXiv] Don't Drop the BATON: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-aware Memory
+- [PlasticsToday] AI Predictive Maintenance Gains Traction in Manufacturing Plants - PlasticsToday
+- [MarketsandMarkets] UK Artificial Intelligence in Manufacturing Market Size, Share,Trends, Growth Analysis Report, 2030 - MarketsandMarkets
+- [Design News] Digital Twins & Intelligent Automation Create Autonomous Smart Manufacturing - Design News

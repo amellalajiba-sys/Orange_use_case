@@ -22,22 +22,6 @@ through an emerging_themes.json file.
 Run directly for a full pass over all verticals:
 
     python -m pipeline.analyze
-
-
-
-
-IRENE:
-======
-
-    - Added detect_emerging_from_themes(): detects themes with Use Cases or
-      Technologies not in the official taxonomy lists.
-    - Added save_emerging_themes(): saves emerging terms to emerging_themes.json
-      for signals_discovery.py to process.
-    - Modified run_full_analysis(): now collects and saves emerging terms
-      alongside the standard theme extraction output.
-    - Kept THEME_EXTRACTION_SYSTEM_PROMPT unchanged (Siegried's original open prompt).
-    - extract_themes() unchanged — still returns a list of dicts.
-
 """
 
 from pipeline.db import (
@@ -103,8 +87,6 @@ def dump_titles(conn, vertical=None, signal_type=None, limit=100):
 
 # ---------- Step 2: LLM-assisted theme extraction ----------
 
-# THEME EXTRACTION WITH ORIGINAL PROMPT
-
 THEME_EXTRACTION_SYSTEM_PROMPT = """You are analyzing market signals (news, research
 papers, vendor announcements, regulation) collected for one business vertical, to spot
 candidate Opportunity Spaces for a B2B telecom/cloud provider (Orange Business).
@@ -138,32 +120,6 @@ no markdown fences:
 themes: 3-6 items max, reject anything generic or supported by only one vague signal.
 watchlist_candidates: only include genuinely recurring patterns, not one-off mentions."""
 
-def detect_emerging_from_themes(themes, vertical):
-    """
-    Check which themes contain technologies/use cases not in the official taxonomy.
-    These become emerging terms for the watchlist.
-    """
-    emerging = []
-    for t in themes:
-        use_case = t.get("use_case", "")
-        technology = t.get("technology", "")
-        rationale = t.get("rationale", "")
-        support_count = t.get("supporting_signal_count", 0)
-        
-        # Check if either field is NOT in the official lists
-        is_emerging_use_case = use_case and use_case not in TAXONOMY_USE_CASES
-        is_emerging_technology = technology and technology not in TAXONOMY_TECHNOLOGIES
-
-        if is_emerging_use_case or is_emerging_technology:
-            emerging.append({
-                "vertical": vertical,
-                "emerging_use_case": use_case if use_case not in TAXONOMY_USE_CASES else None,
-                "emerging_technology": technology if technology not in TAXONOMY_TECHNOLOGIES else None,
-                "rationale": rationale,
-                "supporting_signal_count": support_count
-            })
-
-    return emerging
 
 def extract_themes(conn, vertical, max_signals=40):
     """Ask the LLM to turn raw signal titles into candidate Opportunity
@@ -213,37 +169,6 @@ def extract_themes(conn, vertical, max_signals=40):
     return valid_themes, candidates
 
 
-def save_emerging_themes(emerging_terms):
-    """Save emerging terms to a JSON file for processing by signals_discovery.py."""
-
-    output_path = "emerging_themes.json"
-    
-    # Load existing data if file exists
-    if os.path.exists(output_path):
-        with open(output_path, "r") as f:
-            try:
-                existing = json.load(f)
-            except json.JSONDecodeError:
-                existing = []
-    else:
-        existing = []
-    
-    # Add new terms (avoid duplicates)
-    existing_terms = {(e.get("vertical"), e.get("emerging_use_case"), e.get("emerging_technology")) 
-                      for e in existing}
-    
-    for term in emerging_terms:
-        key = (term.get("vertical"), term.get("emerging_use_case"), term.get("emerging_technology"))
-        if key not in existing_terms:
-            existing.append(term)
-            existing_terms.add(key)
-    
-    with open(output_path, "w") as f:
-        json.dump(existing, f, indent=2)
-    
-    print(f"Saved {len(emerging_terms)} emerging terms to {output_path}")
-
-
 def run_full_analysis():
     conn = get_connection()
     summary(conn)
@@ -252,9 +177,6 @@ def run_full_analysis():
     verticals = [r["vertical_hint"] for r in conn.execute(
         "SELECT DISTINCT vertical_hint FROM signals WHERE vertical_hint IS NOT NULL"
     ).fetchall()]
-
-    all_themes = []      # Store all classified themes
-    all_emerging = []    # Store all emerging terms
 
     for vertical in verticals:
         print(f"\n{'=' * 60}\nTheme extraction: {vertical}\n{'=' * 60}")

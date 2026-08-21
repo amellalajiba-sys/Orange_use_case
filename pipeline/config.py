@@ -202,6 +202,8 @@ TECHNOLOGIES_TAXONOMY = [
     "Cloud Data Platform", "IoT Platforms", "Computer Vision", "Machine Learning",
     "Generative AI", "Network & SD-WAN", "Cloud", "Cybersecurity", "5G", "IoT", "AI, Data, Cloud",
     "Agentic AI", "Edge Computing",
+    "Digital Twins", "Quantum-safe Cryptography",  # added 2026-08-21: promoted from
+    # emerging_themes.json, each backed by 2+ recurring signals across Manufacturing/Public Sector
 ]
 
 # Signal type vocabulary (must match the brief's taxonomy)
