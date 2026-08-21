@@ -3,6 +3,11 @@ Provider-agnostic LLM client. Behavior is controlled entirely by .env, so
 switching machines (or switching Groq <-> Ollama) never requires touching
 this file -- only .env.
 
+NOTE: functionally unchanged in this revision -- every other pipeline module
+(analyze.py, scoring.py) still calls get_llm_json()/get_llm_response() the
+same way. Listed here mainly so the whole pipeline ships as one consistent
+set of files.
+
 .env keys:
     LLM_PROVIDER   "auto" (default, Groq then Ollama fallback) | "groq" | "ollama"
     GROQ_API_KEY   required if LLM_PROVIDER is "auto" or "groq"

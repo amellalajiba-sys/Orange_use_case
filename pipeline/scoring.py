@@ -1,46 +1,52 @@
 """
-Attractiveness scoring for opportunity spaces.
+Scores every un-scored opportunity space on TWO separate axes
+(attractiveness, right-to-win), plus enriches it with the metadata a
+sales/presales team needs to act on it (persona, geography, horizon, domain,
+next action) -- all in one pass, one file, no separate enrich.py.
 
-Formula from the brief:
-    30% market_signal_strength
-  + 20% source_diversity
-  + 20% evidence_quality
-  + 15% novelty_momentum
-  + 15% strategic_relevance
+Weights: 30% market_signal_strength, 20% source_diversity, 25% evidence_quality,
+10% novelty_momentum, 15% strategic_relevance.
 
-The first three sub-scores below are computed deterministically from the
-signals table (no LLM needed, no black box). evidence_quality and
-strategic_relevance need judgment -> plug in an LLM call there (see the
-llm_evidence_quality / llm_strategic_relevance stubs). Keep every sub-score
-stored, never just the total -- that's what makes the score explainable.
+MARKET_SIGNAL_CAP / SOURCE_DIVERSITY_CAP -- re-run `radar_cli.py calibrate`
+after any meaningful change in ingest volume and bump these if verticals are
+pinned at 10.0/10.0 (saturated, no longer discriminating).
+
+CHANGE IN THIS REVISION -- skip already-scored opportunity spaces by default
+------------------------------------------------------------------------------
+Previously this always scored "the latest run's" opportunity spaces
+(get_latest_opportunity_spaces), inserting a fresh row every time (audit
+trail) even for OS that hadn't changed. That was fine at 15 hand-picked OS,
+but now that OS can be auto-promoted from recurring themes over many runs
+(see radar_cli.py's `promote` command), re-running scoring after every
+promote would re-score everything and burn LLM quota (Groq's free tier is
+rate-limited) for OS that already have a perfectly good score.
+
+Adapted from a teammate's "skip if already scored" idea (their version
+checked this per-row with `SELECT COUNT(*) ... WHERE opportunity_space_id = '{id}'`
+built via an f-string -- functionally fine here since `id` is an internal
+integer, but the same pattern elsewhere with LLM-derived strings would be a
+real SQL-injection risk, so it's re-implemented as one parameterized query,
+db.get_unscored_opportunity_spaces()):
+
+    python -m pipeline.scoring            # score only what has no score yet
+    python -m pipeline.scoring --force    # rescore + re-enrich EVERYTHING
+
+The audit-trail behavior (always INSERT, never UPDATE) is unchanged for
+whatever actually does get scored -- --force just widens which OS that is.
 """
 
-from datetime import datetime, timezone
-from email.utils import parsedate_to_datetime
+import sys
 from pipeline.db import (
-    get_connection, get_signals_for_vertical, insert_score, insert_right_to_win_score,
-    get_opportunity_spaces, get_latest_run_id,
+    get_connection, get_signals_for_vertical,
+    get_all_opportunity_spaces, get_unscored_opportunity_spaces,
+    insert_score, insert_right_to_win_score, update_opportunity_space_enrichment,
 )
 from pipeline.config import (
-    ORANGE_BUSINESS_ASSETS, PORTFOLIO_DISTANCE, ANALYST_RECOGNITION,
-    CUSTOMER_REFERENCES, CAPABILITY_STATS,
+    ORANGE_BUSINESS_ASSETS, ANALYST_RECOGNITION, CAPABILITY_STATS, CUSTOMER_REFERENCES,
+    ROLES, BUYER_PERSONAS, GEOS, HORIZONS, DOMAINS_TAXONOMY,
 )
 from llm.llm_client import get_llm_json
 
-# Reweighted 2026-08-17 from the brief's 30/20/20/15/15 starting point.
-# Rationale (methodological, not results-driven -- checked before seeing how
-# it moved the ranking):
-#   - novelty_momentum's proxy (share of signals in the most recent third of
-#     the collection window) needs signals spread over weeks/months to mean
-#     anything. All 4 OS still scored 3.27-3.30 across every run so far --
-#     the whole dataset was ingested in one short window, so the metric is
-#     structurally flat right now, not actually measuring momentum yet.
-#     Down-weighted to 10% until enough time-series history exists to trust it.
-#   - evidence_quality is the most rigorous signal we have today (LLM-judged
-#     credibility/specificity per source, not just raw volume). The 5 points
-#     freed up from novelty_momentum go there instead of anywhere else.
-# Revisit both once ingest has run over several weeks and novelty_momentum
-# actually varies.
 WEIGHTS = {
     "market_signal_strength": 0.30,
     "source_diversity": 0.20,
@@ -49,16 +55,11 @@ WEIGHTS = {
     "strategic_relevance": 0.15,
 }
 
-# Calibrated 2026-08-17 against real volumes (calibrate_caps.py): 106-128
-# signals and 28-47 distinct sources per vertical, once untagged signals are
-# folded in via get_signals_for_vertical(). The old defaults (20 / 8) were
-# so far below real volume that every vertical maxed out at 10/10 on both --
-# these leave headroom for the dataset to keep growing while still
-# differentiating verticals today. Re-run calibrate_caps.py and adjust again
-# once ingest volume changes meaningfully (e.g. new verticals added).
-MARKET_SIGNAL_CAP = 150     # signal count that maps to a 10/10 market_signal_strength
-SOURCE_DIVERSITY_CAP = 50   # distinct domains that maps to a 10/10 source_diversity
+MARKET_SIGNAL_CAP = 350
+SOURCE_DIVERSITY_CAP = 150
 
+
+# ---------- Deterministic sub-scores (no LLM, no black box) ----------
 
 def market_signal_strength(signals) -> float:
     """0-10: how visible the topic is, based on raw signal volume."""
@@ -71,92 +72,34 @@ def source_diversity(signals) -> float:
     return min(10.0, (len(distinct_sources) / SOURCE_DIVERSITY_CAP) * 10)
 
 
-# Novelty: a signal older than this contributes ~0 novelty. 90 days, not 1
-# year -- with the current no-key/free sources, GDELT's rolling window caps
-# around ~3 months and RSS feeds (Google News, vendor blogs, HN) have no
-# historical backfill at all, only "now". Only arXiv, Semantic Scholar and
-# TED carry real deep-past dates. A 1-year window would need paid historical
-# news APIs and would also flatten novelty (almost everything would look
-# equally "not new"). Revisit with the team if that tradeoff changes.
-# Momentum: need at least this many days of spread across signals before
-# splitting into a recent/older window means anything -- below this, momentum
-# is neutral (5.0) rather than a number computed on noise.
-NOVELTY_WINDOW_DAYS = 90
-MOMENTUM_MIN_SPAN_DAYS = 7
-
-
-def _parse_signal_date(signal):
-    """
-    Best-effort real-world date for a signal: prefer published_date (when the
-    thing actually happened) over collected_at (when ingest.py happened to
-    run) -- novelty should reflect how fresh the news itself is, not our
-    scrape schedule. Falls back to collected_at since published_date's format
-    varies across the 9 sources (RFC 822 RSS, ISO from arXiv/Semantic
-    Scholar/TED, GDELT's compact seendate) and is sometimes missing entirely.
-    Returns a tz-aware datetime, or None if nothing parseable was found.
-    """
-    for raw in (signal["published_date"], signal["collected_at"]):
-        if not raw:
-            continue
-        raw = raw.strip()
-        dt = None
-        try:
-            dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
-        except ValueError:
-            pass
-        if dt is None:
-            try:
-                dt = parsedate_to_datetime(raw)  # RFC 822, e.g. Google News / vendor RSS
-            except (ValueError, TypeError):
-                pass
-        if dt is None:
-            try:
-                dt = datetime.strptime(raw, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)  # GDELT seendate
-            except ValueError:
-                pass
-        if dt is not None:
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
-            return dt
-    return None
-
-
 def novelty_momentum(signals) -> float:
-    """
-    0-10, average of two sub-components (per brief section 5):
-      - novelty: how fresh the signals are on average (younger avg age = higher)
-      - momentum: share of signals falling in the more recent half of the
-        observed date span vs. the older half (more weighted to "now" = higher)
-    Both need real date spread to mean anything -- with everything ingested in
-    one short window (see README known limitations), momentum stays neutral
-    (5.0) until MOMENTUM_MIN_SPAN_DAYS of spread actually exists.
-    """
+    """0-10: naive proxy = share of signals collected in the most recent
+    third of the observed window. Only meaningful once ingest has been
+    running over weeks, not a single short window."""
     if not signals:
         return 0.0
+    dates = sorted(s["collected_at"] for s in signals if s["collected_at"])
+    if len(dates) < 3:
+        return 5.0
+    third = max(1, len(dates) // 3)
+    recent_share = third / len(dates)
+    return round(recent_share * 10, 2)
 
-    now = datetime.now(timezone.utc)
-    ages_days = []
-    for s in signals:
-        dt = _parse_signal_date(s)
-        if dt is not None:
-            ages_days.append((now - dt).total_seconds() / 86400)
 
-    if not ages_days:
-        return 5.0  # no parseable dates at all -- neutral default, not a real judgment
+URGENT_SIGNAL_TYPES = {"regulation", "buying_signal"}
 
-    avg_age = sum(ages_days) / len(ages_days)
-    novelty_score = max(0.0, min(10.0, 10 - (avg_age / NOVELTY_WINDOW_DAYS) * 10))
 
-    span_days = max(ages_days) - min(ages_days) if len(ages_days) > 1 else 0
-    if len(ages_days) < 3 or span_days < MOMENTUM_MIN_SPAN_DAYS:
-        momentum_score = 5.0  # not enough time-series spread yet -- neutral, not computed on noise
-    else:
-        midpoint_age = span_days / 2  # smaller age = more recent
-        recent_count = sum(1 for a in ages_days if a <= midpoint_age)
-        momentum_score = round(10 * recent_count / len(ages_days), 2)
+def urgency_score(signals) -> float:
+    """0-10, deterministic: +2 per regulation/buying_signal signal, capped
+    at 10. Answers 'is there a real deadline here', separate from
+    novelty_momentum which just measures 'is coverage increasing'."""
+    if not signals:
+        return 0.0
+    urgent_count = sum(1 for s in signals if s["signal_type"] in URGENT_SIGNAL_TYPES)
+    return min(10.0, urgent_count * 2.0)
 
-    return round((novelty_score + momentum_score) / 2, 2)
 
+# ---------- LLM-judged sub-scores ----------
 
 EVIDENCE_QUALITY_SYSTEM_PROMPT = """You are scoring the credibility and relevance of
 market signals for a B2B innovation radar. You must respond with ONLY a JSON object,
@@ -171,6 +114,7 @@ domain like "Cloud" or "Security", but a specific existing API/product.
 
 Here is the real Orange Business API catalog to check against:
 {asset_catalog}
+{analyst_recognition}
 
 Respond with ONLY a JSON object, no preamble, no markdown fences:
 {{"score": <0-10 number>, "justification": "<one sentence citing the specific matching Orange Business asset by name, or explaining why none match>"}}.
@@ -179,65 +123,13 @@ Score 10 = directly extends a specific asset above with clear enterprise value (
 Score 5 = broadly fits an Orange Business domain but no specific asset matches well.
 Score 0 = unrelated to anything Orange Business currently sells."""
 
-
-def _format_asset_catalog():
-    return "\n".join(f"- {a['name']} ({a['category']})" for a in ORANGE_BUSINESS_ASSETS)
-
-
-def llm_evidence_quality(signals) -> tuple:
-    """
-    0-10 + justification, scored by the LLM from the signal titles/summaries.
-    Returns (score, justification). Falls back to a neutral score if the
-    LLM call or JSON parsing fails, so a flaky call never crashes scoring.
-    """
-    if not signals:
-        return 0.0, "No signals collected yet for this vertical."
-
-    titles = "\n".join(f"- [{s['source_name']}] {s['title']}" for s in signals[:15])
-    prompt = f"Signals to evaluate:\n{titles}"
-
-    result = get_llm_json(prompt, system_prompt=EVIDENCE_QUALITY_SYSTEM_PROMPT)
-    if not result or "score" not in result:
-        return 5.0, "LLM scoring unavailable -- neutral default used."
-    return float(result["score"]), result.get("justification", "")
-
-
-def llm_strategic_relevance(vertical, use_case, technology, signals) -> tuple:
-    """
-    0-10 + justification: fit against Orange Business's REAL sellable API
-    catalog (config.ORANGE_BUSINESS_ASSETS), not a vague domain guess.
-    Returns (score, justification).
-    """
-    prompt = (
-        f"Opportunity space: {vertical} x {use_case} x {technology}\n"
-        f"Number of supporting signals: {len(signals)}"
-    )
-    system_prompt = STRATEGIC_RELEVANCE_SYSTEM_PROMPT.format(asset_catalog=_format_asset_catalog())
-    result = get_llm_json(prompt, system_prompt=system_prompt)
-    if not result or "score" not in result:
-        return 5.0, "LLM scoring unavailable -- neutral default used."
-    return float(result["score"]), result.get("justification", "")
-
-
 RIGHT_TO_WIN_SYSTEM_PROMPT = """You are classifying an Orange Business opportunity space
 on "portfolio distance": how close it is to something Orange Business can ALREADY sell,
 using this real API/product catalog:
 {asset_catalog}
-
-Independent third-party validation for some of these assets (cite this by name if it
-strengthens the case for an asset you match -- it is stronger evidence than the asset
-existing alone, since it's an external analyst confirming market-leading quality, not
-just Orange's own claim):
 {analyst_recognition}
-
-Verified named customers of Orange Business in THIS SAME vertical (cite by name if
-relevant -- an actual delivered customer is stronger evidence than a matching asset
-alone, since it proves Orange has already sold and delivered something comparable):
-{customer_references}
-
-Orange Business scale/capability facts (cite only if directly relevant to the
-classification, e.g. delivery capacity or security posture):
 {capability_stats}
+{customer_references}
 
 Classify using exactly one of these levels:
 L0 = Direct offer: an existing asset above addresses this as-is.
@@ -251,38 +143,89 @@ Respond with ONLY a JSON object, no preamble, no markdown fences:
   "matched_assets": ["<asset name(s) from the catalog that apply, empty list if L3/L4>"],
   "justification": "<one sentence explaining the classification>"}}"""
 
+ENRICHMENT_SYSTEM_PROMPT = """You are enriching a B2B innovation opportunity space with
+the metadata a sales/presales team needs to act on it.
+
+Valid roles (pick the ONE Orange Business team that should own this opportunity): {roles}
+Valid buyer personas (pick the ONE most relevant contact on the customer side): {buyer_personas}
+Valid geographies (pick 1-3 most relevant): {geos}
+Valid horizons (pick exactly one): {horizons}
+  Now = sellable this quarter with what Orange Business already has
+  Next = sellable in 6-12 months, needs some development or partnership
+  Later = exploratory, research-stage, no clear delivery path yet
+Valid business domains (pick the ONE that best fits, exact match required): {domains}
+
+Respond with ONLY a JSON object, no preamble, no markdown fences:
+{{"role": "<one from the roles list>", "buyer_persona": "<one from the buyer personas list>",
+  "geography": ["<1-3 from the list>"], "horizon": "Now"|"Next"|"Later",
+  "domain": "<exact domain name from the list>",
+  "next_action": "<one concrete sentence: what should the reader (sales/presales/strategist) do next>"}}"""
+
+
+def _format_asset_catalog():
+    return "\n".join(f"- {a['name']} ({a['category']})" for a in ORANGE_BUSINESS_ASSETS)
+
 
 def _format_analyst_recognition():
     if not ANALYST_RECOGNITION:
-        return "(none on file)"
-    return "\n".join(
-        f"- {a['source']}: {a['finding']} (relevant to: {', '.join(a['relevant_assets'])})"
-        for a in ANALYST_RECOGNITION
-    )
-
-
-def _format_customer_references(vertical):
-    matches = [c for c in CUSTOMER_REFERENCES if c["vertical"] == vertical]
-    if not matches:
-        return "(none on file for this vertical)"
-    return "\n".join(f"- {c['customer']}: {c['detail']}" for c in matches)
+        return ""
+    lines = "\n".join(f"- {a['fact']} (source: {a['source']})" for a in ANALYST_RECOGNITION)
+    return f"\nExternal validation (use to strengthen justifications where relevant):\n{lines}"
 
 
 def _format_capability_stats():
-    return "\n".join(f"- {s}" for s in CAPABILITY_STATS)
+    if not CAPABILITY_STATS:
+        return ""
+    lines = "\n".join(f"- {c['stat']} (source: {c['source']})" for c in CAPABILITY_STATS)
+    return (f"\nOrange Business scale/capability facts (cite only if directly relevant, "
+            f"e.g. delivery capacity or security posture):\n{lines}")
+
+
+def _format_customer_references(vertical):
+    matches = [c for c in CUSTOMER_REFERENCES if c.get("vertical") == vertical]
+    if not matches:
+        return ""
+    lines = "\n".join(f"- {c['customer']} (source: {c['source']})" for c in matches)
+    return (f"\nVerified named customers of Orange Business in THIS vertical (cite if relevant -- "
+            f"an actual delivered customer is stronger evidence than a matching asset alone):\n{lines}")
+
+
+def llm_evidence_quality(signals) -> tuple:
+    """Returns (score, justification). Falls back to a neutral score if the
+    LLM call or JSON parsing fails, so a flaky call never crashes scoring."""
+    if not signals:
+        return 0.0, "No signals collected yet for this vertical."
+    titles = "\n".join(f"- [{s['source_name']}] {s['title']}" for s in signals[:15])
+    prompt = f"Signals to evaluate:\n{titles}"
+    result = get_llm_json(prompt, system_prompt=EVIDENCE_QUALITY_SYSTEM_PROMPT)
+    if not result or "score" not in result:
+        return 5.0, "LLM scoring unavailable -- neutral default used."
+    return float(result["score"]), result.get("justification", "")
+
+
+def llm_strategic_relevance(vertical, use_case, technology, signals) -> tuple:
+    """Returns (score, justification), grounded in the real API catalog + analyst facts."""
+    prompt = (
+        f"Opportunity space: {vertical} x {use_case} x {technology}\n"
+        f"Number of supporting signals: {len(signals)}"
+    )
+    system_prompt = STRATEGIC_RELEVANCE_SYSTEM_PROMPT.format(
+        asset_catalog=_format_asset_catalog(), analyst_recognition=_format_analyst_recognition(),
+    )
+    result = get_llm_json(prompt, system_prompt=system_prompt)
+    if not result or "score" not in result:
+        return 5.0, "LLM scoring unavailable -- neutral default used."
+    return float(result["score"]), result.get("justification", "")
 
 
 def llm_right_to_win(vertical, use_case, technology):
-    """
-    Separate from attractiveness. Answers "can Orange sell this today", not
-    "is the market hot". Returns (portfolio_distance, score, matched_assets_str, justification).
-    """
+    """Returns (portfolio_distance, score, matched_assets_str, justification)."""
     prompt = f"Opportunity space: {vertical} x {use_case} x {technology}"
     system_prompt = RIGHT_TO_WIN_SYSTEM_PROMPT.format(
         asset_catalog=_format_asset_catalog(),
         analyst_recognition=_format_analyst_recognition(),
-        customer_references=_format_customer_references(vertical),
         capability_stats=_format_capability_stats(),
+        customer_references=_format_customer_references(vertical),
     )
     result = get_llm_json(prompt, system_prompt=system_prompt)
     if not result or "portfolio_distance" not in result:
@@ -290,20 +233,55 @@ def llm_right_to_win(vertical, use_case, technology):
     distance = result.get("portfolio_distance", "L4")
     score = float(result.get("right_to_win_score", 0))
     assets = ", ".join(result.get("matched_assets", []))
-    justification = result.get("justification", "")
-    return distance, score, assets, justification
+    return distance, score, assets, result.get("justification", "")
 
+
+def llm_enrich(vertical, use_case, technology, signals):
+    """Returns a dict: role, buyer_persona, geography (comma-joined str),
+    horizon, domain, next_action. Falls back to conservative defaults (Later
+    horizon, no role/persona/domain claimed) if the LLM is unreachable --
+    never crashes."""
+    sample_titles = "\n".join(f"- {s['title']}" for s in signals[:10])
+    prompt = (
+        f"Opportunity space: {vertical} x {use_case} x {technology}\n"
+        f"Sample signals:\n{sample_titles}"
+    )
+    domain_names = [d["name"] for d in DOMAINS_TAXONOMY]
+    system_prompt = ENRICHMENT_SYSTEM_PROMPT.format(
+        roles=", ".join(ROLES), buyer_personas=", ".join(BUYER_PERSONAS), geos=", ".join(GEOS),
+        horizons=", ".join(HORIZONS), domains=", ".join(domain_names),
+    )
+    result = get_llm_json(prompt, system_prompt=system_prompt)
+    if not result or "role" not in result:
+        return {
+            "role": None, "buyer_persona": None, "geography": None, "horizon": "Later", "domain": None,
+            "next_action": "LLM enrichment unavailable -- review manually before showing to Sales.",
+        }
+    geography = result.get("geography", [])
+    domain = result.get("domain")
+    if domain not in domain_names:  # guard against the LLM inventing a domain name
+        domain = None
+    return {
+        "role": result.get("role"),
+        "buyer_persona": result.get("buyer_persona"),
+        "geography": ", ".join(geography) if isinstance(geography, list) else geography,
+        "horizon": result.get("horizon", "Later"),
+        "domain": domain,
+        "next_action": result.get("next_action", ""),
+    }
+
+
+# ---------- Orchestration ----------
 
 def score_opportunity_space(conn, opportunity_space_row):
+    """Computes and stores attractiveness (with urgency) for one OS.
+    Returns (sub_scores, total, urgency)."""
     vertical = opportunity_space_row["vertical"]
     signals = get_signals_for_vertical(conn, vertical)
 
     evidence_score, evidence_justification = llm_evidence_quality(signals)
     relevance_score, relevance_justification = llm_strategic_relevance(
-        vertical,
-        opportunity_space_row["use_case"],
-        opportunity_space_row["technology"],
-        signals,
+        vertical, opportunity_space_row["use_case"], opportunity_space_row["technology"], signals,
     )
 
     sub_scores = {
@@ -313,38 +291,40 @@ def score_opportunity_space(conn, opportunity_space_row):
         "novelty_momentum": novelty_momentum(signals),
         "strategic_relevance": relevance_score,
     }
+    urgency = urgency_score(signals)
 
     total = sum(sub_scores[k] * WEIGHTS[k] for k in WEIGHTS)
     insert_score(
         conn, opportunity_space_row["id"], sub_scores, round(total, 2),
         evidence_quality_justification=evidence_justification,
         strategic_relevance_justification=relevance_justification,
+        urgency_score=urgency,
     )
-    return sub_scores, round(total, 2)
+    return sub_scores, round(total, 2), urgency
 
 
-def score_all_opportunity_spaces(run_id=None):
-    """
-    Scores every opportunity space in one run. CHANGED 2026-08-19: since
-    opportunity_spaces now keeps every run's history (see db.py), this no
-    longer does a bare `SELECT * FROM opportunity_spaces` -- that would
-    re-score every run ever created, every time you run this, appending
-    duplicate score rows onto old runs for no reason. Defaults to the
-    LATEST run (same behavior as before this change, from the caller's
-    point of view); pass an explicit run_id to (re-)score an older run
-    instead, e.g. `score_all_opportunity_spaces(run_id="2026-08-10T09:00:00+00:00")`.
-    """
+def score_all_opportunity_spaces(force=False):
+    """Scores + enriches opportunity spaces, one pass.
+
+    force=False (default): only opportunity spaces with no score yet
+    (get_unscored_opportunity_spaces) -- safe to re-run after every
+    `radar_cli.py promote` without burning LLM quota re-scoring OS that
+    haven't changed.
+    force=True: rescore + re-enrich every opportunity space regardless."""
     conn = get_connection()
-    if run_id is None:
-        run_id = get_latest_run_id(conn)
-    if run_id is None:
-        print("No opportunity spaces found -- run create_opportunity_spaces.py first.")
+    spaces = get_all_opportunity_spaces(conn) if force else get_unscored_opportunity_spaces(conn)
+
+    if not spaces:
+        print("Nothing to score -- every opportunity space already has a score. "
+              "Use --force to rescore everything anyway.")
         conn.close()
         return
-    print(f"Scoring run: {run_id}")
-    spaces = get_opportunity_spaces(conn, run_id=run_id)
+
+    print(f"Scoring {len(spaces)} opportunity space(s)"
+          f"{' (forced rescore of everything)' if force else ' (unscored only)'}\n")
+
     for space in spaces:
-        sub_scores, total = score_opportunity_space(conn, space)
+        sub_scores, total, urgency = score_opportunity_space(conn, space)
 
         distance, rtw_score, assets, rtw_justification = llm_right_to_win(
             space["vertical"], space["use_case"], space["technology"]
@@ -353,10 +333,30 @@ def score_all_opportunity_spaces(run_id=None):
 
         print(f"{space['label']} ({space['vertical']} x {space['use_case']} x {space['technology']})")
         print(f"  Attractiveness: {total}/10  {sub_scores}")
+        print(f"  Urgency:        {urgency}/10")
         print(f"  Right-to-win:   {rtw_score}/10  [{distance}] assets: {assets or 'none'}")
         print(f"  -> {rtw_justification}")
+
+        if space["domain"] and not force:
+            print("  Enrichment: skipped (already enriched -- use --force to redo)")
+        else:
+            vertical = space["vertical"]
+            signals = get_signals_for_vertical(conn, vertical)
+            enrichment = llm_enrich(vertical, space["use_case"], space["technology"], signals)
+            update_opportunity_space_enrichment(
+                conn, space["id"],
+                role=enrichment["role"], buyer_persona=enrichment["buyer_persona"],
+                geography=enrichment["geography"],
+                horizon=enrichment["horizon"], domain=enrichment["domain"],
+                next_action=enrichment["next_action"],
+            )
+            print(f"  Enrichment: role={enrichment['role']}  buyer_persona={enrichment['buyer_persona']}  "
+                  f"geography={enrichment['geography']}  horizon={enrichment['horizon']}  domain={enrichment['domain']}")
+            print(f"  Next action: {enrichment['next_action']}")
+        print()
+
     conn.close()
 
 
 if __name__ == "__main__":
-    score_all_opportunity_spaces()
+    score_all_opportunity_spaces(force="--force" in sys.argv)

@@ -1,175 +1,58 @@
-'''
+"""
 signals_discovery.py
-====================
+=====================
 
-ingest.py    →  analyze.py   →  signals_discovery.py  →  extend_taxonomy.py   →  scoring.py   →  dashboard.py
-                                --------------------
+ingest.py  ->  analyze.py  ->  (signals_discovery, in-memory)  ->  radar_cli.py promote  ->  scoring.py
 
-This module is responsible for processing emerging terms that were detected by analyze.py
-and saved to emerging_themes.json. 
-It reads these emerging terms, checks if they are already in the watchlist, puts them into the watchlist table
-if they are not already, where they can be tracked for frequency over time, and adds or updates them in the database.
-'''
+Tracks how often a VALID Vertical x Use Case x Technology theme (i.e.
+already matching the closed taxonomy, not a watchlist_terms candidate)
+recurs across separate analyze.py runs. Once a theme has recurred
+config.RECURRING_THEME_PROMOTION_THRESHOLD times, `radar_cli.py promote`
+turns it into a real, registered opportunity space -- this is what lets the
+pipeline grow past a fixed, hand-picked list of opportunity spaces (see
+config.CANDIDATES) as more signals get ingested over time.
 
-import json
-import sqlite3
-from datetime import datetime
+Run via radar_cli.py:
+    python radar_cli.py promote
+"""
 
-
-# Database set-up (if watchlist table doesn't already exist)
-def init_watchlist_table(conn):
-    """Create the watchlist table if it doesn't exist."""
-    conn.execute("""
-        CREATE TABLE IF NOT EXISTS watchlist (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            vertical TEXT NOT NULL,
-            emerging_use_case TEXT,
-            emerging_technology TEXT,
-            rationale TEXT,
-            supporting_signal_count INTEGER DEFAULT 0,
-            first_seen TEXT NOT NULL,
-            last_seen TEXT NOT NULL,
-            frequency INTEGER DEFAULT 1,
-            run_id TEXT,
-            UNIQUE(vertical, emerging_use_case, emerging_technology)
-        )
-    """)
-    conn.commit()
+from pipeline.db import get_connection, add_or_update_recurring_theme
 
 
-
-# `analyze.py` saves emerging terms to `emerging_themes.json`;
-# we have to read this file
-
-def load_emerging_terms():
-    """Loads emerging terms from emerging_themes.json."""
-
-    try:
-        with open("emerging_themes.json", "r") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        print("[ERROR] emerging_themes.json not found — run analyze.py first")
-        return []
-    except json.JSONDecodeError:
-        print("[ERROR] emerging_themes.json is malformed — check the file")
-        return []
-
-
-# For each emerging term, you need to check if it's already in the watchlist table. 
-# If it exists, we update its frequency. If not, we insert it.
-
-def term_exists(conn, vertical, use_case, technology):
-    """Checks if a term already exists in the watchlist."""
-
-    row = conn.execute(
-        """SELECT id, frequency FROM watchlist 
-           WHERE vertical = ? 
-           AND (emerging_use_case = ? OR (emerging_use_case IS NULL AND ? IS NULL))
-           AND (emerging_technology = ? OR (emerging_technology IS NULL AND ? IS NULL))""",
-        (vertical, use_case, use_case, technology, technology)
-    ).fetchone()
-    return row
-
-
-# If term exists: increments frequency and updates `last_seen` in watchlist table
-# If term doesn't exist: inserts it with frequency = 1.
-
-def add_to_watchlist(conn, term, run_id=None):
-    """Adds an emerging term to the watchlist or update its frequency."""
-
-    vertical = term.get("vertical")
-    use_case = term.get("emerging_use_case")
-    technology = term.get("emerging_technology")
-    rationale = term.get("rationale", "")
-    support_count = term.get("supporting_signal_count", 0)
-    
-    # Check if it already exists
-    existing = term_exists(conn, vertical, use_case, technology)
-    
-    now = datetime.now().isoformat()
-    
-    if existing:
-        # Update frequency and last_seen
-        conn.execute(
-            """UPDATE watchlist 
-               SET frequency = frequency + 1, 
-                   last_seen = ?,
-                   supporting_signal_count = ?
-               WHERE id = ?""",
-            (now, support_count, existing["id"])
-        )
-        conn.commit()
-        return "updated"
-    else:
-        # Insert new term
-        conn.execute(
-            """INSERT INTO watchlist 
-               (vertical, emerging_use_case, emerging_technology, 
-                rationale, supporting_signal_count, 
-                first_seen, last_seen, frequency, run_id)
-               VALUES (?, ?, ?, ?, ?, ?, ?, 1, ?)""",
-            (vertical, use_case, technology, rationale, 
-             support_count, now, now, run_id)
-        )
-        conn.commit()
-        return "inserted"
-
-
-def add_all_to_watchlist(conn, emerging_terms, run_id=None):
-    """Adds all emerging terms to the watchlist."""
-
-    added = 0
+def track_valid_themes(conn, vertical, themes, run_id=None):
+    """Upserts every valid theme extract_themes() found for one vertical
+    into recurring_themes, bumping frequency for anything seen before.
+    Returns (inserted_count, updated_count)."""
+    inserted = 0
     updated = 0
-    
-    for term in emerging_terms:
-        result = add_to_watchlist(conn, term, run_id)
+    for t in themes:
+        use_case = t.get("use_case")
+        technology = t.get("technology")
+        if not use_case or not technology:
+            continue  # malformed theme, nothing to track
+        result, _frequency = add_or_update_recurring_theme(
+            conn, vertical, use_case, technology,
+            rationale=t.get("rationale", ""),
+            supporting_signal_count=t.get("supporting_signal_count", 0),
+            run_id=run_id,
+        )
         if result == "inserted":
-            added += 1
-        elif result == "updated":
+            inserted += 1
+        else:
             updated += 1
-    
-    return added, updated
+    return inserted, updated
 
-
-# ============================================
-# MAIN FUNCTION
-# ============================================
-
-def run_discovery(run_id=None):
-    """
-    Main function: reads emerging_themes.json and updates the watchlist.
-    """
-    # 1. Connect to database
-    conn = sqlite3.connect("radar.db")
-    conn.row_factory = sqlite3.Row
-    
-    # 2. Create watchlist table if it doesn't exist
-    init_watchlist_table(conn)
-    
-    # 3. Load emerging terms from JSON
-    emerging_terms = load_emerging_terms()
-    if not emerging_terms:
-        print("No emerging terms to process.")
-        conn.close()
-        return
-    
-    # 4. Add/update each term
-    added, updated = add_all_to_watchlist(conn, emerging_terms, run_id)
-    
-    conn.close()
-    
-    print(f"[OK] Discovery complete: {added} new terms added, {updated} existing terms updated.")
-    print(f"   Total terms in watchlist: {added + updated}")
-
-
-# ============================================
-# SCRIPT ENTRY POINT
-# ============================================
 
 if __name__ == "__main__":
-    # Get the current run_id from the database (optional)
-    # from pipeline.db import get_latest_run_id
-    # run_id = get_latest_run_id()
-    run_id = None  # Or pass the current run_id
-    
-    run_discovery(run_id)
+    # Quick manual check: what's currently tracked, and what's promotable?
+    from pipeline.config import RECURRING_THEME_PROMOTION_THRESHOLD
+
+    conn = get_connection()
+    rows = conn.execute("SELECT * FROM recurring_themes ORDER BY frequency DESC").fetchall()
+    print(f"{len(rows)} recurring theme(s) tracked:\n")
+    for r in rows:
+        flag = " [PROMOTABLE]" if r["frequency"] >= RECURRING_THEME_PROMOTION_THRESHOLD and not r["promoted"] else ""
+        promoted_flag = " [already promoted]" if r["promoted"] else ""
+        print(f"  {r['vertical']} x {r['use_case']} x {r['technology']} "
+              f"-- seen {r['frequency']}x{flag}{promoted_flag}")
+    conn.close()
