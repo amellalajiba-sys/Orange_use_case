@@ -1,5 +1,5 @@
 # Innovation Radar — Opportunity Spaces Summary
-_Generated 2026-08-21 11:08 UTC_
+_Generated 2026-08-21 11:56 UTC_
 
 | OS | Attractiveness | Right-to-win | Distance |
 |---|---|---|---|
@@ -30,13 +30,13 @@ _Generated 2026-08-21 11:08 UTC_
 | OS025 | 4.08/10 | 0.0/10 | L4 |
 | OS026 | 4.08/10 | 0.0/10 | L4 |
 | OS027 | 4.04/10 | 0.0/10 | L4 |
-| OS028 | 7.02/10 | 0.0/10 | L4 |
+| OS028 | 8.47/10 | 8.0/10 | L1 |
 | OS029 | 7.99/10 | 6.0/10 | L3 |
 | OS030 | 7.09/10 | 5.0/10 | L3 |
 | OS031 | 7.54/10 | 6.0/10 | L2 |
 | OS032 | 8.02/10 | 7.0/10 | L1 |
 | OS033 | 8.54/10 | 8.0/10 | L1 |
-| OS034 | 8.24/10 | 0.0/10 | L4 |
+| OS034 | 7.99/10 | 6.0/10 | L3 |
 
 ## OS001 — Public Sector × Sovereign citizen data hosting × Sovereign cloud + GPU inference
 
@@ -658,16 +658,16 @@ _Generated 2026-08-21 11:08 UTC_
 
 ## OS028 — Public Sector × Digital Infrastructure × Cloud Data Platform
 
-**Attractiveness: 7.02/10**
+**Attractiveness: 8.47/10**
 - Market signal strength: 9.8
 - Source diversity: 8.733333333333333
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
+- Evidence quality: 9.0 — The signals come from a wide mix of credible sources—including major media, analyst firms, legal and policy experts, and industry news—covering EU sovereign cloud and data‑sovereignty topics directly relevant to B2B innovation, with only a few vendor‑centric press releases lowering the perfect score.
 - Novelty / momentum: 3.32
-- Strategic relevance: 5.0 — LLM scoring unavailable -- neutral default used.
+- Strategic relevance: 8.0 — The opportunity aligns with API Cloud Avenue (Cloud), extending Orange Business's cloud infrastructure offering for the public sector.
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: none
-- LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring).
+**Right-to-win: 8.0/10 [L1]**
+- Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API M2M for IoT Connect Express
+- Orange Business already offers cloud, SD‑WAN, and data/IoT APIs that can be bundled to meet a public‑sector cloud data platform, though no single packaged offering exists yet.
 
 **Grounding signals (8):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
@@ -794,16 +794,16 @@ _Generated 2026-08-21 11:08 UTC_
 
 ## OS034 — Manufacturing × Manufacturing Process Automation × Agentic AI
 
-**Attractiveness: 8.24/10**
-- Market signal strength: None
-- Source diversity: None
-- Evidence quality: None — None
-- Novelty / momentum: None
-- Strategic relevance: None — None
+**Attractiveness: 7.99/10**
+- Market signal strength: 10.0
+- Source diversity: 8.533333333333333
+- Evidence quality: 7.0 — The list mixes credible analyst and industry news sources with several vendor‑centric press releases, offering relevant but unevenly weighted signals on private 5G and industrial AI.
+- Novelty / momentum: 3.32
+- Strategic relevance: 8.0 — Extends API M2M for IoT Connect Express (Data, IA & IoT) by applying agentic AI to manufacturing process automation
 
-**Right-to-win: 0.0/10 [L4]**
-- Matched assets: restored from prior successful run -- re-score for full justification
-- Restored from a successful scoring pass minutes before a rate-limit-interrupted --force run overwrote it with a neutral default. Total/right-to-win/distance are real; sub-score breakdown and asset justification need a real re-score once quota allows.
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco
+- Orange Business can leverage its IoT and Cloud APIs to gather and process manufacturing data, but it lacks a dedicated agentic AI automation platform, requiring an adjacent capability to be built.
 
 **Grounding signals (8):**
 - [NVIDIA Blog] NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI
