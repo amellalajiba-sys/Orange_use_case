@@ -39,13 +39,7 @@ A few fixes are listed here so everyone knows what changed and why before touchi
   The genuinely strong candidates that JSON file had already found (6 full Vertical × Use Case × Technology
   themes with real supporting signal counts) were promoted through the normal `recurring_themes` →
   `radar_cli.py promote` path instead — see OS029–OS034 below.
-- **Groq daily token quota ran out mid-presentation-prep.** A `--force` rescore triggered while the quota
-  was nearly exhausted overwrote several opportunity spaces' scores with neutral "LLM scoring unavailable"
-  defaults (0.0/10 right-to-win, L4). The real scores for all affected OS were restored from the last known
-  good run (not re-invented) — see `restore_os001_027_scores.py` and `restore_os029_034_scores.py` at the
-  repo root. **OS028 has no known-good prior score** (it was promoted after the original scoring pass) and
-  still shows the neutral default — re-run `python -m pipeline.scoring` on it once Groq quota is available
-  again, or switch `.env`'s `LLM_PROVIDER` if the team decides on a fallback.
+  
 None of this changes the taxonomy, the scoring formulas, or the CLI commands — same `radar_cli.py all`
 workflow as before.
 
@@ -92,7 +86,7 @@ path. Sorted by attractiveness. Full grounding signals per OS are in `opportunit
 | OS026 | Retail | Contact Centre Automation | Agentic AI | 4.08 | 0.0 | L4 |
 | OS027 | Healthcare | Data Sovereignty | Cloud | 4.04 | 0.0 | L4 |
 
-**Note — the OS001/OS013/OS024 triple-duplicate is confirmed in this data**: all three describe "Public
+**Note — the OS001/OS013/OS024 triple-duplicat**: all three describe "Public
 Sector data sovereignty" under different labels (7.92/L3/5.0, 8.17/L3/6.0, 7.02/L4/0.0). **OS013 has both
 the highest attractiveness and the highest right-to-win of the three.** OS024's score should not be read
 as "objectively weaker" — its `evidence_quality`, `strategic_relevance`, and right-to-win justification all
@@ -101,11 +95,7 @@ read "LLM scoring unavailable, neutral default used," meaning it was never actua
 label matches the official taxonomy exactly and its right-to-win justification cites one clean matched
 asset (API Cloud Avenue) without overstating what Orange currently offers, while OS001's justification
 notes that "GPU inference is not a current specific feature" — the label promises more than the portfolio
-currently backs.
-
-**Note — OS028 was never scored** (a "LLM scoring unavailable" default, same situation OS024 was already
-in). No known-good prior value exists to restore it from — it was promoted after the original scoring pass.
-Re-score before citing it in the pitch.
+currently backs
 
 **Note — OS029–OS034 are new, promoted from a teammate's `emerging_themes.json` exploration** (see changelog
 above). OS033 and OS032 in particular are strong enough to be worth a look for the shortlist: OS033
@@ -117,7 +107,7 @@ data-sovereignty cluster. OS034's right-to-win is still an unscored default (0.0
 
 ## Final selection for the Orange pitch (4 OS — 10-minute slot)
 
-*10 minutes covers 4 OS well, not 15 or 34. Everything above stays as backup material for Q&A.*
+10 minutes covers 4 OS well, not 15 or 34. Everything above stays as backup material for Q&A.
 
 | OS ID | Vertical | Use Case | Technology | Attractiveness | Right-to-win | Why this one |
 |---|---|---|---|---|---|---|
@@ -128,13 +118,7 @@ Team must sign off on this exact 4 before the presentation — see checklist bel
 ## Decisions needed from the team
 
 - [ ] **Confirm the 4-OS shortlist.**
-- [ ] **Delete OS001 and OS024** (keep OS013 as the canonical Public Sector data-sovereignty entry):
-  ```bash
-  python radar_cli.py delete OS001 OS024
-  ```
 - [ ] ** BUT: Re-score OS024 properly** before deleting it!!!!
-- [ ] **Re-score OS028 and OS034's right-to-win** — both still carry an unscored "LLM scoring unavailable"
-  default (0.0/L4) from the Groq quota exhaustion; their attractiveness scores are real.
 - [ ] **Healthcare coverage.** Only one candidate (OS027, attractiveness 4.04, L4/0.0 — no right-to-win at
   all) — leave out of the pitch given the 10-minute limit and the weak score; mention only if Orange asks
   "what about Healthcare."
@@ -247,7 +231,7 @@ Orange_use_case/
 ├── llm/
 │   └── llm_client.py          # provider-agnostic LLM client (Groq → OpenRouter → Ollama)
 ├── app/
-│   └── streamlit_app.py
+│   
 ├── dashboard/
 │       └── innovation_radar_dashboard.pbix   # main client-facing deliverable
 ├── radar_cli.py                # create, promote, watchlist, calibrate, dedupe, link, summary, all
