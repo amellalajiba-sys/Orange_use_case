@@ -132,7 +132,7 @@ def generate_proposal(conn, term, run_id=None):
 # Then we loop through all terms that reached the threshold and generate proposals for each
 # (uses get_terms_reaching_threshold() and generate_proposal() functions)
 
-def generate_all_proposals(conn, threshold=5, run_id=None):
+def generate_all_proposals(conn, threshold=3, run_id=None):
     """Generate proposals for all terms that have reached the threshold."""
 
     terms = get_terms_reaching_threshold(conn, threshold)
