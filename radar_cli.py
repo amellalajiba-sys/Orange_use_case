@@ -50,7 +50,9 @@ from pipeline.db import (
 )
 from pipeline.config import CANDIDATES, RECURRING_THEME_PROMOTION_THRESHOLD
 from pipeline.analyze import extract_themes
-from pipeline.signals_discovery import track_valid_themes
+from pipeline.theme_promotion import track_valid_themes
+# import extend_taxonomy.py module for including taxonomy extension logic in the pipeline
+import pipeline.extend_taxonomy as ext
 
 
 # ---------- create ----------
@@ -170,6 +172,12 @@ def cmd_watchlist(conn):
             else "[accumulating]"
         )
         print(f"  {r['vertical']} x {r['use_case']} x {r['technology']} -- seen {r['frequency']}x {status}")
+
+
+# ---------- proposal review ---------- 
+
+def cmd_review(conn):
+    ext.run_review(conn)
 
 
 # ---------- calibrate ----------
@@ -424,6 +432,7 @@ def cmd_all(force=False):
         [sys.executable, "-m", "pipeline.db"],
         [sys.executable, "-m", "pipeline.ingest"],
         [sys.executable, "-m", "pipeline.analyze"],
+        [sys.executable, "-m", "pipeline.extend_taxonomy"], # <-- extend_taxonomy included
         [sys.executable, __file__, "create"],
         [sys.executable, __file__, "promote"],
         [sys.executable, "-m", "pipeline.scoring"] + (["--force"] if force else []),
@@ -458,6 +467,7 @@ def main():
     sub.add_parser("scores")
     sub.add_parser("summary")
     sub.add_parser("all").add_argument("--force", action="store_true")
+    sub.add_parser("review")
 
     args = parser.parse_args()
 
@@ -487,6 +497,8 @@ def main():
         cmd_scores(conn)
     elif args.command == "summary":
         cmd_summary(conn)
+    elif args.command == "review":
+        cmd_review(conn)
 
     conn.close()
 

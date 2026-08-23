@@ -9,6 +9,43 @@ meant editing 6 places and it was easy to miss one.
 """
 
 import os
+import json
+
+
+# =============================================
+# TAXONOMY EXTENSIONS LOGIC
+# =============================================
+
+# Path for taxonomy extensions (in root folder)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TAXONOMY_EXTENSIONS_PATH = os.path.join(BASE_DIR, "taxonomy_extensions.json")
+
+def _init_taxonomy_extensions():
+    """If the file does not exist, it creates it with an empty list."""
+    if not os.path.exists(TAXONOMY_EXTENSIONS_PATH):
+        with open(TAXONOMY_EXTENSIONS_PATH, "w") as f:
+            json.dump([], f)
+
+# Call function at the start so that file exists
+_init_taxonomy_extensions()
+
+def _load_taxonomy_extensions():
+    """Loads the approved terms from the JSON file and returns them as two lists: use_cases and technologies."""
+    if os.path.exists(TAXONOMY_EXTENSIONS_PATH):
+        with open(TAXONOMY_EXTENSIONS_PATH, "r") as f:
+            data = json.load(f)
+        use_cases = [item["term"] for item in data if item["category"] == "use_case"]
+        technologies = [item["term"] for item in data if item["category"] == "technology"]
+        return use_cases, technologies
+    return [], []
+
+# Extensions loading
+_EXT_USE_CASES, _EXT_TECHNOLOGIES = _load_taxonomy_extensions()
+
+
+# =============================================
+# Rest of config.py as before
+# =============================================
 
 DB_PATH = "radar.db"
 
@@ -189,22 +226,24 @@ DOMAINS_TAXONOMY = [
     {"code": "ex", "name": "Employee Experience"},
 ]
 
-USE_CASES_TAXONOMY = [
+# Avoid duplicates
+USE_CASES_TAXONOMY = list(dict.fromkeys([
     "Energy Optimization", "Demand Forecasting", "IT Operations Automation",
     "Imaging Analytics", "Network Modernization & SD-WAN", "Cloud Infrastructure Modernization",
     "Cyber Defense & Zero Trust", "Customer Experience", "Employee Experience",
     "Operational Excellence", "Digital Infrastructure", "Data Sovereignty", "Cybersecurity",
     "Contact Centre Automation", "Clinical Workflow Automation", "Predictive Maintenance",
     "Supply Chain Visibility", "Grid Optimization",
-]
+] + _EXT_USE_CASES))
 
-TECHNOLOGIES_TAXONOMY = [
+# Avoid duplicates
+TECHNOLOGIES_TAXONOMY = list(dict.fromkeys([
     "Cloud Data Platform", "IoT Platforms", "Computer Vision", "Machine Learning",
     "Generative AI", "Network & SD-WAN", "Cloud", "Cybersecurity", "5G", "IoT", "AI, Data, Cloud",
     "Agentic AI", "Edge Computing",
     "Digital Twins", "Quantum-safe Cryptography",  # added 2026-08-21: promoted from
     # emerging_themes.json, each backed by 2+ recurring signals across Manufacturing/Public Sector
-]
+] + _EXT_TECHNOLOGIES))
 
 # Signal type vocabulary (must match the brief's taxonomy)
 SIGNAL_TYPES = [
