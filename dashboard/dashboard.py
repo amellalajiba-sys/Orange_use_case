@@ -741,7 +741,7 @@ else:
 
 
 # ============================================================
-# 17. COMPLETE BOARD
+# 17. COMPLETE DASHBOARD VIEW
 # ============================================================
 
 st.subheader("📋 All Opportunity Spaces")
