@@ -740,38 +740,6 @@ else:
                     )
 
 
-# ============================================================
-# 17. COMPLETE DASHBOARD VIEW
-# ============================================================
-
-st.subheader("📋 All Opportunity Spaces")
-
-st.caption(
-    "Filtered view of all Opportunity Spaces currently available."
-)
-
-
-display_columns = [
-    "ID",
-    "Vertical",
-    "Use Case",
-    "Technology",
-    "Attractiveness",
-    "Right to Win",
-    "Distance",
-]
-
-
-st.dataframe(
-    filtered_df[display_columns]
-    .sort_values(
-        "Attractiveness",
-        ascending=False,
-    ),
-    use_container_width=True,
-    hide_index=True,
-)
-
 
 # ============================================================
 # 18. FOOTER
