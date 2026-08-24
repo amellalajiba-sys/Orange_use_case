@@ -283,6 +283,10 @@ URGENCY_MIN_SCALING_POINT = 1.0
 # scaling point instead of relying on this default.
 URGENCY_CAP = 6.0
 
+# Sieg 24/8 -- weight of the novelty_momentum() contribution folded into
+# urgency (see _urgency_weighted() below for the full reasoning).
+NOVELTY_URGENCY_WEIGHT = 2.0
+
 
 def _urgency_weighted(signals) -> float:
     """The raw, un-normalized weighted urgent-signal value for one OS --
@@ -301,6 +305,32 @@ def _urgency_weighted(signals) -> float:
             else:
                 age_days = (datetime.now(timezone.utc) - dt).total_seconds() / 86400
                 weighted += max(0.0, 1 - age_days / TED_LOOKBACK_DAYS)
+
+    # Sieg 24/8 -- team decision (24/8): fold novelty into urgency too, not
+    # just attractiveness. Her reasoning: "urgency score has a real meaning
+    # (is the signal urgent) while attractiveness is more subjective (it
+    # depends on what we choose to take into account) -- novelty could be
+    # integrated in both." This is NOT double-counting in the harmful sense:
+    # urgency and total_score (attractiveness) are entirely separate
+    # outputs -- urgency isn't in WEIGHTS and never gets summed into
+    # total_score -- so the same underlying signal-timing data can
+    # legitimately answer two different questions ("is this trending up"
+    # matters for both "is this urgent" and "is this attractive").
+    #
+    # Guard: only added once there are >=3 signals -- novelty_momentum()
+    # returns a flat neutral 5.0 fallback below its OWN 3-signal threshold
+    # (see that function's docstring), and without this guard that neutral
+    # default would inject a fake, identical momentum boost into urgency
+    # for every small/sparse OS regardless of its actual timing.
+    #
+    # NOVELTY_URGENCY_WEIGHT=2.0 is a first estimate, not derived from real
+    # data (unlike URGENCY_PERCENTILE/MARKET_SIGNAL_CAP, which were
+    # calibrated against actual radar.db output) -- roughly "as urgent as
+    # 2 regulation signals" at full momentum (10/10). Revisit with
+    # `radar_cli.py calibrate` once there's real before/after data to look at.
+    if len(signals) >= 3:
+        weighted += NOVELTY_URGENCY_WEIGHT * (novelty_momentum(signals) / 10.0)
+
     return weighted
 
 
@@ -839,7 +869,7 @@ def score_all_opportunity_spaces(force=False, from_label=None):
 
 def recalibrate_deterministic_scores(conn=None):
     """Implements the 'Refresh Logic for already existing OSs' gap from
-    current_project_state_overview.md, verbatim: 'We have a process that
+    current_project_state_overview.md: 'We have a process that
     adds new data and promotes new OSes, but it doesn't update the scores
     of existing OSes [...] the radar does not reflect the current market
     state for already known OSs.' Without this, an OS scored Monday with
