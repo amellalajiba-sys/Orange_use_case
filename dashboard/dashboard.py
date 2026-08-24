@@ -47,6 +47,7 @@ def load_opportunities():
             s.strategic_relevance AS "Strategic Relevance",
             s.strategic_relevance_justification AS "Strategic Relevance Justification",
             s.total_score AS Attractiveness,
+            s.urgency_score AS Urgency,
 
             r.right_to_win_score AS "Right to Win",
             r.portfolio_distance AS Distance,
@@ -262,62 +263,43 @@ st.caption(
     "Orange Business right-to-win."
 )
 
+st.markdown("""
+- Size of bubbles : attractiveness.
+- Distance to the center : urgency.
+- Color : right to win.
+""")
 
-fig = px.scatter(
-    filtered_df,
-    x="Attractiveness",
-    y="Right to Win",
-    text="ID",
-    size="Attractiveness",
-    size_max=45,
+filtered_df["theta"] = filtered_df.apply(lambda row : row.Vertical + " x " + row.Technology, axis = 1)
+filtered_df["rad"] = filtered_df.apply(lambda row : row.Urgency, axis = 1)
+filtered_df["name"] = filtered_df.apply(lambda row : row["Vertical"] + " x " + row["Use Case"] + " x " + row["Technology"], axis = 1)
 
-    hover_data={
-        "Vertical": True,
-        "Use Case": True,
-        "Technology": True,
-        "Attractiveness": ":.2f",
-        "Right to Win": ":.2f",
-        "Distance": True,
-        "ID": False,
-    },
-
-    title="Attractiveness vs Right-to-Win",
-)
-
-
-fig.update_traces(
-    textposition="top center"
-)
-
-
-fig.update_xaxes(
-    title="Market Attractiveness",
-    range=[0, 10],
-)
-
-
-fig.update_yaxes(
-    title="Orange Business Right-to-Win",
-    range=[0, 10],
-)
-
-
-# Repères visuels
-fig.add_vline(
-    x=5,
-    line_dash="dash",
-)
-
-fig.add_hline(
-    y=5,
-    line_dash="dash",
-)
-
+fig = px.scatter_polar(filtered_df, 
+                       r='rad', 
+                       theta='theta', 
+                       size='Attractiveness', 
+                       text='ID', 
+                       size_max=45, 
+                       range_r=[0,10],
+                       hover_name='name', 
+                       hover_data={"Vertical": True,
+                                   "Use Case": True,
+                                   "Technology": True,
+                                   "Urgency": True,
+                                   "Attractiveness": ":.2f",
+                                   "Right to Win": ":.2f",
+                                   "Distance": True,
+                                   "ID": True,
+                                   "theta":False,},
+                       color="Right to Win", 
+                       range_color=[0,10], 
+                       color_continuous_scale=["#FFF0CC","#FF8C00"], 
+                       opacity=0.8,
+                       labels={"rad":"Urgency","Right to Win":"Right to win", "Attractiveness":"Attractiveness", 
+                               "theta":"Vertical x Technology", "ID":"Opportunity space label"})
 
 fig.update_layout(
-    height=600,
+    height=650,
 )
-
 
 st.plotly_chart(
     fig,
