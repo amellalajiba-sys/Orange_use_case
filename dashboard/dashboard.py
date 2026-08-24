@@ -17,7 +17,7 @@ st.set_page_config(
 
 
 # ============================================================
-# 2. CONNEXION À LA BASE DE DONNÉES
+# 2. CONNECTION TO THE DATABASE
 # ============================================================
 
 DB_PATH = "radar.db"
@@ -109,13 +109,13 @@ def load_signals(opportunity_space_id):
 
 
 # ============================================================
-# 3. CHARGEMENT DES DONNÉES
+# 3. LOADING THE DATA
 # ============================================================
 
 df = load_opportunities()
 
 
-# Si la base ne contient aucune donnée
+# If the database is empty, display an error message and stop the app
 if df.empty:
     st.error(
         "No Opportunity Spaces were found in radar.db."
@@ -136,7 +136,7 @@ st.write(
 
 
 # ============================================================
-# 5. SIDEBAR — FILTRES
+# 5. SIDEBAR — FILTERS
 # ============================================================
 
 st.sidebar.header("🎛️ Filters")
@@ -173,7 +173,7 @@ selected_distances = st.sidebar.multiselect(
 
 
 # ============================================================
-# 6. APPLICATION DES FILTRES
+# 6. APPLICATION OF THE FILTERS
 # ============================================================
 
 filtered_df = df[
@@ -194,7 +194,7 @@ if filtered_df.empty:
 
 
 # ============================================================
-# 7. KPI — VUE D'ENSEMBLE
+# 7. KPI 
 # ============================================================
 
 st.subheader("📊 Overview")
@@ -326,7 +326,7 @@ st.plotly_chart(
 
 
 # ============================================================
-# 9. CLASSEMENT
+# 9. RANKING
 # ============================================================
 
 st.subheader("🏆 Opportunity Ranking")
@@ -359,7 +359,7 @@ st.dataframe(
 
 
 # ============================================================
-# 10. SÉLECTION D'UN OPPORTUNITY SPACE
+# 10. SELECTION OF AN OS
 # ============================================================
 
 st.subheader("🔎 Opportunity Details")
@@ -375,14 +375,14 @@ selected = filtered_df[
 ].iloc[0]
 
 
-# Charger les sources correspondant à l'OS
+# Loading sources corresponding to one OS
 signals_df = load_signals(
     selected["opportunity_space_id"]
 )
 
 
 # ============================================================
-# 11. INFORMATIONS PRINCIPALES
+# 11. MAIN INFORMATION
 # ============================================================
 
 st.markdown(
@@ -658,9 +658,7 @@ if signals_df.empty:
 
 else:
 
-    # --------------------------------------------------------
-    # Filtre des types de signaux
-    # --------------------------------------------------------
+   
 
     signal_types = sorted(
         signals_df["Type"]
@@ -683,9 +681,7 @@ else:
     ]
 
 
-    # --------------------------------------------------------
-    # Affichage des sources
-    # --------------------------------------------------------
+   
 
     if visible_signals.empty:
 
@@ -745,7 +741,7 @@ else:
 
 
 # ============================================================
-# 17. TABLEAU COMPLET
+# 17. COMPLETE BOARD
 # ============================================================
 
 st.subheader("📋 All Opportunity Spaces")
