@@ -161,6 +161,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+orange.venv/
 
 # Spyder project settings
 .spyderproject
@@ -224,3 +225,4 @@ __marimo__/
 
 radar.db
 radar.db-journal
+opportunity_spaces_summary.md
