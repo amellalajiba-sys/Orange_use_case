@@ -144,7 +144,7 @@ OS001 OS024` (targeted removal), `review` (approve/reject taxonomy proposals).
 **Dashboard:**
 
 ```bash
-python -m streamlit run app/dashboard.py --server.address=127.0.0.1
+python -m streamlit run app/streamlit_app.py --server.address=127.0.0.1
 ```
 
 ## Key design decisions
@@ -161,10 +161,18 @@ python -m streamlit run app/dashboard.py --server.address=127.0.0.1
   urgency) against current data; the LLM half (evidence quality, strategic relevance) is
   carried forward unless a full `--force` is explicitly requested.
 - **Urgency scales dynamically with the current population** — the 95th percentile of
-  weighted urgent signals (regulation + buying_signal) across every scored OS sets the "10/10"
-  point, recalculated on every scoring run. An OS's urgency can shift even if nothing about
-  that OS itself changed — that's the population moving, not a bug (see `scoring.py`'s
-  `compute_urgency_scaling_point()` docstring).
+  weighted urgent signals (regulation + buying_signal + a novelty_momentum contribution, see
+  below) across every scored OS sets the "10/10" point, recalculated on every scoring run. An
+  OS's urgency can shift even if nothing about that OS itself changed — that's the population
+  moving, not a bug (see `scoring.py`'s `compute_urgency_scaling_point()` docstring).
+- **Novelty feeds both urgency and attractiveness, on purpose** — urgency is meant to be
+  "objective" (is there real deadline pressure / momentum), while attractiveness is a weighted
+  mix of more subjective judgment calls. Novelty genuinely answers a question relevant to
+  both, and this isn't double-counting: urgency and `total_score` (attractiveness) are
+  entirely separate outputs — urgency isn't in `WEIGHTS` and never gets summed into
+  `total_score`. Only applied once an OS has ≥3 signals (below that, `novelty_momentum()`
+  returns a flat neutral fallback that would otherwise fake a momentum boost for every small
+  OS) — see `NOVELTY_URGENCY_WEIGHT` in `scoring.py`.
 - **Grounded scoring, not free-text LLM guessing** — Right-to-win and Strategic Relevance are
   scored against Orange Business's real API catalog, named customer references, and analyst
   recognition, all sourced and citable.
@@ -187,14 +195,15 @@ Approving writes straight to `taxonomy_extensions.json` immediately (no need to 
 whole list first) — `config.py` picks it up on the next run.
 
 **Watch out for bare generic technology terms (e.g. a proposal that's just `"AI"` alone).**
-Bare generic technologies are filtered before they enter the watchlist, and the same rule is
-rechecked when a proposal is created or approved. This defence in depth also prevents an older,
-already-pending proposal from being approved accidentally. The taxonomy already has specific technologies for this
+`analyze.py`'s own extraction step has a curation pass that filters these out on purpose (drops
+themes whose technology is a bare generic term), but `extend_taxonomy.py` runs on a separate
+path that doesn't apply that same filter — so a generic term can still reach `review` and get
+approved if nobody catches it. The taxonomy already has specific technologies for this
 (`Machine Learning`, `Generative AI`, `Agentic AI`, plus a catch-all `AI, Data, Cloud`) —
 approving a bare `"AI"` on top adds a duplicate-in-spirit term that doesn't help distinguish
 opportunities. If the LLM keeps proposing bare "AI" repeatedly for a vertical, that's more
 likely a sign the source signals themselves aren't specific enough, not that "AI" deserves its
-own taxonomy slot — worth reviewing the ingest query for that vertical instead.
+own taxonomy slot — worth rejecting and revisiting the ingest query for that vertical instead.
 Approving one occurrence of a term is enough to add it to the JSON (`_add_to_extensions()`
 dedupes by term+category) — no need to individually approve the same term proposed under
 several different verticals.
@@ -237,6 +246,15 @@ Nothing below should be pushed to `dev` until the team has agreed on it together
 
 ## Changelog (most recent first)
 
+- **Sieg 24/8 — novelty folded into urgency too (team decision).** Reasoning: urgency is
+  meant to be objective ("is there real momentum/deadline pressure"), attractiveness is more
+  subjective (a weighted mix of judgment calls) — novelty genuinely belongs in both, and it's
+  not double-counting since urgency and `total_score` are separate outputs, never summed
+  together. Added `NOVELTY_URGENCY_WEIGHT` (first estimate, not yet calibrated against real
+  data) with a guard: only contributes once an OS has ≥3 signals, so `novelty_momentum()`'s
+  own neutral-fallback value (below its 3-signal threshold) can't fake a boost for small OS.
+  Tested: a genuinely trending OS (8/10 novelty, no regulation/buying_signal at all) now scores
+  meaningfully higher urgency than a flat one with the same signal count spread evenly.
 - **Sieg 24/8 — refresh logic (closes the "Refresh Logic for already existing OSs" gap from
   the project status doc).** New `recalibrate_deterministic_scores()` in `scoring.py`
   (`python -m pipeline.scoring --refresh`): recomputes market_signal_strength, source_diversity,
@@ -246,8 +264,7 @@ Nothing below should be pushed to `dev` until the team has agreed on it together
   score was frozen until now) — confirmed the total moves, the LLM fields don't, and no LLM
   call is made.
 - **Sieg 24/8 — dynamic urgency scaling.** Replaced the fixed `URGENCY_CAP` with a 95th-
-  percentile-of-the-current-population scaling point (`compute_urgency_scaling_point()`),
-  per her design. Found and fixed a real bug during testing: the default percentile method
+  percentile-of-the-current-population scaling point (`compute_urgency_scaling_point()`). Found and fixed a real bug during testing: the default percentile method
   extrapolates past the actual maximum for small samples (a 4-point test batch returned a
   "95th percentile" of 15.25 when the highest real value was 10) — fixed with
   `method="inclusive"` plus a hard clamp to the observed maximum.
@@ -255,7 +272,7 @@ Nothing below should be pushed to `dev` until the team has agreed on it together
   promoted opportunity spaces (OS030–OS034) had never actually been added to
   `USE_CASES_TAXONOMY`/`TECHNOLOGIES_TAXONOMY`, so `analyze.py` couldn't legally re-propose
   them for new signals in the same vertical even though they're real, scored opportunities.
-- **Sieg 24/8 — file cleanup.** `theme_promotion.py` kept as the canonical name (her call);
+- **Sieg 24/8 — file cleanup.** `theme_promotion.py` kept as the canonical name;
   `signals_discovery.py` removed outright once every import (`analyze.py`, `radar_cli.py`,
   `radar_cli_top_15.py`) was switched over and nothing else referenced it.
 - **Sieg 24/8 — GDELT.** Confirmed the retry+cooldown patch (`max_records=8`,
@@ -263,12 +280,12 @@ Nothing below should be pushed to `dev` until the team has agreed on it together
   `ingest.py` — a local copy running the old unpatched message
   ("don't rerun the pipeline immediately, wait 15-20 min") had gone stale on one machine.
 - **Sieg 24/8 — taxonomy extension mechanism, restored end-to-end.** `config.py` didn't have
-  the `taxonomy_extensions.json` read side at all on this branch (added, verbatim from her
-  diff); `radar_cli.py`'s `review` command and the `extend_taxonomy` step in `all` had gone
+  the `taxonomy_extensions.json` read side at all on this branch (added, ); `radar_cli.py`'s `review` command and the `extend_taxonomy` step in `all` had gone
   missing (restored); fixed a crash in `review` (`no such table: proposals` if run before
   `extend_taxonomy.py` had ever run once); added the `proposals` table to `db.py`'s central
-  `SCHEMA` too, matching her diff, so `python -m pipeline.db` alone is enough to have it ready.
-
+  `SCHEMA` too, matching diff, so `python -m pipeline.db` alone is enough to have it ready.
+- **Sieg 24/8 — merged `radar_cli_top_15.py`'s `--top N`** into `radar_cli.py summary`, kept
+  both files at command parity going forward.
 
 ## Team
 
