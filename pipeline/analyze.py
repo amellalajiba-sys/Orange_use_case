@@ -12,10 +12,10 @@ Two steps, matching the brief's "Signal Collection -> Theme Extraction" flow:
    Technology combinations, i.e. candidate Opportunity Spaces.
 
 Every valid theme extract_themes() finds is also tracked in-memory via
-signals_discovery.track_valid_themes() -- a recurring theme (same Vertical
+theme_promotion.track_valid_themes() -- a recurring theme (same Vertical
 x Use Case x Technology seen across separate runs) is what
 `radar_cli.py promote` later turns into a real opportunity space. See
-pipeline/signals_discovery.py and pipeline/db.py's recurring_themes table
+pipeline/theme_promotion.py and pipeline/db.py's recurring_themes table
 for the full mechanism -- this replaces an earlier design that round-tripped
 through an emerging_themes.json file.
 
@@ -23,12 +23,22 @@ Run directly for a full pass over all verticals:
 
     python -m pipeline.analyze
 """
+# Sieg 24/8 -- module renamed signals_discovery.py -> theme_promotion.py,
+# docstring above updated to match (pure documentation drift, no logic
+# change here -- see the import below for the actual switch).
 
+import sys
 from pipeline.db import (
     get_connection, add_to_watchlist, list_watchlist, update_watchlist_status, new_run_id,
     list_promotable_themes,
 )
 from pipeline.config import USE_CASES_TAXONOMY, TECHNOLOGIES_TAXONOMY, RECURRING_THEME_PROMOTION_THRESHOLD
+from pipeline.taxonomy_validation import is_generic_taxonomy_term
+# Sieg 24/8 -- switched to pipeline.theme_promotion: that's the name in
+# her diff (signals_discovery.py -> theme_promotion.py), and she picked it
+# as the one to keep. signals_discovery.py removed outright (24/8, on
+# request) -- nothing else in the project referenced it once this import
+# and radar_cli.py/radar_cli_top_15.py were all switched over.
 from pipeline.theme_promotion import track_valid_themes
 from llm.llm_client import get_llm_json
 
@@ -152,24 +162,53 @@ def extract_themes(conn, vertical, max_signals=40):
 
     # Belt and suspenders: even if the LLM ignores the instruction and invents
     # a term, catch it here and reroute to the watchlist rather than trusting it.
+    # Sieg 24/8 -- bug fix: `.get("technology", "unknown")` only falls back to
+    # "unknown" when the KEY is missing entirely -- if the LLM returns the key
+    # WITH a null value (seen in practice from the Ollama/llama3.2:3b fallback,
+    # which is much more prone to malformed JSON than Groq), .get() returns
+    # None, not "unknown", and that None went straight into add_to_watchlist()
+    # -> INSERT with term=None -> sqlite3.IntegrityError: NOT NULL constraint
+    # failed: watchlist_terms.term, crashing the whole --from= run mid-vertical.
+    # `x or "unknown"` catches both "missing" and "present but None/empty".
     valid_themes = []
     for t in themes:
         if t.get("use_case") in USE_CASES_TAXONOMY and t.get("technology") in TECHNOLOGIES_TAXONOMY:
             valid_themes.append(t)
         else:
             if t.get("use_case") not in USE_CASES_TAXONOMY:
-                add_to_watchlist(conn, t.get("use_case", "unknown"), "use_case", vertical)
+                add_to_watchlist(conn, t.get("use_case") or "unknown", "use_case", vertical)
             if t.get("technology") not in TECHNOLOGIES_TAXONOMY:
-                add_to_watchlist(conn, t.get("technology", "unknown"), "technology", vertical)
+                technology = t.get("technology") or "unknown"
+                # Sieg 24/8 -- the prompt asks the LLM to avoid bare "AI",
+                # but prompt compliance is not validation: do not let it
+                # accumulate in watchlist_terms and later reach review.
+                if is_generic_taxonomy_term(technology, "technology"):
+                    print(f"[{vertical}] skipped generic technology candidate: {technology!r}")
+                else:
+                    add_to_watchlist(conn, technology, "technology", vertical)
 
     for c in candidates:
         if c.get("term") and c.get("category") in ("use_case", "technology"):
+            # Sieg 24/8 -- apply the same guard to the LLM's explicit
+            # watchlist output, not only to malformed entries in `themes`.
+            if is_generic_taxonomy_term(c["term"], c["category"]):
+                print(f"[{vertical}] skipped generic technology candidate: {c['term']!r}")
+                continue
             add_to_watchlist(conn, c["term"], c["category"], vertical)
 
     return valid_themes, candidates
 
 
-def run_full_analysis():
+def run_full_analysis(from_vertical=None):
+    """Sieg 23/08 -- added from_vertical: a single Groq key has a shared,
+    small daily token quota (200k TPD on the free tier), and a run can burn
+    through it mid-way (429 rate_limit_exceeded), stopping analysis partway
+    through the vertical list. Rerunning from scratch just re-spends tokens
+    on verticals that already finished before the quota was hit, for no
+    new result -- track_valid_themes() upserts (bumps frequency) rather than
+    duplicating, so a re-run isn't wrong, it's just wasted quota while
+    already scarce. --from=<vertical> skips straight to where the previous
+    run stopped, case-insensitive so `--from=energy` matches "Energy"."""
     conn = get_connection()
     summary(conn)
     run_id = new_run_id()
@@ -177,6 +216,18 @@ def run_full_analysis():
     verticals = [r["vertical_hint"] for r in conn.execute(
         "SELECT DISTINCT vertical_hint FROM signals WHERE vertical_hint IS NOT NULL"
     ).fetchall()]
+
+    if from_vertical:
+        before = len(verticals)
+        matched = [v for v in verticals if v.lower() == from_vertical.lower()]
+        if not matched:
+            print(f"--from={from_vertical}: no vertical matches this name exactly "
+                  f"(available: {', '.join(verticals)}). Running everything instead.")
+        else:
+            start_index = verticals.index(matched[0])
+            verticals = verticals[start_index:]
+            print(f"--from={from_vertical}: skipping {before - len(verticals)} "
+                  f"vertical(s) already processed before the interruption.\n")
 
     for vertical in verticals:
         print(f"\n{'=' * 60}\nTheme extraction: {vertical}\n{'=' * 60}")
@@ -219,4 +270,11 @@ def run_full_analysis():
 
 
 if __name__ == "__main__":
-    run_full_analysis()
+    # Sieg 23/08 -- python -m pipeline.analyze --from=Energy : resume after
+    # a Groq quota/rate-limit interruption without redoing finished verticals.
+    # Ignored (runs everything) if not passed, same as before.
+    from_vertical = None
+    for arg in sys.argv:
+        if arg.startswith("--from="):
+            from_vertical = arg.split("=", 1)[1]
+    run_full_analysis(from_vertical=from_vertical)

@@ -227,3 +227,4 @@ __marimo__/
 radar.db
 radar.db-journal
 opportunity_spaces_summary.md
+logs/*
