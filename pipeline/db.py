@@ -3,8 +3,8 @@ SQLite schema + helper functions for the Innovation Radar.
 Tables: signals, opportunity_spaces, opportunity_signals (link), scores,
 right_to_win_scores, watchlist_terms, recurring_themes.
 
-CHANGES IN THIS REVISION
--------------------------
+CHANGES IN THIS REVISION (SIEGRIED radar_cli - 21.08)
+-----------------------------------------------------
 - get_all_opportunity_spaces(): a teammate's contribution, adopted as-is.
   Scoring used to only ever look at "the latest run_id's" opportunity
   spaces (get_latest_opportunity_spaces). Once opportunity spaces can be
@@ -141,6 +141,21 @@ CREATE TABLE IF NOT EXISTS recurring_themes (
     promoted INTEGER NOT NULL DEFAULT 0,   -- 0/1 -- already turned into an opportunity space?
     run_id TEXT,
     UNIQUE(vertical, use_case, technology)
+);
+
+CREATE TABLE IF NOT EXISTS proposals (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    vertical TEXT NOT NULL,
+    proposed_use_case TEXT,
+    proposed_technology TEXT,
+    frequency INTEGER NOT NULL,
+    first_seen TEXT NOT NULL,
+    last_seen TEXT NOT NULL,
+    status TEXT DEFAULT 'pending',
+    reviewed_at TEXT,
+    reviewed_by TEXT,
+    run_id TEXT,
+    UNIQUE(vertical, proposed_use_case, proposed_technology)
 );
 """
 

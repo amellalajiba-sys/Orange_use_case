@@ -1,8 +1,8 @@
 """
-signals_discovery.py
-=====================
+theme_promotion.py
+==================
 
-ingest.py  ->  analyze.py  ->  (signals_discovery, in-memory)  ->  radar_cli.py promote  ->  scoring.py
+ingest.py  ->  analyze.py  ->  (theme_promotion, in-memory)  ->  radar_cli.py promote  ->  scoring.py
 
 Tracks how often a VALID Vertical x Use Case x Technology theme (i.e.
 already matching the closed taxonomy, not a watchlist_terms candidate)

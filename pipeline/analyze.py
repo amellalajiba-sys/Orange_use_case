@@ -29,7 +29,7 @@ from pipeline.db import (
     list_promotable_themes,
 )
 from pipeline.config import USE_CASES_TAXONOMY, TECHNOLOGIES_TAXONOMY, RECURRING_THEME_PROMOTION_THRESHOLD
-from pipeline.signals_discovery import track_valid_themes
+from pipeline.theme_promotion import track_valid_themes
 from llm.llm_client import get_llm_json
 
 WATCHLIST_PROMOTION_THRESHOLD = 3
