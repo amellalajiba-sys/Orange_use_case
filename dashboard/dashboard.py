@@ -18,12 +18,12 @@ st.set_page_config(
 
 
 # ============================================================
-# FONCTIONS DATABASE
+# DATABASE FUNCTIONS
 # ============================================================
 
 def get_connection():
     """
-    Ouvre une connexion à radar.db.
+    Open a connection to radar.db.
     """
     return sqlite3.connect(DB_PATH)
 
@@ -31,7 +31,7 @@ def get_connection():
 @st.cache_data
 def load_opportunity_spaces():
     """
-    Récupère les Opportunity Spaces + leurs scores.
+    Fetch the Opportunity Spaces + their scores.
     """
 
     conn = get_connection()
@@ -78,8 +78,8 @@ def load_opportunity_spaces():
 @st.cache_data
 def load_signals(opportunity_space_id):
     """
-    Récupère tous les grounding/evidence signals
-    associés à un Opportunity Space.
+    Fetch all the grounding/evidence signals
+    of an OS.
     """
 
     conn = get_connection()
@@ -117,14 +117,14 @@ def load_signals(opportunity_space_id):
 
 
 # ============================================================
-# CHARGEMENT DES DONNÉES
+# LOADING THE DATA
 # ============================================================
 
 df = load_opportunity_spaces()
 
 
 # ============================================================
-# VÉRIFICATION
+# VERIFICATION
 # ============================================================
 
 if df.empty:
@@ -137,7 +137,7 @@ if df.empty:
 
 
 # ============================================================
-# TITRE
+# TITLE
 # ============================================================
 
 st.title("🟠 Orange Business Innovation Radar")
@@ -149,7 +149,7 @@ st.write(
 
 
 # ============================================================
-# SIDEBAR — FILTRES
+# SIDEBAR — FILTERS
 # ============================================================
 
 st.sidebar.header("🎛️ Filters")
@@ -193,7 +193,7 @@ min_attractiveness = st.sidebar.slider(
 
 
 # ============================================================
-# APPLICATION DES FILTRES
+# FILTERS DATAFRAME
 # ============================================================
 
 filtered_df = df[
@@ -206,7 +206,7 @@ filtered_df = df[
 
 
 # ============================================================
-# MESSAGE SI AUCUN RÉSULTAT
+# IF NO RESULTS
 # ============================================================
 
 if filtered_df.empty:
@@ -314,7 +314,7 @@ st.dataframe(
 )
 
 # ============================================================
-# PREPARATION DES DONNEES POUR LE RADAR
+# DATA FOR THE RADAR
 # ============================================================
 
 filtered_df["ID"] = filtered_df["label"]
@@ -325,7 +325,7 @@ filtered_df["Attractiveness"] = filtered_df["attractiveness"]
 filtered_df["Right to Win"] = filtered_df["right_to_win_score"]
 filtered_df["Distance"] = filtered_df["portfolio_distance"]
 
-# Urgency basée sur la distance du portefeuille
+# Urgency based on the distance
 urgency_map = {
     "L1": 8,
     "L2": 5,
@@ -396,8 +396,7 @@ st.subheader("🔍 Opportunity Details")
 
 
 # IMPORTANT :
-# On sélectionne le LABEL pour l'utilisateur,
-# mais ensuite on récupère l'ID numérique de SQLite.
+# We select the label for the user and then we fetch the ID from the database.
 
 selected_label = st.selectbox(
     "Choose an Opportunity Space",
@@ -418,7 +417,7 @@ selected_id = int(
 
 
 # ============================================================
-# INFORMATIONS PRINCIPALES
+# MAIN INFORMATIONS
 # ============================================================
 
 st.markdown(
@@ -562,7 +561,7 @@ signals_df = load_signals(
 
 
 # ============================================================
-# AFFICHAGE DES SIGNALS
+# DISPLAYING SIGNALS
 # ============================================================
 
 if signals_df.empty:
@@ -579,7 +578,7 @@ else:
     )
 
 
-    # ---------- Filtre signal type ----------
+    # ---------- Filter signal type ----------
 
     signal_types = sorted(
         signals_df["signal_type"]
@@ -602,7 +601,7 @@ else:
     ]
 
 
-    # ---------- Affichage ----------
+    # ---------- Display Signals ----------
 
     for _, signal in displayed_signals.iterrows():
 
