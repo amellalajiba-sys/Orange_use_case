@@ -80,6 +80,7 @@ from pipeline.db import (
     get_all_opportunity_spaces, get_unscored_opportunity_spaces,
     get_opportunity_spaces_missing_right_to_win,
     get_opportunity_spaces_with_fallback_scores,
+    get_opportunity_spaces_with_old_scores,
     get_latest_scores,
     insert_score, insert_right_to_win_score, update_opportunity_space_enrichment,
 )
@@ -726,11 +727,10 @@ def score_opportunity_space(conn, opportunity_space_row, urgency_scaling_point=U
 def score_all_opportunity_spaces(force=False, from_label=None):
     """Scores + enriches opportunity spaces, one pass.
 
-    force=False (default): only opportunity spaces with no score yet
-    (get_unscored_opportunity_spaces) -- safe to re-run after every
-    `radar_cli.py promote` without burning LLM quota re-scoring OS that
+    force=False (default): only opportunity spaces with no score yet or old scores see the loop below
+    -- safe to re-run after every `radar_cli.py promote` without burning LLM quota re-scoring OS that
     haven't changed. ALSO repairs any OS stuck with a scores row but no
-    right_to_win_scores row (interrupted run) -- see the loop below.
+    right_to_win_scores row (interrupted run) --.
     force=True: rescore + re-enrich every opportunity space regardless.
     from_label: resume a --force run that got interrupted (e.g. Groq quota
     ran out mid-run) -- skips every OS whose label sorts BEFORE this one
@@ -738,7 +738,19 @@ def score_all_opportunity_spaces(force=False, from_label=None):
     meaningful together with force=True; ignored otherwise (unscored-only
     mode already naturally skips whatever got scored on the interrupted run)."""
     conn = get_connection()
-    spaces = get_all_opportunity_spaces(conn) if force else get_unscored_opportunity_spaces(conn)
+    clean_scores(conn)
+
+    if force:
+        spaces = get_all_opportunity_spaces(conn)
+    else:
+        unscored_spaces = get_unscored_opportunity_spaces(conn)
+        old_score_spaces = get_opportunity_spaces_with_old_scores(conn)
+        # Merge the two lists and remove duplicates using the opportunity space ID
+        spaces_by_id = {
+            space["id"]: space
+            for space in unscored_spaces + old_score_spaces
+        }
+        spaces = list(spaces_by_id.values())
 
     # Sieg 23/08 -- bug fix: get_unscored_opportunity_spaces() only checks the
     # `scores` table, so an OS interrupted between insert_score() and
@@ -1125,6 +1137,54 @@ def rescue_fallback_scores(conn=None):
 
     if close_after:
         conn.close()
+
+def clean_scores(connection) -> None:
+    """
+    Remove duplicate scores for the same opportunity_space_id,
+    keeping only the most recent row based on computed_at.
+    """
+
+    connection.execute(
+        """
+        DELETE FROM scores
+        WHERE id IN (
+            SELECT id
+            FROM (
+                SELECT
+                    id,
+                    ROW_NUMBER() OVER (
+                        PARTITION BY opportunity_space_id
+                        ORDER BY computed_at DESC
+                    ) AS row_number
+                FROM scores
+            )
+            WHERE row_number > 1
+        )
+        """
+    )
+
+
+
+    connection.execute(
+        """
+        DELETE FROM right_to_win_scores
+        WHERE id IN (
+            SELECT id
+            FROM (
+                SELECT
+                    id,
+                    ROW_NUMBER() OVER (
+                        PARTITION BY opportunity_space_id
+                        ORDER BY computed_at DESC
+                    ) AS row_number
+                FROM right_to_win_scores
+            )
+            WHERE row_number > 1
+        )
+        """
+    )
+
+    connection.commit()
 
 
 if __name__ == "__main__":
