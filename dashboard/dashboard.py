@@ -3,6 +3,7 @@ import sqlite3
 import pandas as pd
 import plotly.express as px
 
+#Before running this file you need to make sure the radar.db is not empty !!
 
 # ============================================================
 # CONFIGURATION
@@ -12,20 +13,20 @@ from pathlib import Path
 
 
 # ============================================================
-# CHEMIN DE LA DATABASE
+# WAY TO THE DATABASE
 # ============================================================
 
-# dashboard.py se trouve dans :
+# dashboard.py is located in:
 # Orange_use_case/dashboard/dashboard.py
 #
-# radar.db se trouve dans :
+# radar.db is located in:
 # Orange_use_case/radar.db
 #
-# Donc on remonte d'un dossier avec .parent
+# So we go up one folder with .parent
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DB_PATH = BASE_DIR / "radar_backup.db"
+DB_PATH = BASE_DIR / "radar.db"
 
 st.set_page_config(
     page_title="Orange Business Innovation Radar",
@@ -141,14 +142,14 @@ def load_signals(opportunity_space_id):
 
 
 # ============================================================
-# CHARGEMENT DES DONNÉES
+# LOADING DATA
 # ============================================================
 
 df = load_opportunity_spaces()
 
 
 # ============================================================
-# VÉRIFICATION
+# VERIFICATION
 # ============================================================
 
 if df.empty:
@@ -161,7 +162,7 @@ if df.empty:
 
 
 # ============================================================
-# TITRE
+# TITLE
 # ============================================================
 
 st.title("🟠 Orange Business Innovation Radar")
@@ -173,7 +174,7 @@ st.write(
 
 
 # ============================================================
-# SIDEBAR — FILTRES
+# SIDEBAR — FILTERS
 # ============================================================
 
 st.sidebar.header("🎛️ Filters")
@@ -217,7 +218,7 @@ min_attractiveness = st.sidebar.slider(
 
 
 # ============================================================
-# APPLICATION DES FILTRES
+# FILTERS APPLICATION
 # ============================================================
 
 filtered_df = df[
@@ -230,7 +231,7 @@ filtered_df = df[
 
 
 # ============================================================
-# MESSAGE SI AUCUN RÉSULTAT
+# IF NO RESULTS
 # ============================================================
 
 if filtered_df.empty:
@@ -578,13 +579,13 @@ st.plotly_chart(
 st.subheader("📰 Market Evidence & Signals")
 
 
-# ICI ON UTILISE L'ID NUMÉRIQUE !
+# WE USE NURERIC ID !
 signals_df = load_signals(
     selected_id
 )
 
 
-# DEBUG TEMPORAIRE
+# TEMPORARY DEBUG
 
 with st.expander("🔧 Signal Debug"):
 
@@ -600,7 +601,7 @@ with st.expander("🔧 Signal Debug"):
 
 
 # ============================================================
-# AFFICHAGE DES SIGNALS
+# DISPLAYING SIGNALS
 # ============================================================
 
 if signals_df.empty:
@@ -617,7 +618,7 @@ else:
     )
 
 
-    # ---------- Filtre signal type ----------
+    # ---------- Filter signal type ----------
 
     signal_types = sorted(
         signals_df["signal_type"]
@@ -640,7 +641,7 @@ else:
     ]
 
 
-    # ---------- Affichage ----------
+    # ---------- Display ----------
 
     for _, signal in displayed_signals.iterrows():
 
