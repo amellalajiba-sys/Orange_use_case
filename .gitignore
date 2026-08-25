@@ -3,6 +3,7 @@
 # (write a clear title for each file pls)
 # docs/internal/
 
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -223,6 +224,7 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-radar.db
-radar.db-journal
-opportunity_spaces_summary.md
+# radar.db
+# radar.db-journal
+# opportunity_spaces_summary.md
+logs/*

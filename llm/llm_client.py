@@ -33,20 +33,63 @@ GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")  # llama-3.3-70
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "llama3.2:3b")
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
 
+# Sieg 23/08 -- list of available Groq keys, in try-order. Empty/unset
+# GROQ_API_KEY_2 is simply skipped, so this is safe with only 1 key too.
+# Sieg 24/08 -- temporarily disabled, going back to a single key. Kept the
+# original list commented instead of deleted so it's a one-line swap to
+# turn rotation back on later.
+# GROQ_KEYS = [k for k in (
+#     os.environ.get("GROQ_API_KEY"),
+#     os.environ.get("GROQ_API_KEY_2"),
+# ) if k]
+GROQ_KEYS = [os.environ.get("GROQ_API_KEY")] if os.environ.get("GROQ_API_KEY") else []
+
+def _is_rate_limit_error(e):
+    """Sieg 23/08 -- detects a 429/quota error specifically, so we only
+    rotate keys for THAT reason (not for e.g. a malformed prompt, which
+    would just fail the same way on the second key)."""
+    msg = str(e).lower()
+    return "429" in msg or "rate_limit" in msg or "quota" in msg
+
 
 def _call_groq(prompt, system_prompt=None):
     from groq import Groq  # imported lazily so the package is only required if used
 
-    api_key = os.environ.get("GROQ_API_KEY")
-    if not api_key:
+    if not GROQ_KEYS:
         raise RuntimeError("GROQ_API_KEY not set")
 
-    client = Groq(api_key=api_key)
     messages = []
     if system_prompt:
         messages.append({"role": "system", "content": system_prompt})
     messages.append({"role": "user", "content": prompt})
 
+    # Sieg 23/08 -- try each key in turn; on a rate-limit error, move to the
+    # next key instead of failing straight to Ollama. Any OTHER error (bad
+    # key, network issue) still raises immediately -- no point retrying that
+    # on a second key.
+    # Sieg 24/08 -- rotation loop disabled (single key in use again). Kept
+    # commented, not deleted, so re-enabling it later is a one-line swap
+    # (just uncomment this block and delete the single-key call below it).
+    # last_error = None
+    # for i, api_key in enumerate(GROQ_KEYS):
+    #     try:
+    #         client = Groq(api_key=api_key)
+    #         response = client.chat.completions.create(
+    #             model=GROQ_MODEL,
+    #             messages=messages,
+    #             temperature=0,
+    #         )
+    #         return response.choices[0].message.content
+    #     except Exception as e:
+    #         last_error = e
+    #         if _is_rate_limit_error(e) and i < len(GROQ_KEYS) - 1:
+    #             print(f"[llm_client] Groq key #{i + 1} rate-limited, trying key #{i + 2}")
+    #             continue
+    #         raise  # not a rate-limit error, or no more keys left -- propagate
+    # raise last_error
+
+    # Single-key call (no rotation): just use the one key we have.
+    client = Groq(api_key=GROQ_KEYS[0])
     response = client.chat.completions.create(
         model=GROQ_MODEL,
         messages=messages,
