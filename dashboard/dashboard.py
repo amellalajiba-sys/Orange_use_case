@@ -3,30 +3,12 @@ import sqlite3
 import pandas as pd
 import plotly.express as px
 
-#Before running this file you need to make sure the radar.db is not empty !!
 
 # ============================================================
 # CONFIGURATION
 # ============================================================
 
-from pathlib import Path
-
-
-# ============================================================
-# WAY TO THE DATABASE
-# ============================================================
-
-# dashboard.py is located in:
-# Orange_use_case/dashboard/dashboard.py
-#
-# radar.db is located in:
-# Orange_use_case/radar.db
-#
-# So we go up one folder with .parent
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-DB_PATH = BASE_DIR / "radar.db"
+DB_PATH = "radar.db"
 
 st.set_page_config(
     page_title="Orange Business Innovation Radar",
@@ -43,13 +25,6 @@ def get_connection():
     """
     Ouvre une connexion à radar.db.
     """
-
-    if not DB_PATH.exists():
-        st.error(
-            f"❌ Database not found: {DB_PATH}"
-        )
-        st.stop()
-
     return sqlite3.connect(DB_PATH)
 
 
@@ -142,14 +117,14 @@ def load_signals(opportunity_space_id):
 
 
 # ============================================================
-# LOADING DATA
+# CHARGEMENT DES DONNÉES
 # ============================================================
 
 df = load_opportunity_spaces()
 
 
 # ============================================================
-# VERIFICATION
+# VÉRIFICATION
 # ============================================================
 
 if df.empty:
@@ -162,7 +137,7 @@ if df.empty:
 
 
 # ============================================================
-# TITLE
+# TITRE
 # ============================================================
 
 st.title("🟠 Orange Business Innovation Radar")
@@ -174,7 +149,7 @@ st.write(
 
 
 # ============================================================
-# SIDEBAR — FILTERS
+# SIDEBAR — FILTRES
 # ============================================================
 
 st.sidebar.header("🎛️ Filters")
@@ -218,7 +193,7 @@ min_attractiveness = st.sidebar.slider(
 
 
 # ============================================================
-# FILTERS APPLICATION
+# APPLICATION DES FILTRES
 # ============================================================
 
 filtered_df = df[
@@ -231,7 +206,7 @@ filtered_df = df[
 
 
 # ============================================================
-# IF NO RESULTS
+# MESSAGE SI AUCUN RÉSULTAT
 # ============================================================
 
 if filtered_df.empty:
@@ -338,6 +313,26 @@ st.dataframe(
     hide_index=True
 )
 
+# ============================================================
+# PREPARATION DES DONNEES POUR LE RADAR
+# ============================================================
+
+filtered_df["ID"] = filtered_df["label"]
+filtered_df["Vertical"] = filtered_df["vertical"]
+filtered_df["Use Case"] = filtered_df["use_case"]
+filtered_df["Technology"] = filtered_df["technology"]
+filtered_df["Attractiveness"] = filtered_df["attractiveness"]
+filtered_df["Right to Win"] = filtered_df["right_to_win_score"]
+filtered_df["Distance"] = filtered_df["portfolio_distance"]
+
+# Urgency basée sur la distance du portefeuille
+urgency_map = {
+    "L1": 8,
+    "L2": 5,
+    "L3": 2
+}
+
+filtered_df["Urgency"] = filtered_df["portfolio_distance"].map(urgency_map)
 
 # ============================================================
 # RADAR
@@ -345,55 +340,53 @@ st.dataframe(
 
 st.subheader("🎯 Opportunity Radar")
 
-fig = px.scatter(
-    filtered_df,
-
-    x="attractiveness",
-
-    y="right_to_win_score",
-
-    text="label",
-
-    size="attractiveness",
-
-    size_max=45,
-
-    hover_data=[
-        "vertical",
-        "use_case",
-        "technology",
-        "portfolio_distance"
-    ],
-
-    labels={
-        "attractiveness": "Attractiveness",
-        "right_to_win_score": "Right to Win"
-    },
-
-    title="Attractiveness vs Right to Win"
+st.caption(
+    "The radar compares market attractiveness with "
+    "Orange Business right-to-win."
 )
 
+st.markdown("""
+- Size of bubbles : attractiveness.
+- Distance to the center : urgency.
+- Color : right to win.
+""")
 
-fig.update_traces(
-    textposition="top center"
+filtered_df["theta"] = filtered_df.apply(lambda row : row.Vertical + " x " + row.Technology, axis = 1)
+filtered_df["rad"] = filtered_df.apply(lambda row : row.Urgency, axis = 1)
+filtered_df["name"] = filtered_df.apply(lambda row : row["Vertical"] + " x " + row["Use Case"] + " x " + row["Technology"], axis = 1)
+
+fig = px.scatter_polar(filtered_df, 
+                       r='rad', 
+                       theta='theta', 
+                       size='Attractiveness', 
+                       text='ID', 
+                       size_max=45, 
+                       range_r=[0,10],
+                       hover_name='name', 
+                       hover_data={"Vertical": True,
+                                   "Use Case": True,
+                                   "Technology": True,
+                                   "Urgency": True,
+                                   "Attractiveness": ":.2f",
+                                   "Right to Win": ":.2f",
+                                   "Distance": True,
+                                   "ID": True,
+                                   "theta":False,},
+                       color="Right to Win", 
+                       range_color=[0,10], 
+                       color_continuous_scale=["#FFF0CC","#FF8C00"], 
+                       opacity=0.8,
+                       labels={"rad":"Urgency","Right to Win":"Right to win", "Attractiveness":"Attractiveness", 
+                               "theta":"Vertical x Technology", "ID":"Opportunity space label"})
+
+fig.update_layout(
+    height=650,
 )
-
-
-fig.update_xaxes(
-    range=[0, 10]
-)
-
-
-fig.update_yaxes(
-    range=[0, 10]
-)
-
 
 st.plotly_chart(
     fig,
-    use_container_width=True
+    use_container_width=True,
 )
-
 
 # ============================================================
 # OPPORTUNITY DETAILS
@@ -422,23 +415,6 @@ selected = filtered_df[
 selected_id = int(
     selected["id"]
 )
-
-
-# ============================================================
-# DEBUG — À ENLEVER PLUS TARD
-# ============================================================
-
-with st.expander("🔧 Database Debug"):
-
-    st.write(
-        "Selected OS:",
-        selected_label
-    )
-
-    st.write(
-        "Database ID:",
-        selected_id
-    )
 
 
 # ============================================================
@@ -579,29 +555,14 @@ st.plotly_chart(
 st.subheader("📰 Market Evidence & Signals")
 
 
-# WE USE NURERIC ID !
+# ICI ON UTILISE L'ID NUMÉRIQUE !
 signals_df = load_signals(
     selected_id
 )
 
 
-# TEMPORARY DEBUG
-
-with st.expander("🔧 Signal Debug"):
-
-    st.write(
-        "Opportunity Space ID:",
-        selected_id
-    )
-
-    st.write(
-        "Number of signals:",
-        len(signals_df)
-    )
-
-
 # ============================================================
-# DISPLAYING SIGNALS
+# AFFICHAGE DES SIGNALS
 # ============================================================
 
 if signals_df.empty:
@@ -618,7 +579,7 @@ else:
     )
 
 
-    # ---------- Filter signal type ----------
+    # ---------- Filtre signal type ----------
 
     signal_types = sorted(
         signals_df["signal_type"]
@@ -641,7 +602,7 @@ else:
     ]
 
 
-    # ---------- Display ----------
+    # ---------- Affichage ----------
 
     for _, signal in displayed_signals.iterrows():
 
