@@ -796,13 +796,9 @@ def wipe_opportunity_spaces(conn):
     guarded with try/except since sqlite_sequence only exists once at least
     one AUTOINCREMENT table has a row in it."""
     conn.execute("DELETE FROM opportunity_signals")
-    conn.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'opportunity_signals';")
     conn.execute("DELETE FROM scores")
-    conn.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'scores';")
     conn.execute("DELETE FROM right_to_win_scores")
-    conn.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'right_to_win_scores';")
     conn.execute("DELETE FROM opportunity_spaces")
-    conn.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'opportunity_spaces';")
     for table in ("opportunity_signals", "scores", "right_to_win_scores", "opportunity_spaces"):
         try:
             conn.execute("DELETE FROM sqlite_sequence WHERE name = ?", (table,))
