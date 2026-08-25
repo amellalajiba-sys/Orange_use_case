@@ -21,6 +21,8 @@ from datetime import datetime
 import json
 import os
 
+from pipeline.taxonomy_validation import is_generic_taxonomy_term
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TAXONOMY_EXTENSIONS_PATH = os.path.join(BASE_DIR, "taxonomy_extensions.json")
 
@@ -114,6 +116,11 @@ def generate_proposal(conn, term, run_id=None):
     proposed_use_case = term_value if category == 'use_case' else None
     proposed_technology = term_value if category == 'technology' else None
 
+    # Sieg 24/8 -- do not create new review items for a term that cannot be
+    # approved. Approval has the same guard for proposals created before this.
+    if is_generic_taxonomy_term(term_value, category):
+        return "skipped"
+
     # Check if already exists (with the same vertical and specific use_case/technology)
     existing = proposal_exists(conn, vertical, proposed_use_case, proposed_technology)
     if existing:
@@ -164,6 +171,20 @@ def approve_proposal(conn, proposal_id, reviewed_by="team"):
     
     if not proposal:
         return False
+
+    term = proposal["proposed_use_case"] or proposal["proposed_technology"]
+    category = "use_case" if proposal["proposed_use_case"] else "technology"
+    # Sieg 24/8 -- final guard for historical/manual proposals that bypassed
+    # generate_proposal() before the generic-term rule existed.
+    if is_generic_taxonomy_term(term, category):
+        print(f"[!] Proposal {proposal_id} was not approved: {term!r} is too generic for the taxonomy.")
+        return False
+
+    # Sieg 24/8 -- write JSON before changing proposal status. A JSON error
+    # must leave the proposal pending rather than falsely marked approved.
+    # Persist the extension before recording the approval. If the JSON write
+    # fails, the proposal remains pending instead of falsely appearing approved.
+    _add_to_extensions(term, category)
     
     # Update status
     conn.execute(
@@ -174,16 +195,15 @@ def approve_proposal(conn, proposal_id, reviewed_by="team"):
     )
     conn.commit()
     
-    # Add to taxonomy 
-    # Updated for automation through json
+    # The JSON extension was persisted above; now clear the source watchlist
+    # entry and commit the database audit trail together.
     if proposal["proposed_use_case"]:
-        _add_to_extensions(proposal["proposed_use_case"], "use_case")
         conn.execute("DELETE FROM watchlist_terms WHERE term = ? AND category = 'use_case' AND vertical = ?", 
                      (proposal["proposed_use_case"], proposal["vertical"]))
     elif proposal["proposed_technology"]:
-        _add_to_extensions(proposal["proposed_technology"], "technology")
         conn.execute("DELETE FROM watchlist_terms WHERE term = ? AND category = 'technology' AND vertical = ?",
                      (proposal["proposed_technology"], proposal["vertical"]))
+    conn.commit()
     
     print(f"[+] Proposal {proposal_id} approved and taxonomy updated automatically.")
 
