@@ -584,6 +584,15 @@ def get_opportunity_spaces_with_fallback_scores(conn):
     ).fetchall()
 
 
+def get_opportunity_spaces_with_old_scores(conn):
+    """Returns opportunity spaces with scores computed more than 3 days ago."""
+    return conn.execute(
+        """SELECT * FROM opportunity_spaces
+           WHERE id IN (SELECT opportunity_space_id FROM scores WHERE datetime(computed_at) < datetime('now', '-3 days'))
+           ORDER BY label"""
+    ).fetchall()
+
+
 def get_latest_scores(conn):
     """One row per opportunity space: its most recent attractiveness score
     joined with its most recent right-to-win score. Both `scores` and
