@@ -649,13 +649,7 @@ def get_opportunity_spaces_with_fallback_scores(conn):
 
 
 def get_opportunity_spaces_with_old_scores(conn):
-    """Sieg 25/8 -- teammate's contribution, adopted as-is: opportunity
-    spaces whose latest score is more than 3 days old. Not currently wired
-    into score_all_opportunity_spaces()'s default run (see scoring.py's
-    comment at the call site for why) -- kept here as available infra for
-    whoever wants to build a scheduled/opt-in staleness refresh later,
-    e.g. feeding these into the free `--refresh` (recalibrate_deterministic_
-    scores()) instead of a full paid LLM rescore."""
+    """Returns opportunity spaces with scores computed more than 3 days ago."""
     return conn.execute(
         """SELECT * FROM opportunity_spaces
            WHERE id IN (SELECT opportunity_space_id FROM scores WHERE datetime(computed_at) < datetime('now', '-3 days'))
@@ -790,66 +784,128 @@ def link_signal_to_opportunity(conn, opportunity_space_id, signal_id):
 def insert_score(conn, opportunity_space_id, sub_scores: dict, total_score: float,
                   evidence_quality_justification=None, strategic_relevance_justification=None,
                   urgency_score=None):
-    """Sieg 25/8 -- deliberately kept as always-INSERT, not switched to a
-    teammate's check-then-UPDATE-else-INSERT version: that version (a) drops
-    the audit trail this project documents as a design decision (README
-    "Key design decisions" / interview Q5 -- "scores/right_to_win_scores
-    always INSERT a new row, get_latest_scores() reads back the latest"),
-    and (b) had a real bug in the right_to_win_scores twin of this function
-    (insert_right_to_win_score checked `scores` to decide whether to UPDATE
-    or INSERT INTO `right_to_win_scores` -- since a scores row always exists
-    by the time right-to-win is inserted, it took the UPDATE branch even on
-    an OS's very FIRST right-to-win score, silently updating 0 rows and
-    leaving right_to_win_scores permanently empty for that OS).
-    The real problem that version was solving -- scores/right_to_win_scores
-    accumulating many rows per OS after repeated --refresh/--recalibrate-*/
-    --force runs -- is real (some OS had 30+ rows), but a one-off/occasional
-    prune (clean_scores(), `python -m pipeline.scoring --prune-scores`) is
-    a lower-risk fix than rewriting the audit-trail insert path everywhere."""
-    conn.execute(
-        """INSERT INTO scores
-           (opportunity_space_id, market_signal_strength, source_diversity,
-            evidence_quality, evidence_quality_justification, novelty_momentum,
-            strategic_relevance, strategic_relevance_justification, urgency_score,
-            total_score, computed_at)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-        (
-            opportunity_space_id,
-            sub_scores.get("market_signal_strength"),
-            sub_scores.get("source_diversity"),
-            sub_scores.get("evidence_quality"),
-            evidence_quality_justification,
-            sub_scores.get("novelty_momentum"),
-            sub_scores.get("strategic_relevance"),
-            strategic_relevance_justification,
-            urgency_score,
-            total_score,
-            datetime.now(timezone.utc).isoformat(),
-        ),
-    )
+    # check if opportunity space already exist in scores table
+    existing_os = conn.execute(
+        "SELECT COUNT(*) FROM scores WHERE opportunity_space_id = ?",
+        (opportunity_space_id,)
+    ).fetchone()[0]
+    # insert score if opportunity space is not found
+    if existing_os > 0:
+        # Update existing scores
+        conn.execute(
+            """
+            UPDATE scores
+            SET
+                market_signal_strength = ?,
+                source_diversity = ?,
+                evidence_quality = ?,
+                evidence_quality_justification = ?,
+                novelty_momentum = ?,
+                strategic_relevance = ?,
+                strategic_relevance_justification = ?,
+                urgency_score = ?,
+                total_score = ?,
+                computed_at = ?
+            WHERE opportunity_space_id = ?
+            """,
+            (
+                sub_scores.get("market_signal_strength"),
+                sub_scores.get("source_diversity"),
+                sub_scores.get("evidence_quality"),
+                evidence_quality_justification,
+                sub_scores.get("novelty_momentum"),
+                sub_scores.get("strategic_relevance"),
+                strategic_relevance_justification,
+                urgency_score,
+                total_score,
+                datetime.now(timezone.utc).isoformat(),
+                opportunity_space_id,
+            ),
+        )
+
+    else:
+        # Insert new scores
+        conn.execute(
+            """
+            INSERT INTO scores
+            (
+                opportunity_space_id,
+                market_signal_strength,
+                source_diversity,
+                evidence_quality,
+                evidence_quality_justification,
+                novelty_momentum,
+                strategic_relevance,
+                strategic_relevance_justification,
+                urgency_score,
+                total_score,
+                computed_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                opportunity_space_id,
+                sub_scores.get("market_signal_strength"),
+                sub_scores.get("source_diversity"),
+                sub_scores.get("evidence_quality"),
+                evidence_quality_justification,
+                sub_scores.get("novelty_momentum"),
+                sub_scores.get("strategic_relevance"),
+                strategic_relevance_justification,
+                urgency_score,
+                total_score,
+                datetime.now(timezone.utc).isoformat(),
+            ),
+        )
     conn.commit()
 
 
 def insert_right_to_win_score(conn, opportunity_space_id, portfolio_distance,
-                               right_to_win_score: float, matched_assets, justification):
-    # Sieg 26/8 -- type hint added for symmetry with insert_score()'s
-    # `total_score: float`. The REAL column + float() cast in scoring.py
-    # (llm_right_to_win) already guaranteed float storage, so this is
-    # documentation-only, not a behavior change.
-    conn.execute(
-        """INSERT INTO right_to_win_scores
-           (opportunity_space_id, portfolio_distance, right_to_win_score,
-            matched_assets, justification, computed_at)
-           VALUES (?, ?, ?, ?, ?, ?)""",
-        (
-            opportunity_space_id,
-            portfolio_distance,
-            right_to_win_score,
-            matched_assets,
-            justification,
-            datetime.now(timezone.utc).isoformat(),
-        ),
-    )
+                               right_to_win_score, matched_assets, justification):
+    # check if opportunity space already exist in scores table
+    existing_os = conn.execute(
+        "SELECT COUNT(*) FROM scores WHERE opportunity_space_id = ?",
+        (opportunity_space_id,)
+    ).fetchone()[0]
+    # insert score if opportunity space is not found
+    if existing_os > 0:
+        # Update existing scores
+        conn.execute(
+            """
+            UPDATE right_to_win_scores
+            SET
+                portfolio_distance = ?,
+                right_to_win_score = ?,
+                matched_assets = ?,
+                justification = ?,
+                computed_at = ?
+            WHERE opportunity_space_id = ?
+            """,
+            (
+                portfolio_distance,
+                right_to_win_score,
+                matched_assets,
+                justification,
+                datetime.now(timezone.utc).isoformat(),
+                opportunity_space_id,
+            ),
+        )
+    else:
+        # Insert new scores
+        conn.execute(
+            """INSERT INTO right_to_win_scores
+            (opportunity_space_id, portfolio_distance, right_to_win_score,
+                matched_assets, justification, computed_at)
+            VALUES (?, ?, ?, ?, ?, ?)""",
+            (
+                opportunity_space_id,
+                portfolio_distance,
+                right_to_win_score,
+                matched_assets,
+                justification,
+                datetime.now(timezone.utc).isoformat(),
+            ),
+        )
     conn.commit()
 
 
