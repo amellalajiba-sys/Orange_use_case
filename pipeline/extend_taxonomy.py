@@ -2,8 +2,11 @@
 extend_taxonomy.py
 ==================
 
-ingest.py    →  analyze.py   →  signals_discovery.py  →  extend_taxonomy.py   →  scoring.py   →  dashboard.py
+ingest.py    →  analyze.py   →  theme_promotion.py    →  extend_taxonomy.py   →  scoring.py   →  dashboard/streamlit_app.py
                                                          ------------------
+# Sieg 26/8 -- diagram corrected: theme_promotion.py is the module that
+# replaced signals_discovery.py on 24/8 (see analyze.py/radar_cli.py's own
+# comments), and the dashboard now lives at dashboard/streamlit_app.py.
 
 This module is responsible for checking the watchlist for emerging terms that have reached the 
 frequency threshold (≥ 5 signals) and generating proposals for the team to review. 
@@ -318,4 +321,3 @@ def run_extend_taxonomy(run_id=None):
 
 if __name__ == "__main__":
     run_extend_taxonomy()
-

@@ -38,6 +38,7 @@ WHAT CHANGED IN THIS REVISION
 import argparse
 import inspect
 import re
+import sqlite3  # Sieg 25/8 -- needed to catch the new UNIQUE-index IntegrityError (see cmd_create/cmd_promote)
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -92,14 +93,27 @@ def cmd_create(conn, wipe=False):
     run_id = new_run_id()
     print(f"Registering seed opportunity spaces under run_id={run_id}\n")
     for label, vertical, use_case, technology in CANDIDATES:
-        # Duplicate check: same (vertical, use_case, technology) already
-        # registered under a DIFFERENT label -- warn, don't block, so the
-        # team can decide which to keep (see OS001/OS013 in config.py).
+        # Sieg 25/8 -- bug fix: this used to only WARN on a duplicate triple
+        # and then create it anyway -- that's exactly how OS026/OS052 and
+        # OS036/OS053 ended up as real duplicates in the delivered summary
+        # (same triple, same 43 grounding signals, twice). Now it actually
+        # skips the insert, same as promote() already does below -- the
+        # "team can decide which to keep" idea still works, but by editing
+        # CANDIDATES in config.py, not by silently doubling the DB/summary.
         dup = find_opportunity_space_by_triple(conn, vertical, use_case, technology, exclude_label=label)
         if dup:
-            print(f"  WARNING: {vertical} x {use_case} x {technology} is already registered "
-                  f"as {dup['label']} -- {label} looks like a duplicate.")
-        os_id = upsert_opportunity_space(conn, run_id, label, vertical, use_case, technology)
+            print(f"  SKIPPED {label}: {vertical} x {use_case} x {technology} is already "
+                  f"registered as {dup['label']} -- not creating a duplicate OS for the same triple.")
+            continue
+        try:
+            os_id = upsert_opportunity_space(conn, run_id, label, vertical, use_case, technology)
+        except sqlite3.IntegrityError:
+            # Belt and suspenders: the DB now has a UNIQUE index on
+            # (vertical, use_case, technology) (see pipeline/db.py), so even
+            # if the check above is ever raced or bypassed, this can no
+            # longer silently duplicate -- it just can't insert.
+            print(f"  SKIPPED {label}: duplicate triple rejected by the database.")
+            continue
         print(f"{label} (id={os_id}): {vertical} x {use_case} x {technology}")
 
 
@@ -153,7 +167,19 @@ def cmd_promote(conn):
             continue
 
         label = next_opportunity_space_label(conn)
-        os_id = upsert_opportunity_space(conn, run_id, label, vertical, use_case, technology)
+        try:
+            os_id = upsert_opportunity_space(conn, run_id, label, vertical, use_case, technology)
+        except sqlite3.IntegrityError:
+            # Sieg 25/8 -- same belt-and-suspenders as cmd_create: the
+            # find_opportunity_space_by_triple() check above already should
+            # have caught this, but the new UNIQUE index on
+            # (vertical, use_case, technology) in pipeline/db.py is what
+            # actually guarantees it can't happen -- mark it promoted so it
+            # stops resurfacing here instead of retrying forever.
+            print(f"  SKIPPED: {vertical} x {use_case} x {technology} rejected by the database "
+                  f"as a duplicate triple -- marking promoted, no new OS created.")
+            mark_theme_promoted(conn, theme["id"])
+            continue
         mark_theme_promoted(conn, theme["id"])
         promoted_count += 1
         print(f"  PROMOTED {label} (id={os_id}): {vertical} x {use_case} x {technology} "

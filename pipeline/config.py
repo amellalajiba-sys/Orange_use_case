@@ -1,11 +1,26 @@
 """
 Central configuration for the Innovation Radar signal pipeline.
 
-Every source query list (Google News, GDELT,
-arXiv, Semantic Scholar, competitor watch, regulation, buying signals) used
-to be hand-written 3 times over, once per vertical, in 6 separate lists, aAdding a vertical
-meant editing 6 places and it was easy to miss one.
+Every source query list (Google News, GDELT, arXiv, Semantic Scholar,
+competitor watch, regulation, buying signals) used to be hand-written 3
+times over, once per vertical, in 6 separate lists -- adding a vertical
+meant editing 6 places and it was easy to miss one. VERTICAL_SEEDS below
+fixes that: one dict, everything else derives from it.
 
+Sieg 25/8 -- reorganized into clearly-delimited sections (was briefly split
+into a pipeline/config/ package, reverted: a file-to-folder change is a much messier git merge
+than a normal single-file diff for anyone with in-flight changes on the old
+config.py). Section order below, same content as before, just labeled:
+  1. TAXONOMY EXTENSIONS LOGIC   -- taxonomy_extensions.json load/create
+  2. ENVIRONMENT                 -- .env loading, DB_PATH, API keys
+  3. ENRICHMENT TAXONOMY         -- roles, geography, horizons
+  4. VERTICALS                   -- the single source of truth
+  5. USE CASES / TECHNOLOGIES / DOMAINS / SIGNAL TYPES
+  6. INGEST SOURCE QUERIES & RATE LIMITS
+  7. ORANGE BUSINESS REFERENCE DATA -- assets, customers, stats, partners
+  8. VALUE PROPOSITION MATCHER
+  9. OPPORTUNITY SPACE SEEDS (CANDIDATES)
+Jump to a section by searching for its "# ====" header.
 """
 
 import os
@@ -13,20 +28,18 @@ import json
 from enum import Enum
 from dotenv import load_dotenv
 
-# Sieg 24/8 -- integrated verbatim from her PR diff (Friday->today), not
-# paraphrased, so this reads as her actual contribution when compared
-# against that diff. Only change: placed here (top of this file, after the
-# imports) since this config.py grew a 17-vertical/TED/NewsAPI.ai structure
-# on a separate branch and her diff's original anchor point (right before
-# `DB_PATH = "radar.db"`) doesn't exist in the same spot here.
 
-# =============================================
-# TAXONOMY EXTENSIONS LOGIC
-# =============================================
+# ============================================================
+# 1. TAXONOMY EXTENSIONS LOGIC
+# ============================================================
+# Sieg 24/8 -- integrated origianl from PR diff (Friday->today), not
+# paraphrased, so this reads as her actual contribution when compared
+# against that diff.
 
 # Path for taxonomy extensions (in root folder)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TAXONOMY_EXTENSIONS_PATH = os.path.join(BASE_DIR, "taxonomy_extensions.json")
+
 
 def _init_taxonomy_extensions():
     """If the file does not exist, it creates it with an empty list."""
@@ -34,8 +47,10 @@ def _init_taxonomy_extensions():
         with open(TAXONOMY_EXTENSIONS_PATH, "w") as f:
             json.dump([], f)
 
+
 # Call function at the start so that file exists
 _init_taxonomy_extensions()
+
 
 def _load_taxonomy_extensions():
     """Loads the approved terms from the JSON file and returns them as two lists: use_cases and technologies."""
@@ -47,13 +62,14 @@ def _load_taxonomy_extensions():
         return use_cases, technologies
     return [], []
 
+
 # Extensions loading
 _EXT_USE_CASES, _EXT_TECHNOLOGIES = _load_taxonomy_extensions()
 
-# =============================================
-# Rest of config.py as before
-# =============================================
 
+# ============================================================
+# 2. ENVIRONMENT
+# ============================================================
 # Load .env HERE, not just in llm_client.py -- config.py is imported by
 # ingest.py, which never imports llm_client.py (ingest doesn't touch the
 # LLM at all). Without this line, running `python -m pipeline.ingest` on
@@ -66,13 +82,27 @@ load_dotenv()
 
 DB_PATH = "radar.db"
 
-# --- Reference taxonomy for OS enrichment (persona, geography, time horizon) ---
+NEWSAPI_AI_KEY = os.environ.get("NEWSAPI_AI_KEY", "")
+
+# Optional -- Semantic Scholar's unauthenticated pool is shared across everyone
+# hitting the API at once and gets rate-limited fast. A free "partner" API key
+# (request form at https://www.semanticscholar.org/product/api#api-key-form,
+# approval isn't instant) moves you to your own, much higher-limit pool. Until
+# then, the cooldown+retry logic in section 6 below is the practical fix.
+SEMANTIC_SCHOLAR_API_KEY = os.environ.get("SEMANTIC_SCHOLAR_API_KEY", "")
+
+
+# ============================================================
+# 3. ENRICHMENT TAXONOMY -- roles, geography, horizons
+# ============================================================
 # Split into two lists that used to be one merged `PERSONAS` list -- they answer
 # two different questions and were getting confused with each other:
 #   ROLES          = which Orange Business team should act on this OS (drives the
 #                    dashboard's Role selector / Presales L0-L2 filter)
-#   BUYER_PERSONAS = who the actual buyer is on the customer side (shown in the
-#                    detail panel as context, not used for filtering)
+#   BUYER_PERSONAS = who the actual buyer is on the customer side. Originally
+#                    detail-panel-only; Sieg 25/8 added a working sidebar
+#                    multiselect for it in streamlit_app.py, so this IS now
+#                    filterable too -- comment corrected 26/8, no code change.
 ROLES = ["Strategist", "Sales", "Presales"]
 
 BUYER_PERSONAS = [
@@ -82,13 +112,42 @@ BUYER_PERSONAS = [
 ]
 
 # --- Orange Business geography, for the "geography" enrichment field ---
+# Sieg 25/8 -- replaced the old 5-continent-level list with the Innovation
+# Radar's actual regional grouping (client brief, 25/8).
+#
+# GEOS: plain region names -- used wherever only the label matters (e.g. a
+# future dashboard filter dropdown).
+#
+# GEOS_PROMPT: the SAME regions, but spelling out which countries each one
+# covers -- used only in scoring.py's enrichment prompt. Several of these
+# are NON-standard and a bare label would invite the LLM to guess wrong:
+#   - "DACH" here is Switzerland + Austria ONLY -- Germany is broken out as
+#     its own region, unlike the usual DACH convention that includes it.
+#   - Israel sits under "Southern Europe", not "Middle East".
+# Rest-of-world regions (Africa, Middle East, Asia Pacific, Americas) have
+# no per-country breakdown -- continent-level is enough, per the brief.
+#
+# Keep these two in sync by hand if the grouping ever changes again.
+GEOS = [
+    "Benelux", "Germany", "Southern Europe", "DACH", "UK & Ireland",
+    "Nordics", "Eastern Europe", "Africa", "Middle East", "Asia Pacific", "Americas",
+]
 
-GEOS = ["Europe", "Africa", "Middle East", "Asia Pacific", "Americas"]
+GEOS_PROMPT = (
+    "Benelux (Netherlands, Belgium, Luxembourg), "
+    "Germany (Germany), "
+    "Southern Europe (Italy, Spain, Portugal, Israel), "
+    "DACH (Switzerland, Austria), "
+    "UK & Ireland (United Kingdom, Ireland), "
+    "Nordics (Norway, Sweden, Denmark, Finland, Iceland), "
+    "Eastern Europe, Africa, Middle East, Asia Pacific, Americas"
+)
 
 HORIZONS = ["Now", "Next", "Later"]  # Now = sellable this quarter, Next = 6-12mo, Later = exploratory
 
+
 # ============================================================
-# VERTICALS -- the single source of truth for what we cover.
+# 4. VERTICALS -- the single source of truth for what we cover
 # ============================================================
 
 VERTICAL_SEEDS = {
@@ -104,7 +163,7 @@ VERTICAL_SEEDS = {
     # Defense and Healthcare" since 2025, backed by dedicated divisions.
     # Healthcare was already covered above; Defense was completely missing.
     "Defense": "defense zero trust secure communications sovereign networks",
-    # --- Added Aug 2026 from the client brief PDF (slide 6, "Business context
+    # --- Added from the client brief PDF (slide 6, "Business context
     # the radar must speak" -- CUSTOMER VERTICALS) and slide 11's opportunity-
     # space examples. This is the FULL list the client actually gave us; the
     # 8 verticals above were only ever a partial subset. Deliberately NOT
@@ -142,11 +201,86 @@ VERTICALS = sorted(VERTICAL_SEEDS)
 # own comment above for why they're kept separate rather than merged.
 TRUST_CRITICAL_VERTICALS = {"Defense", "Healthcare", "Aerospace & Defense"}
 
+
+# ============================================================
+# 5. USE CASES / TECHNOLOGIES / DOMAINS / SIGNAL TYPES
+# ============================================================
+
+# Signal type vocabulary (must match the brief's taxonomy)
+SIGNAL_TYPES = [
+    "trend", "regulation", "buying_signal", "market_move", "tech_maturity", "proof_signal",
+]
+
+# Sieg 24/8 -- wrapped in list(dict.fromkeys(...)) and appended _EXT_USE_CASES
+# so a term approved via `radar_cli.py review` (written to
+# taxonomy_extensions.json by extend_taxonomy.py) actually reaches the LLM
+# prompt in analyze.py on the next run, without ever duplicating a term
+# that's already hand-listed below (dict.fromkeys preserves first-seen
+# order and drops repeats).
+USE_CASES_TAXONOMY = list(dict.fromkeys([
+    "Energy Optimization", "Demand Forecasting", "IT Operations Automation",
+    "Imaging Analytics", "Network Modernization & SD-WAN", "Cloud Infrastructure Modernization",
+    "Cyber Defense & Zero Trust", "Customer Experience", "Employee Experience",
+    "Operational Excellence", "Digital Infrastructure", "Data Sovereignty", "Cybersecurity",
+    "Contact Centre Automation", "Clinical Workflow Automation", "Predictive Maintenance",
+    "Supply Chain Visibility", "Grid Optimization",
+    # --- Restored from emerging_themes.json review (see emerging_themes_review.md) ---
+    "Industrial Digital Twin & Automation",  # 8 supporting signals -- strongest candidate in the batch
+    "Citizen Participation Platforms",       # 7 supporting signals -- pairs with existing Cloud Data Platform
+    # Sieg 24/8 -- the rest of that same emerging_themes.json batch (OS029-034
+    # in opportunity_spaces_summary.md) were promoted into real opportunity
+    # spaces, but their use_case labels never actually made it into this
+    # list -- so analyze.py's LLM prompt still can't legally propose them
+    # again for a NEW signal in the same vertical, even though they're
+    # already proven, scored, real opportunities in the DB.
+    "Manufacturing Process Automation",              # OS034
+    "Infrastructure Planning & Management",          # OS032
+    "Post-Quantum Cryptography Testing Infrastructure",  # OS030
+    "Strategic Communications & Advertising Consultancy",  # OS031
+] + _EXT_USE_CASES))
+
+# Sieg 24/8 -- same wrapping as USE_CASES_TAXONOMY above, same reason.
+TECHNOLOGIES_TAXONOMY = list(dict.fromkeys([
+    "Cloud Data Platform", "IoT Platforms", "Computer Vision", "Machine Learning",
+    "Generative AI", "Network & SD-WAN", "Cloud", "Cybersecurity", "5G", "IoT", "AI, Data, Cloud",
+    "Agentic AI", "Edge Computing",
+    # --- Restored from emerging_themes.json review (see emerging_themes_review.md) ---
+    "Digital Twins",  # 8 supporting signals -- pairs with Industrial Digital Twin & Automation above
+    "Quantum-safe Cryptography",  # Sieg 24/8 -- same gap as above: backs OS030,
+    # promoted and scored, but never added to this list until now.
+] + _EXT_TECHNOLOGIES))
+
+# --- Business domain taxonomy (matches the radar's sectors) ---
+DOMAINS_TAXONOMY = [
+    {"code": "ox", "name": "Smart Industries"},
+    {"code": "conn", "name": "Connectivity Solutions"},
+    {"code": "cyber", "name": "Cybersecurity"},
+    {"code": "cloud", "name": "Cloud"},
+    {"code": "cx", "name": "Customer Experience"},
+    {"code": "ex", "name": "Employee Experience"},
+]
+
+# --- Portfolio distance taxonomy (right-to-win classification) ---
+PORTFOLIO_DISTANCE = {
+    "L0": {"label": "Direct offer", "blurb": "An existing Orange Business offer addresses this as-is."},
+    "L1": {"label": "Bundle", "blurb": "Two or more existing offers exist but are not yet packaged together."},
+    "L2": {"label": "Partner-dependent", "blurb": "Needs a capability held by an existing partner, not Orange itself."},
+    "L3": {"label": "Adjacent", "blurb": "Needs one capability to be built or acquired -- close, but not there yet."},
+    "L4": {"label": "White space", "blurb": "No plausible path from the current portfolio."},
+}
+
+RECURRING_THEME_PROMOTION_THRESHOLD = 2
+
+
+# ============================================================
+# 6. INGEST SOURCE QUERIES & RATE LIMITS
+# ============================================================
+
 GOOGLE_NEWS_QUERIES = [{"vertical": v, "query": q} for v, q in VERTICAL_SEEDS.items()]
 
 ENABLE_GDELT = True
-GDELT_QUERIES = GOOGLE_NEWS_QUERIES  
-ARXIV_QUERIES = GOOGLE_NEWS_QUERIES  #
+GDELT_QUERIES = GOOGLE_NEWS_QUERIES
+ARXIV_QUERIES = GOOGLE_NEWS_QUERIES
 SEMANTIC_SCHOLAR_QUERIES = ARXIV_QUERIES
 
 COMPETITORS = [
@@ -174,9 +308,7 @@ BUYING_SIGNAL_QUERIES = [
     for v in VERTICALS
 ]
 
-# ============================================================
-# TED Search API v3 -- real EU public procurement data (buying signals)
-# ============================================================
+# --- TED Search API v3 -- real EU public procurement data (buying signals) ---
 # https://api.ted.europa.eu/v3/notices/search -- public, keyless for search
 # (only submitting/managing NOT-YET-published notices needs an API key).
 # Docs: https://docs.ted.europa.eu/api/latest/index.html
@@ -201,11 +333,9 @@ TED_FIELDS = [
 # source_diversity meaningfully comparable across sources.
 TED_QUERIES = [{"vertical": v, "query": f'FT~"{seed}"'} for v, seed in VERTICAL_SEEDS.items()]
 
-# ============================================================
-# NewsAPI.ai (Event Registry) -- broader, higher-quality news than the free
-# Google News RSS scrape (proper full-text search, source filtering, no
-# "hl=en" locale guessing). https://newsapi.ai -- 2,000 free tokens/month.
-# ============================================================
+# --- NewsAPI.ai (Event Registry) -- broader, higher-quality news than the
+# free Google News RSS scrape (proper full-text search, source filtering, no
+# "hl=en" locale guessing). https://newsapi.ai -- 2,000 free tokens/month. ---
 ENABLE_NEWSAPI_AI = True
 NEWSAPI_AI_URL = "https://eventregistry.org/api/v1/article/getArticles"
 NEWSAPI_AI_SLEEP_SECONDS = 1
@@ -219,41 +349,6 @@ VENDOR_FEEDS = [
 ]
 
 HN_QUERIES = ["private 5G", "agentic AI insurance", "sovereign cloud", "AI contact center", "grid AI"]
-
-# --- Strategic Value Propositions (corporate deck, slide 17/20) -- mapping
-# target for "strategic relevance" scoring. Without this, the 15% weight
-# given to strategic_relevance was a pure LLM guess with nothing concrete to
-# check it against. Each OS gets matched (best-effort, keyword-based) to the
-# closest of Orange's 5 named value propositions.
-class ValueProposition(str, Enum):
-    SECURE_CONNECTIVITY = "NextGen Secured Connectivity"
-    SECURE_CLOUD = "Secure Cloud Orchestration"
-    GENAI_WORKFORCE = "GenAI Empowered Workforce"
-    CUSTOMER_EXPERIENCE = "Orchestrate Customer Interactions"
-    OPERATIONAL_EXPERIENCE = "Smart Manufacturing & Operations"
-
-
-# Keyword hints for the lightweight classifier below. Not exhaustive --
-# a starting seed list, extend as more opportunity spaces get scored.
-VALUE_PROP_KEYWORDS = {
-    ValueProposition.SECURE_CONNECTIVITY: ["sd-wan", "network", "5g", "connectivity", "sase"],
-    ValueProposition.SECURE_CLOUD: ["cloud migration", "multi-cloud", "sovereign cloud", "cloud security", "cloud"],
-    ValueProposition.GENAI_WORKFORCE: ["copilot", "generative ai", "agentic ai", "productivity", "collaboration"],
-    ValueProposition.CUSTOMER_EXPERIENCE: ["contact center", "contact centre", "customer journey", "cx", "personalization"],
-    ValueProposition.OPERATIONAL_EXPERIENCE: ["iot", "predictive maintenance", "computer vision", "ot", "manufacturing"],
-}
-
-
-def map_to_value_proposition(os_text):
-    """Naive keyword matcher over 'vertical use_case technology', lowercased.
-    Returns the first matching ValueProposition, or None if nothing matches
-    -- None means 'no strategic relevance boost applied', not an error."""
-    text = os_text.lower()
-    for vp, keywords in VALUE_PROP_KEYWORDS.items():
-        if any(kw in text for kw in keywords):
-            return vp
-    return None
-
 
 # --- Rate-limit delays between requests, per source -- CRITICAL, do not remove.
 # Without these, GDELT and Semantic Scholar throttle or temporarily ban the IP
@@ -269,16 +364,14 @@ GDELT_COOLDOWN_MINUTES = 20         # after 2 consecutive blocks, skip the whole
 SEMANTIC_SCHOLAR_SLEEP_SECONDS = 20  # Semantic Scholar API -- unauthenticated rate limit
 SEMANTIC_SCHOLAR_RETRY_WAIT_SECONDS = 15
 SEMANTIC_SCHOLAR_COOLDOWN_MINUTES = 20
-# Optional -- Semantic Scholar's unauthenticated pool is shared across everyone
-# hitting the API at once and gets rate-limited fast. A free "partner" API key
-# (request form at https://www.semanticscholar.org/product/api#api-key-form,
-# approval isn't instant) moves you to your own, much higher-limit pool. Until
-# then, the cooldown+retry logic below is the practical fix.
-SEMANTIC_SCHOLAR_API_KEY = os.environ.get("SEMANTIC_SCHOLAR_API_KEY", "")
+
 ARXIV_SLEEP_SECONDS = 3              # arXiv asks for >=3s between requests, be a good citizen
 GOOGLE_NEWS_SLEEP_SECONDS = 1        # light, but still spaced out across 7 verticals
 
-NEWSAPI_AI_KEY = os.environ.get("NEWSAPI_AI_KEY", "")
+
+# ============================================================
+# 7. ORANGE BUSINESS REFERENCE DATA -- assets, customers, stats, partners
+# ============================================================
 
 # --- Orange Business real product APIs (from apiforbusiness catalog) ---
 # Used to ground strategic_relevance/right-to-win scoring: an opportunity
@@ -305,10 +398,6 @@ ORANGE_BUSINESS_ASSETS = [
 ]
 
 # --- External validation, wired into strategic_relevance / right-to-win prompts
-# NOTE: this used to be defined TWICE in this file (an earlier, shorter version
-# followed immediately by this fuller one -- the first was dead code, since the
-# second simply overwrote it at import time). Removed the duplicate; nothing
-# else needed to change since every caller already only ever saw this version.
 ANALYST_RECOGNITION = [
     {
         "fact": "Orange Business recognized as a Leader for the 23rd consecutive year "
@@ -451,8 +540,8 @@ CUSTOMER_REFERENCES = [
 # and pipeline_value have NO equivalent anywhere in this repo -- left as
 # empty dicts on purpose rather than invented numbers. scoring.py's
 # pipeline_calibration_bonus() is a safe +0.0 no-op until a real per-vertical
-# CRM export is dropped in here (keyed by the exact VERTICAL_SEEDS names
-# above, e.g. {"Manufacturing": 12}) -- needs a team decision on where that
+# CRM export is dropped in here (keyed by the exact VERTICAL_SEEDS names,
+# e.g. {"Manufacturing": 12}) -- needs a team decision on where that
 # export comes from, see README "Needs a team decision".
 OPPORTUNITY_COUNT_BY_VERTICAL = {}   # vertical -> int, from a CRM export (not populated yet)
 PIPELINE_VALUE_BY_VERTICAL = {}      # vertical -> EUR value, from a CRM export (not populated yet)
@@ -498,71 +587,47 @@ PARTNER_TIERS = {
     "Google Cloud": "Premier",
 }
 
-# --- Portfolio distance taxonomy (right-to-win classification) ---
-PORTFOLIO_DISTANCE = {
-    "L0": {"label": "Direct offer", "blurb": "An existing Orange Business offer addresses this as-is."},
-    "L1": {"label": "Bundle", "blurb": "Two or more existing offers exist but are not yet packaged together."},
-    "L2": {"label": "Partner-dependent", "blurb": "Needs a capability held by an existing partner, not Orange itself."},
-    "L3": {"label": "Adjacent", "blurb": "Needs one capability to be built or acquired -- close, but not there yet."},
-    "L4": {"label": "White space", "blurb": "No plausible path from the current portfolio."},
-}
-
-# --- Business domain taxonomy (matches the radar's sectors) ---
-DOMAINS_TAXONOMY = [
-    {"code": "ox", "name": "Smart Industries"},
-    {"code": "conn", "name": "Connectivity Solutions"},
-    {"code": "cyber", "name": "Cybersecurity"},
-    {"code": "cloud", "name": "Cloud"},
-    {"code": "cx", "name": "Customer Experience"},
-    {"code": "ex", "name": "Employee Experience"},
-]
-
-# Sieg 24/8 -- wrapped in list(dict.fromkeys(...)) and appended _EXT_USE_CASES
-# so a term approved via `radar_cli.py review` (written to
-# taxonomy_extensions.json by extend_taxonomy.py) actually reaches the LLM
-# prompt in analyze.py on the next run, without ever duplicating a term
-# that's already hand-listed below (dict.fromkeys preserves first-seen
-# order and drops repeats).
-USE_CASES_TAXONOMY = list(dict.fromkeys([
-    "Energy Optimization", "Demand Forecasting", "IT Operations Automation",
-    "Imaging Analytics", "Network Modernization & SD-WAN", "Cloud Infrastructure Modernization",
-    "Cyber Defense & Zero Trust", "Customer Experience", "Employee Experience",
-    "Operational Excellence", "Digital Infrastructure", "Data Sovereignty", "Cybersecurity",
-    "Contact Centre Automation", "Clinical Workflow Automation", "Predictive Maintenance",
-    "Supply Chain Visibility", "Grid Optimization",
-    # --- Restored from emerging_themes.json review (see emerging_themes_review.md) ---
-    "Industrial Digital Twin & Automation",  # 8 supporting signals -- strongest candidate in the batch
-    "Citizen Participation Platforms",       # 7 supporting signals -- pairs with existing Cloud Data Platform
-    # Sieg 24/8 -- the rest of that same emerging_themes.json batch (OS029-034
-    # in opportunity_spaces_summary.md) were promoted into real opportunity
-    # spaces, but their use_case labels never actually made it into this
-    # list -- so analyze.py's LLM prompt still can't legally propose them
-    # again for a NEW signal in the same vertical, even though they're
-    # already proven, scored, real opportunities in the DB.
-    "Manufacturing Process Automation",              # OS034
-    "Infrastructure Planning & Management",          # OS032
-    "Post-Quantum Cryptography Testing Infrastructure",  # OS030
-    "Strategic Communications & Advertising Consultancy",  # OS031
-] + _EXT_USE_CASES))
-
-# Sieg 24/8 -- same wrapping as USE_CASES_TAXONOMY above, same reason.
-TECHNOLOGIES_TAXONOMY = list(dict.fromkeys([
-    "Cloud Data Platform", "IoT Platforms", "Computer Vision", "Machine Learning",
-    "Generative AI", "Network & SD-WAN", "Cloud", "Cybersecurity", "5G", "IoT", "AI, Data, Cloud",
-    "Agentic AI", "Edge Computing",
-    # --- Restored from emerging_themes.json review (see emerging_themes_review.md) ---
-    "Digital Twins",  # 8 supporting signals -- pairs with Industrial Digital Twin & Automation above
-    "Quantum-safe Cryptography",  # Sieg 24/8 -- same gap as above: backs OS030,
-    # promoted and scored, but never added to this list until now.
-] + _EXT_TECHNOLOGIES))
-
-# Signal type vocabulary (must match the brief's taxonomy)
-SIGNAL_TYPES = [
-    "trend", "regulation", "buying_signal", "market_move", "tech_maturity", "proof_signal",
-]
 
 # ============================================================
-# Growing beyond a fixed list of opportunity spaces
+# 8. VALUE PROPOSITION MATCHER
+# ============================================================
+# --- Strategic Value Propositions (corporate deck, slide 17/20) -- mapping
+# target for "strategic relevance" scoring. Without this, the 15% weight
+# given to strategic_relevance was a pure LLM guess with nothing concrete to
+# check it against. Each OS gets matched (best-effort, keyword-based) to the
+# closest of Orange's 5 named value propositions.
+class ValueProposition(str, Enum):
+    SECURE_CONNECTIVITY = "NextGen Secured Connectivity"
+    SECURE_CLOUD = "Secure Cloud Orchestration"
+    GENAI_WORKFORCE = "GenAI Empowered Workforce"
+    CUSTOMER_EXPERIENCE = "Orchestrate Customer Interactions"
+    OPERATIONAL_EXPERIENCE = "Smart Manufacturing & Operations"
+
+
+# Keyword hints for the lightweight classifier below. Not exhaustive --
+# a starting seed list, extend as more opportunity spaces get scored.
+VALUE_PROP_KEYWORDS = {
+    ValueProposition.SECURE_CONNECTIVITY: ["sd-wan", "network", "5g", "connectivity", "sase"],
+    ValueProposition.SECURE_CLOUD: ["cloud migration", "multi-cloud", "sovereign cloud", "cloud security", "cloud"],
+    ValueProposition.GENAI_WORKFORCE: ["copilot", "generative ai", "agentic ai", "productivity", "collaboration"],
+    ValueProposition.CUSTOMER_EXPERIENCE: ["contact center", "contact centre", "customer journey", "cx", "personalization"],
+    ValueProposition.OPERATIONAL_EXPERIENCE: ["iot", "predictive maintenance", "computer vision", "ot", "manufacturing"],
+}
+
+
+def map_to_value_proposition(os_text):
+    """Naive keyword matcher over 'vertical use_case technology', lowercased.
+    Returns the first matching ValueProposition, or None if nothing matches
+    -- None means 'no strategic relevance boost applied', not an error."""
+    text = os_text.lower()
+    for vp, keywords in VALUE_PROP_KEYWORDS.items():
+        if any(kw in text for kw in keywords):
+            return vp
+    return None
+
+
+# ============================================================
+# 9. OPPORTUNITY SPACE SEEDS (CANDIDATES) -- growing beyond a fixed list
 # ============================================================
 
 CANDIDATES = [
@@ -651,5 +716,3 @@ CANDIDATES = [
     # Grounded in TMF Group (hybrid cloud, risk reduction) -- see CUSTOMER_REFERENCES.
     ("OS051", "IT and Services", "Cloud Infrastructure Modernization", "Cloud"),
 ]
-
-RECURRING_THEME_PROMOTION_THRESHOLD = 2

@@ -193,10 +193,70 @@ def migrate_schema(conn):
     conn.commit()
 
 
+def dedupe_opportunity_spaces(conn):
+    """Sieg 25/8 -- fix for the OS026/OS052 (and OS036/OS053) duplicate bug:
+    cmd_create()'s duplicate check only ever WARNED, it never blocked the
+    insert, so the same (vertical, use_case, technology) triple could end up
+    registered twice under two different labels. This cleans up any
+    duplicates already sitting in the DB: for each triple registered more
+    than once, keep the OLDEST row (lowest id = first ever created, so the
+    one with the longest signal-linking history) and delete the newer
+    duplicate(s) -- including their scores, right-to-win scores, and signal
+    links, same as delete_opportunity_spaces() does for a manual delete.
+    Safe to call every time init_db() runs: once no duplicates remain, the
+    GROUP BY ... HAVING c > 1 below returns nothing and this is a no-op."""
+    dup_groups = conn.execute(
+        """SELECT vertical, use_case, technology, MIN(id) AS keep_id, COUNT(*) AS c
+           FROM opportunity_spaces
+           GROUP BY vertical, use_case, technology
+           HAVING c > 1"""
+    ).fetchall()
+    for g in dup_groups:
+        losers = conn.execute(
+            """SELECT id, label FROM opportunity_spaces
+               WHERE vertical = ? AND use_case = ? AND technology = ? AND id != ?""",
+            (g["vertical"], g["use_case"], g["technology"], g["keep_id"]),
+        ).fetchall()
+        for loser in losers:
+            print(f"[dedupe_opportunity_spaces] removing duplicate {loser['label']} -- "
+                  f"same triple ({g['vertical']} x {g['use_case']} x {g['technology']}) "
+                  f"already registered under an earlier OS.")
+            conn.execute("DELETE FROM opportunity_signals WHERE opportunity_space_id = ?", (loser["id"],))
+            conn.execute("DELETE FROM scores WHERE opportunity_space_id = ?", (loser["id"],))
+            conn.execute("DELETE FROM right_to_win_scores WHERE opportunity_space_id = ?", (loser["id"],))
+            conn.execute("DELETE FROM opportunity_spaces WHERE id = ?", (loser["id"],))
+    conn.commit()
+
+
+def ensure_opportunity_space_uniqueness(conn):
+    """Sieg 25/8 -- the actual root fix, not just the cleanup above: without
+    this, duplicate creation was only ever prevented by an application-level
+    check-then-insert (find_opportunity_space_by_triple() before upsert),
+    which is not race-proof and -- as create()'s warn-only version proved --
+    easy to leave non-blocking by mistake. A DB-level UNIQUE index makes a
+    duplicate triple impossible to insert at all, no matter which code path
+    tries it. Must run AFTER dedupe_opportunity_spaces(), otherwise creating
+    the index would fail on the duplicates that still exist."""
+    try:
+        conn.execute(
+            """CREATE UNIQUE INDEX IF NOT EXISTS idx_opportunity_spaces_triple
+               ON opportunity_spaces (vertical, use_case, technology)"""
+        )
+        conn.commit()
+    except sqlite3.IntegrityError as e:
+        # Belt and suspenders: if dedupe somehow missed a pair (e.g. a new
+        # duplicate slipped in between dedupe and this call), don't crash
+        # init_db() over it -- surface it loudly instead so it gets noticed.
+        print(f"[!] Could not enforce opportunity_spaces triple uniqueness -- "
+              f"duplicates still present: {e}")
+
+
 def init_db():
     conn = get_connection()
     conn.executescript(SCHEMA)
     migrate_schema(conn)  # safe no-op on a fresh DB, adds columns on an existing one
+    dedupe_opportunity_spaces(conn)  # clean up any pre-existing duplicate triples
+    ensure_opportunity_space_uniqueness(conn)  # then make new ones impossible
     conn.commit()
     conn.close()
 
@@ -573,14 +633,33 @@ def get_opportunity_spaces_with_fallback_scores(conn):
     is available again (a fresh key, tomorrow's reset, Ollama)."""
     return conn.execute(
         """SELECT os.* FROM opportunity_spaces os
-           JOIN scores s ON s.opportunity_space_id = os.id
-               AND s.computed_at = (SELECT MAX(computed_at) FROM scores WHERE opportunity_space_id = os.id)
-           JOIN right_to_win_scores r ON r.opportunity_space_id = os.id
-               AND r.computed_at = (SELECT MAX(computed_at) FROM right_to_win_scores WHERE opportunity_space_id = os.id)
+           JOIN scores s ON s.id = (
+               SELECT id FROM scores WHERE opportunity_space_id = os.id
+               ORDER BY computed_at DESC, id DESC LIMIT 1
+           )
+           JOIN right_to_win_scores r ON r.id = (
+               SELECT id FROM right_to_win_scores WHERE opportunity_space_id = os.id
+               ORDER BY computed_at DESC, id DESC LIMIT 1
+           )
            WHERE s.evidence_quality_justification LIKE '%unavailable%'
               OR s.strategic_relevance_justification LIKE '%unavailable%'
               OR r.justification LIKE '%unavailable%'
            ORDER BY os.label"""
+    ).fetchall()
+
+
+def get_opportunity_spaces_with_old_scores(conn):
+    """Sieg 25/8 -- teammate's contribution, adopted as-is: opportunity
+    spaces whose latest score is more than 3 days old. Not currently wired
+    into score_all_opportunity_spaces()'s default run (see scoring.py's
+    comment at the call site for why) -- kept here as available infra for
+    whoever wants to build a scheduled/opt-in staleness refresh later,
+    e.g. feeding these into the free `--refresh` (recalibrate_deterministic_
+    scores()) instead of a full paid LLM rescore."""
+    return conn.execute(
+        """SELECT * FROM opportunity_spaces
+           WHERE id IN (SELECT opportunity_space_id FROM scores WHERE datetime(computed_at) < datetime('now', '-3 days'))
+           ORDER BY label"""
     ).fetchall()
 
 
@@ -599,7 +678,24 @@ def get_latest_scores(conn):
     from every result, so it never appears in the summary or dashboard, with
     no error anywhere. Switched to LEFT JOIN on right_to_win_scores so a
     partially-scored OS still shows up, with NULL right-to-win fields the
-    UI/summary can flag ("not yet scored") instead of just vanishing."""
+    UI/summary can flag ("not yet scored") instead of just vanishing.
+
+    Sieg 25/8 -- bug fix: "latest per OS" used to be `s.computed_at =
+    (SELECT MAX(computed_at) ...)`. On Windows, datetime.now()'s clock
+    resolution can return the IDENTICAL timestamp string for two inserts
+    that happen within the same tick (confirmed: two insert_score() calls
+    milliseconds apart in a test both got the same ISO string) -- when that
+    happens, MAX(computed_at) ties, the equality join matches BOTH rows
+    (old and new score) for that one OS, get_latest_scores() silently
+    returns 2 rows instead of 1, and whichever one the caller happens to
+    read first can be the STALE one -- exactly what broke `--refresh`
+    (recalibrate_deterministic_scores()) in test_score_moves_when_new_
+    signals_are_linked: the new total was computed and inserted correctly,
+    but the old total kept being read back. Now selects by `id` (AUTOINCREMENT,
+    always monotonically increasing, never ties) as the tiebreaker after
+    computed_at, via a correlated subquery that returns exactly one row's
+    id per OS regardless of timestamp collisions -- ORDER BY ... LIMIT 1
+    instead of an equality match on a value that can repeat."""
     return conn.execute("""
         SELECT os.id, os.label, os.vertical, os.use_case, os.technology,
                s.market_signal_strength, s.source_diversity, s.evidence_quality,
@@ -608,12 +704,78 @@ def get_latest_scores(conn):
                s.urgency_score, s.total_score,
                r.portfolio_distance, r.right_to_win_score, r.matched_assets, r.justification
         FROM opportunity_spaces os
-        JOIN scores s ON s.opportunity_space_id = os.id
-            AND s.computed_at = (SELECT MAX(computed_at) FROM scores WHERE opportunity_space_id = os.id)
-        LEFT JOIN right_to_win_scores r ON r.opportunity_space_id = os.id
-            AND r.computed_at = (SELECT MAX(computed_at) FROM right_to_win_scores WHERE opportunity_space_id = os.id)
+        JOIN scores s ON s.id = (
+            SELECT id FROM scores WHERE opportunity_space_id = os.id
+            ORDER BY computed_at DESC, id DESC LIMIT 1
+        )
+        LEFT JOIN right_to_win_scores r ON r.id = (
+            SELECT id FROM right_to_win_scores WHERE opportunity_space_id = os.id
+            ORDER BY computed_at DESC, id DESC LIMIT 1
+        )
         ORDER BY os.label
     """).fetchall()
+
+
+def get_scores_ranked_by_persona_vertical(conn, persona=None, vertical=None):
+    """Sieg 25/8 -- closes the "Persona + vertical ranking" backend gap from
+    current_project_state_overview.md: "The logic for sorting OSs based on
+    the persona + vertical combination. Currently, the backend returns all
+    OSs without role-specific sorting." That doc suggested either frontend
+    sorting (already fine for a demo) OR "a backend endpoint/query that
+    accepts persona and vertical parameters and returns a sorted list" --
+    this is that query. `persona` here is the OWNING team column
+    (opportunity_spaces.persona, i.e. config.ROLES: Strategist/Sales/
+    Presales -- who should ACT on this OS), not buyer_persona (who the
+    customer-side contact is, already filterable in the dashboard) and not
+    the dashboard's top "Role" selector (which is the VIEWER's own role,
+    used only to hide L3/L4 opportunities from Presales).
+
+    Same "latest score per OS" join as get_latest_scores() (including the
+    Sieg 25/8 timestamp-tie fix -- ORDER BY ... LIMIT 1, not an equality
+    match on computed_at), plus the persona/vertical columns and an
+    explicit ranking: persona first (groups each team's opportunities
+    together), then vertical, then total_score DESC within that group --
+    matches how a Strategist or Sales lead would actually want to scan
+    the list ("show me MY team's opportunities, best market first").
+
+    Both args optional and independently combinable:
+      - persona=None, vertical=None  -> every OS, still ranked this way
+      - persona="Sales"              -> only Sales-owned OS, ranked
+      - vertical="Manufacturing"     -> only Manufacturing, ranked
+      - both                         -> both filters applied together
+
+    Callable directly from Power BI's SQLite connector too (same DB file,
+    same query) -- not Streamlit-only."""
+    query = """
+        SELECT os.id, os.label, os.vertical, os.use_case, os.technology,
+               os.persona, os.buyer_persona, os.horizon, os.domain,
+               s.total_score, s.urgency_score,
+               r.portfolio_distance, r.right_to_win_score
+        FROM opportunity_spaces os
+        JOIN scores s ON s.id = (
+            SELECT id FROM scores WHERE opportunity_space_id = os.id
+            ORDER BY computed_at DESC, id DESC LIMIT 1
+        )
+        LEFT JOIN right_to_win_scores r ON r.id = (
+            SELECT id FROM right_to_win_scores WHERE opportunity_space_id = os.id
+            ORDER BY computed_at DESC, id DESC LIMIT 1
+        )
+        WHERE 1=1
+    """
+    params = []
+    if persona:
+        query += " AND os.persona = ?"
+        params.append(persona)
+    if vertical:
+        query += " AND os.vertical = ?"
+        params.append(vertical)
+    # Sieg 25/8 -- persona first (NULLS LAST so unassigned OS sort to the
+    # bottom of each vertical group instead of alphabetically ahead of
+    # "Presales"/"Sales"/"Strategist"), then vertical, then best score first.
+    query += """
+        ORDER BY (os.persona IS NULL), os.persona, os.vertical, s.total_score DESC
+    """
+    return conn.execute(query, params).fetchall()
 
 
 def link_signal_to_opportunity(conn, opportunity_space_id, signal_id):
@@ -628,6 +790,22 @@ def link_signal_to_opportunity(conn, opportunity_space_id, signal_id):
 def insert_score(conn, opportunity_space_id, sub_scores: dict, total_score: float,
                   evidence_quality_justification=None, strategic_relevance_justification=None,
                   urgency_score=None):
+    """Sieg 25/8 -- deliberately kept as always-INSERT, not switched to a
+    teammate's check-then-UPDATE-else-INSERT version: that version (a) drops
+    the audit trail this project documents as a design decision (README
+    "Key design decisions" / interview Q5 -- "scores/right_to_win_scores
+    always INSERT a new row, get_latest_scores() reads back the latest"),
+    and (b) had a real bug in the right_to_win_scores twin of this function
+    (insert_right_to_win_score checked `scores` to decide whether to UPDATE
+    or INSERT INTO `right_to_win_scores` -- since a scores row always exists
+    by the time right-to-win is inserted, it took the UPDATE branch even on
+    an OS's very FIRST right-to-win score, silently updating 0 rows and
+    leaving right_to_win_scores permanently empty for that OS).
+    The real problem that version was solving -- scores/right_to_win_scores
+    accumulating many rows per OS after repeated --refresh/--recalibrate-*/
+    --force runs -- is real (some OS had 30+ rows), but a one-off/occasional
+    prune (clean_scores(), `python -m pipeline.scoring --prune-scores`) is
+    a lower-risk fix than rewriting the audit-trail insert path everywhere."""
     conn.execute(
         """INSERT INTO scores
            (opportunity_space_id, market_signal_strength, source_diversity,
@@ -653,7 +831,11 @@ def insert_score(conn, opportunity_space_id, sub_scores: dict, total_score: floa
 
 
 def insert_right_to_win_score(conn, opportunity_space_id, portfolio_distance,
-                               right_to_win_score, matched_assets, justification):
+                               right_to_win_score: float, matched_assets, justification):
+    # Sieg 26/8 -- type hint added for symmetry with insert_score()'s
+    # `total_score: float`. The REAL column + float() cast in scoring.py
+    # (llm_right_to_win) already guaranteed float storage, so this is
+    # documentation-only, not a behavior change.
     conn.execute(
         """INSERT INTO right_to_win_scores
            (opportunity_space_id, portfolio_distance, right_to_win_score,
