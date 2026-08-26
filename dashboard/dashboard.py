@@ -50,7 +50,7 @@ def load_opportunity_spaces():
             s.novelty_momentum AS "Novelty / Momentum",
             s.strategic_relevance AS "Strategic Relevance",
             s.strategic_relevance_justification AS "Strategic Relevance Justification",
-            s.total_score AS Attractiveness,
+            s.total_score AS attractiveness,
             s.urgency_score AS Urgency,
             r.portfolio_distance,
             r.right_to_win_score,
@@ -395,26 +395,20 @@ st.plotly_chart(
 
 st.subheader("🔍 Opportunity Details")
 
-
-# IMPORTANT :
-# We select the label for the user and then we fetch the ID from the database.
-
 selected_label = st.selectbox(
     "Choose an Opportunity Space",
     filtered_df["label"].tolist()
 )
 
-
-selected = filtered_df[
-    filtered_df["label"] == selected_label
+# IMPORTANT :
+# On récupère les données originales dans df
+# pour conserver tous les scores de l'Opportunity Space.
+selected = df[
+    df["label"] == selected_label
 ].iloc[0]
 
-
-# ID NUMÉRIQUE DE LA DATABASE
-
-selected_id = int(
-    selected["id"]
-)
+# ID numérique SQLite
+selected_id = int(selected["id"])
 
 
 # ============================================================
@@ -517,11 +511,11 @@ score_data = pd.DataFrame({
     ],
 
     "Score": [
-        selected["market_signal_strength"],
-        selected["source_diversity"],
-        selected["evidence_quality"],
-        selected["novelty_momentum"],
-        selected["strategic_relevance"]
+        selected["Market Signal Strength"],
+        selected["Source Diversity"],
+        selected["Evidence Quality"],
+        selected["Novelty / Momentum"],
+        selected["Strategic Relevance"]
     ]
 })
 
