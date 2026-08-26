@@ -513,11 +513,19 @@ def run_full_refresh():
         else:
             print("[GDELT] disabled in config.py (ENABLE_GDELT = False) -- skipping")
 
+        # Sieg 26/8 -- both these sources are genuinely not tied to one
+        # vertical (vendor blogs, general HN search terms), which used to
+        # leave vertical_hint as NULL -> showed as a silent "(Blank)" slice
+        # in the Power BI treemap (128 signals, no explanation). Giving it a
+        # real, documented label instead -- same "Cross-vertical" value
+        # already used elsewhere in the data -- so it's an honest category,
+        # not a data gap. See README's "Cross-vertical signals" note.
         for feed in VENDOR_FEEDS:
-            safe_run(f"Vendor / {feed['name']}", fetch_vendor_feed, conn, feed["name"], feed["url"])
+            safe_run(f"Vendor / {feed['name']}", fetch_vendor_feed, conn, feed["name"], feed["url"],
+                     vertical_hint="Cross-vertical")
 
         for q in HN_QUERIES:
-            safe_run(f"Hacker News / '{q}'", fetch_hacker_news, conn, q)
+            safe_run(f"Hacker News / '{q}'", fetch_hacker_news, conn, q, vertical_hint="Cross-vertical")
 
         for q in COMPETITOR_QUERIES:
             safe_run(f"Competitor watch / {q['vertical']}", fetch_google_news,

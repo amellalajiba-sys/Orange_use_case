@@ -35,14 +35,13 @@ from pipeline.db import (
 from pipeline.config import USE_CASES_TAXONOMY, TECHNOLOGIES_TAXONOMY, RECURRING_THEME_PROMOTION_THRESHOLD
 from pipeline.taxonomy_validation import is_generic_taxonomy_term
 # Sieg 24/8 -- switched to pipeline.theme_promotion: that's the name in
-# her diff (signals_discovery.py -> theme_promotion.py), and she picked it
-# as the one to keep. signals_discovery.py removed outright (24/8, on
-# request) -- nothing else in the project referenced it once this import
+# diff (signals_discovery.py -> theme_promotion.py), and original picked it
+# as the one to keep. signals_discovery.py removed outright -- nothing else in the project referenced it once this import
 # and radar_cli.py/radar_cli_top_15.py were all switched over.
 from pipeline.theme_promotion import track_valid_themes
 from llm.llm_client import get_llm_json
 
-WATCHLIST_PROMOTION_THRESHOLD = 3
+WATCHLIST_PROMOTION_THRESHOLD = 2
 
 
 # ---------- Step 1: quick exploration, no LLM ----------
@@ -131,11 +130,93 @@ themes: 3-6 items max, reject anything generic or supported by only one vague si
 watchlist_candidates: only include genuinely recurring patterns, not one-off mentions."""
 
 
+def _call_theme_extraction_llm(vertical, rows):
+    """Sieg 25/8 -- pure LLM-boundary function, split out of extract_themes()
+    so the classification logic below (_classify_themes) can be unit-tested
+    against hand-crafted LLM outputs without needing a DB connection or a
+    real LLM call. Builds the prompt from already-fetched signal rows and
+    returns the raw parsed JSON dict (or None if the call/parse failed) --
+    no watchlist/DB writes happen here."""
+    titles = "\n".join(f"- [{r['signal_type']}] {r['title']}" for r in rows)
+    prompt = f"Vertical: {vertical}\n\nSignals:\n{titles}"
+    system_prompt = THEME_EXTRACTION_SYSTEM_PROMPT.format(
+        use_cases=", ".join(USE_CASES_TAXONOMY), technologies=", ".join(TECHNOLOGIES_TAXONOMY)
+    )
+    return get_llm_json(prompt, system_prompt=system_prompt)
+
+
+def _classify_themes(themes, candidates):
+    """Sieg 25/8 -- pure classification logic, split out of extract_themes()
+    on purpose: takes the LLM's already-parsed `themes`/`watchlist_candidates`
+    lists and sorts them into what's usable vs what needs a watchlist entry,
+    with NO database access and NO LLM call -- this is what makes it directly
+    unit-testable against malformed/edge-case inputs (missing keys, null
+    values, bare generic terms) without a live DB or a real/mocked LLM
+    response wrapper, see tests/test_analyze_classification.py.
+
+    Returns (valid_themes, watchlist_entries, skipped_generic):
+      - valid_themes: themes whose use_case AND technology both match the
+        closed taxonomy exactly, unchanged.
+      - watchlist_entries: list of (term, category, vertical) tuples the
+        caller should persist via db.add_to_watchlist().
+      - skipped_generic: list of (term, category, vertical) that were
+        filtered out as bare generic terms (e.g. "AI" alone) -- returned so
+        the caller can log them, matching the original behavior.
+
+    Sieg 24/8 -- bug fix, preserved: `.get("technology", "unknown")` only
+    falls back to "unknown" when the KEY is missing entirely -- if the LLM
+    returns the key WITH a null value (seen in practice from the Ollama/
+    llama3.2:3b fallback, which is much more prone to malformed JSON than
+    Groq), .get() returns None, not "unknown", and that None would go
+    straight into add_to_watchlist() -> INSERT with term=None ->
+    sqlite3.IntegrityError: NOT NULL constraint failed: watchlist_terms.term,
+    crashing the whole --from= run mid-vertical. `x or "unknown"` catches
+    both "missing" and "present but None/empty"."""
+    valid_themes = []
+    watchlist_entries = []
+    skipped_generic = []
+
+    for t in themes:
+        use_case = t.get("use_case")
+        technology = t.get("technology")
+        if use_case in USE_CASES_TAXONOMY and technology in TECHNOLOGIES_TAXONOMY:
+            valid_themes.append(t)
+            continue
+        if use_case not in USE_CASES_TAXONOMY:
+            watchlist_entries.append((use_case or "unknown", "use_case"))
+        if technology not in TECHNOLOGIES_TAXONOMY:
+            technology = technology or "unknown"
+            # Sieg 24/8 -- the prompt asks the LLM to avoid bare "AI", but
+            # prompt compliance is not validation: do not let it accumulate
+            # in watchlist_terms and later reach review.
+            if is_generic_taxonomy_term(technology, "technology"):
+                skipped_generic.append((technology, "technology"))
+            else:
+                watchlist_entries.append((technology, "technology"))
+
+    for c in candidates:
+        if c.get("term") and c.get("category") in ("use_case", "technology"):
+            # Sieg 24/8 -- apply the same guard to the LLM's explicit
+            # watchlist output, not only to malformed entries in `themes`.
+            if is_generic_taxonomy_term(c["term"], c["category"]):
+                skipped_generic.append((c["term"], c["category"]))
+            else:
+                watchlist_entries.append((c["term"], c["category"]))
+
+    return valid_themes, watchlist_entries, skipped_generic
+
+
 def extract_themes(conn, vertical, max_signals=40):
     """Ask the LLM to turn raw signal titles into candidate Opportunity
     Spaces for one vertical, constrained to the closed taxonomy. Anything
     that doesn't fit goes to watchlist_terms instead of being silently
-    accepted or silently dropped. Returns (valid_themes, watchlist_candidates)."""
+    accepted or silently dropped. Returns (valid_themes, watchlist_candidates).
+
+    Sieg 25/8 -- now a thin orchestrator: fetch signals (DB) -> call the LLM
+    (_call_theme_extraction_llm) -> classify the result (_classify_themes,
+    pure) -> persist watchlist entries (DB). Same inputs/outputs/behavior as
+    before the split -- see the two helper functions above for what moved
+    where and why."""
     rows = conn.execute(
         "SELECT signal_type, title FROM signals WHERE vertical_hint = ? "
         "ORDER BY collected_at DESC LIMIT ?",
@@ -146,13 +227,7 @@ def extract_themes(conn, vertical, max_signals=40):
         print(f"[{vertical}] only {len(rows)} signals -- too few for reliable theme extraction, skipping")
         return [], []
 
-    titles = "\n".join(f"- [{r['signal_type']}] {r['title']}" for r in rows)
-    prompt = f"Vertical: {vertical}\n\nSignals:\n{titles}"
-    system_prompt = THEME_EXTRACTION_SYSTEM_PROMPT.format(
-        use_cases=", ".join(USE_CASES_TAXONOMY), technologies=", ".join(TECHNOLOGIES_TAXONOMY)
-    )
-
-    result = get_llm_json(prompt, system_prompt=system_prompt)
+    result = _call_theme_extraction_llm(vertical, rows)
     if not result or "themes" not in result:
         print(f"[{vertical}] theme extraction failed or returned nothing usable")
         return [], []
@@ -160,41 +235,12 @@ def extract_themes(conn, vertical, max_signals=40):
     themes = result.get("themes", [])
     candidates = result.get("watchlist_candidates", [])
 
-    # Belt and suspenders: even if the LLM ignores the instruction and invents
-    # a term, catch it here and reroute to the watchlist rather than trusting it.
-    # Sieg 24/8 -- bug fix: `.get("technology", "unknown")` only falls back to
-    # "unknown" when the KEY is missing entirely -- if the LLM returns the key
-    # WITH a null value (seen in practice from the Ollama/llama3.2:3b fallback,
-    # which is much more prone to malformed JSON than Groq), .get() returns
-    # None, not "unknown", and that None went straight into add_to_watchlist()
-    # -> INSERT with term=None -> sqlite3.IntegrityError: NOT NULL constraint
-    # failed: watchlist_terms.term, crashing the whole --from= run mid-vertical.
-    # `x or "unknown"` catches both "missing" and "present but None/empty".
-    valid_themes = []
-    for t in themes:
-        if t.get("use_case") in USE_CASES_TAXONOMY and t.get("technology") in TECHNOLOGIES_TAXONOMY:
-            valid_themes.append(t)
-        else:
-            if t.get("use_case") not in USE_CASES_TAXONOMY:
-                add_to_watchlist(conn, t.get("use_case") or "unknown", "use_case", vertical)
-            if t.get("technology") not in TECHNOLOGIES_TAXONOMY:
-                technology = t.get("technology") or "unknown"
-                # Sieg 24/8 -- the prompt asks the LLM to avoid bare "AI",
-                # but prompt compliance is not validation: do not let it
-                # accumulate in watchlist_terms and later reach review.
-                if is_generic_taxonomy_term(technology, "technology"):
-                    print(f"[{vertical}] skipped generic technology candidate: {technology!r}")
-                else:
-                    add_to_watchlist(conn, technology, "technology", vertical)
+    valid_themes, watchlist_entries, skipped_generic = _classify_themes(themes, candidates)
 
-    for c in candidates:
-        if c.get("term") and c.get("category") in ("use_case", "technology"):
-            # Sieg 24/8 -- apply the same guard to the LLM's explicit
-            # watchlist output, not only to malformed entries in `themes`.
-            if is_generic_taxonomy_term(c["term"], c["category"]):
-                print(f"[{vertical}] skipped generic technology candidate: {c['term']!r}")
-                continue
-            add_to_watchlist(conn, c["term"], c["category"], vertical)
+    for term, category in watchlist_entries:
+        add_to_watchlist(conn, term, category, vertical)
+    for term, category in skipped_generic:
+        print(f"[{vertical}] skipped generic {category} candidate: {term!r}")
 
     return valid_themes, candidates
 
