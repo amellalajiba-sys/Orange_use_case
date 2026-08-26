@@ -584,6 +584,15 @@ def get_opportunity_spaces_with_fallback_scores(conn):
     ).fetchall()
 
 
+def get_opportunity_spaces_with_old_scores(conn):
+    """Returns opportunity spaces with scores computed more than 3 days ago."""
+    return conn.execute(
+        """SELECT * FROM opportunity_spaces
+           WHERE id IN (SELECT opportunity_space_id FROM scores WHERE datetime(computed_at) < datetime('now', '-3 days'))
+           ORDER BY label"""
+    ).fetchall()
+
+
 def get_latest_scores(conn):
     """One row per opportunity space: its most recent attractiveness score
     joined with its most recent right-to-win score. Both `scores` and
@@ -628,46 +637,128 @@ def link_signal_to_opportunity(conn, opportunity_space_id, signal_id):
 def insert_score(conn, opportunity_space_id, sub_scores: dict, total_score: float,
                   evidence_quality_justification=None, strategic_relevance_justification=None,
                   urgency_score=None):
-    conn.execute(
-        """INSERT INTO scores
-           (opportunity_space_id, market_signal_strength, source_diversity,
-            evidence_quality, evidence_quality_justification, novelty_momentum,
-            strategic_relevance, strategic_relevance_justification, urgency_score,
-            total_score, computed_at)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-        (
-            opportunity_space_id,
-            sub_scores.get("market_signal_strength"),
-            sub_scores.get("source_diversity"),
-            sub_scores.get("evidence_quality"),
-            evidence_quality_justification,
-            sub_scores.get("novelty_momentum"),
-            sub_scores.get("strategic_relevance"),
-            strategic_relevance_justification,
-            urgency_score,
-            total_score,
-            datetime.now(timezone.utc).isoformat(),
-        ),
-    )
+    # check if opportunity space already exist in scores table
+    existing_os = conn.execute(
+        "SELECT COUNT(*) FROM scores WHERE opportunity_space_id = ?",
+        (opportunity_space_id,)
+    ).fetchone()[0]
+    # insert score if opportunity space is not found
+    if existing_os > 0:
+        # Update existing scores
+        conn.execute(
+            """
+            UPDATE scores
+            SET
+                market_signal_strength = ?,
+                source_diversity = ?,
+                evidence_quality = ?,
+                evidence_quality_justification = ?,
+                novelty_momentum = ?,
+                strategic_relevance = ?,
+                strategic_relevance_justification = ?,
+                urgency_score = ?,
+                total_score = ?,
+                computed_at = ?
+            WHERE opportunity_space_id = ?
+            """,
+            (
+                sub_scores.get("market_signal_strength"),
+                sub_scores.get("source_diversity"),
+                sub_scores.get("evidence_quality"),
+                evidence_quality_justification,
+                sub_scores.get("novelty_momentum"),
+                sub_scores.get("strategic_relevance"),
+                strategic_relevance_justification,
+                urgency_score,
+                total_score,
+                datetime.now(timezone.utc).isoformat(),
+                opportunity_space_id,
+            ),
+        )
+
+    else:
+        # Insert new scores
+        conn.execute(
+            """
+            INSERT INTO scores
+            (
+                opportunity_space_id,
+                market_signal_strength,
+                source_diversity,
+                evidence_quality,
+                evidence_quality_justification,
+                novelty_momentum,
+                strategic_relevance,
+                strategic_relevance_justification,
+                urgency_score,
+                total_score,
+                computed_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                opportunity_space_id,
+                sub_scores.get("market_signal_strength"),
+                sub_scores.get("source_diversity"),
+                sub_scores.get("evidence_quality"),
+                evidence_quality_justification,
+                sub_scores.get("novelty_momentum"),
+                sub_scores.get("strategic_relevance"),
+                strategic_relevance_justification,
+                urgency_score,
+                total_score,
+                datetime.now(timezone.utc).isoformat(),
+            ),
+        )
     conn.commit()
 
 
 def insert_right_to_win_score(conn, opportunity_space_id, portfolio_distance,
                                right_to_win_score, matched_assets, justification):
-    conn.execute(
-        """INSERT INTO right_to_win_scores
-           (opportunity_space_id, portfolio_distance, right_to_win_score,
-            matched_assets, justification, computed_at)
-           VALUES (?, ?, ?, ?, ?, ?)""",
-        (
-            opportunity_space_id,
-            portfolio_distance,
-            right_to_win_score,
-            matched_assets,
-            justification,
-            datetime.now(timezone.utc).isoformat(),
-        ),
-    )
+    # check if opportunity space already exist in scores table
+    existing_os = conn.execute(
+        "SELECT COUNT(*) FROM scores WHERE opportunity_space_id = ?",
+        (opportunity_space_id,)
+    ).fetchone()[0]
+    # insert score if opportunity space is not found
+    if existing_os > 0:
+        # Update existing scores
+        conn.execute(
+            """
+            UPDATE right_to_win_scores
+            SET
+                portfolio_distance = ?,
+                right_to_win_score = ?,
+                matched_assets = ?,
+                justification = ?,
+                computed_at = ?
+            WHERE opportunity_space_id = ?
+            """,
+            (
+                portfolio_distance,
+                right_to_win_score,
+                matched_assets,
+                justification,
+                datetime.now(timezone.utc).isoformat(),
+                opportunity_space_id,
+            ),
+        )
+    else:
+        # Insert new scores
+        conn.execute(
+            """INSERT INTO right_to_win_scores
+            (opportunity_space_id, portfolio_distance, right_to_win_score,
+                matched_assets, justification, computed_at)
+            VALUES (?, ?, ?, ?, ?, ?)""",
+            (
+                opportunity_space_id,
+                portfolio_distance,
+                right_to_win_score,
+                matched_assets,
+                justification,
+                datetime.now(timezone.utc).isoformat(),
+            ),
+        )
     conn.commit()
 
 

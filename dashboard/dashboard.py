@@ -1,44 +1,48 @@
+import streamlit as st
 import sqlite3
-
 import pandas as pd
 import plotly.express as px
-import streamlit as st
 
 
 # ============================================================
-# 1. CONFIGURATION
-# ============================================================
-
-st.set_page_config(
-    page_title="Orange Business Innovation Radar",
-    page_icon="🟠",
-    layout="wide",
-)
-
-
-# ============================================================
-# 2. CONNECTION TO THE DATABASE
+# CONFIGURATION
 # ============================================================
 
 DB_PATH = "radar.db"
 
+st.set_page_config(
+    page_title="Orange Business Innovation Radar",
+    page_icon="🟠",
+    layout="wide"
+)
 
-def load_opportunities():
+
+# ============================================================
+# DATABASE FUNCTIONS
+# ============================================================
+
+def get_connection():
     """
-    Load Opportunity Spaces together with their attractiveness
-    and right-to-win scores.
+    Open a connection to radar.db.
+    """
+    return sqlite3.connect(DB_PATH)
+
+
+@st.cache_data
+def load_opportunity_spaces():
+    """
+    Fetch the Opportunity Spaces + their scores.
     """
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = get_connection()
 
     query = """
         SELECT
-            os.id AS opportunity_space_id,
-            os.label AS ID,
-            os.vertical AS Vertical,
-            os.use_case AS "Use Case",
-            os.technology AS Technology,
-
+            os.id,
+            os.label,
+            os.vertical,
+            os.use_case,
+            os.technology,
             s.market_signal_strength AS "Market Signal Strength",
             s.source_diversity AS "Source Diversity",
             s.evidence_quality AS "Evidence Quality",
@@ -47,21 +51,22 @@ def load_opportunities():
             s.strategic_relevance AS "Strategic Relevance",
             s.strategic_relevance_justification AS "Strategic Relevance Justification",
             s.total_score AS Attractiveness,
-
-            r.right_to_win_score AS "Right to Win",
-            r.portfolio_distance AS Distance,
-            r.matched_assets AS "Matched Assets",
-            r.justification AS "Right to Win Justification"
+            s.urgency_score AS Urgency,
+            r.portfolio_distance,
+            r.right_to_win_score,
+            r.matched_assets,
+            r.justification AS right_to_win_justification
 
         FROM opportunity_spaces os
 
         LEFT JOIN scores s
-            ON os.id = s.opportunity_space_id
+            ON s.opportunity_space_id = os.id
 
         LEFT JOIN right_to_win_scores r
-            ON os.id = r.opportunity_space_id
+            ON r.opportunity_space_id = os.id
 
-        ORDER BY s.total_score DESC
+        ORDER BY
+            s.total_score DESC
     """
 
     df = pd.read_sql_query(query, conn)
@@ -71,130 +76,151 @@ def load_opportunities():
     return df
 
 
+@st.cache_data
 def load_signals(opportunity_space_id):
     """
-    Load all grounding signals associated with one Opportunity Space.
+    Fetch all the grounding/evidence signals
+    of an OS.
     """
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = get_connection()
 
     query = """
         SELECT
-            s.source_name AS "Source",
-            s.source_url AS "URL",
-            s.signal_type AS "Type",
-            s.title AS "Title",
-            s.summary AS "Summary",
-            s.published_date AS "Published Date"
+            s.id,
+            s.source_name,
+            s.source_url,
+            s.signal_type,
+            s.title,
+            s.summary,
+            s.published_date
 
-        FROM signals s
+        FROM opportunity_signals osig
 
-        INNER JOIN opportunity_signals os
-            ON s.id = os.signal_id
+        JOIN signals s
+            ON s.id = osig.signal_id
 
-        WHERE os.opportunity_space_id = ?
+        WHERE osig.opportunity_space_id = ?
 
-        ORDER BY s.published_date DESC
+        ORDER BY
+            s.published_date DESC
     """
 
-    df = pd.read_sql_query(
+    signals = pd.read_sql_query(
         query,
         conn,
-        params=(opportunity_space_id,),
+        params=(opportunity_space_id,)
     )
 
     conn.close()
 
-    return df
+    return signals
 
 
 # ============================================================
-# 3. LOADING THE DATA
+# LOADING THE DATA
 # ============================================================
 
-df = load_opportunities()
+df = load_opportunity_spaces()
 
 
-# If the database is empty, display an error message and stop the app
+# ============================================================
+# VERIFICATION
+# ============================================================
+
 if df.empty:
+
     st.error(
-        "No Opportunity Spaces were found in radar.db."
+        "❌ No Opportunity Spaces found in radar.db."
     )
+
     st.stop()
 
 
 # ============================================================
-# 4. HEADER
+# TITLE
 # ============================================================
 
 st.title("🟠 Orange Business Innovation Radar")
 
 st.write(
-    "Explore and compare Opportunity Spaces based on "
-    "market attractiveness and Orange Business right-to-win."
+    "Discover the most attractive Opportunity Spaces "
+    "for Orange Business."
 )
 
 
 # ============================================================
-# 5. SIDEBAR — FILTERS
+# SIDEBAR — FILTERS
 # ============================================================
 
 st.sidebar.header("🎛️ Filters")
 
-st.sidebar.caption(
-    "Filter the radar by business vertical and portfolio distance."
-)
 
-
-# -------- Vertical --------
+# ---------- Vertical ----------
 
 vertical_options = sorted(
-    df["Vertical"].dropna().unique()
+    df["vertical"].dropna().unique()
 )
 
 selected_verticals = st.sidebar.multiselect(
-    "Business Vertical",
+    "🏭 Vertical",
     options=vertical_options,
-    default=vertical_options,
+    default=vertical_options
 )
 
 
-# -------- Distance --------
+# ---------- Distance ----------
 
 distance_options = sorted(
-    df["Distance"].dropna().unique()
+    df["portfolio_distance"].dropna().unique()
 )
 
 selected_distances = st.sidebar.multiselect(
-    "Portfolio Distance",
+    "📏 Portfolio Distance",
     options=distance_options,
-    default=distance_options,
+    default=distance_options
+)
+
+
+# ---------- Minimum attractiveness ----------
+
+min_attractiveness = st.sidebar.slider(
+    "⭐ Minimum Attractiveness",
+    min_value=0.0,
+    max_value=10.0,
+    value=0.0,
+    step=0.1
 )
 
 
 # ============================================================
-# 6. APPLICATION OF THE FILTERS
+# FILTERS DATAFRAME
 # ============================================================
 
 filtered_df = df[
-    (df["Vertical"].isin(selected_verticals))
+    (df["vertical"].isin(selected_verticals))
     &
-    (df["Distance"].isin(selected_distances))
+    (df["portfolio_distance"].isin(selected_distances))
+    &
+    (df["attractiveness"].fillna(0) >= min_attractiveness)
 ].copy()
 
 
-# Aucun résultat
+# ============================================================
+# IF NO RESULTS
+# ============================================================
+
 if filtered_df.empty:
 
     st.warning(
-        "No Opportunity Spaces match your current filters."
+        "No Opportunity Space matches your filters."
     )
 
     st.stop()
 
 
 # ============================================================
-# 7. KPI 
+# OVERVIEW
 # ============================================================
 
 st.subheader("📊 Overview")
@@ -206,53 +232,111 @@ with col1:
 
     st.metric(
         "Opportunity Spaces",
-        len(filtered_df),
+        len(filtered_df)
     )
 
 
 with col2:
 
-    average_attractiveness = (
-        filtered_df["Attractiveness"].mean()
-    )
+    best_attractiveness = filtered_df[
+        "attractiveness"
+    ].max()
 
     st.metric(
-        "Average Attractiveness",
-        f"{average_attractiveness:.2f}/10",
+        "Best Attractiveness",
+        f"{best_attractiveness:.2f}/10"
     )
 
 
 with col3:
 
-    average_right_to_win = (
-        filtered_df["Right to Win"].mean()
-    )
+    best_rtw = filtered_df[
+        "right_to_win_score"
+    ].max()
 
     st.metric(
-        "Average Right-to-Win",
-        f"{average_right_to_win:.2f}/10",
+        "Best Right to Win",
+        f"{best_rtw:.1f}/10"
     )
 
 
 with col4:
 
-    best_index = filtered_df[
-        "Attractiveness"
-    ].idxmax()
-
-    best_opportunity = filtered_df.loc[
-        best_index,
-        "ID",
-    ]
+    average_attractiveness = filtered_df[
+        "attractiveness"
+    ].mean()
 
     st.metric(
-        "Top Opportunity",
-        best_opportunity,
+        "Average Attractiveness",
+        f"{average_attractiveness:.2f}/10"
     )
 
 
 # ============================================================
-# 8. RADAR
+# RANKING
+# ============================================================
+
+st.subheader("🏆 Opportunity Ranking")
+
+ranking_df = filtered_df[
+    [
+        "label",
+        "vertical",
+        "use_case",
+        "technology",
+        "attractiveness",
+        "right_to_win_score",
+        "portfolio_distance"
+    ]
+].copy()
+
+
+ranking_df = ranking_df.sort_values(
+    "attractiveness",
+    ascending=False
+)
+
+
+ranking_df.columns = [
+    "OS",
+    "Vertical",
+    "Use Case",
+    "Technology",
+    "Attractiveness",
+    "Right to Win",
+    "Distance"
+]
+
+
+st.dataframe(
+    ranking_df,
+    use_container_width=True,
+    hide_index=True
+)
+
+# ============================================================
+# DATA FOR THE RADAR
+# ============================================================
+
+filtered_df["ID"] = filtered_df["label"]
+filtered_df["Vertical"] = filtered_df["vertical"]
+filtered_df["Use Case"] = filtered_df["use_case"]
+filtered_df["Technology"] = filtered_df["technology"]
+filtered_df["Attractiveness"] = filtered_df["attractiveness"]
+filtered_df["Right to Win"] = filtered_df["right_to_win_score"]
+filtered_df["Distance"] = filtered_df["portfolio_distance"]
+
+# Urgency based on the distance
+urgency_map = {
+    "L1": 8,
+    "L2": 5,
+    "L3": 2
+}
+
+filtered_df["Urgency"] = filtered_df["portfolio_distance"].map(urgency_map)
+
+# ============================================================
+# RADAR
 # ============================================================
 
 st.subheader("🎯 Opportunity Radar")
@@ -262,131 +346,83 @@ st.caption(
     "Orange Business right-to-win."
 )
 
+st.markdown("""
+- Size of bubbles : attractiveness.
+- Distance to the center : urgency.
+- Color : right to win.
+""")
 
-fig = px.scatter(
-    filtered_df,
-    x="Attractiveness",
-    y="Right to Win",
-    text="ID",
-    size="Attractiveness",
-    size_max=45,
+filtered_df["theta"] = filtered_df.apply(lambda row : row.Vertical + " x " + row.Technology, axis = 1)
+filtered_df["rad"] = filtered_df.apply(lambda row : row.Urgency, axis = 1)
+filtered_df["name"] = filtered_df.apply(lambda row : row["Vertical"] + " x " + row["Use Case"] + " x " + row["Technology"], axis = 1)
 
-    hover_data={
-        "Vertical": True,
-        "Use Case": True,
-        "Technology": True,
-        "Attractiveness": ":.2f",
-        "Right to Win": ":.2f",
-        "Distance": True,
-        "ID": False,
-    },
-
-    title="Attractiveness vs Right-to-Win",
-)
-
-
-fig.update_traces(
-    textposition="top center"
-)
-
-
-fig.update_xaxes(
-    title="Market Attractiveness",
-    range=[0, 10],
-)
-
-
-fig.update_yaxes(
-    title="Orange Business Right-to-Win",
-    range=[0, 10],
-)
-
-
-# Repères visuels
-fig.add_vline(
-    x=5,
-    line_dash="dash",
-)
-
-fig.add_hline(
-    y=5,
-    line_dash="dash",
-)
-
+fig = px.scatter_polar(filtered_df, 
+                       r='rad', 
+                       theta='theta', 
+                       size='Attractiveness', 
+                       text='ID', 
+                       size_max=45, 
+                       range_r=[0,10],
+                       hover_name='name', 
+                       hover_data={"Vertical": True,
+                                   "Use Case": True,
+                                   "Technology": True,
+                                   "Urgency": True,
+                                   "Attractiveness": ":.2f",
+                                   "Right to Win": ":.2f",
+                                   "Distance": True,
+                                   "ID": True,
+                                   "theta":False,},
+                       color="Right to Win", 
+                       range_color=[0,10], 
+                       color_continuous_scale=["#FFF0CC","#FF8C00"], 
+                       opacity=0.8,
+                       labels={"rad":"Urgency","Right to Win":"Right to win", "Attractiveness":"Attractiveness", 
+                               "theta":"Vertical x Technology", "ID":"Opportunity space label"})
 
 fig.update_layout(
-    height=600,
+    height=650,
 )
-
 
 st.plotly_chart(
     fig,
     use_container_width=True,
 )
 
-
 # ============================================================
-# 9. RANKING
-# ============================================================
-
-st.subheader("🏆 Opportunity Ranking")
-
-ranking_columns = [
-    "ID",
-    "Vertical",
-    "Use Case",
-    "Technology",
-    "Attractiveness",
-    "Right to Win",
-    "Distance",
-]
-
-
-ranking = (
-    filtered_df[ranking_columns]
-    .sort_values(
-        "Attractiveness",
-        ascending=False,
-    )
-)
-
-
-st.dataframe(
-    ranking,
-    use_container_width=True,
-    hide_index=True,
-)
-
-
-# ============================================================
-# 10. SELECTION OF AN OS
+# OPPORTUNITY DETAILS
 # ============================================================
 
-st.subheader("🔎 Opportunity Details")
+st.subheader("🔍 Opportunity Details")
 
-selected_id = st.selectbox(
+
+# IMPORTANT :
+# We select the label for the user and then we fetch the ID from the database.
+
+selected_label = st.selectbox(
     "Choose an Opportunity Space",
-    options=filtered_df["ID"].tolist(),
+    filtered_df["label"].tolist()
 )
 
 
 selected = filtered_df[
-    filtered_df["ID"] == selected_id
+    filtered_df["label"] == selected_label
 ].iloc[0]
 
 
-# Loading sources corresponding to one OS
-signals_df = load_signals(
-    selected["opportunity_space_id"]
+# ID NUMÉRIQUE DE LA DATABASE
+
+selected_id = int(
+    selected["id"]
 )
 
 
 # ============================================================
-# 11. MAIN INFORMATION
+# MAIN INFORMATIONS
 # ============================================================
 
 st.markdown(
-    f"### {selected['ID']}"
+    f"### {selected['label']}"
 )
 
 
@@ -395,391 +431,232 @@ col1, col2 = st.columns(2)
 
 with col1:
 
-    st.markdown("#### Opportunity")
-
     st.write(
-        "**Vertical:**",
-        selected["Vertical"],
+        "**🏭 Vertical:**",
+        selected["vertical"]
     )
 
     st.write(
-        "**Use Case:**",
-        selected["Use Case"],
+        "**🎯 Use Case:**",
+        selected["use_case"]
     )
 
     st.write(
-        "**Technology:**",
-        selected["Technology"],
+        "**💻 Technology:**",
+        selected["technology"]
     )
 
 
 with col2:
 
-    st.markdown("#### Scores")
-
-    score_col1, score_col2 = st.columns(2)
-
-    with score_col1:
-
-        st.metric(
-            "Attractiveness",
-            f"{selected['Attractiveness']:.2f}/10",
-        )
-
-    with score_col2:
-
-        st.metric(
-            "Right-to-Win",
-            f"{selected['Right to Win']:.2f}/10",
-        )
+    st.write(
+        "**⭐ Attractiveness:**",
+        f"{selected['attractiveness']:.2f}/10"
+        if pd.notna(selected["attractiveness"])
+        else "N/A"
+    )
 
     st.write(
-        "**Portfolio Distance:**",
-        selected["Distance"],
+        "**🏆 Right to Win:**",
+        f"{selected['right_to_win_score']:.1f}/10"
+        if pd.notna(selected["right_to_win_score"])
+        else "N/A"
+    )
+
+    st.write(
+        "**📏 Portfolio Distance:**",
+        selected["portfolio_distance"]
+        if pd.notna(selected["portfolio_distance"])
+        else "N/A"
     )
 
 
 # ============================================================
-# 12. ATTRACTIVENESS BREAKDOWN
+# RIGHT TO WIN DETAILS
 # ============================================================
 
-st.markdown("### 📊 Attractiveness Breakdown")
+st.subheader("💪 Right to Win")
 
-score_data = pd.DataFrame(
-    {
-        "Criterion": [
-            "Market Signal Strength",
-            "Source Diversity",
-            "Evidence Quality",
-            "Novelty / Momentum",
-            "Strategic Relevance",
-        ],
 
-        "Score": [
-            selected["Market Signal Strength"],
-            selected["Source Diversity"],
-            selected["Evidence Quality"],
-            selected["Novelty / Momentum"],
-            selected["Strategic Relevance"],
-        ],
-    }
-)
+if pd.notna(selected["matched_assets"]):
+
+    st.write("**Matched Orange Business Assets:**")
+
+    st.info(
+        selected["matched_assets"]
+    )
+
+
+if pd.notna(
+    selected["right_to_win_justification"]
+):
+
+    st.write(
+        "**Why Orange Business can win:**"
+    )
+
+    st.write(
+        selected["right_to_win_justification"]
+    )
+
+
+# ============================================================
+# ATTRACTIVENESS SCORE DETAILS
+# ============================================================
+
+st.subheader("📈 Attractiveness Score Breakdown")
+
+
+score_data = pd.DataFrame({
+    "Dimension": [
+        "Market Signal Strength",
+        "Source Diversity",
+        "Evidence Quality",
+        "Novelty / Momentum",
+        "Strategic Relevance"
+    ],
+
+    "Score": [
+        selected["market_signal_strength"],
+        selected["source_diversity"],
+        selected["evidence_quality"],
+        selected["novelty_momentum"],
+        selected["strategic_relevance"]
+    ]
+})
+
+
+score_data = score_data.dropna()
 
 
 fig_scores = px.bar(
     score_data,
-    x="Score",
-    y="Criterion",
-    orientation="h",
-    range_x=[0, 10],
-    title="Attractiveness Score Breakdown",
-)
 
+    x="Dimension",
 
-fig_scores.update_layout(
-    height=400,
+    y="Score",
+
+    range_y=[0, 10],
+
+    title="Attractiveness Components"
 )
 
 
 st.plotly_chart(
     fig_scores,
-    use_container_width=True,
+    use_container_width=True
 )
 
 
 # ============================================================
-# 13. JUSTIFICATIONS
+# GROUNDING / EVIDENCE SIGNALS
 # ============================================================
 
-st.markdown("### 💡 Strategic Explanation")
-
-if pd.notna(
-    selected["Strategic Relevance Justification"]
-):
-
-    st.write(
-        selected[
-            "Strategic Relevance Justification"
-        ]
-    )
-
-else:
-
-    st.info(
-        "No strategic relevance justification available."
-    )
+st.subheader("📰 Market Evidence & Signals")
 
 
-st.markdown("### 🔬 Evidence Quality")
-
-if pd.notna(
-    selected["Evidence Quality Justification"]
-):
-
-    st.write(
-        selected[
-            "Evidence Quality Justification"
-        ]
-    )
-
-else:
-
-    st.info(
-        "No evidence quality justification available."
-    )
+# ICI ON UTILISE L'ID NUMÉRIQUE !
+signals_df = load_signals(
+    selected_id
+)
 
 
 # ============================================================
-# 14. RIGHT-TO-WIN
+# DISPLAYING SIGNALS
 # ============================================================
-
-st.markdown("### 🏆 Right-to-Win")
-
-
-rtw_col1, rtw_col2 = st.columns(2)
-
-
-with rtw_col1:
-
-    st.metric(
-        "Right-to-Win Score",
-        f"{selected['Right to Win']:.2f}/10",
-    )
-
-    st.write(
-        "**Portfolio Distance:**",
-        selected["Distance"],
-    )
-
-
-with rtw_col2:
-
-    st.markdown("#### Orange Business Assets")
-
-    if pd.notna(selected["Matched Assets"]):
-
-        st.write(
-            selected["Matched Assets"]
-        )
-
-    else:
-
-        st.info(
-            "No matched assets available."
-        )
-
-
-st.markdown("#### Why can Orange Business win?")
-
-
-if pd.notna(
-    selected["Right to Win Justification"]
-):
-
-    st.write(
-        selected[
-            "Right to Win Justification"
-        ]
-    )
-
-else:
-
-    st.info(
-        "No right-to-win justification available."
-    )
-
-
-# ============================================================
-# 15. STRATEGIC POSITION
-# ============================================================
-
-st.markdown("### 🧭 Strategic Position")
-
-
-attractiveness = selected["Attractiveness"]
-right_to_win = selected["Right to Win"]
-
-
-if (
-    pd.notna(attractiveness)
-    and pd.notna(right_to_win)
-):
-
-    if (
-        attractiveness >= 7
-        and right_to_win >= 7
-    ):
-
-        st.success(
-            "⭐ Strong opportunity: "
-            "high attractiveness and strong right-to-win."
-        )
-
-    elif (
-        attractiveness >= 7
-        and right_to_win < 7
-    ):
-
-        st.warning(
-            "⚠️ Attractive opportunity, "
-            "but Orange Business may need additional capabilities."
-        )
-
-    elif (
-        attractiveness < 7
-        and right_to_win >= 7
-    ):
-
-        st.info(
-            "💡 Orange Business has a strong right-to-win, "
-            "but market attractiveness is more moderate."
-        )
-
-    else:
-
-        st.warning(
-            "Opportunity with relatively low "
-            "attractiveness and right-to-win."
-        )
-
-
-# ============================================================
-# 16. GROUNDING SIGNALS
-# ============================================================
-
-st.markdown("### 📰 Evidence / Grounding Signals")
-
 
 if signals_df.empty:
 
-    st.info(
-        "No evidence signals are available for this Opportunity Space."
+    st.warning(
+        "No evidence signals are available "
+        "for this Opportunity Space."
     )
 
 else:
 
-   
+    st.success(
+        f"{len(signals_df)} evidence signals found."
+    )
+
+
+    # ---------- Filter signal type ----------
 
     signal_types = sorted(
-        signals_df["Type"]
+        signals_df["signal_type"]
         .dropna()
         .unique()
     )
 
 
     selected_signal_types = st.multiselect(
-        "Filter evidence type",
+        "Filter signal type",
         options=signal_types,
-        default=signal_types,
+        default=signal_types
     )
 
 
-    visible_signals = signals_df[
-        signals_df["Type"].isin(
+    displayed_signals = signals_df[
+        signals_df["signal_type"].isin(
             selected_signal_types
         )
     ]
 
 
-   
+    # ---------- Display Signals ----------
 
-    if visible_signals.empty:
+    for _, signal in displayed_signals.iterrows():
 
-        st.info(
-            "No evidence matches the selected signal types."
-        )
+        with st.expander(
+            f"📰 {signal['title']}"
+        ):
 
-    else:
-
-        for _, signal in visible_signals.iterrows():
-
-            source = signal["Source"]
-            signal_type = signal["Type"]
-            title = signal["Title"]
-            summary = signal["Summary"]
-            published_date = signal["Published Date"]
-            url = signal["URL"]
+            st.write(
+                "**Source:**",
+                signal["source_name"]
+            )
 
 
-            with st.expander(
-                f"{signal_type} — {source}"
+            st.write(
+                "**Type:**",
+                signal["signal_type"]
+            )
+
+
+            if pd.notna(
+                signal["published_date"]
             ):
 
-                st.markdown(
-                    f"**{title}**"
+                st.write(
+                    "**Published:**",
+                    signal["published_date"]
                 )
 
 
-                if (
-                    pd.notna(summary)
-                    and summary
-                ):
+            if pd.notna(
+                signal["summary"]
+            ):
 
-                    st.write(
-                        summary
-                    )
-
-
-                if (
-                    pd.notna(published_date)
-                    and published_date
-                ):
-
-                    st.caption(
-                        f"Published: {published_date}"
-                    )
+                st.write(
+                    signal["summary"]
+                )
 
 
-                if (
-                    pd.notna(url)
-                    and url
-                ):
+            if pd.notna(
+                signal["source_url"]
+            ):
 
-                    st.markdown(
-                        f"[🔗 Open source]({url})"
-                    )
+                st.markdown(
+                    f"[🔗 Read original source]({signal['source_url']})"
+                )
 
 
 # ============================================================
-# 17. COMPLETE DASHBOARD VIEW
-# ============================================================
-
-st.subheader("📋 All Opportunity Spaces")
-
-st.caption(
-    "Filtered view of all Opportunity Spaces currently available."
-)
-
-
-display_columns = [
-    "ID",
-    "Vertical",
-    "Use Case",
-    "Technology",
-    "Attractiveness",
-    "Right to Win",
-    "Distance",
-]
-
-
-st.dataframe(
-    filtered_df[display_columns]
-    .sort_values(
-        "Attractiveness",
-        ascending=False,
-    ),
-    use_container_width=True,
-    hide_index=True,
-)
-
-
-# ============================================================
-# 18. FOOTER
+# FOOTER
 # ============================================================
 
 st.divider()
 
 st.caption(
-    "Orange Business Innovation Radar • "
-    "Data powered by radar.db"
+    "Orange Business Innovation Radar — "
+    "Data loaded from radar.db"
 )
