@@ -8,10 +8,31 @@ meant editing 6 places and it was easy to miss one.
 
 """
 
-import os
-import json
-from enum import Enum
-from dotenv import load_dotenv
+import sys
+# Sieg 23/08 -- needed for the novelty_momentum() time-window fix below
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
+from pipeline.db import (
+    get_connection, get_linked_signals_for_opportunity_space,
+    get_all_opportunity_spaces, get_unscored_opportunity_spaces,
+    get_opportunity_spaces_missing_right_to_win,
+    get_opportunity_spaces_with_fallback_scores,
+    get_opportunity_spaces_with_old_scores,
+    get_latest_scores,
+    insert_score, insert_right_to_win_score, update_opportunity_space_enrichment,
+)
+from pipeline.config import (
+    ORANGE_BUSINESS_ASSETS, ANALYST_RECOGNITION, CAPABILITY_STATS, CUSTOMER_REFERENCES,
+    ROLES, BUYER_PERSONAS, GEOS, HORIZONS, DOMAINS_TAXONOMY,
+    TRUST_CRITICAL_VERTICALS, map_to_value_proposition,
+    # Sieg 24/8 -- the 2 brief calibration factors with no data source yet
+    # (see config.py comment above their definition for the full context).
+    OPPORTUNITY_COUNT_BY_VERTICAL, PIPELINE_VALUE_BY_VERTICAL,
+    # Sieg 24/8 -- reused as the buying_signal decay window in urgency_score()
+    # below, instead of inventing a separate constant (see comment there).
+    TED_LOOKBACK_DAYS,
+)
+from llm.llm_client import get_llm_json
 
 # Sieg 24/8 -- integrated verbatim from her PR diff (Friday->today), not
 # paraphrased, so this reads as her actual contribution when compared
@@ -470,215 +491,666 @@ CUSTOMER_REFERENCES = [
 # Sieg 24/8 -- the client brief lists 5 factors for internal right-to-win
 # calibration: CRM customer overlap, opportunity count, pipeline value,
 # product/offering match, people capability. Before this, only 2 of the 5
-# fed the scoring at all: product/offering match (ORANGE_BUSINESS_ASSETS,
-# matched by the LLM in scoring.llm_right_to_win) and people capability
-# (CAPABILITY_STATS below, injected into the same prompt "if relevant").
-# CRM customer overlap already has real data one line up (CUSTOMER_REFERENCES
-# -- public customer-story pages, used as a CRM-overlap proxy since no
-# internal CRM export is available to this team) and is now wired into a
-# deterministic bonus in scoring.crm_customer_overlap_bonus(). opportunity_count
-# and pipeline_value have NO equivalent anywhere in this repo -- left as
-# empty dicts on purpose rather than invented numbers. scoring.py's
-# pipeline_calibration_bonus() is a safe +0.0 no-op until a real per-vertical
-# CRM export is dropped in here (keyed by the exact VERTICAL_SEEDS names
-# above, e.g. {"Manufacturing": 12}) -- needs a team decision on where that
-# export comes from, see README "Needs a team decision".
-OPPORTUNITY_COUNT_BY_VERTICAL = {}   # vertical -> int, from a CRM export (not populated yet)
-PIPELINE_VALUE_BY_VERTICAL = {}      # vertical -> EUR value, from a CRM export (not populated yet)
+# actually fed the score: product/offering match (ORANGE_BUSINESS_ASSETS
+# matching inside the LLM prompt below) and people capability (CAPABILITY_STATS,
+# injected into the same prompt "if relevant" -- generic text, not a scored
+# factor). The 2 functions below add the missing/partial ones as small,
+# deterministic, additive bonuses -- same pattern as the trust-critical-
+# vertical bonus in llm_strategic_relevance() -- rather than trying to shoehorn
+# them into the LLM's free-text judgment where they'd be unverifiable.
+def crm_customer_overlap_bonus(vertical) -> float:
+    """Sieg 24/8 -- CRM customer overlap factor. No internal CRM export is
+    available to this team, so this uses CUSTOMER_REFERENCES (public,
+    sourced customer-story pages, already grounding the right-to-win prompt)
+    as the closest available proxy: a named customer in this vertical is real
+    evidence Orange already has a foothold there, even without a live CRM
+    feed of live pipeline/account data. +0.5 per named customer in this
+    vertical, capped at +1.0 (2+ customers) so one vertical with many public
+    case studies can't dominate the score the way the LLM's free-text
+    judgment already can."""
+    count = sum(1 for c in CUSTOMER_REFERENCES if c.get("vertical") == vertical)
+    return min(1.0, count * 0.5)
 
-CAPABILITY_STATS = [
-    {"stat": "30,000 employees", "source": "Orange Business corporate presentation, 2026"},
-    {"stat": "EUR 7.3bn revenue (2025)", "source": "Orange Business corporate presentation, 2026"},
-    {"stat": "40,000+ B2B customers, 200+ countries", "source": "Orange Business corporate presentation, 2026"},
-    {"stat": "70+ data centers across 5 continents", "source": "Orange Business corporate presentation, 2026"},
-    {"stat": "18 SOCs and 15 CyberSOCs worldwide", "source": "Orange Business corporate presentation, 2026"},
-    # --- Added from the corporate deck -- especially useful for Defense/
-    # Healthcare right-to-win justifications, and for Manufacturing OS that
-    # can cite a named partner ecosystem.
-    {"stat": "Cyberdefense revenue grew 6.8% in 2025", "source": "Orange Business corporate presentation, 2026"},
-    {"stat": "250+ dedicated Defense experts", "source": "Orange Business corporate presentation, 2026"},
-    {"stat": "1,000+ dedicated Healthcare experts", "source": "Orange Business corporate presentation, 2026"},
-    # --- Added from live orange-business.com pages (Aug 2026 check) ---
-    {"stat": "Tier-1 global backbone present in 200+ countries and territories",
-     "source": "orange-business.com/en/about-us/analysts/gartner-recognition-for-global-wan-services"},
-    {"stat": "Evolution Platform (Network as a Service): SD-WAN, SASE and cloud connectivity "
-             "combined through a single API/portal with on-demand, SLA-backed delivery",
-     "source": "orange-business.com/en/about-us/analysts/gartner-recognition-for-global-wan-services"},
-    # --- Added Aug 2026 from the orange-business.com homepage. NOTE: this page
-    # states "65 countries: Team presence" and "30,000+ B2B customers", which
-    # reads lower than the corporate-deck figures above (200+ countries,
-    # 40,000+ customers) -- kept both rather than silently picking one, since
-    # they're plausibly different official metrics (physical team/office
-    # presence vs. network backbone reach) rather than a real contradiction.
-    # Flag for the client meeting if it comes up: "which count is current?"
-    {"stat": "5,500+ AI, Data and Cloud experts", "source": "orange-business.com homepage"},
-    {"stat": "#1 global voice and data network; team presence in 65 countries on all continents; "
-             "6 major Service Centers", "source": "orange-business.com homepage"},
-]
 
-# --- Named partner tiers (corporate deck) -- citable in right-to-win
-# justifications when an OS's technology aligns with one of these partners
-# (e.g. an AWS-based Cloud OS, a Cisco-based SD-WAN OS).
-PARTNER_TIERS = {
-    "Cisco": "Global Gold Partner",
-    "AWS": "Advanced Partner, MSP",
-    "Palo Alto Networks": "Diamond, #1 EMEA Partner",
-    "Microsoft": "Gold (MAICPP), Partner of the Year",
-    "Google Cloud": "Premier",
-}
+def pipeline_calibration_bonus(vertical) -> float:
+    """Sieg 24/8 -- opportunity count + pipeline value factors from the brief.
+    Deliberately a SAFE NO-OP (+0.0) for every vertical right now: neither
+    OPPORTUNITY_COUNT_BY_VERTICAL nor PIPELINE_VALUE_BY_VERTICAL (config.py)
+    has any real data in it -- there's no CRM export to pull from yet, and
+    inventing numbers here would make the score look more grounded than it
+    is. Once the team drops a real per-vertical export into those 2 dicts,
+    this starts contributing +0.3 for a tracked opportunity count and +0.3
+    more if pipeline_value is at/above the per-vertical median -- structured
+    now so wiring in real numbers later is a config.py edit only, not a
+    scoring.py change."""
+    bonus = 0.0
+    if OPPORTUNITY_COUNT_BY_VERTICAL.get(vertical):
+        bonus += 0.3
+    values = [v for v in PIPELINE_VALUE_BY_VERTICAL.values() if v]
+    median_value = sorted(values)[len(values) // 2] if values else None
+    if median_value is not None and PIPELINE_VALUE_BY_VERTICAL.get(vertical, 0) >= median_value:
+        bonus += 0.3
+    return bonus
 
-# --- Portfolio distance taxonomy (right-to-win classification) ---
-PORTFOLIO_DISTANCE = {
-    "L0": {"label": "Direct offer", "blurb": "An existing Orange Business offer addresses this as-is."},
-    "L1": {"label": "Bundle", "blurb": "Two or more existing offers exist but are not yet packaged together."},
-    "L2": {"label": "Partner-dependent", "blurb": "Needs a capability held by an existing partner, not Orange itself."},
-    "L3": {"label": "Adjacent", "blurb": "Needs one capability to be built or acquired -- close, but not there yet."},
-    "L4": {"label": "White space", "blurb": "No plausible path from the current portfolio."},
-}
 
-# --- Business domain taxonomy (matches the radar's sectors) ---
-DOMAINS_TAXONOMY = [
-    {"code": "ox", "name": "Smart Industries"},
-    {"code": "conn", "name": "Connectivity Solutions"},
-    {"code": "cyber", "name": "Cybersecurity"},
-    {"code": "cloud", "name": "Cloud"},
-    {"code": "cx", "name": "Customer Experience"},
-    {"code": "ex", "name": "Employee Experience"},
-]
+def llm_right_to_win(vertical, use_case, technology):
+    """Returns (portfolio_distance, score, matched_assets_str, justification)."""
+    prompt = f"Opportunity space: {vertical} x {use_case} x {technology}"
+    system_prompt = RIGHT_TO_WIN_SYSTEM_PROMPT.format(
+        asset_catalog=_format_asset_catalog(),
+        analyst_recognition=_format_analyst_recognition(),
+        capability_stats=_format_capability_stats(),
+        customer_references=_format_customer_references(vertical),
+    )
+    result = get_llm_json(prompt, system_prompt=system_prompt)
+    if not result or "portfolio_distance" not in result:
+        return "L4", 0.0, "", "LLM scoring unavailable -- defaulted to L4/0 (do not trust, re-run scoring)."
+    distance = result.get("portfolio_distance", "L4")
+    score = float(result.get("right_to_win_score", 0))
+    assets = ", ".join(result.get("matched_assets", []))
+    justification = result.get("justification", "")
 
-# Sieg 24/8 -- wrapped in list(dict.fromkeys(...)) and appended _EXT_USE_CASES
-# so a term approved via `radar_cli.py review` (written to
-# taxonomy_extensions.json by extend_taxonomy.py) actually reaches the LLM
-# prompt in analyze.py on the next run, without ever duplicating a term
-# that's already hand-listed below (dict.fromkeys preserves first-seen
-# order and drops repeats).
-USE_CASES_TAXONOMY = list(dict.fromkeys([
-    "Energy Optimization", "Demand Forecasting", "IT Operations Automation",
-    "Imaging Analytics", "Network Modernization & SD-WAN", "Cloud Infrastructure Modernization",
-    "Cyber Defense & Zero Trust", "Customer Experience", "Employee Experience",
-    "Operational Excellence", "Digital Infrastructure", "Data Sovereignty", "Cybersecurity",
-    "Contact Centre Automation", "Clinical Workflow Automation", "Predictive Maintenance",
-    "Supply Chain Visibility", "Grid Optimization",
-    # --- Restored from emerging_themes.json review (see emerging_themes_review.md) ---
-    "Industrial Digital Twin & Automation",  # 8 supporting signals -- strongest candidate in the batch
-    "Citizen Participation Platforms",       # 7 supporting signals -- pairs with existing Cloud Data Platform
-    # Sieg 24/8 -- the rest of that same emerging_themes.json batch (OS029-034
-    # in opportunity_spaces_summary.md) were promoted into real opportunity
-    # spaces, but their use_case labels never actually made it into this
-    # list -- so analyze.py's LLM prompt still can't legally propose them
-    # again for a NEW signal in the same vertical, even though they're
-    # already proven, scored, real opportunities in the DB.
-    "Manufacturing Process Automation",              # OS034
-    "Infrastructure Planning & Management",          # OS032
-    "Post-Quantum Cryptography Testing Infrastructure",  # OS030
-    "Strategic Communications & Advertising Consultancy",  # OS031
-] + _EXT_USE_CASES))
+    # Sieg 24/8 -- apply the 2 deterministic calibration bonuses (see the
+    # functions above). crm_bonus is real data (CUSTOMER_REFERENCES);
+    # pipeline_bonus is a no-op until real CRM data exists -- see their
+    # docstrings. Only append to the justification when a bonus actually
+    # applied, so untouched scores don't get a misleading "+0.0" note.
+    crm_bonus = crm_customer_overlap_bonus(vertical)
+    pipeline_bonus = pipeline_calibration_bonus(vertical)
+    total_bonus = crm_bonus + pipeline_bonus
+    if total_bonus:
+        score = min(10.0, score + total_bonus)
+        justification += (f" +{total_bonus:.1f} calibration bonus (CRM customer overlap"
+                           f"{', opportunity count/pipeline value' if pipeline_bonus else ''}).")
 
-# Sieg 24/8 -- same wrapping as USE_CASES_TAXONOMY above, same reason.
-TECHNOLOGIES_TAXONOMY = list(dict.fromkeys([
-    "Cloud Data Platform", "IoT Platforms", "Computer Vision", "Machine Learning",
-    "Generative AI", "Network & SD-WAN", "Cloud", "Cybersecurity", "5G", "IoT", "AI, Data, Cloud",
-    "Agentic AI", "Edge Computing",
-    # --- Restored from emerging_themes.json review (see emerging_themes_review.md) ---
-    "Digital Twins",  # 8 supporting signals -- pairs with Industrial Digital Twin & Automation above
-    "Quantum-safe Cryptography",  # Sieg 24/8 -- same gap as above: backs OS030,
-    # promoted and scored, but never added to this list until now.
-] + _EXT_TECHNOLOGIES))
+    return distance, score, assets, justification
 
-# Signal type vocabulary (must match the brief's taxonomy)
-SIGNAL_TYPES = [
-    "trend", "regulation", "buying_signal", "market_move", "tech_maturity", "proof_signal",
-]
 
-# ============================================================
-# Growing beyond a fixed list of opportunity spaces
-# ============================================================
+def llm_enrich(vertical, use_case, technology, signals):
+    """Returns a dict: role, buyer_persona, geography (comma-joined str),
+    horizon, domain, next_action_strategist, next_action_sales,
+    next_action_presales. Falls back to conservative defaults (Later
+    horizon, no role/persona/domain claimed, same generic "review manually"
+    message on all 3 next actions) if the LLM is unreachable -- never crashes."""
+    sample_titles = "\n".join(f"- {s['title']}" for s in signals[:ENRICHMENT_SAMPLE_SIZE])
+    prompt = (
+        f"Opportunity space: {vertical} x {use_case} x {technology}\n"
+        f"Sample signals:\n{sample_titles}"
+    )
+    domain_names = [d["name"] for d in DOMAINS_TAXONOMY]
+    system_prompt = ENRICHMENT_SYSTEM_PROMPT.format(
+        roles=", ".join(ROLES), buyer_personas=", ".join(BUYER_PERSONAS), geos=", ".join(GEOS),
+        horizons=", ".join(HORIZONS), domains=", ".join(domain_names),
+    )
+    result = get_llm_json(prompt, system_prompt=system_prompt)
+    fallback_action = "LLM enrichment unavailable -- review manually before showing to Sales."
+    if not result or "role" not in result:
+        return {
+            "role": None, "buyer_persona": None, "geography": None, "horizon": "Later", "domain": None,
+            "next_action_strategist": fallback_action,
+            "next_action_sales": fallback_action,
+            "next_action_presales": fallback_action,
+        }
+    geography = result.get("geography", [])
+    domain = result.get("domain")
+    if domain not in domain_names:  # guard against the LLM inventing a domain name
+        domain = None
+    return {
+        "role": result.get("role"),
+        "buyer_persona": result.get("buyer_persona"),
+        "geography": ", ".join(geography) if isinstance(geography, list) else geography,
+        "horizon": result.get("horizon", "Later"),
+        "domain": domain,
+        "next_action_strategist": result.get("next_action_strategist", fallback_action),
+        "next_action_sales": result.get("next_action_sales", fallback_action),
+        "next_action_presales": result.get("next_action_presales", fallback_action),
+        "next_action": result.get("next_action", ""),
+    }
 
-CANDIDATES = [
-    ("OS001", "Public Sector", "Sovereign citizen data hosting", "Sovereign cloud + GPU inference"),
-    ("OS002", "Manufacturing", "Fire and hazard detection", "Edge computer vision (Raspberry Pi class)"),
-    ("OS003", "Finance & Insurance", "Conduct-risk / compliance monitoring", "AI surveillance of communications"),
-    ("OS004", "Manufacturing", "Remote-controlled industrial robots", "Vision-guided teleoperation"),
-    ("OS005", "Manufacturing", "Energy Optimization", "IoT Platforms"),
-    ("OS006", "Manufacturing", "Operational Excellence", "Machine Learning"),
-    ("OS007", "Manufacturing", "Cyber Defense & Zero Trust", "Cybersecurity"),
-    ("OS008", "Manufacturing", "Imaging Analytics", "Computer Vision"),
-    ("OS009", "Finance & Insurance", "Cloud Infrastructure Modernization", "Cloud"),
-    ("OS010", "Finance & Insurance", "Cybersecurity", "Machine Learning"),
-    ("OS011", "Finance & Insurance", "Customer Experience", "Generative AI"),
-    ("OS012", "Finance & Insurance", "IT Operations Automation", "Machine Learning"),
-    ("OS013", "Public Sector", "Data Sovereignty", "Cloud"),
-    ("OS014", "Public Sector", "Cyber Defense & Zero Trust", "Cybersecurity"),
-    ("OS015", "Public Sector", "Digital Infrastructure", "IoT Platforms"),
-    # ============================================================
-    # OS9xx -- one seed per vertical that had ZERO CANDIDATES coverage
-    # (see the Aug 2026 VERTICAL_SEEDS expansion above: 14 of the 17
-    # verticals had never had a single hand-picked opportunity space).
-    # Labeled OS901+ SPECIFICALLY to avoid colliding with organically
-    # promoted OS -- radar_cli.py promote()/next_opportunity_space_label()
-    # grow labels upward from OS016, and the live DB already has OS020,
-    # OS039, etc. from real signal promotion. If OS001-OS015 above ever
-    # grow that high too, bump this block's starting number accordingly.
-    #
-    # Deliberately NOT exhaustive (one each, not several) -- with 5 days to
-    # the client presentation, the goal is to get every vertical a starting
-    # point on the radar now, not a fully researched shortlist. Real signal
-    # volume over the week (ingest -> analyze -> promote) is what should
-    # actually validate or kill these -- treat a low attractiveness/evidence
-    # score here as informative, not a bug.
-    # ============================================================
-    # OS901 removed (Aug 2026): "Retail x Contact Centre Automation x Agentic AI"
-    # got independently rediscovered by the real ingest -> analyze -> promote
-    # pipeline as OS026 -- keeping this manual seed would just duplicate real,
-    # signal-backed data. Good news, not a bug: it means the seed was a solid
-    # bet, confirmed by actual market signals rather than just intuition.
-    # Grounded in MicroPort CardioFlow (remote monitoring) + the HDS/Enovacom
-    # eHealth certification (Orange Business' dedicated Healthcare division).
-    ("OS040", "Healthcare", "Clinical Workflow Automation", "Machine Learning"),
-    # Grounded in the anonymous energy customer story ("An energy provider
-    # adopts generative AI to produce field service reports in a flash").
-    ("OS041", "Energy", "Employee Experience", "Generative AI"),
-    # OS904 removed (Aug 2026): "Transportation and Logistics x Supply Chain
-    # Visibility x IoT Platforms" got independently rediscovered as OS036 --
-    # same situation as OS901 above.
-    # Grounded in Skytale (secure comms platform, delivered in weeks) -- the
-    # closest public proxy we have, even though that story itself is tagged
-    # Public Sector (see CUSTOMER_REFERENCES note on why Defense/Aerospace &
-    # Defense have no direct public customer story).
-    ("OS042", "Defense", "Cyber Defense & Zero Trust", "Cybersecurity"),
-    # Grounded in Aberg Connect (Europe-wide tire pressure monitoring) + Toyota
-    # (connected cars, traffic hazard detection).
-    ("OS043", "Automotive", "Predictive Maintenance", "IoT Platforms"),
-    # Grounded in emerging_themes.json's "Industrial Digital Twin & Automation"
-    # theme (8 supporting signals, the strongest candidate in that batch --
-    # see emerging_themes_review.md) -- Construction fits it as well as
-    # Manufacturing does.
-    ("OS044", "Construction", "Industrial Digital Twin & Automation", "Digital Twins"),
-    # No direct customer story yet -- generic but taxonomy-clean seed; GDPR/AI
-    # Act-driven data residency is a real, current pattern for pharma/clinical
-    # data (see Data Management page: "compliance with GDPR, NIS2, and the AI
-    # Act" from the Data & AI expertise page).
-    ("OS045", "Life Sciences", "Data Sovereignty", "Cloud"),
-    # No direct customer story yet -- same supply-chain-visibility pattern as
-    # Transportation and Logistics (OS904), applied to wholesale distribution.
-    ("OS046", "Wholesale", "Supply Chain Visibility", "IoT Platforms"),
-    # Grounded in the Managed DDoS Protection product (real, sellable asset --
-    # see ORANGE_BUSINESS_ASSETS) -- streaming/media infrastructure is a
-    # classic DDoS target.
-    ("OS047", "Media & Entertainment", "Cyber Defense & Zero Trust", "Cybersecurity"),
-    # Directly lifted from the client brief PDF's own "what a good opportunity
-    # topic looks like" example (slide "Some examples"): "Private 5G + edge
-    # vision for safety compliance in mining." This is the strongest
-    # candidate for a real "pepite" in this batch -- it's literally the
-    # brief's model answer, not a guess.
-    ("OS048", "Natural Resources", "Operational Excellence", "Computer Vision"),
-    # Same trust-critical logic as Defense (OS905) -- see TRUST_CRITICAL_VERTICALS.
-    ("OS049", "Aerospace & Defense", "Cyber Defense & Zero Trust", "Cybersecurity"),
-    # Matches this vertical's own VERTICAL_SEEDS search seed almost exactly
-    # ("AI demand forecasting supply chain FMCG cloud").
-    ("OS050", "Fast Moving Consumer Goods", "Demand Forecasting", "Machine Learning"),
-    # Grounded in TMF Group (hybrid cloud, risk reduction) -- see CUSTOMER_REFERENCES.
-    ("OS051", "IT and Services", "Cloud Infrastructure Modernization", "Cloud"),
-]
 
-RECURRING_THEME_PROMOTION_THRESHOLD = 2
+# ---------- Orchestration ----------
+
+def score_opportunity_space(conn, opportunity_space_row, urgency_scaling_point=URGENCY_CAP):
+    """Computes and stores attractiveness (with urgency) for one OS.
+    Returns (sub_scores, total, urgency).
+
+    Sieg 23/08 -- was get_signals_for_vertical(conn, vertical): every OS in
+    the same vertical scored on the exact same signal pool, so their
+    deterministic sub-scores (and evidence_quality/strategic_relevance,
+    which get shown that same signal list) were never actually OS-specific.
+    Now uses get_linked_signals_for_opportunity_space(), the OS-specific set
+    `radar_cli.py link` already builds -- REQUIRES link to have run first
+    (see module docstring for the new pipeline order). An OS not yet linked
+    simply gets an empty list here, which every sub-score below already
+    treats as a defined 0.0/neutral case.
+
+    Sieg 24/8 -- urgency_scaling_point: the dynamic 95th-percentile value
+    from compute_urgency_scaling_point(), computed once per batch by the
+    caller (score_all_opportunity_spaces()) and passed in here rather than
+    recomputed per-OS -- recomputing the whole population's percentile for
+    every single OS in a loop would be O(n^2) in signal-fetching calls for
+    no benefit, since the scaling point is the same for every OS scored in
+    the same run."""
+    signals = get_linked_signals_for_opportunity_space(conn, opportunity_space_row["id"])
+
+    evidence_score, evidence_justification = llm_evidence_quality(signals)
+    relevance_score, relevance_justification = llm_strategic_relevance(
+        opportunity_space_row["vertical"], opportunity_space_row["use_case"],
+        opportunity_space_row["technology"], signals,
+    )
+
+    sub_scores = {
+        "market_signal_strength": market_signal_strength(signals),
+        "source_diversity": source_diversity(signals),
+        "evidence_quality": evidence_score,
+        "novelty_momentum": novelty_momentum(signals),
+        "strategic_relevance": relevance_score,
+    }
+    urgency = urgency_score(signals, scaling_point=urgency_scaling_point)
+
+    total = sum(sub_scores[k] * WEIGHTS[k] for k in WEIGHTS)
+    insert_score(
+        conn, opportunity_space_row["id"], sub_scores, round(total, 2),
+        evidence_quality_justification=evidence_justification,
+        strategic_relevance_justification=relevance_justification,
+        urgency_score=urgency,
+    )
+    return sub_scores, round(total, 2), urgency
+
+
+def score_all_opportunity_spaces(force=False, from_label=None):
+    """Scores + enriches opportunity spaces, one pass.
+
+    force=False (default): only opportunity spaces with no score yet or old scores see the loop below
+    -- safe to re-run after every `radar_cli.py promote` without burning LLM quota re-scoring OS that
+    haven't changed. ALSO repairs any OS stuck with a scores row but no
+    right_to_win_scores row (interrupted run) --.
+    force=True: rescore + re-enrich every opportunity space regardless.
+    from_label: resume a --force run that got interrupted (e.g. Groq quota
+    ran out mid-run) -- skips every OS whose label sorts BEFORE this one
+    alphabetically, so already-redone OS aren't burned through again. Only
+    meaningful together with force=True; ignored otherwise (unscored-only
+    mode already naturally skips whatever got scored on the interrupted run)."""
+    conn = get_connection()
+    clean_scores(conn)
+
+    if force:
+        spaces = get_all_opportunity_spaces(conn)
+    else:
+        unscored_spaces = get_unscored_opportunity_spaces(conn)
+        old_score_spaces = get_opportunity_spaces_with_old_scores(conn)
+        # Merge the two lists and remove duplicates using the opportunity space ID
+        spaces_by_id = {
+            space["id"]: space
+            for space in unscored_spaces + old_score_spaces
+        }
+        spaces = list(spaces_by_id.values())
+
+    # Sieg 23/08 -- bug fix: get_unscored_opportunity_spaces() only checks the
+    # `scores` table, so an OS interrupted between insert_score() and
+    # insert_right_to_win_score() (Groq quota exhausted mid-run, crash, etc.)
+    # had a `scores` row already, so it was never picked up by a normal
+    # (non --force) run again -- permanently stuck until someone noticed and
+    # manually ran `--force --from=OSxxx`. Folded in here as a SEPARATE list
+    # (not merged into `spaces`) so the loop below can skip the expensive
+    # evidence_quality/strategic_relevance LLM calls for these -- they
+    # already have a perfectly good attractiveness score, only right-to-win
+    # is missing.
+    repair_spaces = [] if force else get_opportunity_spaces_missing_right_to_win(conn)
+    if repair_spaces:
+        print(f"Repairing {len(repair_spaces)} opportunity space(s) left incomplete by an "
+              f"earlier interrupted run (has attractiveness score, missing right-to-win):")
+        for s in repair_spaces:
+            print(f"  {s['label']} ({s['vertical']} x {s['use_case']} x {s['technology']})")
+        print()
+
+    if force and from_label:
+        before = len(spaces)
+        spaces = [s for s in spaces if s["label"] >= from_label]
+        print(f"--from {from_label}: skipping {before - len(spaces)} opportunity space(s) "
+              f"already done before the interruption.\n")
+
+    if not spaces and not repair_spaces:
+        print("Nothing to score -- every opportunity space already has a score. "
+              "Use --force to rescore everything anyway.")
+        conn.close()
+        return
+
+    print(f"Scoring {len(spaces)} opportunity space(s)"
+          f"{' (forced rescore of everything)' if force else ' (unscored only)'}\n")
+
+    # Sieg 24/8 -- dynamic urgency scaling point (her design, 24/8): computed
+    # ONCE per run, over every OS this run touches (both freshly scored and
+    # repaired), not per-OS -- see compute_urgency_scaling_point()'s
+    # docstring. score_opportunity_space() below just uses the value.
+    urgency_scaling_point = compute_urgency_scaling_point(
+        conn, opportunity_space_ids=[s["id"] for s in spaces] + [s["id"] for s in repair_spaces]
+    )
+    print(f"Urgency scaling point this run (95th percentile of weighted urgent signals): "
+          f"{urgency_scaling_point:.2f} -- an OS at or above this weighted value scores 10/10 on urgency.\n")
+
+    for space in spaces:
+        sub_scores, total, urgency = score_opportunity_space(conn, space, urgency_scaling_point=urgency_scaling_point)
+
+        distance, rtw_score, assets, rtw_justification = llm_right_to_win(
+            space["vertical"], space["use_case"], space["technology"]
+        )
+        insert_right_to_win_score(conn, space["id"], distance, rtw_score, assets, rtw_justification)
+
+        print(f"{space['label']} ({space['vertical']} x {space['use_case']} x {space['technology']})")
+        print(f"  Attractiveness: {total}/10  {sub_scores}")
+        print(f"  Urgency:        {urgency}/10")
+        print(f"  Right-to-win:   {rtw_score}/10  [{distance}] assets: {assets or 'none'}")
+        print(f"  -> {rtw_justification}")
+
+        if space["domain"] and not force:
+            print("  Enrichment: skipped (already enriched -- use --force to redo)")
+        else:
+            vertical = space["vertical"]
+            # Sieg 23/08 -- was get_signals_for_vertical(conn, vertical): the
+            # sample titles fed to the enrichment LLM (used to write persona/
+            # role/next actions) came from the whole vertical, not this OS --
+            # same fix as score_opportunity_space() above, same reasoning.
+            signals = get_linked_signals_for_opportunity_space(conn, space["id"])
+            enrichment = llm_enrich(vertical, space["use_case"], space["technology"], signals)
+            update_opportunity_space_enrichment(
+                conn, space["id"],
+                role=enrichment["role"], buyer_persona=enrichment["buyer_persona"],
+                geography=enrichment["geography"],
+                horizon=enrichment["horizon"], domain=enrichment["domain"],
+                next_action_strategist=enrichment["next_action_strategist"],
+                next_action_sales=enrichment["next_action_sales"],
+                next_action_presales=enrichment["next_action_presales"],
+            )
+            print(f"  Enrichment: role={enrichment['role']}  buyer_persona={enrichment['buyer_persona']}  "
+                  f"geography={enrichment['geography']}  horizon={enrichment['horizon']}  domain={enrichment['domain']}")
+            print(f"  Next action (Strategist): {enrichment['next_action_strategist']}")
+            print(f"  Next action (Sales):      {enrichment['next_action_sales']}")
+            print(f"  Next action (Presales):   {enrichment['next_action_presales']}")
+        print()
+
+    # Sieg 23/08 -- repair pass: only the missing right-to-win step (+ enrichment
+    # if it was never done either), no re-run of score_opportunity_space() --
+    # that would waste LLM quota re-scoring evidence_quality/strategic_relevance
+    # that's already fine.
+    for space in repair_spaces:
+        distance, rtw_score, assets, rtw_justification = llm_right_to_win(
+            space["vertical"], space["use_case"], space["technology"]
+        )
+        insert_right_to_win_score(conn, space["id"], distance, rtw_score, assets, rtw_justification)
+        print(f"REPAIRED {space['label']}: Right-to-win {rtw_score}/10 [{distance}] "
+              f"assets: {assets or 'none'}")
+
+        if not space["domain"]:
+            vertical = space["vertical"]
+            # Sieg 23/08 -- was get_signals_for_vertical(conn, vertical): the
+            # sample titles fed to the enrichment LLM (used to write persona/
+            # role/next actions) came from the whole vertical, not this OS --
+            # same fix as score_opportunity_space() above, same reasoning.
+            signals = get_linked_signals_for_opportunity_space(conn, space["id"])
+            enrichment = llm_enrich(vertical, space["use_case"], space["technology"], signals)
+            update_opportunity_space_enrichment(
+                conn, space["id"],
+                role=enrichment["role"], buyer_persona=enrichment["buyer_persona"],
+                geography=enrichment["geography"],
+                horizon=enrichment["horizon"], domain=enrichment["domain"],
+                next_action_strategist=enrichment["next_action_strategist"],
+                next_action_sales=enrichment["next_action_sales"],
+                next_action_presales=enrichment["next_action_presales"],
+            )
+        print()
+
+    # Sieg 24/8 -- her design: the dynamic urgency scaling point should
+    # reflect the WHOLE current population on every run, not just the OS
+    # scored/repaired in this particular batch (a mostly-empty incremental
+    # run would otherwise compute its percentile from 1-2 OS and barely move
+    # anyone). Rescaling everyone here, at the end, is free (no LLM calls,
+    # see recalibrate_urgency()'s docstring) -- this is what actually makes
+    # existing OS's urgency "alive" and shift with new signal volume, per
+    # her stated intent.
+    recalibrate_urgency(conn)
+
+    conn.close()
+
+
+def recalibrate_deterministic_scores(conn=None):
+    """Implements the 'Refresh Logic for already existing OSs' gap from
+    current_project_state_overview.md: 'We have a process that
+    adds new data and promotes new OSes, but it doesn't update the scores
+    of existing OSes [...] the radar does not reflect the current market
+    state for already known OSs.' Without this, an OS scored Monday with
+    100 signals still shows Monday's score Tuesday even after 50 more
+    signals arrive for it -- `radar_cli.py all` only ever scores NEW
+    (unscored) OS, see score_all_opportunity_spaces()'s docstring.
+
+    Recalculates market_signal_strength, source_diversity, novelty_momentum,
+    and urgency_score for EVERY currently-scored OS, using each OS's
+    CURRENT linked signals -- so run `radar_cli.py link` again first if new
+    signals have come in since the last link; this function only reads
+    opportunity_signals, it doesn't re-attach anything itself (link's own
+    top_n logic is a bigger, separate operation not worth duplicating here).
+
+    evidence_quality/strategic_relevance (LLM-based, the expensive half) are
+    carried forward UNCHANGED from each OS's latest score -- same principle
+    as recalibrate_urgency()/recalibrate_right_to_win(): this whole refresh
+    is free in Groq quota terms. total_score is recomputed from the mix of
+    fresh deterministic values + the unchanged LLM values.
+
+    urgency_score reuses the SAME dynamic 95th-percentile scaling point as
+    the rest of the pipeline (compute_urgency_scaling_point(), see that
+    function and recalibrate_urgency()) -- not a second, separate urgency
+    calculation, so this and a plain `python -m pipeline.scoring` run never
+    disagree about what "urgent" means this run.
+
+    Run: python -m pipeline.scoring --refresh
+    """
+    close_after = conn is None
+    if conn is None:
+        conn = get_connection()
+
+    rows = get_latest_scores(conn)
+    if not rows:
+        print("No scored opportunity spaces found -- nothing to refresh. "
+              "Run `python -m pipeline.scoring` first.")
+        if close_after:
+            conn.close()
+        return
+
+    urgency_scaling_point = compute_urgency_scaling_point(conn)
+    print(f"Refreshing deterministic scores (market signal strength, source diversity, "
+          f"novelty momentum, urgency) for {len(rows)} opportunity space(s) -- "
+          f"no LLM calls, free in quota terms. Urgency scaling point: "
+          f"{urgency_scaling_point:.2f}\n")
+
+    for r in rows:
+        signals = get_linked_signals_for_opportunity_space(conn, r["id"])
+        new_deterministic = {
+            "market_signal_strength": market_signal_strength(signals),
+            "source_diversity": source_diversity(signals),
+            "novelty_momentum": novelty_momentum(signals),
+        }
+        new_urgency = urgency_score(signals, scaling_point=urgency_scaling_point)
+
+        sub_scores = {
+            **new_deterministic,
+            "evidence_quality": r["evidence_quality"],
+            "strategic_relevance": r["strategic_relevance"],
+        }
+        new_total = round(sum(sub_scores[k] * WEIGHTS[k] for k in WEIGHTS), 2)
+
+        insert_score(
+            conn, r["id"], sub_scores, new_total,
+            evidence_quality_justification=r["evidence_quality_justification"],
+            strategic_relevance_justification=r["strategic_relevance_justification"],
+            urgency_score=new_urgency,
+        )
+        moved = " (unchanged)" if new_total == r["total_score"] else ""
+        print(f"{r['label']} ({r['vertical']} x {r['use_case']} x {r['technology']}): "
+              f"total {r['total_score']}/10 -> {new_total}/10{moved}, "
+              f"urgency {r['urgency_score']}/10 -> {new_urgency}/10")
+
+    if close_after:
+        conn.close()
+
+
+def recalibrate_urgency(conn=None):
+    """Sieg 24/8 -- redoes urgency_score for every already-scored OS using a
+    freshly-computed dynamic scaling point (95th percentile of weighted
+    urgent signals across the WHOLE current population -- see
+    compute_urgency_scaling_point()), not a fixed cap. WITHOUT ANY LLM CALL
+    AT ALL -- urgency_score is 100% deterministic, so this is free in Groq
+    quota terms, unlike recalibrate_right_to_win() below which still needs
+    one LLM call per OS.
+
+    Her design intent, verbatim: "if we recalibrate the scaling point during
+    each run [...] the urgency scores for existing OSs will change with
+    every update. This is intentional -- the radar needs to be alive and
+    reflect the current context." So yes, re-running this can genuinely
+    move an OS's urgency_score up or down even though nothing about that
+    specific OS changed -- that's the population shifting, not a bug.
+
+    Called automatically at the end of score_all_opportunity_spaces() (see
+    below) so a normal `python -m pipeline.scoring` run already keeps every
+    OS's urgency current -- also runnable standalone:
+    `python -m pipeline.scoring --recalibrate-urgency`, e.g. right after a
+    fresh ingest without wanting a full rescore.
+
+    Keeps every other field of the latest `scores` row as-is (market_signal_
+    strength, source_diversity, evidence_quality, novelty_momentum,
+    strategic_relevance, total_score -- urgency isn't part of the weighted
+    total, see WEIGHTS) and only recomputes urgency_score, then re-inserts
+    via insert_score() -- still respects the "always INSERT, never UPDATE"
+    audit-trail rule (see README "Key design decisions"), just carries the
+    unchanged fields forward instead of recomputing them.
+
+    Run: python -m pipeline.scoring --recalibrate-urgency
+    """
+    close_after = conn is None
+    if conn is None:
+        conn = get_connection()
+
+    rows = get_latest_scores(conn)
+    if not rows:
+        print("No scored opportunity spaces found -- nothing to recalibrate. "
+              "Run `python -m pipeline.scoring` first.")
+        if close_after:
+            conn.close()
+        return
+
+    urgency_scaling_point = compute_urgency_scaling_point(conn)
+    print(f"Recalibrating urgency_score for {len(rows)} opportunity space(s) -- "
+          f"no LLM calls, free in quota terms. Scaling point (95th percentile): "
+          f"{urgency_scaling_point:.2f}\n")
+    for r in rows:
+        signals = get_linked_signals_for_opportunity_space(conn, r["id"])
+        new_urgency = urgency_score(signals, scaling_point=urgency_scaling_point)
+        sub_scores = {
+            "market_signal_strength": r["market_signal_strength"],
+            "source_diversity": r["source_diversity"],
+            "evidence_quality": r["evidence_quality"],
+            "novelty_momentum": r["novelty_momentum"],
+            "strategic_relevance": r["strategic_relevance"],
+        }
+        insert_score(
+            conn, r["id"], sub_scores, r["total_score"],
+            evidence_quality_justification=r["evidence_quality_justification"],
+            strategic_relevance_justification=r["strategic_relevance_justification"],
+            urgency_score=new_urgency,
+        )
+        print(f"{r['label']} ({r['vertical']} x {r['use_case']} x {r['technology']}): "
+              f"urgency {r['urgency_score']}/10 -> {new_urgency}/10")
+
+    if close_after:
+        conn.close()
+
+
+def recalibrate_right_to_win(conn=None):
+    """Sieg 24/8 -- redoes ONLY the right-to-win step (llm_right_to_win) for
+    every opportunity space that already has an attractiveness score, so
+    today's crm_customer_overlap_bonus()/pipeline_calibration_bonus() change
+    gets applied to already-scored OS WITHOUT re-burning LLM quota on
+    evidence_quality/strategic_relevance/enrichment, which didn't change and
+    already have good values -- `--force` would redo all of those too for no
+    reason, and Groq's free tier is already quota-tight (see llm_client.py).
+    Use this after a calibration-only change like today's; use `--force`
+    only when the scoring LOGIC itself (not just right-to-win) changes.
+    right_to_win_scores is audit-trail (always INSERT, never UPDATE), so this
+    naturally produces a fresh row per OS and get_latest_scores() picks the
+    newest one up automatically -- no explicit overwrite step needed.
+
+    Run: python -m pipeline.scoring --recalibrate-right-to-win
+    """
+    close_after = conn is None
+    if conn is None:
+        conn = get_connection()
+
+    # Opportunity spaces with NO attractiveness score yet still need the
+    # full score_opportunity_space() pass (they need evidence_quality etc.
+    # computed for the first time) -- not this shortcut. Run the normal
+    # `python -m pipeline.scoring` (unscored-only mode) for those first.
+    unscored_ids = {s["id"] for s in get_unscored_opportunity_spaces(conn)}
+    spaces = [s for s in get_all_opportunity_spaces(conn) if s["id"] not in unscored_ids]
+
+    if not spaces:
+        print("No already-scored opportunity spaces found -- nothing to recalibrate. "
+              "Run `python -m pipeline.scoring` first.")
+        if close_after:
+            conn.close()
+        return
+
+    print(f"Recalibrating right-to-win only for {len(spaces)} already-scored opportunity "
+          f"space(s) -- evidence_quality/strategic_relevance/enrichment untouched.\n")
+    for space in spaces:
+        distance, rtw_score, assets, rtw_justification = llm_right_to_win(
+            space["vertical"], space["use_case"], space["technology"]
+        )
+        insert_right_to_win_score(conn, space["id"], distance, rtw_score, assets, rtw_justification)
+        print(f"{space['label']} ({space['vertical']} x {space['use_case']} x {space['technology']})")
+        print(f"  Right-to-win: {rtw_score}/10  [{distance}] assets: {assets or 'none'}")
+        print(f"  -> {rtw_justification}\n")
+
+    if close_after:
+        conn.close()
+
+
+def rescue_fallback_scores(conn=None):
+    """Sieg 24/8 -- quota-safe alternative to `--force --from=OSxxx` for the
+    specific case of OS that got a neutral FALLBACK value (evidence_quality/
+    strategic_relevance=5.0, right_to_win=0.0/L4) because Groq's quota was
+    exhausted at the moment they were scored -- see
+    db.get_opportunity_spaces_with_fallback_scores() for how these are found
+    (grepping the "LLM scoring unavailable" justification text).
+
+    `--force --from=OS003` would re-spend quota on EVERY OS from OS003
+    onward alphabetically (most of which already have a real, good score) --
+    with the quota already exhausted, that's not affordable. This instead
+    re-runs the full scoring pass (evidence_quality, strategic_relevance,
+    right_to_win, enrichment) ONLY for the OS that actually need it -- 31 on
+    the last check, not 90+.
+
+    Run once quota is available again (fresh key, tomorrow's reset, or
+    Ollama): python -m pipeline.scoring --rescue-fallback
+    """
+    close_after = conn is None
+    if conn is None:
+        conn = get_connection()
+
+    spaces = get_opportunity_spaces_with_fallback_scores(conn)
+    if not spaces:
+        print("No opportunity space currently has a fallback score -- nothing to rescue.")
+        if close_after:
+            conn.close()
+        return
+
+    print(f"Rescuing {len(spaces)} opportunity space(s) that got a neutral fallback "
+          f"score (Groq quota was exhausted when they were first scored):\n")
+    for space in spaces:
+        sub_scores, total, urgency = score_opportunity_space(conn, space)
+        distance, rtw_score, assets, rtw_justification = llm_right_to_win(
+            space["vertical"], space["use_case"], space["technology"]
+        )
+        insert_right_to_win_score(conn, space["id"], distance, rtw_score, assets, rtw_justification)
+
+        print(f"{space['label']} ({space['vertical']} x {space['use_case']} x {space['technology']})")
+        print(f"  Attractiveness: {total}/10  {sub_scores}")
+        print(f"  Right-to-win:   {rtw_score}/10  [{distance}]")
+        print(f"  -> {rtw_justification}\n")
+
+        vertical = space["vertical"]
+        signals = get_linked_signals_for_opportunity_space(conn, space["id"])
+        enrichment = llm_enrich(vertical, space["use_case"], space["technology"], signals)
+        update_opportunity_space_enrichment(
+            conn, space["id"],
+            role=enrichment["role"], buyer_persona=enrichment["buyer_persona"],
+            geography=enrichment["geography"],
+            horizon=enrichment["horizon"], domain=enrichment["domain"],
+            next_action_strategist=enrichment["next_action_strategist"],
+            next_action_sales=enrichment["next_action_sales"],
+            next_action_presales=enrichment["next_action_presales"],
+        )
+
+    if close_after:
+        conn.close()
+
+def clean_scores(connection) -> None:
+    """
+    Remove duplicate scores for the same opportunity_space_id,
+    keeping only the most recent row based on computed_at.
+    """
+
+    connection.execute(
+        """
+        DELETE FROM scores
+        WHERE id IN (
+            SELECT id
+            FROM (
+                SELECT
+                    id,
+                    ROW_NUMBER() OVER (
+                        PARTITION BY opportunity_space_id
+                        ORDER BY computed_at DESC
+                    ) AS row_number
+                FROM scores
+            )
+            WHERE row_number > 1
+        )
+        """
+    )
+
+
+
+    connection.execute(
+        """
+        DELETE FROM right_to_win_scores
+        WHERE id IN (
+            SELECT id
+            FROM (
+                SELECT
+                    id,
+                    ROW_NUMBER() OVER (
+                        PARTITION BY opportunity_space_id
+                        ORDER BY computed_at DESC
+                    ) AS row_number
+                FROM right_to_win_scores
+            )
+            WHERE row_number > 1
+        )
+        """
+    )
+
+    connection.commit()
+
+
+if __name__ == "__main__":
+    # --from=OS018 : resume an interrupted --force run starting at this label
+    # (e.g. after switching GROQ_API_KEY mid-run). Ignored without --force.
+    # Sieg 24/8 -- --recalibrate-right-to-win : cheap alternative to --force
+    # after a right-to-win-only calibration change (see function docstring).
+    # Sieg 24/8 -- --rescue-fallback : quota-safe alternative to --force for
+    # redoing ONLY the OS that got a neutral fallback score, not everything
+    # from a --from= label onward (see function docstring).
+    # Sieg 24/8 -- --recalibrate-urgency : free (no LLM) alternative to
+    # --force after a deterministic-only formula change (see function
+    # docstring). Check this one before --recalibrate-right-to-win since
+    # both can be needed after the same session -- run urgency first, it
+    # costs nothing.
+    from_label = None
+    for arg in sys.argv:
+        if arg.startswith("--from="):
+            from_label = arg.split("=", 1)[1]
+    # Sieg 24/8 -- --refresh : implements the "Refresh Logic for already
+    # existing OSs" gap (current_project_state_overview.md) -- redoes all 4
+    # deterministic sub-scores (not just urgency) for every scored OS using
+    # their CURRENT linked signals, free of LLM calls. Run `radar_cli.py
+    # link` first if new signals came in since the last link. Checked before
+    # --recalibrate-urgency below since --refresh already includes urgency.
+    if "--refresh" in sys.argv:
+        recalibrate_deterministic_scores()
+    elif "--recalibrate-urgency" in sys.argv:
+        recalibrate_urgency()
+    elif "--recalibrate-right-to-win" in sys.argv:
+        recalibrate_right_to_win()
+    elif "--rescue-fallback" in sys.argv:
+        rescue_fallback_scores()
+    else:
+        score_all_opportunity_spaces(force="--force" in sys.argv, from_label=from_label)
