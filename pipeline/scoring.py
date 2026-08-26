@@ -751,7 +751,6 @@ def score_all_opportunity_spaces(force=False, from_label=None):
     db.py, unused for now, for whoever wants to wire an automatic
     "--refresh only what's stale" mode later."""
     conn = get_connection()
-    clean_scores(conn)
 
     if force:
         spaces = get_all_opportunity_spaces(conn)
@@ -1277,54 +1276,6 @@ def rescue_fallback_scores(conn=None):
 
     if close_after:
         conn.close()
-
-def clean_scores(connection) -> None:
-    """
-    Remove duplicate scores for the same opportunity_space_id,
-    keeping only the most recent row based on computed_at.
-    """
-
-    connection.execute(
-        """
-        DELETE FROM scores
-        WHERE id IN (
-            SELECT id
-            FROM (
-                SELECT
-                    id,
-                    ROW_NUMBER() OVER (
-                        PARTITION BY opportunity_space_id
-                        ORDER BY computed_at DESC
-                    ) AS row_number
-                FROM scores
-            )
-            WHERE row_number > 1
-        )
-        """
-    )
-
-
-
-    connection.execute(
-        """
-        DELETE FROM right_to_win_scores
-        WHERE id IN (
-            SELECT id
-            FROM (
-                SELECT
-                    id,
-                    ROW_NUMBER() OVER (
-                        PARTITION BY opportunity_space_id
-                        ORDER BY computed_at DESC
-                    ) AS row_number
-                FROM right_to_win_scores
-            )
-            WHERE row_number > 1
-        )
-        """
-    )
-
-    connection.commit()
 
 
 if __name__ == "__main__":
