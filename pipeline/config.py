@@ -84,12 +84,6 @@ DB_PATH = "radar.db"
 
 NEWSAPI_AI_KEY = os.environ.get("NEWSAPI_AI_KEY", "")
 
-# Sieg 26/8 -- EPO OPS (patents) uses OAuth2 client_credentials, not a bare
-# API key like NEWSAPI_AI_KEY above -- see ingest.py's fetch_epo() for the
-# token exchange. Free account: https://developers.epo.org
-EPO_CONSUMER_KEY = os.environ.get("EPO_CONSUMER_KEY", "")
-EPO_SECRET_KEY = os.environ.get("EPO_SECRET_KEY", "")
-
 # Optional -- Semantic Scholar's unauthenticated pool is shared across everyone
 # hitting the API at once and gets rate-limited fast. A free "partner" API key
 # (request form at https://www.semanticscholar.org/product/api#api-key-form,
@@ -362,19 +356,6 @@ ENABLE_NEWSAPI_AI = True
 NEWSAPI_AI_URL = "https://eventregistry.org/api/v1/article/getArticles"
 NEWSAPI_AI_SLEEP_SECONDS = 1
 NEWSAPI_AI_QUERIES = [{"vertical": v, "query": q} for v, q in VERTICAL_SEEDS.items()]  # same seeds again, same reasoning as TED_QUERIES above
-
-# --- EPO OPS (patents) -- new 26/8, added the night before the presentation.
-# Patent filings are a strong innovation signal (real R&D spend, dated,
-# company-attributed) that none of the other 9 sources capture.
-# ENABLE_EPO defaults to False on purpose: flip to True in .env-adjacent code
-# only once EPO_CONSUMER_KEY/EPO_SECRET_KEY are confirmed working (see
-# ingest.py's fetch_epo() docstring for the quick curl test) -- don't let an
-# untested 10th source risk the other 9 right before the demo. ---
-ENABLE_EPO = False
-EPO_AUTH_URL = "https://ops.epo.org/3.2/auth/accesstoken"
-EPO_SEARCH_URL = "https://ops.epo.org/3.2/rest-services/published-data/search"
-EPO_SLEEP_SECONDS = 2  # be a good citizen -- small gap between per-vertical calls
-EPO_QUERIES = [{"vertical": v, "query": seed} for v, seed in VERTICAL_SEEDS.items()]  # same seeds again, same reasoning as TED_QUERIES above
 
 VENDOR_FEEDS = [
     {"name": "AWS News Blog", "url": "https://aws.amazon.com/blogs/aws/feed/"},

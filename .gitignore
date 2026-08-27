@@ -228,3 +228,4 @@ __marimo__/
 # radar.db-journal
 # opportunity_spaces_summary.md
 logs/*
+.vscode/
