@@ -55,7 +55,7 @@ import pytest
 from pipeline.scoring import (
     novelty_momentum, _urgency_weighted, urgency_score,
     compute_urgency_scaling_point, recalibrate_deterministic_scores,
-    URGENCY_CAP, NOVELTY_URGENCY_WEIGHT,
+    URGENCY_CAP,  # Sieg 26/08 -- NOVELTY_URGENCY_WEIGHT removed here, never used in this file
 )
 from pipeline.db import (
     SCHEMA, get_latest_scores, delete_opportunity_spaces,
@@ -305,7 +305,8 @@ class TestGetOpportunitySpacesMissingRightToWin:
     def test_unscored_and_partially_scored_are_mutually_exclusive(self, db_conn):
         """Every OS must show up in exactly one of the two "needs work"
         lists, never both and never neither (unless it's fully done)."""
-        unscored_id = _insert_opportunity_space(db_conn, "OS004")
+        # Sieg 26/08 -- return value not captured: test asserts by label below, id not needed
+        _insert_opportunity_space(db_conn, "OS004")  # unscored -- asserted on by label below, id not needed
         partial_id = _insert_opportunity_space(db_conn, "OS005")
         _insert_score(db_conn, partial_id)
         done_id = _insert_opportunity_space(db_conn, "OS006")

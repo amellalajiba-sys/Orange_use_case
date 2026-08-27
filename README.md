@@ -160,6 +160,47 @@ Ollama and pull a local model -- the true last-resort fallback, free and offline
 ollama pull llama3.2:3b
 ```
 
+Orange_use_case/
+├── .githooks/                    # post-merge hook running check_no_streamlit_leak.py
+├── dashboard/                    # client-facing deliverables
+│   ├── dashboard.py
+│   ├── streamlit_app_sieg.py             # interactive Streamlit dashboard
+│   ├── innovation_radar_dashboard.pbix   # Power BI report
+│   ├── radar_powerbi_model.xlsx
+│   └── radar_powerbi_tables.xlsx
+├── docs/
+├── images/
+├── llm/
+│   ├── __init__.py
+│   └── llm_client.py             # provider-agnostic LLM client (Groq -> Cerebras -> SambaNova -> Ollama)
+├── logs/                         # timestamped ingest logs + GDELT cooldown state
+├── pipeline/
+│   ├── __init__.py
+│   ├── config.py                 # verticals, taxonomy, Orange Business asset catalog, geography
+│   ├── db.py                     # SQLite schema + data access, dedupe, uniqueness constraint
+│   ├── ingest.py                 # 9-source signal collection (TED, NewsAPI.ai, GDELT, etc.)
+│   ├── analyze.py                # LLM theme extraction + classification
+│   ├── theme_promotion.py        # recurring valid theme tracking (feeds `promote`)
+│   ├── extend_taxonomy.py        # watchlist -> proposal -> taxonomy_extensions.json flow
+│   ├── taxonomy_validation.py    # shared guardrail against bare generic terms (e.g. "AI")
+│   └── scoring.py                # attractiveness + right-to-win scoring, per linked OS
+├── tests/
+│   ├── analyze_healthcare.py     # deep-dive report for one vertical
+│   ├── check_healthcare.py       # quick DB spot-check
+│   ├── test_LLM.py               # malformed/missing LLM output handling
+│   ├── test_scoring_and_db.py
+│   └── tests_irene/
+├── .env                          # not committed — see Setup
+├── .gitignore
+├── check_no_streamlit_leak.py    # guards pipeline/ and llm/ against a dashboard-code leak
+├── extend_taxonomy.md            # design notes for the taxonomy-extension mechanism
+├── opportunity_spaces_summary.md # auto-generated, client-facing
+├── radar_cli.py                  # create, promote, review, link, score, summary, all
+├── radar.db / radar_g.db
+├── requirements.txt
+├── score_breakdown.png
+└── taxonomy_extensions.json      # approved taxonomy terms (auto-created if missing)
+
 ## External dependencies & costs
 
 Everything below is free-tier / no-cost for a project this size — flagging the actual limits

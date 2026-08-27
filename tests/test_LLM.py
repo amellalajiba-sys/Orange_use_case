@@ -22,8 +22,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-import pytest
-
+# Sieg 26/08 -- "import pytest" removed here: never used as pytest.* in this
+# file (monkeypatch is a fixture, auto-injected by pytest via the test
+# function's parameter, not something you import).
 from pipeline.analyze import _classify_themes
 from pipeline.taxonomy_validation import is_generic_taxonomy_term
 from pipeline.extend_taxonomy import generate_proposal

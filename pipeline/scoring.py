@@ -120,13 +120,29 @@ WEIGHTS = {
 # same category of risk as EVIDENCE_QUALITY_MAX_SIGNALS/ENRICHMENT_SAMPLE_SIZE
 # above needing a check whenever top_n moves.
 #
+# Sieg 26/08 -- 45 -> 56, pour
+# suivre EXACTEMENT `radar_cli.py cmd_link`'s nouveau top_n=56 (voir le
+# commentaire complet à cet endroit dans radar_cli.py pour le detail du
+# calcul -- même 90e percentile, mesuré sur 125 OS réels après le fix GDELT
+# et le filtre NON_TECH_SOURCES). Recalculé ici uniquement pour rester
+# structurellement vrai avec le nouveau plafond de `link` -- pas une
+# deuxième mesure indépendante. Pour vérifier que les deux valeurs sont
+# toujours synchronisées après un futur changement de top_n :
+#   grep "top_n=" radar_cli.py     # doit matcher MARKET_SIGNAL_CAP ci-dessous
+#
 # SOURCE_DIVERSITY_CAP=40 has no equivalent structural tie (source diversity
 # isn't hard-capped by top_n the way raw count is) -- this IS a judgment
 # call from real data: set near the observed max (41) rather than the
 # average (14.6 would saturate roughly half the OS at 10/10). Re-run
 # `calibrate` and revisit if ingest volume/source variety changes meaningfully.
-MARKET_SIGNAL_CAP = 45       # = link's top_n -- structural ceiling, not a guess (see comment above)
+# Sieg 26/08 -- left at 40 for now: the "Across N OS" distinct-sources max
+# seen tonight (after the NON_TECH_SOURCES filter) was still <=40, so this
+# one hasn't gone stale yet -- re-check with `calibrate`'s first block
+# ("distinct sources min=X max=Y avg=Z") after the next full relink+rescore,
+# since removing junk sources could plausibly lower the real max slightly.
+MARKET_SIGNAL_CAP = 56       # = link's top_n -- structural ceiling, not a guess (see comment above)
 SOURCE_DIVERSITY_CAP = 40    # distinct named sources that maps to a 10/10 source_diversity
+
 
 # Sieg 23/08 -- found while investigating whether link's top_n=15 (radar_cli.py)
 # is arbitrary: llm_evidence_quality() and llm_enrich() below were ALSO
@@ -724,19 +740,27 @@ def score_opportunity_space(conn, opportunity_space_row, urgency_scaling_point=U
     return sub_scores, round(total, 2), urgency
 
 
-def score_all_opportunity_spaces(force=False, from_label=None):
+def score_all_opportunity_spaces(force=False, from_label=None, to_label=None):
     """Scores + enriches opportunity spaces, one pass.
 
-    force=False (default): only opportunity spaces with no score yet or old scores see the loop below
-    -- safe to re-run after every `radar_cli.py promote` without burning LLM quota re-scoring OS that
+    force=False (default): only opportunity spaces with no score yet
+    (get_unscored_opportunity_spaces) -- safe to re-run after every
+    `radar_cli.py promote` without burning LLM quota re-scoring OS that
     haven't changed. ALSO repairs any OS stuck with a scores row but no
-    right_to_win_scores row (interrupted run) --.
+    right_to_win_scores row (interrupted run) -- see the loop below.
     force=True: rescore + re-enrich every opportunity space regardless.
     from_label: resume a --force run that got interrupted (e.g. Groq quota
     ran out mid-run) -- skips every OS whose label sorts BEFORE this one
     alphabetically, so already-redone OS aren't burned through again. Only
     meaningful together with force=True; ignored otherwise (unscored-only
     mode already naturally skips whatever got scored on the interrupted run).
+    to_label: Sieg 26/08 -- symmetric to from_label, for the opposite case:
+    rescoring a bounded range (e.g. "--from=OS006 --to=OS060" after a
+    top_n/cap recalibration, to check the new caps' effect on a sample
+    before spending quota on all 125 OS). Skips every OS whose label sorts
+    AFTER this one. Combinable with from_label for a two-sided range, or
+    usable alone for "everything up to and including this label". Only
+    meaningful together with force=True, same as from_label.
 
     Sieg 25/8 -- deliberately NOT merging in db.get_opportunity_spaces_with_
     old_scores() (OS scored >3 days ago) as a teammate's version did: that
@@ -751,18 +775,7 @@ def score_all_opportunity_spaces(force=False, from_label=None):
     db.py, unused for now, for whoever wants to wire an automatic
     "--refresh only what's stale" mode later."""
     conn = get_connection()
-
-    if force:
-        spaces = get_all_opportunity_spaces(conn)
-    else:
-        unscored_spaces = get_unscored_opportunity_spaces(conn)
-        old_score_spaces = get_opportunity_spaces_with_old_scores(conn)
-        # Merge the two lists and remove duplicates using the opportunity space ID
-        spaces_by_id = {
-            space["id"]: space
-            for space in unscored_spaces + old_score_spaces
-        }
-        spaces = list(spaces_by_id.values())
+    spaces = get_all_opportunity_spaces(conn) if force else get_unscored_opportunity_spaces(conn)
 
     # Sieg 23/08 -- bug fix: get_unscored_opportunity_spaces() only checks the
     # `scores` table, so an OS interrupted between insert_score() and
@@ -787,6 +800,12 @@ def score_all_opportunity_spaces(force=False, from_label=None):
         spaces = [s for s in spaces if s["label"] >= from_label]
         print(f"--from {from_label}: skipping {before - len(spaces)} opportunity space(s) "
               f"already done before the interruption.\n")
+
+    if force and to_label:
+        before = len(spaces)
+        spaces = [s for s in spaces if s["label"] <= to_label]
+        print(f"--to {to_label}: keeping only {len(spaces)} of {before} opportunity space(s) "
+              f"up to and including this label.\n")
 
     if not spaces and not repair_spaces:
         print("Nothing to score -- every opportunity space already has a score. "
@@ -888,10 +907,29 @@ def score_all_opportunity_spaces(force=False, from_label=None):
     # her stated intent.
     recalibrate_urgency(conn)
 
+    # Sieg 25/8 -- closes the "does it refresh automatically after 3 days"
+    # question: it didn't, on purpose (a teammate's version wired this to a
+    # full LLM rescore on every plain run, which would silently burn quota
+    # -- see recalibrate_deterministic_scores()'s docstring). This does the
+    # SAME staleness check, but only ever triggers the FREE deterministic
+    # refresh (no LLM calls, same one --refresh runs by hand) -- so a normal
+    # `python -m pipeline.scoring` / `radar_cli.py all` run now keeps any
+    # 3+ day old OS's market_signal_strength/source_diversity/novelty_
+    # momentum/urgency current automatically, at zero extra Groq cost,
+    # without ever touching evidence_quality/strategic_relevance.
+    stale_ids = {s["id"] for s in get_opportunity_spaces_with_old_scores(conn)}
+    if stale_ids:
+        stale_rows = [r for r in get_latest_scores(conn) if r["id"] in stale_ids]
+        if stale_rows:
+            print(f"\nAuto-refreshing {len(stale_rows)} opportunity space(s) scored "
+                  f"more than 3 days ago (free, deterministic only -- run "
+                  f"`radar_cli.py link` first if new signals should count):\n")
+            recalibrate_deterministic_scores(conn, rows=stale_rows)
+
     conn.close()
 
 
-def recalibrate_deterministic_scores(conn=None):
+def recalibrate_deterministic_scores(conn=None, rows=None):
     """Implements the 'Refresh Logic for already existing OSs' gap from
     current_project_state_overview.md: 'We have a process that
     adds new data and promotes new OSes, but it doesn't update the scores
@@ -902,11 +940,12 @@ def recalibrate_deterministic_scores(conn=None):
     (unscored) OS, see score_all_opportunity_spaces()'s docstring.
 
     Recalculates market_signal_strength, source_diversity, novelty_momentum,
-    and urgency_score for EVERY currently-scored OS, using each OS's
-    CURRENT linked signals -- so run `radar_cli.py link` again first if new
-    signals have come in since the last link; this function only reads
-    opportunity_signals, it doesn't re-attach anything itself (link's own
-    top_n logic is a bigger, separate operation not worth duplicating here).
+    and urgency_score for the given OS (or EVERY currently-scored OS if
+    `rows` is omitted), using each OS's CURRENT linked signals -- so run
+    `radar_cli.py link` again first if new signals have come in since the
+    last link; this function only reads opportunity_signals, it doesn't
+    re-attach anything itself (link's own top_n logic is a bigger, separate
+    operation not worth duplicating here).
 
     evidence_quality/strategic_relevance (LLM-based, the expensive half) are
     carried forward UNCHANGED from each OS's latest score -- same principle
@@ -920,13 +959,21 @@ def recalibrate_deterministic_scores(conn=None):
     calculation, so this and a plain `python -m pipeline.scoring` run never
     disagree about what "urgent" means this run.
 
+    Sieg 25/8 -- `rows` param added so score_all_opportunity_spaces() can
+    call this automatically on just the STALE subset (OS scored >3 days
+    ago, see get_opportunity_spaces_with_old_scores()) at the end of every
+    normal run, instead of needing someone to remember `--refresh` by hand.
+    Manual `--refresh` from the command line is UNCHANGED -- it still omits
+    `rows` and refreshes every scored OS, not just the stale ones.
+
     Run: python -m pipeline.scoring --refresh
     """
     close_after = conn is None
     if conn is None:
         conn = get_connection()
 
-    rows = get_latest_scores(conn)
+    if rows is None:
+        rows = get_latest_scores(conn)
     if not rows:
         print("No scored opportunity spaces found -- nothing to refresh. "
               "Run `python -m pipeline.scoring` first.")
@@ -1292,9 +1339,12 @@ if __name__ == "__main__":
     # both can be needed after the same session -- run urgency first, it
     # costs nothing.
     from_label = None
+    to_label = None  # Sieg 26/08 -- see score_all_opportunity_spaces()'s docstring
     for arg in sys.argv:
         if arg.startswith("--from="):
             from_label = arg.split("=", 1)[1]
+        elif arg.startswith("--to="):
+            to_label = arg.split("=", 1)[1]
     # Sieg 24/8 -- --refresh : implements the "Refresh Logic for already
     # existing OSs" gap (current_project_state_overview.md) -- redoes all 4
     # deterministic sub-scores (not just urgency) for every scored OS using
@@ -1314,4 +1364,4 @@ if __name__ == "__main__":
     elif "--prune-scores" in sys.argv:
         clean_scores()
     else:
-        score_all_opportunity_spaces(force="--force" in sys.argv, from_label=from_label)
+        score_all_opportunity_spaces(force="--force" in sys.argv, from_label=from_label, to_label=to_label)

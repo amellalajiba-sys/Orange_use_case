@@ -19,12 +19,12 @@ UPDATED FOR NEW SCHEMA:
   - Proposals are still stored in the `proposals` table (same as before).
 '''
 
-import sqlite3
 from datetime import datetime
 import json
 import os
 
 from pipeline.taxonomy_validation import is_generic_taxonomy_term
+from pipeline.db import get_connection  # Sieg 26/8 -- see run_extend_taxonomy() below
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TAXONOMY_EXTENSIONS_PATH = os.path.join(BASE_DIR, "taxonomy_extensions.json")
@@ -295,8 +295,16 @@ def run_extend_taxonomy(run_id=None):
     Main function: checks watchlist, generates proposals.
     """
     # 1. Connect to database
-    conn = sqlite3.connect("radar.db")
-    conn.row_factory = sqlite3.Row
+    # Sieg 26/8 -- was sqlite3.connect("radar.db") directly, bypassing
+    # config.DB_PATH: every other module (db.py, ingest.py, scoring.py,
+    # radar_cli.py) reads/writes via get_connection(), which resolves
+    # DB_PATH from config.py. Harmless today only because DB_PATH's value
+    # happens to still be "radar.db" -- if that ever changes, this was the
+    # one function left silently pointed at the wrong file, with no error.
+    # radar_cli.py `all` runs this file as its own subprocess (see
+    # radar_cli.py's `python -m pipeline.extend_taxonomy` call), so this
+    # path is hit on every full pipeline run, not just a standalone call.
+    conn = get_connection()
     
     # 2. Create proposals table if it doesn't exist
     init_proposals_table(conn)
@@ -305,7 +313,7 @@ def run_extend_taxonomy(run_id=None):
     inserted, exists = generate_all_proposals(conn, threshold=5, run_id=run_id)
     
     # 4. Print summary
-    print(f"[OK] Extend taxonomy complete:")
+    print("[OK] Extend taxonomy complete:")
     print(f"   New proposals: {inserted}")
     print(f"   Already exists: {exists}")
     

@@ -106,6 +106,7 @@ def _call_groq(prompt, system_prompt=None):
     # next key instead of failing straight to Ollama. Any OTHER error (bad
     # key, network issue) still raises immediately -- no point retrying that
     # on a second key.
+    # Sieg 25/08 -- rotation loop re-enabled (was commented out 24/08).
     last_error = None
     for i, api_key in enumerate(GROQ_KEYS):
         try:
