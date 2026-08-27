@@ -300,6 +300,13 @@ def cmd_calibrate(conn):
     for os_row in spaces:
         target_keywords = _keywords(f"{os_row['use_case']} {os_row['technology']}")
         vertical_signals = get_signals_for_vertical(conn, os_row["vertical"])
+        # Sieg 26/08 -- kept in sync with cmd_link()'s NON_TECH_SOURCES
+        # filter, same "identical on purpose" reasoning as this whole
+        # diagnostic already follows (see comment above current_top_n).
+        vertical_signals = [
+            s for s in vertical_signals
+            if (s["source_name"] or "").strip().lower() not in NON_TECH_SOURCES
+        ]
         matching = sum(
             1 for s in vertical_signals
             if len(target_keywords & _keywords(s["title"] or "")) > 0
@@ -389,6 +396,33 @@ def cmd_dedupe(conn, apply=False):
 
 STOPWORDS = {"and", "the", "for", "with", "of", "in", "on", "a", "an", "to", "x"}
 
+# Sieg 26/08 -- observed via `radar_cli.py link`'s own printed output: a
+# handful of signals get linked purely because a proper noun (a person's
+# surname, a place name, a media outlet's own name) happens to collide with
+# a keyword shared by a use_case/technology pair -- "Cloud" (Natasha Cloud,
+# a WNBA player; St. Cloud, a city), "Excellence" (a generic awards-show
+# word). This is a source-level fix, not a keyword-matching fix: an earlier
+# attempt at fixing this by requiring 2+ overlapping keywords whenever the
+# only shared word is generic was tested against every OS in tonight's
+# `link` output and REJECTED -- it gutted genuinely relevant single-
+# generic-keyword matches across almost every OS (e.g. OS120 24->0, OS127
+# 29->1, OS122 11->2), because many use_case/technology names are
+# themselves built from generic words ("Cloud", "Network Modernization"),
+# so a real match and a proper-noun collision are lexically indistinguishable
+# by keyword count alone. This denylist instead targets the exact
+# sports/entertainment/hyper-local source outlets observed producing these
+# collisions -- it can only ever REMOVE a signal, never change which
+# keywords match, so it carries none of that regression risk. Deliberately
+# NOT including "The Citizen" (the source behind one other observed
+# collision, a Knysna crime story matching on "network") -- it's a general
+# newspaper, not a sports/entertainment outlet, so blanket-excluding it on
+# the strength of one bad article risks losing real content later; delete
+# that one signal by hand instead if it's still linked before the demo.
+# Extend this set if `link`'s output surfaces another offending source.
+NON_TECH_SOURCES = {
+    "latestly", "yahoo sports", "mix 94.9", "narooma news",
+}
+
 
 def _keywords(text):
     words = re.findall(r"[a-zA-Z]+", text.lower())
@@ -405,13 +439,36 @@ def _keywords(text):
 # overlap signals just to cover them -- see EVIDENCE_QUALITY_MAX_SIGNALS /
 # ENRICHMENT_SAMPLE_SIZE in scoring.py, which cap the LLM-facing slice
 # separately from this for exactly that cost reason.
+#
+# Sieg 26/08 (2h du matin, veille de la présentation) -- 45 -> 56. La valeur
+# de 45 avait été calibrée le 23/08 avec GDELT cassé (rate-limit non
+# résolu) et un keyword-matching qui laissait passer du bruit non filtré
+# (voir NON_TECH_SOURCES ci-dessus) -- donc calibrée sur MOINS de signaux
+# que ce que le pipeline collecte réellement maintenant. Après le fix GDELT
+# ("AI"/"EU" trop courts, voir config.py) et le filtre NON_TECH_SOURCES,
+# relancé `radar_cli.py calibrate` sur 125 OS réels : le bloc "Signals with
+# keyword overlap > 0, per OS, BEFORE link's top_n cutoff" a donné
+# median=23, 90th percentile=56, max=117, avec 25 OS (20%) qui se faisaient
+# encore couper des signaux pertinents par l'ancien top_n=45. Même logique
+# que le 23/08 : 90e percentile, pas le max (117 ferait payer un prompt LLM
+# énorme à toutes les OS pour couvrir une poignée de cas extrêmes) ni la
+# moyenne (saturerait la moitié des OS à 10/10 sur market_signal_strength).
+# Pour reproduire ce calcul sur de nouvelles données :
+#   python -m pipeline.ingest
+#   python radar_cli.py link
+#   python radar_cli.py calibrate > calibrate_output.txt
+# -- lire le bloc "Across N OS: median=X 90th percentile=Y max=Z" en bas du
+# fichier, prendre le 90th percentile comme nouveau top_n.
 # Re-run `calibrate` after any meaningful change in ingest/promote volume --
 # this number will go stale the same way the old MARKET_SIGNAL_CAP did.
-def cmd_link(conn, top_n=45):
+def cmd_link(conn, top_n=56):
     spaces = get_all_opportunity_spaces(conn)
     for os_row in spaces:
         target_keywords = _keywords(f"{os_row['use_case']} {os_row['technology']}")
         signals = get_signals_for_vertical(conn, os_row["vertical"])
+        # Sieg 26/08 -- see NON_TECH_SOURCES above for why this filter exists
+        # and why it's source-based rather than a keyword-count change.
+        signals = [s for s in signals if (s["source_name"] or "").strip().lower() not in NON_TECH_SOURCES]
 
         scored = []
         for s in signals:
