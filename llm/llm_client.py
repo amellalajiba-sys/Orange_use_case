@@ -81,8 +81,6 @@ GROQ_KEYS = [k for k in (
      os.environ.get("GROQ_API_KEY"),
      os.environ.get("GROQ_API_KEY_2"),
      os.environ.get("GROQ_API_KEY_3"),
-     os.environ.get("GROQ_API_KEY_4"),
-     os.environ.get("GROQ_API_KEY_5")
  ) if k]
 
 def _is_rate_limit_error(e):

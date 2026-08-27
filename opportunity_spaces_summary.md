@@ -1,141 +1,135 @@
 # Innovation Radar — Opportunity Spaces Summary
-_Generated 2026-08-27 06:50 UTC_
+_Generated 2026-08-26 09:17 UTC_
 
-_131/131 opportunity spaces scored._
+_125/125 opportunity spaces scored._
 
 | OS | Attractiveness | Right-to-win | Distance | Urgency |
 |---|---|---|---|---|
-| OS001 | 8.65/10 | 5.6/10 | L3 | 8.0/10 |
-| OS002 | 8.61/10 | 8.6/10 | L1 | 5.09/10 |
-| OS003 | 5.85/10 | 6.5/10 | L3 | 4.84/10 |
-| OS004 | 8.18/10 | 8.5/10 | L1 | 7.96/10 |
-| OS005 | 7.49/10 | 9.2/10 | L1 | 4.8/10 |
-| OS006 | 5.38/10 | 8.5/10 | L1 | 4.77/10 |
-| OS007 | 6.55/10 | 9.5/10 | L1 | 5.1/10 |
-| OS008 | 4.31/10 | 5.6/10 | L3 | 4.64/10 |
-| OS009 | 6.46/10 | 10.0/10 | L0 | 4.44/10 |
-| OS010 | 3.93/10 | 7.5/10 | L3 | 4.41/10 |
-| OS011 | 3.59/10 | 7.8/10 | L3 | 3.02/10 |
-| OS012 | 5.45/10 | 8.2/10 | L1 | 3.67/10 |
-| OS013 | 9.05/10 | 9.3/10 | L1 | 8.0/10 |
-| OS014 | 7.97/10 | 9.2/10 | L1 | 4.56/10 |
-| OS015 | 7.57/10 | 9.5/10 | L1 | 4.71/10 |
-| OS016 | 5.84/10 | 8.5/10 | L3 | 3.53/10 |
-| OS017 | 8.13/10 | 6.6/10 | L3 | 4.32/10 |
-| OS018 | 5.79/10 | 10.0/10 | L0 | 3.85/10 |
-| OS019 | 7.42/10 | 7.5/10 | L3 | 3.63/10 |
-| OS020 | 8.88/10 | 10.0/10 | L0 | 9.03/10 |
-| OS021 | 7.23/10 | 5.3/10 | L3 | 7.11/10 |
-| OS022 | 6.2/10 | 7.5/10 | L1 | 6.89/10 |
-| OS023 | 8.83/10 | 9.2/10 | L1 | 6.57/10 |
-| OS024 | 8.8/10 | 6.3/10 | L3 | 8.0/10 |
-| OS025 | 7.07/10 | 6.2/10 | L3 | 2.96/10 |
-| OS026 | 7.42/10 | 6.6/10 | L3 | 4.44/10 |
-| OS027 | 5.81/10 | 6.0/10 | L3 | 4.61/10 |
-| OS028 | 9.06/10 | 9.5/10 | L1 | 7.9/10 |
-| OS029 | 8.32/10 | 8.5/10 | L1 | 7.42/10 |
-| OS030 | 3.79/10 | 5.6/10 | L3 | 6.97/10 |
-| OS031 | 3.57/10 | 6.5/10 | L3 | 7.08/10 |
-| OS032 | 6.58/10 | 6.5/10 | L3 | 4.77/10 |
-| OS033 | 9.28/10 | 9.3/10 | L1 | 7.99/10 |
-| OS034 | 7.49/10 | 6.5/10 | L3 | 10.0/10 |
-| OS035 | 3.49/10 | 9.0/10 | L1 | 3.53/10 |
-| OS036 | 7.16/10 | 8.3/10 | L1 | 4.14/10 |
-| OS037 | 3.92/10 | 8.8/10 | L1 | 4.54/10 |
-| OS038 | 7.89/10 | 6.5/10 | L3 | 3.75/10 |
-| OS039 | 4.67/10 | 8.5/10 | L1 | 3.71/10 |
-| OS040 | 4.73/10 | 7.0/10 | L3 | 3.64/10 |
-| OS041 | 2.48/10 | 4.6/10 | L3 | 0.0/10 |
-| OS042 | 6.8/10 | 8.2/10 | L1 | 4.12/10 |
-| OS043 | 3.98/10 | 9.2/10 | L1 | 0.0/10 |
-| OS044 | 4.09/10 | 5.5/10 | L3 | 4.07/10 |
-| OS045 | 4.97/10 | 5.6/10 | L3 | 4.59/10 |
-| OS046 | 5.5/10 | 8.2/10 | L1 | 4.05/10 |
-| OS047 | 4.48/10 | 8.2/10 | L1 | 3.88/10 |
-| OS048 | 2.23/10 | 5.5/10 | L3 | 0.0/10 |
-| OS049 | 6.84/10 | 5.2/10 | L3 | 4.78/10 |
-| OS050 | 3.87/10 | 4.8/10 | L3 | 3.53/10 |
-| OS051 | 6.77/10 | 8.0/10 | L1 | 4.35/10 |
-| OS054 | 6.32/10 | 8.7/10 | L1 | 4.64/10 |
-| OS055 | 5.15/10 | 10.0/10 | L0 | 4.57/10 |
-| OS056 | 5.45/10 | 8.8/10 | L1 | 4.54/10 |
-| OS057 | 4.82/10 | 7.2/10 | L3 | 3.53/10 |
-| OS058 | 4.68/10 | 7.5/10 | L1 | 3.18/10 |
-| OS059 | 4.53/10 | 8.5/10 | L1 | 3.97/10 |
-| OS060 | 4.32/10 | 3.5/10 | L3 | 9.54/10 |
-| OS061 | 5.25/10 | 5.6/10 | L3 | 4.51/10 |
-| OS062 | 5.04/10 | 9.2/10 | L0 | 4.24/10 |
-| OS063 | 4.05/10 | 9.5/10 | L1 | 8.94/10 |
-| OS064 | 4.17/10 | 5.8/10 | L3 | 3.71/10 |
-| OS065 | 7.2/10 | 7.3/10 | L1 | 10.0/10 |
-| OS066 | 3.61/10 | 8.2/10 | L1 | 4.48/10 |
-| OS067 | 4.32/10 | 6.8/10 | L3 | 4.54/10 |
-| OS068 | 3.99/10 | 7.0/10 | L1 | 3.97/10 |
-| OS069 | 4.37/10 | 4.3/10 | L3 | 4.2/10 |
-| OS070 | 5.78/10 | 4.5/10 | L3 | 9.71/10 |
-| OS071 | 4.86/10 | 7.5/10 | L1 | 4.29/10 |
-| OS072 | 4.68/10 | 5.1/10 | L3 | 7.59/10 |
-| OS073 | 8.54/10 | 5.6/10 | L3 | 10.0/10 |
-| OS074 | 4.58/10 | 5.5/10 | L3 | 4.38/10 |
-| OS075 | 6.45/10 | 7.5/10 | L1 | 4.4/10 |
-| OS076 | 5.21/10 | 5.6/10 | L3 | 4.45/10 |
-| OS077 | 4.62/10 | 8.5/10 | L1 | 3.37/10 |
-| OS078 | 5.34/10 | 7.5/10 | L1 | 4.1/10 |
-| OS079 | 4.37/10 | 8.5/10 | L1 | 3.53/10 |
-| OS080 | 6.01/10 | 9.8/10 | L0 | 3.35/10 |
-| OS081 | 4.88/10 | 9.0/10 | L1 | 6.98/10 |
-| OS082 | 7.84/10 | 6.8/10 | L3 | 3.63/10 |
-| OS083 | 7.65/10 | 7.5/10 | L3 | 4.32/10 |
-| OS084 | 5.42/10 | 7.5/10 | L1 | 3.82/10 |
-| OS085 | 4.9/10 | 7.8/10 | L1 | 3.97/10 |
-| OS086 | 6.21/10 | 8.5/10 | L1 | 6.87/10 |
-| OS087 | 8.09/10 | 5.6/10 | L3 | 10.0/10 |
-| OS088 | 4.84/10 | 5.8/10 | L3 | 4.64/10 |
-| OS089 | 4.92/10 | 8.0/10 | L1 | 3.97/10 |
-| OS090 | 5.73/10 | 8.8/10 | L1 | 4.05/10 |
-| OS091 | 5.16/10 | 8.5/10 | L1 | 4.48/10 |
-| OS092 | 4.67/10 | 10.0/10 | L0 | 3.71/10 |
-| OS093 | 7.24/10 | 8.8/10 | L1 | 10.0/10 |
-| OS094 | 4.29/10 | 9.2/10 | L0 | 3.53/10 |
-| OS095 | 4.86/10 | 5.8/10 | L3 | 2.95/10 |
-| OS096 | 6.35/10 | 6.5/10 | L3 | 4.6/10 |
-| OS097 | 8.96/10 | 6.5/10 | L3 | 10.0/10 |
-| OS098 | 2.68/10 | 7.5/10 | L1 | 0.0/10 |
-| OS099 | 5.09/10 | 8.3/10 | L1 | 4.24/10 |
-| OS100 | 5.11/10 | 8.0/10 | L1 | 4.41/10 |
-| OS101 | 4.72/10 | 8.5/10 | L1 | 3.91/10 |
-| OS102 | 4.79/10 | 8.3/10 | L1 | 4.35/10 |
-| OS103 | 3.36/10 | 7.5/10 | L1 | 3.78/10 |
-| OS104 | 4.1/10 | 8.3/10 | L1 | 3.78/10 |
-| OS105 | 6.66/10 | 9.5/10 | L1 | 6.64/10 |
-| OS106 | 6.81/10 | 8.0/10 | L1 | 4.74/10 |
-| OS107 | 4.88/10 | 5.1/10 | L3 | 3.88/10 |
-| OS108 | 7.35/10 | 7.5/10 | L1 | 10.0/10 |
-| OS109 | 3.82/10 | 8.3/10 | L1 | 3.97/10 |
-| OS110 | 4.31/10 | 5.8/10 | L3 | 4.38/10 |
-| OS111 | 3.97/10 | 8.3/10 | L1 | 3.37/10 |
-| OS112 | 3.85/10 | 9.3/10 | L1 | 3.78/10 |
-| OS113 | 3.66/10 | 7.5/10 | L1 | 3.67/10 |
-| OS114 | 5.69/10 | 7.5/10 | L1 | 4.37/10 |
-| OS115 | 6.05/10 | 7.0/10 | L3 | 4.04/10 |
-| OS116 | 3.43/10 | 7.5/10 | L3 | 3.26/10 |
-| OS117 | 2.97/10 | 8.2/10 | L1 | 3.53/10 |
-| OS118 | 4.96/10 | 8.5/10 | L1 | 4.38/10 |
-| OS119 | 4.84/10 | 8.0/10 | L1 | 3.74/10 |
-| OS120 | 4.32/10 | 5.6/10 | L3 | 8.83/10 |
-| OS121 | 6.94/10 | 5.8/10 | L3 | 2.85/10 |
-| OS122 | 4.24/10 | 8.0/10 | L1 | 7.71/10 |
-| OS123 | 4.38/10 | 5.8/10 | L3 | 4.3/10 |
-| OS124 | 6.29/10 | 10.0/10 | L0 | 3.53/10 |
-| OS125 | 2.03/10 | 5.5/10 | L3 | 0.0/10 |
-| OS126 | 3.79/10 | 7.5/10 | L1 | 3.53/10 |
-| OS127 | 5.03/10 | 8.5/10 | L1 | 9.5/10 |
-| OS128 | 6.17/10 | 8.7/10 | L1 | 4.41/10 |
-| OS129 | 6.81/10 | 5.5/10 | L3 | 7.06/10 |
-| OS130 | 3.5/10 | 9.5/10 | L1 | 4.41/10 |
-| OS131 | 5.02/10 | 5.5/10 | L3 | 4.49/10 |
-| OS132 | 5.93/10 | 9.2/10 | L1 | 4.79/10 |
-| OS133 | 3.48/10 | 7.5/10 | L1 | 2.65/10 |
+| OS001 | 8.73/10 | 6.6/10 | L3 | 4.85/10 |
+| OS002 | 7.53/10 | 9.2/10 | L1 | 4.9/10 |
+| OS003 | 6.18/10 | 6.6/10 | L3 | 4.72/10 |
+| OS004 | 7.74/10 | 6.5/10 | L3 | 7.75/10 |
+| OS005 | 7.02/10 | 8.5/10 | L1 | 4.59/10 |
+| OS006 | 4.62/10 | 8.5/10 | L1 | 4.5/10 |
+| OS007 | 7.35/10 | 9.3/10 | L1 | 4.97/10 |
+| OS008 | 4.17/10 | 6.5/10 | L3 | 4.45/10 |
+| OS009 | 6.16/10 | 10.0/10 | L0 | 4.36/10 |
+| OS010 | 4.15/10 | 9.2/10 | L1 | 4.25/10 |
+| OS011 | 2.84/10 | 7.5/10 | L3 | 2.96/10 |
+| OS012 | 5.37/10 | 8.5/10 | L1 | 3.46/10 |
+| OS013 | 8.88/10 | 10.0/10 | L0 | 7.97/10 |
+| OS014 | 8.37/10 | 9.5/10 | L1 | 4.5/10 |
+| OS015 | 7.07/10 | 9.5/10 | L0 | 4.69/10 |
+| OS016 | 3.68/10 | 10.0/10 | L0 | 3.36/10 |
+| OS017 | 7.83/10 | 8.4/10 | L3 | 4.04/10 |
+| OS018 | 4.79/10 | 6.2/10 | L2 | 3.77/10 |
+| OS019 | 5.23/10 | 8.8/10 | L3 | 3.61/10 |
+| OS020 | 8.78/10 | 9.4/10 | L0 | 6.46/10 |
+| OS021 | 4.32/10 | 8.5/10 | L3 | 6.43/10 |
+| OS022 | 4.1/10 | 8.3/10 | L3 | 6.15/10 |
+| OS023 | 9.08/10 | 10.0/10 | L0 | 6.46/10 |
+| OS024 | 7.73/10 | 3.5/10 | L2 | 7.97/10 |
+| OS025 | 5.51/10 | 5.8/10 | L2 | 3.27/10 |
+| OS026 | 6.72/10 | 9.7/10 | L1 | 4.27/10 |
+| OS027 | 4.75/10 | 7.0/10 | L3 | 4.39/10 |
+| OS028 | 8.87/10 | 9.2/10 | L1 | 7.87/10 |
+| OS029 | 8.87/10 | 8.5/10 | L1 | 7.22/10 |
+| OS030 | 4.29/10 | 2.5/10 | L4 | 6.83/10 |
+| OS031 | 3.49/10 | 6.5/10 | L3 | 6.88/10 |
+| OS032 | 6.12/10 | 7.5/10 | L3 | 4.59/10 |
+| OS033 | 8.56/10 | 8.5/10 | L1 | 7.76/10 |
+| OS034 | 7.67/10 | 5.6/10 | L3 | 10.0/10 |
+| OS035 | 3.89/10 | 8.8/10 | L1 | 3.46/10 |
+| OS036 | 7.04/10 | 8.0/10 | L1 | 4.02/10 |
+| OS037 | 3.92/10 | 8.0/10 | L1 | 4.45/10 |
+| OS038 | 8.07/10 | 5.5/10 | L3 | 3.54/10 |
+| OS039 | 5.17/10 | 9.5/10 | L1 | 3.63/10 |
+| OS040 | 3.96/10 | 6.1/10 | L3 | 4.62/10 |
+| OS041 | 1.63/10 | 5.5/10 | L3 | 0.0/10 |
+| OS042 | 4.93/10 | 8.3/10 | L1 | 4.32/10 |
+| OS043 | 3.98/10 | 9.3/10 | L1 | 0.0/10 |
+| OS044 | 3.83/10 | 5.5/10 | L3 | 3.89/10 |
+| OS045 | 4.68/10 | 7.5/10 | L1 | 4.39/10 |
+| OS046 | 6.07/10 | 7.8/10 | L1 | 3.89/10 |
+| OS047 | 3.85/10 | 4.6/10 | L3 | 3.71/10 |
+| OS048 | 2.43/10 | 6.5/10 | L3 | 0.0/10 |
+| OS049 | 6.81/10 | 7.5/10 | L1 | 4.63/10 |
+| OS050 | 3.91/10 | 5.5/10 | L3 | 3.46/10 |
+| OS051 | 7.18/10 | 8.0/10 | L1 | 4.26/10 |
+| OS054 | 5.27/10 | 8.8/10 | L1 | 4.4/10 |
+| OS055 | 4.16/10 | 9.3/10 | L1 | 4.39/10 |
+| OS056 | 4.31/10 | 6.0/10 | L3 | 4.25/10 |
+| OS057 | 4.42/10 | 9.5/10 | L1 | 3.3/10 |
+| OS058 | 4.77/10 | 5.7/10 | L3 | 3.46/10 |
+| OS059 | 5.28/10 | 7.5/10 | L1 | 3.89/10 |
+| OS060 | 3.89/10 | 5.5/10 | L3 | 9.35/10 |
+| OS061 | 5.28/10 | 5.2/10 | L3 | 4.32/10 |
+| OS062 | 4.79/10 | 9.2/10 | L0 | 4.08/10 |
+| OS063 | 3.88/10 | 9.5/10 | L1 | 8.66/10 |
+| OS064 | 4.72/10 | 5.5/10 | L3 | 3.63/10 |
+| OS065 | 5.97/10 | 8.2/10 | L1 | 10.0/10 |
+| OS066 | 3.28/10 | 7.5/10 | L3 | 4.04/10 |
+| OS067 | 3.63/10 | 8.5/10 | L1 | 4.15/10 |
+| OS068 | 3.64/10 | 9.0/10 | L1 | 3.89/10 |
+| OS069 | 4.64/10 | 5.6/10 | L3 | 4.07/10 |
+| OS070 | 5.48/10 | 4.5/10 | L3 | 9.44/10 |
+| OS071 | 5.51/10 | 9.3/10 | L0 | 4.21/10 |
+| OS072 | 4.79/10 | 8.8/10 | L1 | 7.44/10 |
+| OS073 | 6.63/10 | 5.2/10 | L3 | 10.0/10 |
+| OS074 | 4.01/10 | 7.5/10 | L1 | 4.25/10 |
+| OS075 | 5.91/10 | 8.3/10 | L1 | 4.15/10 |
+| OS076 | 5.43/10 | 9.5/10 | L0 | 4.36/10 |
+| OS077 | 4.37/10 | 8.3/10 | L1 | 3.63/10 |
+| OS078 | 5.2/10 | 7.5/10 | L1 | 4.12/10 |
+| OS079 | 4.52/10 | 9.4/10 | L0 | 3.46/10 |
+| OS080 | 5.62/10 | 9.8/10 | L0 | 3.05/10 |
+| OS081 | 5.33/10 | 8.3/10 | L1 | 6.84/10 |
+| OS082 | 7.89/10 | 6.5/10 | L3 | 3.34/10 |
+| OS083 | 7.4/10 | 6.8/10 | L3 | 4.15/10 |
+| OS084 | 4.85/10 | 9.5/10 | L1 | 3.97/10 |
+| OS085 | 5.0/10 | 8.2/10 | L1 | 3.89/10 |
+| OS086 | 5.64/10 | 9.5/10 | L1 | 6.71/10 |
+| OS087 | 8.36/10 | 6.5/10 | L3 | 10.0/10 |
+| OS088 | 4.49/10 | 5.8/10 | L3 | 4.5/10 |
+| OS089 | 4.79/10 | 8.0/10 | L1 | 3.89/10 |
+| OS090 | 5.61/10 | 8.0/10 | L1 | 3.97/10 |
+| OS091 | 5.24/10 | 9.5/10 | L1 | 4.72/10 |
+| OS092 | 4.67/10 | 10.0/10 | L0 | 3.63/10 |
+| OS093 | 7.59/10 | 9.5/10 | L1 | 9.79/10 |
+| OS094 | 3.99/10 | 7.8/10 | L3 | 3.46/10 |
+| OS095 | 5.06/10 | 7.5/10 | L1 | 2.89/10 |
+| OS096 | 5.57/10 | 7.5/10 | L1 | 4.45/10 |
+| OS097 | 8.91/10 | 6.5/10 | L3 | 10.0/10 |
+| OS098 | 2.58/10 | 5.5/10 | L3 | 0.0/10 |
+| OS099 | 5.37/10 | 7.8/10 | L1 | 4.11/10 |
+| OS100 | 5.03/10 | 9.0/10 | L1 | 4.32/10 |
+| OS101 | 4.86/10 | 8.2/10 | L1 | 4.01/10 |
+| OS102 | 4.96/10 | 7.5/10 | L1 | 4.32/10 |
+| OS103 | 3.06/10 | 5.2/10 | L3 | 3.46/10 |
+| OS104 | 2.6/10 | 8.2/10 | L1 | 3.71/10 |
+| OS105 | 4.63/10 | 9.3/10 | L1 | 6.47/10 |
+| OS106 | 5.27/10 | 8.7/10 | L1 | 4.56/10 |
+| OS107 | 3.05/10 | 8.8/10 | L1 | 3.71/10 |
+| OS108 | 5.23/10 | 8.2/10 | L1 | 10.0/10 |
+| OS109 | 2.82/10 | 7.5/10 | L1 | 3.89/10 |
+| OS110 | 4.11/10 | 5.5/10 | L3 | 4.21/10 |
+| OS111 | 4.77/10 | 9.2/10 | L0 | 3.63/10 |
+| OS112 | 4.07/10 | 9.2/10 | L1 | 3.46/10 |
+| OS113 | 3.71/10 | 6.5/10 | L1 | 3.59/10 |
+| OS114 | 5.75/10 | 7.5/10 | L1 | 4.22/10 |
+| OS115 | 6.22/10 | 6.0/10 | L3 | 3.93/10 |
+| OS116 | 3.73/10 | 6.5/10 | L3 | 3.19/10 |
+| OS117 | 3.07/10 | 7.8/10 | L1 | 3.46/10 |
+| OS118 | 4.48/10 | 9.1/10 | L3 | 4.15/10 |
+| OS119 | 4.45/10 | 6.9/10 | L1 | 3.57/10 |
+| OS120 | 3.88/10 | 8.1/10 | L1 | 8.81/10 |
+| OS121 | 5.75/10 | 9.7/10 | L3 | 3.12/10 |
+| OS122 | 2.74/10 | 9.0/10 | L3 | 7.55/10 |
+| OS123 | 3.6/10 | 0.5/10 | L4 | 4.15/10 |
+| OS124 | 5.53/10 | 10.0/10 | L0 | 3.36/10 |
+| OS125 | 2.62/10 | 0.4/10 | L4 | 0.0/10 |
+| OS126 | 4.12/10 | 0.2/10 | L4 | 3.46/10 |
+| OS127 | 5.65/10 | 9.7/10 | L0 | 9.27/10 |
 
 ## Orange Business at a glance
 
@@ -154,20 +148,20 @@ _131/131 opportunity spaces scored._
 
 ## OS001 — Public Sector × Sovereign citizen data hosting × Sovereign cloud + GPU inference
 
-**Attractiveness: 8.65/10**
+**Attractiveness: 8.73/10**
 - Market signal strength: 10.0
-- Source diversity: 10.0
-- Evidence quality: 8.0 — The signals are largely specific, come from a diverse mix of reputable news, analyst, and regulatory sources, and directly address EU sovereign cloud and data sovereignty, though a few are vendor‑centric press releases.
-- Novelty / momentum: 9.0
-- Strategic relevance: 5.0 — The opportunity aligns broadly with API Cloud Avenue (Cloud) for hosting, but there is no specific Orange Business API for sovereign cloud or GPU inference. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Source diversity: 9.0
+- Evidence quality: 9.0 — The signals are highly relevant to EU sovereign cloud trends and come from a diverse mix of credible sources—including major media, industry analysts, regulators, and reputable research firms—despite a few vendor‑issued press releases.
+- Novelty / momentum: 9.35
+- Strategic relevance: 5.0 — Broadly aligns with API Cloud Avenue (Cloud) as a cloud hosting service, though no specific sovereign or GPU inference asset exists in the catalog. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 8.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.85/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.6/10 [L3]**
+**Right-to-win: 6.6/10 [L3]**
 - Matched assets: API Cloud Avenue, API Evolution Platform
-- Orange Business offers generic cloud via API Cloud Avenue and network connectivity via Evolution Platform, but lacks a sovereign‑cloud offering with GPU inference, requiring a new capability. +1.0 calibration bonus (CRM customer overlap).
+- Orange Business can leverage its Cloud Avenue and Evolution Platform for sovereign cloud hosting, but lacks a dedicated GPU inference service, requiring a new capability to meet the public‑sector AI workload demand. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (56):**
+**Grounding signals (46):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
 - [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
 - [Lawfare] The EU Cloud and AI Development Act - Lawfare
@@ -197,13 +191,7 @@ _131/131 opportunity spaces scored._
 - [Fortune Business Insights] Germany Cloud Computing Market Size, Share | Growth [2032] - Fortune Business Insights
 - [Sebastian Barros Newsletter] Telcos are Back to the Data Centers - Sebastian Barros Newsletter
 - [RCR Wireless News] AI factories to football matches – Vodafone and BT show Euro model for sovereign telcos - RCR Wireless News
-- [The Fast Mode] Deutsche Telekom’s T Cloud Public Joins German Government Cloud and AI Framework - The Fast Mode
-- [arXiv] An Analytical-Prior Framework for Data-Efficient Prediction of Sound-Reduction Frequencies in Rectangular Side-Branch Helmholtz Resonators
-- [TED - EU Public Procurement] Denmark – Data-processing services – GPUs as a service
-- [TED - EU Public Procurement] Germany – IT services: consulting, software development, Internet and support – Bereitstellung von Cloud-Services für den Betrieb der Förderzentrale Deutschland (FZD)
-- [Ottawa Citizen] Government 'dependent' on U.S. companies to meet public service AI needs: study - Ottawa Citizen
 - [Google Cloud Press Corner] DICT and Google Cloud Partner on Multi-Year AI and Cybersecurity Initiatives to Deliver Next-Generation Citizen Services - Google Cloud Press Corner
-- [observer.com] Public-Sector A.I. Is Advancing Faster Than Public-Sector Data - observer.com
 - [The Fast Mode] Deutsche Telekom Expands T Cloud Public into Fully Sovereign European Cloud - The Fast Mode
 - [Light Reading] NTT Data and Google Cloud partnership targets agentic AI, sovereign cloud - Light Reading
 - [Politics and Governance] Offshore Embeddedness Beyond the Wall: Chinese Cloud Providers in Southeast Asia’s Data Governance Landscape
@@ -220,27 +208,23 @@ _131/131 opportunity spaces scored._
 - [orrick.com] Data Localization and the Sovereign Cloud: EU Cloud Regulations Explained - orrick.com
 - [Broadcom] Who Really Controls Your Data? The Test of Sovereign Cloud - Broadcom
 - [Silicon Canals] Europe’s new tech-sovereignty plan doesn’t ban U.S. cloud giants — it sets four levels of “sovereignty” for sensitive government data, and an American law makes the top levels nearly impossible for them to reach - Silicon Canals
-- [International Journal of Science and Research Archive] Sovereign cloud implementation: Technical architectures for data residency and regulatory compliance
-- [International Conference on Cyber Conflict] Up in the Air: Ensuring Government Data Sovereignty in the Cloud
-- [Semantic Scholar] Saving Data, Securing EU Accession: Diia’s Dual-Cloud Dilemma in 2025
-- [Global academic journal of economics and business] Cloud-Based Disaster Recovery and Business Continuity for Mission-Critical Data in Saudi Organizations
 
 ## OS002 — Manufacturing × Fire and hazard detection × Edge computer vision (Raspberry Pi class)
 
-**Attractiveness: 8.61/10**
-- Market signal strength: 10.0
-- Source diversity: 7.75
-- Evidence quality: 7.0 — The set mixes reputable analyst reports and industry news on private 5G, edge, and AI with several vendor‑centric blogs and peripheral topics, yielding generally credible but partially diluted relevance.
-- Novelty / momentum: 9.56
-- Strategic relevance: 9.0 — Directly aligns with API M2M for IoT Connect Express (Data, IA & IoT), enabling edge computer‑vision devices for fire/hazard detection in manufacturing. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 7.53/10**
+- Market signal strength: 7.777777777777778
+- Source diversity: 5.75
+- Evidence quality: 7.0 — The list contains several credible analyst and industry sources on private 5G, edge computing, and AI for industry, but also includes vendor‑centric blogs and a few unrelated items, resulting in a solid yet imperfect overall relevance and credibility.
+- Novelty / momentum: 9.43
+- Strategic relevance: 9.0 — The edge computer‑vision fire detection use‑case directly extends Orange Business' API M2M for IoT Connect Express (Data, IA & IoT) by leveraging its IoT connectivity and data ingestion capabilities for manufacturing safety. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 5.09/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.9/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.6/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Incident, API Evolution Platform, API Flexible SDWAN Cisco
-- Existing IoT, cloud, security and connectivity APIs can be combined to deliver edge vision fire detection, but no single packaged offering currently exists. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.2/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Incident
+- Orange Business already offers IoT connectivity, cloud processing, network services and incident handling that can be bundled to create a fire‑hazard edge‑vision solution, but no pre‑packaged offering exists yet. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (51):**
+**Grounding signals (35):**
 - [Tech Monitor] Bringing intelligence to the factory floor: Private 5G and edge computing* - Tech Monitor
 - [Telecoms Tech News] Verizon deploys Ericsson private 5G edge networks worldwide - Telecoms Tech News
 - [ARC Advisory Group] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory Group
@@ -276,39 +260,23 @@ _131/131 opportunity spaces scored._
 - [NVIDIA Blog] How XPUs Meet a World-Class AI Factory
 - [ARC Advisory] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory
 - [The Guardian] Hanging By a Wire review - cable car rescue documentary dangles viewers on the edge of disaster
-- [Journal of Advanced Research in Applied Sciences and Engineering Technology] Empowering Innovation: Private 5G Network Integration with Edge AI
-- [ICTACT Journal on Image and Video Processing] EDGE-AI VIDEO ANALYTICS FOR INDUSTRIAL WORKER SAFETY AND HAZARD DETECTION IN SMART MANUFACTURING ENVIRONMENTS THROUGH DECISION-MAKING FRAMEWORKS
-- [IEEE Conference on Computer Communications] Enabling Edge AI Offloading for XR Devices in Cost-Effective Private 5G Networks
-- [IEEE Networking Letters] Closed-Loop Network Control for Industrial Edge Computing: A Telemetry-Driven and AI-Based Approach for Latency-Critical Applications in Private 5G
-- [IEEE Access] AI-Driven NTN and 5G Edge Integration for Cost-Effective, Secure, and Sustainable Smart Agriculture in Rural Areas: A Comparative Study With Traditional Approaches
-- [Journal of Advances in Developmental Research] The Convergence of Private Wireless with AI and Machine Learning: Investigating how private networks enable real-time data processing at the edge for AI-driven applications in manufacturing, predictive maintenance, and autonomous systems
-- [Journal of Information Systems Engineering & Management] Collaborative Intelligence in Manufacturing: Human-Robot Teams with Edge AI
-- [arXiv] How Edge of Stability Hinders SCAFFOLD in Federated Optimization
-- [Barchart.com] Capricor Therapeutics, Inc. Notice of September 28, 2026 Application Deadline for Class Action Lawsuit - Contact Lewis Kahn, Esq. at Kahn Swick & Foti, LLC, Before Application Deadline
-- [Barchart.com] Cogent Communications Holdings Securities Fraud Class Action Result of Undisclosed Demand and Backlog Issues and approximately 29% Stock Decline - Investors may Contact Lewis Kahn, Esq, at Kahn Swick & Foti, LLC
-- [wallstreet:online] EquipmentShare.com Inc. Notice of September 21, 2026 Application Deadline for Class Action Lawsuit - Contact Lewis Kahn, Esq. at Kahn Swick & Foti, LLC, Before Application Deadline
-- [Barchart.com] HDFC Bank Limited Securities Fraud Class Action Result of Deceptive Interest Payments and Approximately 4% Stock Decline - Investors may Contact Lewis Kahn, Esq, at Kahn Swick & Foti, LLC
-- [Barchart.com] EquipmentShare.com Inc. Notice of September 21, 2026 Application Deadline for Class Action Lawsuit - Contact Lewis Kahn, Esq. at Kahn Swick & Foti, LLC, Before Application Deadline
-- [Barchart.com] Primoris Services Corporation Notice of September 21, 2026 Application Deadline for Class Action Lawsuit - Contact Lewis Kahn, Esq. at Kahn Swick & Foti, LLC, Before Application Deadline
-- [arXiv] Agentic Autoresearch for Cell-Edge Power Control: Radically Redefining the Researcher's Role
-- [2025 International Conference on Innovations and Emerging Technologies In AI & Communication Systems (IETACS)] Adaptive Multi-Sensory Augmented Reality Interface for Operator Training in Smart Manufacturing Cells Using Real-Time Biosignal Feedback and Edge-AI
 
 ## OS003 — Finance & Insurance × Conduct-risk / compliance monitoring × AI surveillance of communications
 
-**Attractiveness: 5.85/10**
-- Market signal strength: 5.111111111111111
+**Attractiveness: 6.18/10**
+- Market signal strength: 4.888888888888888
 - Source diversity: 5.25
-- Evidence quality: 7.0 — The set mixes credible, diverse sources (analyst reports, major media, academic preprints, consulting firms) with some vendor‑centric or tangential items, yielding generally relevant but not uniformly high‑quality signals.
-- Novelty / momentum: 9.13
-- Strategic relevance: 4.0 — No existing Orange Business API directly offers AI‑driven conduct‑risk monitoring, though it loosely aligns with security offerings like API Incident.
+- Evidence quality: 8.0 — The list includes diverse, largely credible sources (major media, academic preprint, industry analysts, and consulting firms) covering AI, compliance, and RegTech topics, though a few entries are vague or marketing‑focused, preventing a perfect score.
+- Novelty / momentum: 9.09
+- Strategic relevance: 5.0 — The concept aligns with Orange Business security assets like API Incident and Live Identity APIs, but there is no specific API for AI‑driven communications compliance monitoring.
 
-**Urgency: 4.84/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.72/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.5/10 [L3]**
-- Matched assets: API Contact Everyone, API Incident, API M2M for IoT Connect Express, API Evolution Platform
-- Orange Business has AI, security and communication APIs but lacks a dedicated AI‑driven conduct‑risk monitoring solution, requiring a new capability to be built. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 6.6/10 [L3]**
+- Matched assets: API Contact Everyone, API Business Talk Digital, API Incident
+- Existing collaboration and telephony APIs can capture communications, but Orange lacks a dedicated AI-driven compliance monitoring service, requiring a new capability to be built. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (23):**
+**Grounding signals (22):**
 - [Insurance Business] IAG bets on agentic AI where conduct risk is highest - Insurance Business
 - [Cisco Blog] Monitoring beyond SNMP: Turning your network into a sensor
 - [Hacker News] Show HN: Pingu Unchained an Unrestricted LLM for High-Risk AI Security Research
@@ -331,24 +299,23 @@ _131/131 opportunity spaces scored._
 - [International Journal of Advanced Research in Computer Science &amp; Technology] Autonomous Insurance Analytics Using Agentic AI for Personalized Coverage and Predictive Risk Intelligence
 - [International Journal of Emerging Research in Engineering and Technology] Explainable Agentic AI-Driven Machine Learning Framework for Property and General Insurance Risk Assessment
 - [Rediff.com India Ltd.] Irdai's crackdown on insurer operating costs signals stricter compliance
-- [arXiv] PlanSightRAG: A Visual-First Multimodal RAG for Automating Question Answering and Compliance Checking for Civil Standard Plans
 
 ## OS004 — Manufacturing × Remote-controlled industrial robots × Vision-guided teleoperation
 
-**Attractiveness: 8.18/10**
-- Market signal strength: 10.0
-- Source diversity: 8.75
-- Evidence quality: 7.0 — The list mixes credible analyst reports, reputable industry news, and academic work with several vendor‑centric and community posts, offering specific but unevenly weighted signals that are largely relevant to industrial AI, private 5G, and OT security.
-- Novelty / momentum: 9.33
-- Strategic relevance: 5.0 — The use case loosely fits Orange Business IoT (API M2M for IoT Connect Express) and low‑latency networking (API Flexible SDWAN Cisco) but no specific API directly addresses vision‑guided industrial robot teleoperation. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 7.74/10**
+- Market signal strength: 8.88888888888889
+- Source diversity: 7.5
+- Evidence quality: 7.0 — The list mixes credible analyst reports, established industry media, and reputable research with several vendor‑centric and community posts, offering generally relevant but unevenly sourced signals for industrial AI, private 5G, and OT security.
+- Novelty / momentum: 9.25
+- Strategic relevance: 6.0 — Leverages API M2M for IoT Connect Express (Data, IA & IoT) for remote robot telemetry, but Orange Business has no dedicated robot teleoperation product. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 7.96/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 7.75/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Cloud Avenue, API Live Identity Verify
-- Existing connectivity, IoT, cloud and security APIs can be bundled to deliver low‑latency, secure teleoperation for industrial robots, though no single pre‑packaged offering exists yet. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 6.5/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Cloud Avenue, API Evolution Platform
+- Existing connectivity, SD‑WAN and cloud APIs cover network and data needs, but Orange lacks a dedicated real‑time vision‑guided teleoperation platform, requiring a new capability. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (46):**
+**Grounding signals (40):**
 - [Qualcomm] Qualcomm Brings On‑Premises Industrial AI and Connectivity to a Siemens Factory Model at MWC Barcelona - Qualcomm
 - [Fierce Network] Industrial AI could be salve for ailing private network market - Fierce Network
 - [ARC Advisory Group] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory Group
@@ -389,29 +356,23 @@ _131/131 opportunity spaces scored._
 - [ARCweb.com] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARCweb.com
 - [ARC Advisory] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory
 - [ArabianBusiness.com] DXB targets faster journeys with biometrics and remote departures - Arabian Business: Latest News on the Middle East, Real Estate, Finance, and More
-- [ICTACT Journal on Image and Video Processing] EDGE-AI VIDEO ANALYTICS FOR INDUSTRIAL WORKER SAFETY AND HAZARD DETECTION IN SMART MANUFACTURING ENVIRONMENTS THROUGH DECISION-MAKING FRAMEWORKS
-- [Global Communications Conference] A Novel AI/ML SIEM as Application Function within Private 5G Core Network for Industrial-IoT
-- [IEEE Networking Letters] Closed-Loop Network Control for Industrial Edge Computing: A Telemetry-Driven and AI-Based Approach for Latency-Critical Applications in Private 5G
-- [THE LOCAL REPORT ARTICLES] A New Zealand sailor spent years living alone on a remote Cook Islands atoll across three separate stays; a year after his final stay ended, Suwarrow was declared a national park - THE LOCAL REPORT ARTICLES
-- [SiliconANGLE] How private 5G is powering the next wave of industrial innovation - SiliconANGLE
-- [NTT, Inc.] The industrial revolution you didn’t see coming — powered by private 5G - NTT, Inc.
 
 ## OS005 — Manufacturing × Energy Optimization × IoT Platforms
 
-**Attractiveness: 7.49/10**
-- Market signal strength: 7.111111111111112
-- Source diversity: 6.25
-- Evidence quality: 8.0 — The set draws from a diverse mix of credible sources—including major vendor blogs, reputable industry news outlets, and peer‑reviewed academic venues—covering AI, optimization, and cybersecurity trends directly relevant to B2B industrial IoT innovation.
-- Novelty / momentum: 9.06
-- Strategic relevance: 8.0 — Directly aligns with API M2M for IoT Connect Express, Orange Business's IoT connectivity platform that can be leveraged for manufacturing energy optimization use cases. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 7.02/10**
+- Market signal strength: 5.777777777777777
+- Source diversity: 5.25
+- Evidence quality: 8.0 — The list combines credible sources (Microsoft, arXiv, IEEE, reputable industry media) with diverse, relevant topics on AI, optimization, and industrial IoT security, though some entries are pre‑prints or conference abstracts lacking full peer review.
+- Novelty / momentum: 8.85
+- Strategic relevance: 9.0 — Extends API M2M for IoT Connect Express (IoT connectivity) to a manufacturing energy‑optimization platform, directly leveraging Orange Business's IoT offering Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 4.8/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.59/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.2/10 [L1]**
+**Right-to-win: 8.5/10 [L1]**
 - Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Orange Business already offers IoT connectivity, cloud hosting, and SD‑WAN/network‑as‑a‑service assets that can be bundled to deliver an energy‑optimization platform for manufacturers, though no dedicated packaged solution currently exists. +1.0 calibration bonus (CRM customer overlap).
+- Energy‑optimization IoT for manufacturing requires bundling IoT connectivity, cloud analytics and SD‑WAN/network services, which exist as separate APIs but are not offered as a single product. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (32):**
+**Grounding signals (26):**
 - [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
 - [arXiv] Improving the matrix multiplication exponent with modern optimization and AlphaEvolve
 - [IoT Business News] Industrial AI Shifts Focus from Predictive Maintenance to Knowledge Preservation - IoT Business News
@@ -438,29 +399,23 @@ _131/131 opportunity spaces scored._
 - [Hacker News] Ditch the Batteries: Off-Grid Compressed Air Energy Storage (2018)
 - [The Guardian] Against the wind: despite Trump's attacks, unions are fighting for good US clean energy jobs
 - [Zero Hedge] Nano Nuclear Energy Signs Commercial Framework With Tillman To Enable Nuclear Power For Data Centers
-- [NST Online] Govt explores regulatory framework for e-commerce platforms | New Straits Times
-- [Global Communications Conference] A Novel AI/ML SIEM as Application Function within Private 5G Core Network for Industrial-IoT
-- [arXiv] AI Agentic Selective Laser Sintering Process Optimization
-- [arXiv] How Edge of Stability Hinders SCAFFOLD in Federated Optimization
-- [rcrwireless.com] Private 5G in Industry 4.0 – 90% ROI in 12 months, plus big AI/IoT gains - rcrwireless.com
-- [Investing.com] Earnings call transcript: Karoon Energy posts solid H1 2026 results as shares slip By Investing.com
 
 ## OS006 — Manufacturing × Operational Excellence × Machine Learning
 
-**Attractiveness: 5.38/10**
-- Market signal strength: 4.444444444444445
-- Source diversity: 3.25
-- Evidence quality: 4.0 — The set mixes low‑credibility academic papers and vendor‑centric announcements with a few credible analyst reports, yielding limited overall market relevance for a B2B innovation radar.
-- Novelty / momentum: 9.0
-- Strategic relevance: 10.0 — Directly extends API M2M for IoT Connect Express (Data, IA & IoT) by applying machine‑learning analytics to manufacturing IoT data for operational excellence. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 4.62/10**
+- Market signal strength: 3.333333333333333
+- Source diversity: 2.5
+- Evidence quality: 6.0 — The set mixes strong, diverse B2B sources (Accenture acquisition coverage, Omdia, and market forecast) with several academic pre‑prints and low‑impact items, yielding moderate overall credibility and relevance.
+- Novelty / momentum: 8.67
+- Strategic relevance: 5.0 — The opportunity aligns with API M2M for IoT Connect Express (Data, IA & IoT) for industrial data and ML, but Orange Business has no dedicated manufacturing operational‑excellence product. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 4.77/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.5/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 8.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
-- Manufacturing operational‑excellence ML can be delivered by bundling existing IoT connectivity, cloud and network APIs, requiring no new core capability. +1.0 calibration bonus (CRM customer overlap).
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
+- Orange Business already offers IoT/AI (M2M) and cloud (Cloud Avenue) plus network connectivity (Evolution Platform) that can be bundled to enable machine‑learning‑driven operational excellence in manufacturing, though no dedicated packaged offer exists yet. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (20):**
+**Grounding signals (15):**
 - [arXiv] Q-based Variational Inverse Reinforcement Learning
 - [Accenture] Accenture to Strengthen Capabilities for Software and Automation Solutions from Siemens Digital Industries with Acquisition of Industries eXcellence Group - Accenture
 - [Metrology and Quality News] Accenture Strengthen Software and Automation Capabilities with Acquisition of Industries eXcellence Group - Metrology and Quality News
@@ -476,28 +431,23 @@ _131/131 opportunity spaces scored._
 - [arXiv] ADEPT: Accelerating Dexterity via Pre-Training and Post-Training using Reinforcement Learning
 - [arXiv] Image-Guided Pavement Defect Recognition in GPR Data with novel 3D Deep Learning Architecture
 - [arXiv] How AI Assistance Affects Human Skill Development: A Study of Learning with Logic Puzzles
-- [Journal of Advances in Developmental Research] The Convergence of Private Wireless with AI and Machine Learning: Investigating how private networks enable real-time data processing at the edge for AI-driven applications in manufacturing, predictive maintenance, and autonomous systems
-- [arXiv] Formal, Executable and Explainable Runtime Monitoring of Spoken Air Traffic Control Operational Procedures
-- [arXiv] MetaSieve: Faster Relational Deep Learning through SQL-Based Metapath Selection
-- [Eden Magnet] Full list: South East business excellence awards finalists revealed
-- [Scienmag: Latest Science and Health News] Comprehensive Review of Benchmark Datasets for Deep Learning in Medical
 
 ## OS007 — Manufacturing × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 6.55/10**
+**Attractiveness: 7.35/10**
 - Market signal strength: 8.444444444444445
 - Source diversity: 6.5
-- Evidence quality: 6.0 — The list mixes credible analyst and news sources with several vendor‑centric blogs, offering relevant OT cybersecurity signals but limited independent validation.
+- Evidence quality: 8.0 — The list mixes reputable analyst reports, established media, and industry publications covering OT cybersecurity and zero‑trust trends, though some entries are vendor‑focused or redundant, limiting a perfect score.
 - Novelty / momentum: 7.63
-- Strategic relevance: 3.0 — The opportunity does not map to a specific Orange Business API; only generic security assets such as API Incident (Security) loosely relate, but no dedicated manufacturing cyber‑defense or Zero Trust product exists. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+- Strategic relevance: 5.0 — Broadly aligns with Orange Business security assets such as API Incident and API Live Identity Verify, but no specific API/product targets manufacturing‑focused zero‑trust cyber‑defense Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 5.1/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.97/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.5/10 [L1]**
+**Right-to-win: 9.3/10 [L1]**
 - Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Evolution Platform
-- Multiple existing security and network assets can be bundled (identity, incident response, SD‑WAN/SASE) to meet a manufacturing cyber‑defense and zero‑trust need, but no single product currently offers the full solution. +1.0 calibration bonus (CRM customer overlap).
+- Cyber Defense & Zero Trust requires combining existing security APIs with SD‑WAN/SASE networking assets, which Orange Business already offers but not yet packaged as a single manufacturing solution. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (39):**
+**Grounding signals (38):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
 - [Cisco Blogs] Layered Defense for the Plant Floor: Simplifying OT Security - Cisco Blogs
 - [Industrial Cyber] Nozomi’s Plante says CISOs must rethink OT and IoT security as old models fail converged industrial environments - Industrial Cyber
@@ -536,24 +486,23 @@ _131/131 opportunity spaces scored._
 - [Hacker News] Would you trust an AI agent to auto-approve low-value insurance claims?
 - [Asian News International (ANI)] NIA raids five places across Telangana in 2025 Ahmedabad cyber terrorism case
 - [Cisco Blog] Cisco AI Defense + Armada: Distributed AI That’s Safe to Run, Wherever the Mission Requires It
-- [Businessday NG] CAPIS CEO reveals the working steps of the N5bn fund and the Kids Capital Trust
 
 ## OS008 — Manufacturing × Imaging Analytics × Computer Vision
 
-**Attractiveness: 4.31/10**
-- Market signal strength: 1.777777777777778
-- Source diversity: 1.5
-- Evidence quality: 8.0 — The set combines reputable analyst reports, peer‑reviewed journals, and established tech media covering AI, OT security, private 5G, and edge AI, yielding high credibility and strong relevance for a B2B innovation radar.
-- Novelty / momentum: 8.75
-- Strategic relevance: 4.0 — The opportunity aligns broadly with API M2M for IoT Connect Express (Data, IA & IoT) for AI‑driven manufacturing use‑cases, but Orange Business has no dedicated imaging or computer‑vision API. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 4.17/10**
+- Market signal strength: 1.5555555555555556
+- Source diversity: 1.25
+- Evidence quality: 8.0 — The set mixes reputable analyst reports, peer‑reviewed research, and established tech media covering AI, IoT, and 5G innovations for enterprises, though a few items are less formal community posts.
+- Novelty / momentum: 8.57
+- Strategic relevance: 4.0 — No specific Orange Business API directly addresses manufacturing imaging analytics; the closest match is API M2M for IoT Connect Express (Data, IA & IoT) which could be leveraged but is not a direct fit. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 4.64/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.45/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.6/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
-- Orange Business lacks a dedicated imaging analytics/computer vision offering, but its IoT, cloud, and AI expertise provide a near‑term foundation, requiring a new capability to be built. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 6.5/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco
+- Orange Business lacks a dedicated imaging analytics/computer vision offering, but can leverage its IoT, cloud, and networking APIs to build the capability, requiring new AI services. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (8):**
+**Grounding signals (7):**
 - [IoT Analytics] The $1 trillion industrial downtime problem is becoming a knowledge problem—can AI mitigate it? - IoT Analytics
 - [IoT Analytics] OT cybersecurity: How IT/OT convergence and AI are changing security architectures - IoT Analytics
 - [arXiv] Vision-Language Models for Analog Gauge Reading: An Empirical Study of Specialization, Transfer and Reliability
@@ -561,22 +510,21 @@ _131/131 opportunity spaces scored._
 - [Computer Weekly] NTT Data, Ericsson team to scale private 5G, physical AI for enterprises - Computer Weekly
 - [Hacker News] Google Announces AutoML Vision, NLP, Translation, and Contact Center AI
 - [Hacker News] Show HN: Off Grid – Run AI text, image gen, vision offline on your phone
-- [ICTACT Journal on Image and Video Processing] EDGE-AI VIDEO ANALYTICS FOR INDUSTRIAL WORKER SAFETY AND HAZARD DETECTION IN SMART MANUFACTURING ENVIRONMENTS THROUGH DECISION-MAKING FRAMEWORKS
 
 ## OS009 — Finance & Insurance × Cloud Infrastructure Modernization × Cloud
 
-**Attractiveness: 6.46/10**
+**Attractiveness: 6.16/10**
 - Market signal strength: 6.888888888888889
 - Source diversity: 4.0
-- Evidence quality: 5.0 — The list mixes credible primary sources (Microsoft, Gartner, NVIDIA) with low‑credibility aggregators and vendor press releases, offering some specific relevance but overall uneven signal quality.
+- Evidence quality: 5.0 — The list mixes credible, specific sources (Microsoft, Gartner, NVIDIA, PR Newswire, Broadcom) with many low‑credibility, duplicate Hacker News links and vague vendor‑centric announcements, yielding moderate overall relevance and credibility.
 - Novelty / momentum: 8.39
-- Strategic relevance: 10.0 — Directly aligns with API Cloud Avenue (Cloud), enabling cloud infrastructure modernization for finance and insurance customers. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Strategic relevance: 8.0 — The opportunity aligns with Orange Business’s API Cloud Avenue, its dedicated Cloud infrastructure service, which can be leveraged for finance‑insurance cloud modernization. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.44/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.36/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 10.0/10 [L0]**
-- Matched assets: API Cloud Avenue, API Evolution Platform
-- Orange Business already offers cloud infrastructure via API Cloud Avenue, complemented by Evolution Platform for network connectivity, directly matching a Finance & Insurance cloud modernization need. +1.0 calibration bonus (CRM customer overlap).
+- Matched assets: API Cloud Avenue
+- API Cloud Avenue directly delivers cloud infrastructure services required for finance & insurance cloud modernization. +1.0 calibration bonus (CRM customer overlap).
 
 **Grounding signals (31):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
@@ -613,20 +561,20 @@ _131/131 opportunity spaces scored._
 
 ## OS010 — Finance & Insurance × Cybersecurity × Machine Learning
 
-**Attractiveness: 3.93/10**
-- Market signal strength: 2.6666666666666665
+**Attractiveness: 4.15/10**
+- Market signal strength: 2.444444444444444
 - Source diversity: 1.75
-- Evidence quality: 6.0 — The set mixes credible sources (Cisco, J.P. Morgan, peer‑reviewed journals) with vendor blogs, community posts, and pre‑prints, offering relevant B2B cybersecurity and AI themes but uneven source authority.
-- Novelty / momentum: 8.33
-- Strategic relevance: 3.0 — Only loosely aligns with security APIs such as Live Identity Verify, but no specific Orange Business product targets finance‑insurance cybersecurity with ML.
+- Evidence quality: 6.0 — The list mixes credible sources (Cisco, J.P. Morgan, Business Wire) with less market‑focused or vendor‑biased items (blog posts, pre‑print papers), offering relevant but unevenly reliable B2B innovation signals.
+- Novelty / momentum: 8.18
+- Strategic relevance: 5.0 — The idea aligns with Orange Business security APIs such as Live Identity Verify and Incident, and with the AI/ML capabilities of API M2M for IoT Connect Express, but there is no specific finance‑oriented product in the catalog to extend directly.
 
-**Urgency: 4.41/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.25/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L3]**
-- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Evolution Platform, API M2M for IoT Connect Express
-- Orange Business has security‑focused APIs and strong AI expertise, but lacks a dedicated ML‑driven cybersecurity solution for finance, requiring a new capability to bridge the gap. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.2/10 [L1]**
+- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Cloud Avenue, API M2M for IoT Connect Express (Data, IA & IoT)
+- Multiple existing security and AI‑related APIs can be combined to address a finance‑focused cybersecurity‑ML use case, but Orange does not yet offer a pre‑packaged solution. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (12):**
+**Grounding signals (11):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
 - [Hacker News] Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer
 - [Hacker News] Moving the U.S. Government Toward Zero Trust Cybersecurity Principles
@@ -638,22 +586,21 @@ _131/131 opportunity spaces scored._
 - [Journal of Information Systems Engineering & Management] A Multidisciplinary Framework for AI and Data-Driven Transformation in Taxation, Insurance, Mortgage Financing, and Financial Advisory: Integrating Cloud Computing, Deep Learning, and Agentic AI for Community-Centric Economic Development
 - [International Journal of Emerging Research in Engineering and Technology] Explainable Agentic AI-Driven Machine Learning Framework for Property and General Insurance Risk Assessment
 - [arXiv] Learning Whom to Trust : Decision-Generated Credibility in Social Learning
-- [arXiv] TraceML: An Empirical Analysis of Human-Agent Planning in Machine Learning Development
 
 ## OS011 — Finance & Insurance × Customer Experience × Generative AI
 
-**Attractiveness: 3.59/10**
+**Attractiveness: 2.84/10**
 - Market signal strength: 1.5555555555555556
 - Source diversity: 1.5
-- Evidence quality: 6.0 — The set mixes moderately credible tech and academic sources with vendor‑centric press releases and one unrelated political story, giving a mixed but not strong overall signal quality.
+- Evidence quality: 3.0 — The set is dominated by duplicate vendor press releases and low‑credibility blogs, with only a few moderately relevant but niche sources, reducing overall credibility and relevance for a B2B innovation radar.
 - Novelty / momentum: 5.71
-- Strategic relevance: 5.0 — Fits broadly via API M2M for IoT Connect Express (Data, IA & IoT) which provides AI capabilities, though no dedicated generative AI CX product exists. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+- Strategic relevance: 5.0 — Broadly aligns with Orange Business’ Relation client APIs such as API Satellite, which could be extended with generative AI to enhance finance‑insurance customer experience. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
-**Urgency: 3.02/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 2.96/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.8/10 [L3]**
-- Matched assets: API Cloud Avenue, API Live Identity Verify, API Business Talk Digital, API Mobile Suite, API Contact Everyone
-- Orange Business can leverage its cloud, security, voice and mobile APIs to deliver AI‑enhanced CX, but lacks a dedicated generative‑AI service, requiring a new capability to be built or acquired. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 7.5/10 [L3]**
+- Matched assets: API Cloud Avenue, API Business Talk Digital, API Live Identity Verify, API Contact Everyone, API Evolution Platform
+- Existing APIs provide cloud, voice, identity and connectivity foundations, but a generative AI engine for customer experience is not yet in the catalog, requiring a new capability. +1.0 calibration bonus (CRM customer overlap).
 
 **Grounding signals (7):**
 - [PR Newswire] CIMB Niaga and Virtusa Complete a First-of-Its-Kind Modernization on Pega Cloud to Enhance Customer Banking Experiences in Indonesia - PR Newswire
@@ -666,20 +613,20 @@ _131/131 opportunity spaces scored._
 
 ## OS012 — Finance & Insurance × IT Operations Automation × Machine Learning
 
-**Attractiveness: 5.45/10**
-- Market signal strength: 5.555555555555555
+**Attractiveness: 5.37/10**
+- Market signal strength: 5.333333333333333
 - Source diversity: 5.0
-- Evidence quality: 6.0 — The set mixes credible B2B‑focused sources (J.P. Morgan, AWS, Infosys, IEEE conferences) with less authoritative or marketing‑heavy items (PR Newswire press releases, Hacker News job post, sustainability blog), yielding moderate overall credibility and relevance.
-- Novelty / momentum: 6.8
-- Strategic relevance: 4.0 — Only loosely aligns with API M2M for IoT Connect Express (Data, IA & IoT) which offers AI capabilities, but Orange Business has no specific IT operations automation or ML-focused product for finance & insurance.
+- Evidence quality: 6.0 — The set mixes credible industry and academic sources (e.g., J.P. Morgan, AWS, IEEE, arXiv) with low‑credibility press releases and vendor‑centric announcements, giving moderate overall credibility and relevance for a B2B innovation radar.
+- Novelty / momentum: 6.67
+- Strategic relevance: 4.0 — The idea loosely maps to the API Incident for automated incident handling, but there is no dedicated finance‑oriented or ML‑focused API in Orange Business’s catalog.
 
-**Urgency: 3.67/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.2/10 [L1]**
-- Matched assets: API Evolution Platform, API M2M for IoT Connect Express, API Incident, API Cloud Avenue
-- A bundle of Evolution Platform (network automation), M2M for IoT Connect Express (AI/ML), Incident API (automated incident handling) and Cloud Avenue can address IT Operations Automation with ML, but no single existing asset does so directly. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.5/10 [L1]**
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Incident, API Maintenance, API Evolution Platform
+- Orange Business can bundle its Cloud, AI/IoT, incident and maintenance APIs (plus Evolution Platform) to address IT operations automation with ML, but no dedicated packaged offering currently exists. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (26):**
+**Grounding signals (24):**
 - [PR Newswire] CUBE ACQUIRES SILICON VALLEY REGTECH, 4CRISK, DELIVERING NEXT GENERATION COMPLIANCE AND RISK MAPPING AUTOMATION - PR Newswire
 - [TechAfrica News] Absa Kenya Invests $31 Million in Technology, Automates 71% of Operations - TechAfrica News
 - [Hacker News] Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer
@@ -704,25 +651,23 @@ _131/131 opportunity spaces scored._
 - [Българска Телеграфна Агенция] NGOs Raise Concerns Over Police Operations Targeting Cyclists in Sofia Parks
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
 - [arXiv] Learning Whom to Trust : Decision-Generated Credibility in Social Learning
-- [arXiv] TraceML: An Empirical Analysis of Human-Agent Planning in Machine Learning Development
-- [tickerreport.com] Waystar Targets Autonomous Revenue Cycle With AI , Automation Push at Investor Day
 
 ## OS013 — Public Sector × Data Sovereignty × Cloud
 
-**Attractiveness: 9.05/10**
+**Attractiveness: 8.88/10**
 - Market signal strength: 10.0
-- Source diversity: 9.75
-- Evidence quality: 8.0 — The list contains numerous, diverse and largely credible sources (major media, analyst reports, policy analyses) directly addressing EU sovereign cloud and data sovereignty, though a few entries are vendor‑focused press releases.
-- Novelty / momentum: 9.0
-- Strategic relevance: 8.0 — Matches API Cloud Avenue (Cloud) as the core offering that can be extended for public‑sector data‑sovereignty cloud solutions. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Source diversity: 8.75
+- Evidence quality: 8.0 — The list provides specific, relevant EU sovereign cloud signals from a diverse mix of reputable media, analyst reports, legal and policy sources, though some entries are vendor‑driven press releases.
+- Novelty / momentum: 9.35
+- Strategic relevance: 8.0 — Matches API Cloud Avenue (Cloud), which can be extended to offer sovereign cloud services for public sector customers. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 8.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 7.97/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.3/10 [L1]**
+**Right-to-win: 10.0/10 [L0]**
 - Matched assets: API Cloud Avenue, API Evolution Platform
-- Public‑sector data‑sovereignty cloud needs can be satisfied by bundling Cloud Avenue’s sovereign cloud offering with Evolution Platform’s secure, region‑specific network services, both already in Orange Business’s portfolio. +1.0 calibration bonus (CRM customer overlap).
+- Orange Business can directly meet public‑sector data‑sovereignty cloud needs with its Cloud Avenue offering (regional data‑center options) complemented by Evolution Platform for secure, compliant connectivity. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (56):**
+**Grounding signals (46):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
 - [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
 - [Lawfare] The EU Cloud and AI Development Act - Lawfare
@@ -760,42 +705,32 @@ _131/131 opportunity spaces scored._
 - [IOT Insider] Nigeria signs smart cities IoT deal for 50,000 AI-enabled solar streetlights doubling as distributed AI data centres - IOT Insider
 - [Cisco Blog] Meet “The Data Center Lens” video series: Clear answers for modernizing and scaling for AI
 - [Cisco Blog] Cloud or On-Premises? New Report Shows Why AI Workload Placement Matters
-- [The Fast Mode] Deutsche Telekom Expands T Cloud Public into Fully Sovereign European Cloud - The Fast Mode
 - [Light Reading] NTT Data and Google Cloud partnership targets agentic AI, sovereign cloud - Light Reading
-- [Light Reading] Deutsche Telekom takes its 'T' to the cloud - Light Reading
 - [Politics and Governance] Offshore Embeddedness Beyond the Wall: Chinese Cloud Providers in Southeast Asia’s Data Governance Landscape
 - [International journal of science research and technology] Designing Secure Sovereign Cloud Architectures for Enterprise Data Analytics and Digital Transformation
 - [International journal of future innovative science and technology] Hybrid Sovereign Cloud Framework for Artificial Intelligence Powered Enterprise Analytics and Secure Data Integration
 - [2025 International Conference on Informatics, Multimedia, Cyber and Information System (ICIMCIS)] Digital Sovereignty in Malaysia’s National Data Governance
-- [Computer fraud & security] Sovereign Cloud Buildout Using Repeatable and Scalable Patterns
 - [arXiv.org] Sovereign 2.0: Control-Plane Sovereignty for Cloud Systems Under Disruption
-- [Vaccine Insights] Beyond the cloud: a resilient sovereign edge architecture for vaccine independence in the Global South
-- [International Journal of Data Engineering and Intelligent Computing] A Framework for Privacy-Preserving Machine Learning in Sovereign Cloud Environments
-- [Open Research Europe] A federated policy-governed architecture for sovereign European data spaces
 - [orrick.com] Data Localization and the Sovereign Cloud: EU Cloud Regulations Explained - orrick.com
 - [Broadcom] Who Really Controls Your Data? The Test of Sovereign Cloud - Broadcom
 - [Silicon Canals] Europe’s new tech-sovereignty plan doesn’t ban U.S. cloud giants — it sets four levels of “sovereignty” for sensitive government data, and an American law makes the top levels nearly impossible for them to reach - Silicon Canals
-- [International Journal of Science and Research Archive] Sovereign cloud implementation: Technical architectures for data residency and regulatory compliance
-- [International Conference on Cyber Conflict] Up in the Air: Ensuring Government Data Sovereignty in the Cloud
-- [Semantic Scholar] Saving Data, Securing EU Accession: Diia’s Dual-Cloud Dilemma in 2025
-- [Global academic journal of economics and business] Cloud-Based Disaster Recovery and Business Continuity for Mission-Critical Data in Saudi Organizations
 
 ## OS014 — Public Sector × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 7.97/10**
+**Attractiveness: 8.37/10**
 - Market signal strength: 10.0
 - Source diversity: 8.0
-- Evidence quality: 7.0 — The list mixes credible government and industry sources with vendor‑focused announcements, offering specific, relevant public‑sector AI and zero‑trust signals but includes several marketing‑heavy items that lower overall credibility.
+- Evidence quality: 8.0 — The signals are largely specific, come from a mix of credible government, industry, and reputable media sources, and focus on relevant public‑sector AI and zero‑trust cybersecurity trends, though a few are vendor‑centric.
 - Novelty / momentum: 8.67
-- Strategic relevance: 5.0 — Fits Orange Business security portfolio (e.g., API Incident, API Live Identity Verify) but no specific zero‑trust or public‑sector cyber‑defense API matches directly
+- Strategic relevance: 6.0 — The public‑sector cyber‑defense and zero‑trust focus aligns with Orange Business' API Incident (Security) and API Live Identity Verify, but there is no dedicated zero‑trust API in the current catalog.
 
-**Urgency: 4.56/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.5/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.2/10 [L1]**
-- Matched assets: API Flexible SDWAN Cisco, API Live Identity Captcha, API Live Identity Verify, API Incident, API Evolution Platform
-- Existing security, identity and SD‑WAN APIs can be combined to deliver a Zero‑Trust cyber‑defense solution for the public sector, but Orange does not yet offer them as a pre‑packaged offering. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.5/10 [L1]**
+- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Evolution Platform, API Cloud Avenue
+- Orange can meet the public‑sector cyber‑defense and zero‑trust need by bundling its existing identity, incident‑response, SD‑WAN/SASE and cloud security APIs, a combination already proven with public‑sector clients. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (50):**
+**Grounding signals (45):**
 - [Cyber Magazine] TCS Brings SovereignSecure Cloud to EU for AI Data Security - Cyber Magazine
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
 - [Google Cloud Press Corner] DICT and Google Cloud Partner on Multi-Year AI and Cybersecurity Initiatives to Deliver Next-Generation Citizen Services - Google Cloud Press Corner
@@ -841,28 +776,23 @@ _131/131 opportunity spaces scored._
 - [arXiv] FedGuard-DC: Privacy-Preserving Federated Load Forecasting and Cyber-Attack Detection for Data-Center Loads in Transmission Systems
 - [Cisco Blog] AI Workforce Consortium: Building a cybersecurity workforce ready for what’s next
 - [Hacker News] Would you trust an AI agent to auto-approve low-value insurance claims?
-- [Asian News International (ANI)] "What is there in this ₹500 crore trust file?" AAP targets Delhi govt on SS Mota Singh School trust row
-- [Cisco Blog] Cisco AI Defense + Armada: Distributed AI That’s Safe to Run, Wherever the Mission Requires It
-- [Social Science Research Network] The trust deficit. EU bargaining for access and control over cloud infrastructures
-- [arXiv] Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization
-- [Economic Times] Canada is bolstering its defense industry as US relations fray. A boom is on for local contractors
 
 ## OS015 — Public Sector × Digital Infrastructure × IoT Platforms
 
-**Attractiveness: 7.57/10**
-- Market signal strength: 7.777777777777778
-- Source diversity: 8.0
-- Evidence quality: 5.0 — The list mixes a few high‑credibility, relevant signals (e.g., CNBC, Jones Day, World Economic Forum) with many lower‑credibility, vendor‑oriented or loosely related IoT and smart‑city pieces, resulting in moderate overall credibility and relevance.
-- Novelty / momentum: 8.86
-- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express, Orange Business's specific IoT platform offering for digital infrastructure. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 7.07/10**
+- Market signal strength: 6.888888888888889
+- Source diversity: 7.0
+- Evidence quality: 6.0 — The set mixes reputable sources (CNBC, Jones Day, World Economic Forum, government agency) with lower‑credibility or vendor‑driven content, yielding moderate overall credibility and relevance for a B2B innovation radar.
+- Novelty / momentum: 9.03
+- Strategic relevance: 8.0 — The innovation opportunity aligns with Orange Business's domain of Internet & Reseaux (API Eligibility) and leverages the scale/capability facts of having a Tier-1 global backbone present in 200+ countries and territories, as well as 70+ data centers across 5 continents, to deliver a robust and secure IoT platform. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 4.71/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.69/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Orange Business already offers IoT connectivity, cloud, and SD‑WAN services that can be combined to meet public‑sector digital‑infrastructure needs, requiring only a bundled offering. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.5/10 [L0]**
+- Matched assets: API M2M for IoT Connect Express, API Flexible SDWAN Cisco
+- Orange Business has existing M2M capabilities and a strong internet and resaews portfolio, making it a direct offer for this opportunity space. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (36):**
+**Grounding signals (31):**
 - [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
 - [Jones Day] Dutch Government Blocks U.S. Acquisition of Cloud Provider, Signaling Heightened Focus on EU Digital Sovereignty - Jones Day
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
@@ -894,28 +824,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
 - [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
 - [Yahoo News] Bali embraced digital nomads. Now it's reckoning with the growing pains.
-- [Journal of Risk and Financial Management] Closing the VAT Gap in the EU-27: Business Cloud Accounting and Mandatory Digital Reporting
-- [Journal of Environmental Management] Automated environmental compliance monitoring of rivers with IoT and open government data.
-- [WebProNews] CISA Red Team Exposes SOC Failures in Critical Infrastructure Tests
-- [FoneArena] Xbox unveils disc-to-digital feature for physical games
-- [TechBullion] Exploring What Makes a Digital Audio Converter Important in a High-End Audio System
 
 ## OS016 — Manufacturing × Network Modernization & SD-WAN × 5G
 
-**Attractiveness: 5.84/10**
-- Market signal strength: 5.111111111111111
-- Source diversity: 4.25
-- Evidence quality: 7.0 — The set mixes reputable analyst reports, carrier announcements and academic work with vendor blogs and press releases, giving a fairly credible but partially marketing‑heavy picture.
-- Novelty / momentum: 6.52
-- Strategic relevance: 7.0 — Leverages API Flexible SDWAN Cisco for SD‑WAN network modernization, aligning with the manufacturing use‑case though no dedicated manufacturing API exists. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+**Attractiveness: 3.68/10**
+- Market signal strength: 3.7777777777777777
+- Source diversity: 3.25
+- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
+- Novelty / momentum: 6.47
+- Strategic relevance: 0.0 — The innovation opportunity does not match any specific Orange Business API or product, as none of the 17 supporting signals are related to the mentioned manufacturing, network modernization, SD-WAN, and 5G space. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 3.53/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.36/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.5/10 [L3]**
-- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Mobile Suite, API M2M for IoT Connect Express
-- Orange has SD‑WAN assets that meet the network modernization need, but the catalog lacks a 5G private‑network offering, requiring a new capability to close the gap. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 10.0/10 [L0]**
+- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Cloud Avenue
+- The opportunity space aligns with Orange Business's existing capabilities in SD-WAN and cloud connectivity, as well as its Evolution Platform, which offers a Network as a Service. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (24):**
+**Grounding signals (17):**
 - [Fierce Network] Industrial AI could be salve for ailing private network market - Fierce Network
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
@@ -933,30 +858,23 @@ _131/131 opportunity spaces scored._
 - [Nokia] Combining network slicing with edge cloud unlocks opportunities for enterprises and CSPs - Nokia
 - [NTT Data] Cargill Modernizes Manufacturing Operations with NTT DATA's Private 5G Network - NTT Data
 - [The Citizen] Knysna shooting: Police pursue leads after three killed in 24 hours - LNN - Network News
-- [Journal of Advanced Research in Applied Sciences and Engineering Technology] Empowering Innovation: Private 5G Network Integration with Edge AI
-- [Global Communications Conference] A Novel AI/ML SIEM as Application Function within Private 5G Core Network for Industrial-IoT
-- [IEEE Networking Letters] Closed-Loop Network Control for Industrial Edge Computing: A Telemetry-Driven and AI-Based Approach for Latency-Critical Applications in Private 5G
-- [2025 MIPRO 48th ICT and Electronics Convention] Data Transmission of a ROS-Based Autonomous Vehicle Over a Private 5G Network
-- [arXiv] A Hybrid Security Framework for Mini-Programs: Visual UI Compliance and Network Risk Assessment
-- [arXiv] Neural-Network and Reduced-order Modeling Workflows for AI-Driven CFD: Fast Response Surfaces, Reduced Dynamics and Jet in Cross-flow Examples
-- [SDxCentral] Telecom titans Verizon, Vodafone, Telefónica topped Gartner’s private network ranking bin - SDxCentral
 
 ## OS017 — Finance & Insurance × IT Operations Automation × Agentic AI
 
-**Attractiveness: 8.13/10**
+**Attractiveness: 7.83/10**
 - Market signal strength: 10.0
 - Source diversity: 8.75
-- Evidence quality: 8.0 — The list contains multiple specific, diverse, and credible sources (major cloud providers, consulting firms, regulators, and industry media) directly addressing agentic AI applications in insurance, though a few entries are lower‑credibility market reports or community posts.
+- Evidence quality: 8.0 — The list mixes highly credible sources (AWS, Deloitte, BCG, FICO, NVIDIA) with vendor press releases and market reports, offering diverse but partially marketing‑driven signals that are clearly relevant to B2B agentic AI in insurance.
 - Novelty / momentum: 7.78
-- Strategic relevance: 4.0 — No specific Orange Business API directly addresses agentic AI‑driven IT‑ops automation; the closest match is API Incident (Security) for incident handling, but it does not cover the broader automation scope. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+- Strategic relevance: 2.0 — None of the API assets directly match the opportunity space of Finance & Insurance x IT Operations Automation x Agentic AI, although some might be tangentially related to IT Operations Automation. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
-**Urgency: 4.32/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.04/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.6/10 [L3]**
-- Matched assets: API Incident, API Maintenance, API Cloud Avenue, API M2M for IoT Connect Express, Evolution Platform
-- Existing APIs cover incident handling, maintenance, cloud and AI‑enabled IoT, but a dedicated Agentic AI IT‑ops automation platform is missing, requiring a new capability built on top of current assets. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.4/10 [L3]**
+- Matched assets: API Business Talk Digital, API Evolution Platform, API Contact Everyone
+- Finance & Insurance industry lacks a strong AI-powered IT operations automation solution with agentic capabilities. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (54):**
+**Grounding signals (45):**
 - [Amazon Web Services (AWS)] Build an agentic AI healthcare claims pipeline with Amazon Bedrock and AWS HealthLake | Artificial Intelligence - Amazon Web Services (AWS)
 - [Salesforce] The Complete Guide to Agentic AI in Insurance - Salesforce
 - [Insurance Business] IAG bets on agentic AI where conduct risk is highest - Insurance Business
@@ -1002,30 +920,21 @@ _131/131 opportunity spaces scored._
 - [Journal of Computational Analysis And Applications] Agentic AI in Claims Processing: Transforming Insurance Operations through Autonomous AI Systems
 - [Sovremennaya nauka i innovatsii] Agentic AI as a tool for automating insurance sales: design and implementation
 - [Journal of Information Systems Engineering & Management] A Multidisciplinary Framework for AI and Data-Driven Transformation in Taxation, Insurance, Mortgage Financing, and Financial Advisory: Integrating Cloud Computing, Deep Learning, and Agentic AI for Community-Centric Economic Development
-- [International Journal of Advanced Research in Computer Science &amp; Technology] Autonomous Insurance Analytics Using Agentic AI for Personalized Coverage and Predictive Risk Intelligence
-- [International Journal of Emerging Research in Engineering and Technology] Explainable Agentic AI-Driven Machine Learning Framework for Property and General Insurance Risk Assessment
-- [Insurance Business] Agentic AI attacks could drive higher cyber claim frequency, experts warn - Insurance Business
-- [Българска Телеграфна Агенция] NGOs Raise Concerns Over Police Operations Targeting Cyclists in Sofia Parks
-- [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
-- [arXiv] SPO++: Stream-Aligned Policy Optimization for Asynchronous Agentic RL
-- [Vietnam Investment Review - VIR] Duck Creek launches agentic AI platform for insurance - Vietnam Investment Review - VIR
-- [tickerreport.com] Waystar Targets Autonomous Revenue Cycle With AI , Automation Push at Investor Day
 
 ## OS018 — Finance & Insurance × Network Modernization & SD-WAN × Network & SD-WAN
 
-**Attractiveness: 5.79/10**
+**Attractiveness: 4.79/10**
 - Market signal strength: 4.888888888888888
 - Source diversity: 4.25
-- Evidence quality: 5.0 — The list mixes credible sources (Gartner, Cisco, IBM, Nasdaq) with vendor press releases and duplicate Hacker News items, yielding moderate overall credibility and mixed relevance to B2B innovation.
+- Evidence quality: 7.0 — The set mixes credible sources (Gartner, IBM, Cisco, Microsoft, Nasdaq, CIO Dive) with vendor press releases and aggregator posts, offering diverse but unevenly authoritative signals that are generally relevant to B2B cloud, network, and banking modernization.
 - Novelty / momentum: 7.27
-- Strategic relevance: 10.0 — Directly aligns with API Flexible SDWAN Cisco and API Evolution Platform, which provide SD‑WAN/network modernization services that can be targeted to Finance & Insurance customers. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+- Strategic relevance: 0.0 — The innovation opportunity is unrelated to any specific Orange Business asset, as none of the provided APIs or products match the specified domain of Finance & Insurance, Network Modernization & SD-WAN, or Network & SD-WAN. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 3.85/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.77/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 10.0/10 [L0]**
-- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform
-- Orange Business already offers SD‑WAN via its Flexible SDWAN Cisco and Evolution Platform assets and has proven finance customers (e.g., BNP Paribas), enabling a direct, ready‑to‑sell solution. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 6.2/10 [L2]**
+- Matched assets: API Flexible SDWAN Cisco, API Business Talk Digital
+- Needs a partnership with a specialized SD-WAN provider to address the specific needs of finance and insurance verticals. +1.0 calibration bonus (CRM customer overlap).
 
 **Grounding signals (22):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
@@ -1053,20 +962,20 @@ _131/131 opportunity spaces scored._
 
 ## OS019 — Manufacturing × Operational Excellence × Edge Computing
 
-**Attractiveness: 7.42/10**
-- Market signal strength: 7.555555555555555
-- Source diversity: 7.0
-- Evidence quality: 8.0 — The signals come from a mix of reputable analysts, industry media, and research sources covering private 5G, edge computing, and industrial IoT security, though some are vendor‑centric press releases, reducing overall objectivity.
-- Novelty / momentum: 7.06
-- Strategic relevance: 7.0 — Extends API M2M for IoT Connect Express (Data, IA & IoT) to enable edge computing for manufacturing operational excellence. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 5.23/10**
+- Market signal strength: 5.111111111111111
+- Source diversity: 5.0
+- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
+- Novelty / momentum: 6.96
+- Strategic relevance: 5.0 — The innovation opportunity broadly fits Orange Business's domain of Internet & Reseaux, as indicated by the API Eligibility, API Core Information, and API Flexible SDWAN Cisco APIs, but no specific asset directly extends a clear enterprise value. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 3.63/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.61/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Evolution Platform, API Cloud Avenue
-- Orange Business can combine its IoT connectivity, SD‑WAN, and cloud APIs to approach manufacturing edge use‑cases, but lacks a dedicated edge‑compute platform, requiring a new capability to fully meet the operational‑excellence demand. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.8/10 [L3]**
+- Matched assets: API Flexible SDWAN Cisco, API Cloud Avenue
+- Manufacturing and operational excellence require a robust internet and network infrastructure, Edge Computing can improve efficiency and productivity, but is still a capability that Orange Business needs to build or acquire. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (35):**
+**Grounding signals (23):**
 - [Tech Monitor] Bringing intelligence to the factory floor: Private 5G and edge computing* - Tech Monitor
 - [Telecoms Tech News] Verizon deploys Ericsson private 5G edge networks worldwide - Telecoms Tech News
 - [ARC Advisory Group] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory Group
@@ -1090,35 +999,23 @@ _131/131 opportunity spaces scored._
 - [ARCweb.com] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARCweb.com
 - [ARC Advisory] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory
 - [The Guardian] Hanging By a Wire review - cable car rescue documentary dangles viewers on the edge of disaster
-- [Journal of Advanced Research in Applied Sciences and Engineering Technology] Empowering Innovation: Private 5G Network Integration with Edge AI
-- [ICTACT Journal on Image and Video Processing] EDGE-AI VIDEO ANALYTICS FOR INDUSTRIAL WORKER SAFETY AND HAZARD DETECTION IN SMART MANUFACTURING ENVIRONMENTS THROUGH DECISION-MAKING FRAMEWORKS
-- [IEEE Conference on Computer Communications] Enabling Edge AI Offloading for XR Devices in Cost-Effective Private 5G Networks
-- [IEEE Networking Letters] Closed-Loop Network Control for Industrial Edge Computing: A Telemetry-Driven and AI-Based Approach for Latency-Critical Applications in Private 5G
-- [IEEE Access] AI-Driven NTN and 5G Edge Integration for Cost-Effective, Secure, and Sustainable Smart Agriculture in Rural Areas: A Comparative Study With Traditional Approaches
-- [Journal of Advances in Developmental Research] The Convergence of Private Wireless with AI and Machine Learning: Investigating how private networks enable real-time data processing at the edge for AI-driven applications in manufacturing, predictive maintenance, and autonomous systems
-- [Journal of Information Systems Engineering & Management] Collaborative Intelligence in Manufacturing: Human-Robot Teams with Edge AI
-- [arXiv] Formal, Executable and Explainable Runtime Monitoring of Spoken Air Traffic Control Operational Procedures
-- [arXiv] How Edge of Stability Hinders SCAFFOLD in Federated Optimization
-- [Eden Magnet] Full list: South East business excellence awards finalists revealed
-- [arXiv] Agentic Autoresearch for Cell-Edge Power Control: Radically Redefining the Researcher's Role
-- [2025 International Conference on Innovations and Emerging Technologies In AI & Communication Systems (IETACS)] Adaptive Multi-Sensory Augmented Reality Interface for Operator Training in Smart Manufacturing Cells Using Real-Time Biosignal Feedback and Edge-AI
 
 ## OS020 — Public Sector × Cloud Infrastructure Modernization × Cloud
 
-**Attractiveness: 8.88/10**
+**Attractiveness: 8.78/10**
 - Market signal strength: 10.0
 - Source diversity: 8.0
-- Evidence quality: 8.0 — The set mixes highly credible, diverse sources (major news outlets, analyst reports, regulator coverage) that are largely relevant to EU sovereign cloud trends, though a few items are vendor‑centric or tangential, preventing a perfect score.
+- Evidence quality: 7.0 — The list includes several reputable, diverse sources covering EU sovereign cloud initiatives and market size, though it is mixed with vendor press releases and lower‑credibility market forecasts, reducing overall credibility.
 - Novelty / momentum: 9.33
-- Strategic relevance: 9.0 — Directly aligns with API Cloud Avenue, Orange Business's cloud infrastructure offering, extending it to public sector modernization Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Strategic relevance: 10.0 — API Cloud Avenue (Cloud) offers cloud infrastructure modernization services, specifically through its Evolution Platform (Network as a Service), which combines SD-WAN, SASE, and cloud connectivity. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 9.03/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 6.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 10.0/10 [L0]**
-- Matched assets: API Cloud Avenue
-- Orange Business already provides cloud infrastructure services through API Cloud Avenue, directly matching the public‑sector cloud modernization need. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.4/10 [L0]**
+- Matched assets: API Cloud Avenue, API Evolution Platform
+- The opportunity space aligns with Orange Business's existing cloud infrastructure modernization capabilities, including the API Cloud Avenue and Evolution Platform, which can be leveraged to support public sector cloud infrastructure modernization. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (56):**
+**Grounding signals (45):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
 - [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
 - [Lawfare] The EU Cloud and AI Development Act - Lawfare
@@ -1164,34 +1061,23 @@ _131/131 opportunity spaces scored._
 - [International journal of future innovative science and technology] Hybrid Sovereign Cloud Framework for Artificial Intelligence Powered Enterprise Analytics and Secure Data Integration
 - [Computer fraud & security] Sovereign Cloud Buildout Using Repeatable and Scalable Patterns
 - [arXiv.org] Sovereign 2.0: Control-Plane Sovereignty for Cloud Systems Under Disruption
-- [Vaccine Insights] Beyond the cloud: a resilient sovereign edge architecture for vaccine independence in the Global South
-- [International Journal of Data Engineering and Intelligent Computing] A Framework for Privacy-Preserving Machine Learning in Sovereign Cloud Environments
-- [itnewsonline.com] Zscaler and Schwarz Digits Partner to Deliver Sovereign Cloud Security Platform for Europe
-- [investegate.co.uk] Expanded Growth Opportunity on G - Cloud 15 | Company Announcement
-- [Global Government Forum] Sovereign cloud ‘strategic enabler’ of digital transformation, says Portuguese government - Global Government Forum
-- [arXiv] Wet Removal and Cloud Enhancement: The Microphysics of Cloud-Haze Interactions on Sub-Neptunes
-- [EUR-Lex] Comparative Study on cloud computing contracts - EUR-Lex
-- [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
-- [Hacker News] Verizon has turned to Google Cloud’s Contact Center AI to automate phone calls
-- [Hacker News] Contact Center AI Solution – Google Cloud
-- [Hacker News] Google Cloud launches coronavirus response program with Contact Center AI
 
 ## OS021 — Energy × Grid Optimization × IoT Platforms
 
-**Attractiveness: 7.23/10**
-- Market signal strength: 8.444444444444445
-- Source diversity: 5.75
-- Evidence quality: 6.0 — The list mixes high‑credibility, relevant sources (Nature, ABB, IBM, Microsoft) with lower‑credibility, less relevant Hacker News items, yielding a moderately strong but uneven signal set.
-- Novelty / momentum: 8.42
-- Strategic relevance: 8.0 — Extends API M2M for IoT Connect Express, Orange Business's IoT platform, to enable energy grid optimization use cases Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 4.32/10**
+- Market signal strength: 5.111111111111111
+- Source diversity: 2.75
+- Evidence quality: 6.0 — The list mixes high‑credibility, relevant sources (Nature, IBM, ABB, Frontiers) with less rigorous, duplicate or off‑topic Hacker News items, yielding a moderately credible but uneven signal set.
+- Novelty / momentum: 7.39
+- Strategic relevance: 0.0 — The innovation opportunity of IoT platforms does not match any of Orange Business's existing API products, such as API M2M for IoT Connect Express, and there is no direct extension of any specific asset. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 7.11/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 6.43/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.3/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
-- Orange Business has IoT connectivity, cloud and network‑as‑a‑service APIs that cover the technical backbone, but lacks the energy‑specific grid‑optimization analytics and vertical expertise, making the opportunity adjacent.
+**Right-to-win: 8.5/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express (Data, IA & IoT), API Cloud Avenue (Cloud)
+- Energy x Grid Optimization requires IoT Platforms, Data, and Cloud capabilities, which exist in Orange Business's portfolio, but one new capability is needed to address the full scope of the opportunity space.
 
-**Grounding signals (38):**
+**Grounding signals (23):**
 - [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
 - [Nature] IoT-Enhanced virtual power plants with edge computing and blockchain security for sustainable smart grid management - Nature
 - [ABB] The role of AI in energy optimization - ABB
@@ -1215,38 +1101,23 @@ _131/131 opportunity spaces scored._
 - [Frontiers] AI-driven smart home optimization for sustainable energy and water management: a systematic review - Frontiers
 - [Legit.ng - Nigeria news.] Binance bans 17 crypto platforms, including 3 linked to Nigeria
 - [TheJournal.ie] Half of Ireland's grid-scale electricity generated last year came from renewable sources
-- [Market Research Future] IoT Telecom Services Market Size, Share & Growth Report 2035 | MRFR - Market Research Future
-- [Frontiers] Environment sustainability with smart grid sensor - Frontiers
-- [Nature] An IoT-enabled AI framework for sustainable product design optimizing eco-efficiency using BiLSTM - Nature
-- [StartUs Insights] 10 Top Smart Grid Solutions to Watch (2025) - StartUs Insights
-- [Energies Media] IoT Energy Management in 2025: Real Results from Smart Industries - Energies Media
-- [International Journal of Science, Strategic Management and Technology] Smart EV Charging Infrastructure Using IOT and AI for Intelligent Energy Management and Grid Optimization
-- [Iranian Journal of Science and Technology Transactions of Electrical Engineering] Harnessing Quantum Computing and AI for Enhanced Optimization in Renewable Energy-Driven Smart Grid Systems
-- [Proceedings of the Institution of mechanical engineers. Part D, journal of automobile engineering] Edge AI and IoT for smart sustainable transportation: Real-time renewable energy optimization – A comprehensive review
-- [2024 32nd Southern African Universities Power Engineering Conference (SAUPEC)] Optimization of Internet of Things (IoT) for Smart Grid Energy Management Using Artificial Intelligence (AI) Techniques to Reach SDG7
-- [2025 International Conference on Digital Innovations for Sustainable Solutions (ICDISS)] IoT-Based Renewable Energy Integration and Optimization in Smart Power Grids
-- [Proceedings of the 1st International Conference on Intelligent Methods and Advanced Computer Scientific Innovations] IoT-Integrated Smart Grids for Sustainable Energy Engagement: Optimizing Renewable Resources through Real-Time Monitoring and AI-Powered Predictive Systems
-- [2025 IEEE World AI IoT Congress (AIIoT)] AI-Driven Smart Grid Optimization: Enhancing Urban Communication Networks
-- [2025 6th International Conference on IoT Based Control Networks and Intelligent Systems (ICICNIS)] A Review on Smart Traffic Light Management and Energy Optimization with Artificial Intelligence(AI) enabled Programmable Logic Controller(PLC) using Internet of Things(IoT)
-- [2025 2nd International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering (RMKMATE)] Green IoT-Based Smart Grid: Implementing Intelligent Demand-Response Systems for Energy Sustainability
-- [2025 IEEE 3rd Global Conference on Wireless Computing and Networking (GCWCN)] AI-Based Power Flow Control for Real-Time Grid Optimization and Load Balancing
 
 ## OS022 — Energy × Grid Optimization × Edge Computing
 
-**Attractiveness: 6.2/10**
-- Market signal strength: 6.666666666666666
-- Source diversity: 4.5
-- Evidence quality: 7.0 — The list mixes high‑credibility, topic‑relevant sources (Nature, IBM, ABB, Microsoft, Frontiers) with lower‑credibility, informal Hacker News posts, yielding a solid but not flawless signal set.
-- Novelty / momentum: 8.0
-- Strategic relevance: 5.0 — Broadly aligns with API M2M for IoT Connect Express (IoT) and API Cloud Avenue (Cloud/Edge) but Orange Business has no dedicated product for energy grid optimization
+**Attractiveness: 4.1/10**
+- Market signal strength: 4.222222222222222
+- Source diversity: 2.0
+- Evidence quality: 7.0 — The list mixes high‑credibility, relevant sources (Nature, Microsoft, ABB, IBM, Frontiers) with lower‑credibility, less relevant Hacker News items, yielding a moderately strong but uneven signal set.
+- Novelty / momentum: 6.84
+- Strategic relevance: 0.0 — The innovation opportunity does not match any specific Orange Business product or API, as none of the provided APIs are directly related to Energy x Grid Optimization x Edge Computing.
 
-**Urgency: 6.89/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 6.15/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing IoT connectivity, cloud, and SD‑WAN APIs can be bundled to create an edge‑computing grid‑optimization solution, though Orange Business does not yet offer it as a single packaged product.
+**Right-to-win: 8.3/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue
+- Needs one new capability to be built or acquired, specifically edge computing, to address the Energy x Grid Optimization opportunity space.
 
-**Grounding signals (30):**
+**Grounding signals (19):**
 - [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
 - [Nature] IoT-Enhanced virtual power plants with edge computing and blockchain security for sustainable smart grid management - Nature
 - [ABB] The role of AI in energy optimization - ABB
@@ -1266,34 +1137,23 @@ _131/131 opportunity spaces scored._
 - [EUR-Lex] Commission notice on a guidance on the establishment of areas for grid and storage infrastructure necessary to integrate renewab - EUR-Lex
 - [Frontiers] AI-driven smart home optimization for sustainable energy and water management: a systematic review - Frontiers
 - [TheJournal.ie] Half of Ireland's grid-scale electricity generated last year came from renewable sources
-- [Frontiers] Environment sustainability with smart grid sensor - Frontiers
-- [StartUs Insights] 10 Top Smart Grid Solutions to Watch (2025) - StartUs Insights
-- [International Journal of Science, Strategic Management and Technology] Smart EV Charging Infrastructure Using IOT and AI for Intelligent Energy Management and Grid Optimization
-- [Iranian Journal of Science and Technology Transactions of Electrical Engineering] Harnessing Quantum Computing and AI for Enhanced Optimization in Renewable Energy-Driven Smart Grid Systems
-- [Proceedings of the Institution of mechanical engineers. Part D, journal of automobile engineering] Edge AI and IoT for smart sustainable transportation: Real-time renewable energy optimization – A comprehensive review
-- [2024 32nd Southern African Universities Power Engineering Conference (SAUPEC)] Optimization of Internet of Things (IoT) for Smart Grid Energy Management Using Artificial Intelligence (AI) Techniques to Reach SDG7
-- [2025 International Conference on Digital Innovations for Sustainable Solutions (ICDISS)] IoT-Based Renewable Energy Integration and Optimization in Smart Power Grids
-- [2025 IEEE World AI IoT Congress (AIIoT)] AI-Driven Smart Grid Optimization: Enhancing Urban Communication Networks
-- [2025 6th International Conference on IoT Based Control Networks and Intelligent Systems (ICICNIS)] A Review on Smart Traffic Light Management and Energy Optimization with Artificial Intelligence(AI) enabled Programmable Logic Controller(PLC) using Internet of Things(IoT)
-- [2025 2nd International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering (RMKMATE)] Green IoT-Based Smart Grid: Implementing Intelligent Demand-Response Systems for Energy Sustainability
-- [2025 IEEE 3rd Global Conference on Wireless Computing and Networking (GCWCN)] AI-Based Power Flow Control for Real-Time Grid Optimization and Load Balancing
 
 ## OS023 — Public Sector × Digital Infrastructure × Cloud
 
-**Attractiveness: 8.83/10**
+**Attractiveness: 9.08/10**
 - Market signal strength: 10.0
-- Source diversity: 8.5
-- Evidence quality: 8.0 — The list combines multiple reputable, diverse sources (major news, analyst, regulator, and industry publications) that directly address EU sovereign cloud and data protection, though it includes some vendor‑centric press releases that lower the overall credibility slightly.
-- Novelty / momentum: 9.35
-- Strategic relevance: 8.0 — Directly aligns with API Cloud Avenue (Cloud), extending Orange Business's cloud offering to the public sector digital infrastructure market Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Source diversity: 8.25
+- Evidence quality: 8.0 — The set mixes reputable news outlets, analyst reports, and regulatory commentary with a few vendor press releases, offering specific, diverse, and largely credible signals relevant to EU sovereign cloud and data sovereignty.
+- Novelty / momentum: 9.33
+- Strategic relevance: 10.0 — API Evolution Platform (Network as a Service) aligns with the public sector digital infrastructure domain, extending Orange Business's SD-WAN, SASE, and cloud connectivity capabilities, which is a key differentiator in the Gartner Magic Quadrant for Global WAN Services. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 6.57/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 6.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.2/10 [L1]**
-- Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform, API Live Identity Verify, API Incident
-- Orange Business already offers cloud, SD‑WAN/network‑as‑a‑service and security APIs that together satisfy a public‑sector digital‑infrastructure cloud need, but they are not yet packaged as a unified offering. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 10.0/10 [L0]**
+- Matched assets: API Cloud Avenue (Cloud), API Eligibility (Internet & Reseaux)
+- Orange Business already offers a cloud-based infrastructure and eligibility services that can support public sector digital infrastructure needs. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (56):**
+**Grounding signals (45):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
 - [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
 - [Lawfare] The EU Cloud and AI Development Act - Lawfare
@@ -1338,35 +1198,24 @@ _131/131 opportunity spaces scored._
 - [International journal of science research and technology] Designing Secure Sovereign Cloud Architectures for Enterprise Data Analytics and Digital Transformation
 - [International journal of future innovative science and technology] Hybrid Sovereign Cloud Framework for Artificial Intelligence Powered Enterprise Analytics and Secure Data Integration
 - [2025 International Conference on Informatics, Multimedia, Cyber and Information System (ICIMCIS)] Digital Sovereignty in Malaysia’s National Data Governance
-- [Computer fraud & security] Sovereign Cloud Buildout Using Repeatable and Scalable Patterns
-- [arXiv.org] Sovereign 2.0: Control-Plane Sovereignty for Cloud Systems Under Disruption
-- [Vaccine Insights] Beyond the cloud: a resilient sovereign edge architecture for vaccine independence in the Global South
-- [International Journal of Data Engineering and Intelligent Computing] A Framework for Privacy-Preserving Machine Learning in Sovereign Cloud Environments
-- [TED - EU Public Procurement] Belgium-Brussels: Category 4 of the Dynamic Purchasing System PS for Services for Citizen Participation and Deliberation Processes – Digital Platform Setup, Moderation and Analysis
-- [itnewsonline.com] Zscaler and Schwarz Digits Partner to Deliver Sovereign Cloud Security Platform for Europe
-- [gulf-times.com] Cyber resilience is crucial to Qatar digital future : expert
-- [investegate.co.uk] Expanded Growth Opportunity on G - Cloud 15 | Company Announcement
-- [biometricupdate.com] Côte dIvoire launches national PKI to strengthen digital sovereignty
 - [Global Government Forum] Sovereign cloud ‘strategic enabler’ of digital transformation, says Portuguese government - Global Government Forum
-- [arXiv] Wet Removal and Cloud Enhancement: The Microphysics of Cloud-Haze Interactions on Sub-Neptunes
-- [Journal of Risk and Financial Management] Closing the VAT Gap in the EU-27: Business Cloud Accounting and Mandatory Digital Reporting
 
 ## OS024 — Public Sector × Data Sovereignty × Cloud Data Platform
 
-**Attractiveness: 8.8/10**
+**Attractiveness: 7.73/10**
 - Market signal strength: 10.0
-- Source diversity: 10.0
-- Evidence quality: 8.0 — The list provides specific, relevant EU sovereign cloud signals from a diverse mix of reputable media, analyst reports, legal and policy outlets, though it includes some vendor‑centric press releases.
-- Novelty / momentum: 9.0
-- Strategic relevance: 6.0 — The opportunity aligns with API Cloud Avenue (Cloud) as a cloud data platform for the public sector, but Orange Business has no specific sovereign data platform API in its catalog. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Source diversity: 9.0
+- Evidence quality: 8.0 — The signals are diverse and largely relevant to EU sovereign cloud trends, drawing from credible media, analyst reports, and policy sources, though some are vendor‑centric press releases that lower overall rigor.
+- Novelty / momentum: 9.35
+- Strategic relevance: 0.0 — The innovation opportunity does not relate to any of the existing Orange Business products or domains, which are focused on WAN services, IoT, collaboration, security, and cloud services. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 8.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 7.97/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.3/10 [L3]**
-- Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
-- Public sector data sovereignty requires a sovereign cloud offering that Orange Business does not currently provide, though Cloud Avenue, Evolution Platform and SD‑WAN APIs can be bundled to approach the solution. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 3.5/10 [L2]**
+- Matched assets: API Evolution Platform, API Cloud Avenue
+- Needs a capability on cloud data platform and data sovereignty, which an external partner has, not Orange itself. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (56):**
+**Grounding signals (46):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
 - [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
 - [Lawfare] The EU Cloud and AI Development Act - Lawfare
@@ -1403,43 +1252,33 @@ _131/131 opportunity spaces scored._
 - [Open Access Government] The missing foundation of public sector AI: Data trust and process visibility - Open Access Government
 - [GovInsider] Why imperfect data shouldn't stall public sector AI innovation - GovInsider
 - [IOT Insider] Nigeria signs smart cities IoT deal for 50,000 AI-enabled solar streetlights doubling as distributed AI data centres - IOT Insider
-- [Cisco Blog] Meet “The Data Center Lens” video series: Clear answers for modernizing and scaling for AI
-- [Cisco Blog] Cloud or On-Premises? New Report Shows Why AI Workload Placement Matters
-- [The Fast Mode] Deutsche Telekom Expands T Cloud Public into Fully Sovereign European Cloud - The Fast Mode
 - [Light Reading] NTT Data and Google Cloud partnership targets agentic AI, sovereign cloud - Light Reading
-- [Light Reading] Deutsche Telekom takes its 'T' to the cloud - Light Reading
 - [Politics and Governance] Offshore Embeddedness Beyond the Wall: Chinese Cloud Providers in Southeast Asia’s Data Governance Landscape
 - [International journal of science research and technology] Designing Secure Sovereign Cloud Architectures for Enterprise Data Analytics and Digital Transformation
 - [International journal of future innovative science and technology] Hybrid Sovereign Cloud Framework for Artificial Intelligence Powered Enterprise Analytics and Secure Data Integration
 - [2025 International Conference on Informatics, Multimedia, Cyber and Information System (ICIMCIS)] Digital Sovereignty in Malaysia’s National Data Governance
-- [Computer fraud & security] Sovereign Cloud Buildout Using Repeatable and Scalable Patterns
 - [arXiv.org] Sovereign 2.0: Control-Plane Sovereignty for Cloud Systems Under Disruption
-- [Vaccine Insights] Beyond the cloud: a resilient sovereign edge architecture for vaccine independence in the Global South
 - [itnewsonline.com] Zscaler and Schwarz Digits Partner to Deliver Sovereign Cloud Security Platform for Europe
 - [orrick.com] Data Localization and the Sovereign Cloud: EU Cloud Regulations Explained - orrick.com
 - [Broadcom] Who Really Controls Your Data? The Test of Sovereign Cloud - Broadcom
 - [Silicon Canals] Europe’s new tech-sovereignty plan doesn’t ban U.S. cloud giants — it sets four levels of “sovereignty” for sensitive government data, and an American law makes the top levels nearly impossible for them to reach - Silicon Canals
-- [International Journal of Science and Research Archive] Sovereign cloud implementation: Technical architectures for data residency and regulatory compliance
-- [International Conference on Cyber Conflict] Up in the Air: Ensuring Government Data Sovereignty in the Cloud
-- [Semantic Scholar] Saving Data, Securing EU Accession: Diia’s Dual-Cloud Dilemma in 2025
-- [Global academic journal of economics and business] Cloud-Based Disaster Recovery and Business Continuity for Mission-Critical Data in Saudi Organizations
 
 ## OS025 — Retail × Customer Experience × Agentic AI
 
-**Attractiveness: 7.07/10**
-- Market signal strength: 9.555555555555555
-- Source diversity: 8.5
-- Evidence quality: 6.0 — The list is highly relevant to agentic AI in B2B contexts but leans heavily on vendor blogs and press releases, with limited independent analyst or regulator sources, reducing overall credibility.
-- Novelty / momentum: 5.58
-- Strategic relevance: 3.0 — No specific Orange Business API directly addresses retail‑focused agentic AI for CX; the closest is the generic AI capabilities in API M2M for IoT Connect Express, which is not a clear fit. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+**Attractiveness: 5.51/10**
+- Market signal strength: 7.777777777777778
+- Source diversity: 6.5
+- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
+- Novelty / momentum: 6.29
+- Strategic relevance: 0.0 — The opportunity space of Retail, Customer Experience, and Agentic AI does not directly align with any of Orange Business's existing products, such as API Satellite (Relation client), API Mobile Suite (Mobilite), or API Contact Everyone (Collaboration & Teletravail). Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
-**Urgency: 2.96/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.27/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.2/10 [L3]**
-- Matched assets: API Satellite, API Contact Everyone, API Mobile, API Core Information
-- Existing client‑relationship and omnichannel APIs can be combined, but a dedicated Agentic AI conversational platform is missing, requiring a new capability to be built. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 5.8/10 [L2]**
+- Matched assets: API Evolution Platform (Relation client), API Contact Everyone (Collaboration & Teletravail)
+- Needs AI and agentic capabilities not directly offered by Orange Business, but can be bundled with Evolution Platform and Contact Everyone for customer experience and collaboration. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (43):**
+**Grounding signals (35):**
 - [NVIDIA Blog] NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI
 - [Cisco Blog] Meet Instant Attack Verification: Agentic AI for Tier-1 and Tier-2 SOC investigation
 - [Hacker News] Show HN: Agentic interface for mainframes and COBOL
@@ -1475,31 +1314,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
 - [APAC Media] NTT DATA Partners with AWS to Accelerate Enterprise Cloud and Agentic AI Adoption - APAC Media
 - [arXiv] Structurally-bounded Agentic Graph Exploration for Evidence-Grounded Scholarly DeepSearch
-- [International Research Journal of Modernization in Engineering Technology &amp; Science] A PROACTIVE AGENTIC AI APPROACH TO REDUCE REPEAT CALLERS IN RETAIL CONTACT CENTERS
-- [arXiv.org] Flowr - Scaling Up Retail Supply Chain Operations Through Agentic AI in Large Scale Supermarket Chains
-- [Journal of AI, Robotics &amp; Workplace Automation] AI in retail: Operationalising agentic AI with trust and transparency
-- [HCAIep] Human-Centred Research Automation: Agentic AI Framework for Literature Discovery, Filtering, and Gap Identification
-- [International Journal of Scientific Research in Computer Science Engineering and Information Technology] Agentic AI in Data Analytics: Transforming Autonomous Insights and Decision-Making
-- [World Journal of Advanced Research and Reviews] Agentic Voice AI in Enterprise Call Centers: Data-Driven Cost-Benefit and Strategic Analysis of RAG-Powered Automation in Financial Services and E-commerce
-- [International Journal of Engineering Science and Information Technology] AI Governance Across the Structured-to-Fluid Automation Spectrum: Deterministic and Agentic Architectures in Modern Contact Centres
-- [European Modern Studies Journal] Retail Cybersecurity in the Agentic Age: Securing Autonomous Shopping Agents in E-Commerce
 
 ## OS026 — Retail × Contact Centre Automation × Agentic AI
 
-**Attractiveness: 7.42/10**
+**Attractiveness: 6.72/10**
 - Market signal strength: 10.0
-- Source diversity: 8.0
-- Evidence quality: 5.0 — The signals are relevant to agentic AI in B2B contact centers but are dominated by vendor blogs, press releases, and community posts, with limited independent analyst or regulator sources, reducing overall credibility.
-- Novelty / momentum: 8.2
-- Strategic relevance: 5.0 — Matches API Contact Everyone (Collaboration & Teletravail) which can be leveraged for contact‑centre automation, though no dedicated AI product exists. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+- Source diversity: 6.75
+- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
+- Novelty / momentum: 8.22
+- Strategic relevance: 2.0 — The innovation opportunity broadly fits the Orange Business domain of Collaboration & Teletravail (API Contact Everyone), but no specific asset matches well. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
-**Urgency: 4.44/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.27/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.6/10 [L3]**
-- Matched assets: API Contact Everyone, API Business Talk Digital
-- Existing contact‑centre communication APIs exist, but no current Agentic AI offering, requiring a new AI capability to be built. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.7/10 [L1]**
+- Matched assets: API Evolution Platform, API Contact Everyone, API Eligibility
+- The opportunity space for Retail x Contact Centre Automation x Agentic AI can be addressed through a bundle of Orange Business's existing assets, including the Evolution Platform for network as a service, API Contact Everyone for collaboration and teletravail, and API Eligibility for internet and resaews. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (56):**
+**Grounding signals (45):**
 - [NVIDIA Blog] NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI
 - [Cisco Blog] Meet Instant Attack Verification: Agentic AI for Tier-1 and Tier-2 SOC investigation
 - [Hacker News] Show HN: Agentic interface for mainframes and COBOL
@@ -1545,34 +1376,23 @@ _131/131 opportunity spaces scored._
 - [iTnews] Metcash exploring agentic AI to automate retail ordering - iTnews
 - [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
 - [IBM] A guide to contact center automation trends for 2026 - IBM
-- [APAC Media] NTT DATA Partners with AWS to Accelerate Enterprise Cloud and Agentic AI Adoption - APAC Media
-- [arXiv] Motion helps the contact process: survival below the percolation threshold on Poisson Brownian motions
-- [arXiv] Structurally-bounded Agentic Graph Exploration for Evidence-Grounded Scholarly DeepSearch
-- [Malaysiakini.com] Nepal floods: Over 50 Malaysians still missing, families unable to contact
-- [International Research Journal of Modernization in Engineering Technology &amp; Science] A PROACTIVE AGENTIC AI APPROACH TO REDUCE REPEAT CALLERS IN RETAIL CONTACT CENTERS
-- [arXiv.org] Flowr - Scaling Up Retail Supply Chain Operations Through Agentic AI in Large Scale Supermarket Chains
-- [Journal of AI, Robotics &amp; Workplace Automation] AI in retail: Operationalising agentic AI with trust and transparency
-- [HCAIep] Human-Centred Research Automation: Agentic AI Framework for Literature Discovery, Filtering, and Gap Identification
-- [Pattern Analysis and Applications] A review of natural language processing in contact centre automation
-- [World Journal of Advanced Research and Reviews] Agentic Voice AI in Enterprise Call Centers: Data-Driven Cost-Benefit and Strategic Analysis of RAG-Powered Automation in Financial Services and E-commerce
-- [International Journal of Engineering Science and Information Technology] AI Governance Across the Structured-to-Fluid Automation Spectrum: Deterministic and Agentic Architectures in Modern Contact Centres
 
 ## OS027 — Healthcare × Data Sovereignty × Cloud
 
-**Attractiveness: 5.81/10**
-- Market signal strength: 6.888888888888889
-- Source diversity: 4.0
-- Evidence quality: 5.0 — The list mixes low‑credibility, duplicate Hacker News links and vendor‑centric blog posts with a few relevant topics, resulting in moderate overall credibility and relevance.
-- Novelty / momentum: 8.71
-- Strategic relevance: 5.5 — Broadly aligns with Orange Business' cloud offering (API Cloud Avenue) but there is no specific healthcare data sovereignty API in the current catalog. Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
+**Attractiveness: 4.75/10**
+- Market signal strength: 5.777777777777777
+- Source diversity: 3.0
+- Evidence quality: 3.0 — Most signals are low‑credibility aggregator or vendor‑marketing posts with limited primary evidence, and only a few hint at relevant B2B trends like sovereign cloud and AI workload placement.
+- Novelty / momentum: 8.46
+- Strategic relevance: 5.5 — Broadly aligns with API Cloud Avenue (Cloud) for hosting sovereign healthcare data, but no specific Orange Business healthcare or data‑sovereignty API exists. Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
 
-**Urgency: 4.61/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.39/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.0/10 [L3]**
-- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, Evolution Platform
-- Orange Business combines cloud, data/IoT and healthcare expertise, yet it does not currently offer a dedicated sovereign‑cloud solution, making the opportunity adjacent and requiring a new capability. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 7.0/10 [L3]**
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Live Identity Verify
+- Orange Business has cloud, data and security APIs, but a dedicated sovereign‑cloud offering for regulated healthcare data is not in the catalog, requiring a new capability to meet data‑sovereignty compliance. +0.5 calibration bonus (CRM customer overlap).
 
-**Grounding signals (31):**
+**Grounding signals (26):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -1599,28 +1419,23 @@ _131/131 opportunity spaces scored._
 - [American Hospital Association] Mayo Clinic Unveils Global Data and Insights Platform to Support Health Systems Worldwide - American Hospital Association
 - [Speedway Media] GPS Tracker for Vehicle: How to Choose the Right Tracking System in 2026 - For most personal vehicles, a GPS tracker provides the core features you need. Businesses managing multiple vehicles may benefit from the additional data offered by telematics. by SM
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [Cisco Blog] Cisco IQ: Engineering Sovereignty in the AI Era
-- [BioMedicine] Mini-review of clinical data service platforms in the era of artificial intelligence: A case study of the iHi data platform
-- [Clinical Chemistry] B-214 Migration of a Previously Validated Sequencing Workflow of 4,700 Genes Associated with Clinical Phenotypes to the MGI DNBSEQ-G400 Platform: High-Quality NGS Data with Elevated Concordance to Expected Results
-- [International Journal of Population Data Science] Hospital Electronic Health Records as a research resource: data linkage, national scale-up, and five-year Impact of the National Centre for Healthy Ageing Data Platform
-- [Journal of Clinical Oncology] AI-driven prediction of prostate cancer risk: A comparative analysis with C the Signs in the Mayo Clinic data platform.
 
 ## OS028 — Public Sector × Digital Infrastructure × Cloud Data Platform
 
-**Attractiveness: 9.06/10**
+**Attractiveness: 8.87/10**
 - Market signal strength: 10.0
-- Source diversity: 10.0
-- Evidence quality: 8.5 — The list combines diverse, credible sources (major media, analyst reports, regulatory coverage) that directly address EU sovereign cloud and data‑sovereignty trends, with only a few vendor‑centric items lowering the overall purity.
-- Novelty / momentum: 8.85
-- Strategic relevance: 7.0 — The public sector cloud data platform aligns with Orange Business's API Cloud Avenue (Cloud) offering, extending its cloud infrastructure capabilities for enterprise customers. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Source diversity: 8.75
+- Evidence quality: 8.0 — The signals come from a diverse mix of reputable media, analyst reports, and policy sources, though some are vendor‑issued press releases, making them largely credible and relevant but not uniformly independent.
+- Novelty / momentum: 9.15
+- Strategic relevance: 8.0 — The public sector cloud data platform aligns with API Cloud Avenue (Cloud) as a direct cloud service offering, though it is a broader data platform than the generic cloud API. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 7.9/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 7.87/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.5/10 [L1]**
-- Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
-- The public‑sector cloud data platform can be delivered by bundling Orange's existing Cloud Avenue cloud services with Evolution Platform (network‑as‑a‑service) and SD‑WAN connectivity, all of which are already in the portfolio and proven in the public sector. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.2/10 [L1]**
+- Matched assets: API Cloud Avenue, API Evolution Platform, API M2M for IoT Connect Express
+- Existing Cloud, network‑as‑a‑service and IoT data APIs can be combined to deliver a public‑sector cloud data platform, but Orange does not yet offer a pre‑packaged solution. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (56):**
+**Grounding signals (47):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
 - [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
 - [Lawfare] The EU Cloud and AI Development Act - Lawfare
@@ -1656,10 +1471,6 @@ _131/131 opportunity spaces scored._
 - [Google Cloud Press Corner] DICT and Google Cloud Partner on Multi-Year AI and Cybersecurity Initiatives to Deliver Next-Generation Citizen Services - Google Cloud Press Corner
 - [The World Economic Forum] Why AI needs digital public infrastructure to deliver for citizens - The World Economic Forum
 - [observer.com] Public-Sector A.I. Is Advancing Faster Than Public-Sector Data - observer.com
-- [Open Access Government] The missing foundation of public sector AI: Data trust and process visibility - Open Access Government
-- [GovInsider] Why imperfect data shouldn't stall public sector AI innovation - GovInsider
-- [Frontiers] Integrating sustainable urban governance and smart infrastructure for resilient cities - Frontiers
-- [Homeland Security Today] IoT Devices Make Municipal Infrastructure an Easy Target for Cyberattackers - Homeland Security Today
 - [Light Reading] NTT Data and Google Cloud partnership targets agentic AI, sovereign cloud - Light Reading
 - [Politics and Governance] Offshore Embeddedness Beyond the Wall: Chinese Cloud Providers in Southeast Asia’s Data Governance Landscape
 - [International journal of science research and technology] Designing Secure Sovereign Cloud Architectures for Enterprise Data Analytics and Digital Transformation
@@ -1672,28 +1483,23 @@ _131/131 opportunity spaces scored._
 - [Broadcom] Who Really Controls Your Data? The Test of Sovereign Cloud - Broadcom
 - [Business Wire] Japan Data Center Market Investment Analysis Report 2026-2031: Growth Opportunities in IT, Electrical, and Mechanical Infrastructure, Cooling Systems, Construction and Tier Standards - ResearchAndMarkets.com - Business Wire
 - [Silicon Canals] Europe’s new tech-sovereignty plan doesn’t ban U.S. cloud giants — it sets four levels of “sovereignty” for sensitive government data, and an American law makes the top levels nearly impossible for them to reach - Silicon Canals
-- [International Journal of Science and Research Archive] Sovereign cloud implementation: Technical architectures for data residency and regulatory compliance
-- [International Conference on Cyber Conflict] Up in the Air: Ensuring Government Data Sovereignty in the Cloud
-- [Journal of Risk and Financial Management] Closing the VAT Gap in the EU-27: Business Cloud Accounting and Mandatory Digital Reporting
-- [Semantic Scholar] Saving Data, Securing EU Accession: Diia’s Dual-Cloud Dilemma in 2025
-- [Global academic journal of economics and business] Cloud-Based Disaster Recovery and Business Continuity for Mission-Critical Data in Saudi Organizations
 
 ## OS029 — Manufacturing × Industrial Digital Twin & Automation × Digital Twins
 
-**Attractiveness: 8.32/10**
+**Attractiveness: 8.87/10**
 - Market signal strength: 10.0
 - Source diversity: 10.0
-- Evidence quality: 7.0 — The signals are largely relevant to industrial AI, private 5G, and digital twins and include several credible analyst and trade sources, though some are vendor‑centric or low‑credibility aggregators, limiting overall confidence.
+- Evidence quality: 8.0 — The list mixes strong analyst and reputable industry sources with a few vendor‑centric and aggregator items, offering specific, relevant insights on industrial AI, private 5G, and digital twins for B2B innovation.
 - Novelty / momentum: 8.22
-- Strategic relevance: 5.0 — Broadly aligns with Orange Business IoT (API M2M for IoT Connect Express) and Cloud (API Cloud Avenue) offerings, but no dedicated digital‑twin API exists. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+- Strategic relevance: 7.0 — Extends API M2M for IoT Connect Express (Data, IA & IoT) by leveraging IoT data to feed industrial digital twins, aligning with Orange Business’s IoT portfolio. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 7.42/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 7.22/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 8.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
-- Existing IoT connectivity, cloud, and network‑as‑a‑service APIs can be bundled to deliver a manufacturing digital‑twin solution, though Orange lacks a dedicated twin platform. +1.0 calibration bonus (CRM customer overlap).
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
+- Digital Twin needs IoT data capture, cloud analytics, and secure connectivity, which can be assembled from existing IoT, cloud, and network APIs, but no single pre‑packaged offer currently exists. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (54):**
+**Grounding signals (45):**
 - [Qualcomm] Qualcomm Brings On‑Premises Industrial AI and Connectivity to a Siemens Factory Model at MWC Barcelona - Qualcomm
 - [Fierce Network] Industrial AI could be salve for ailing private network market - Fierce Network
 - [ARC Advisory Group] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory Group
@@ -1739,30 +1545,21 @@ _131/131 opportunity spaces scored._
 - [EUR-Lex] Reporting of environmental data from industrial installations and establishment of the Industrial Emissions Portal - EUR-Lex
 - [Cisco Blog] Powering the Scale Engine for Cisco: How AI is Revolutionizing Digital Customer Experience
 - [ARCweb.com] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARCweb.com
-- [Bizcommunity.com] Senior Manager: Digital Security Architect - South Africa - Johannesburg
-- [ARC Advisory] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory
-- [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
-- [ICTACT Journal on Image and Video Processing] EDGE-AI VIDEO ANALYTICS FOR INDUSTRIAL WORKER SAFETY AND HAZARD DETECTION IN SMART MANUFACTURING ENVIRONMENTS THROUGH DECISION-MAKING FRAMEWORKS
-- [Global Communications Conference] A Novel AI/ML SIEM as Application Function within Private 5G Core Network for Industrial-IoT
-- [IEEE Networking Letters] Closed-Loop Network Control for Industrial Edge Computing: A Telemetry-Driven and AI-Based Approach for Latency-Critical Applications in Private 5G
-- [SiliconANGLE] How private 5G is powering the next wave of industrial innovation - SiliconANGLE
-- [NTT, Inc.] The industrial revolution you didn’t see coming — powered by private 5G - NTT, Inc.
-- [english.newsfirst.lk] Digital Predators Exposed: SLCERT Cracks Down on Exploitative Social Media Groups
 
 ## OS030 — Manufacturing × Post-Quantum Cryptography Testing Infrastructure × Quantum-safe Cryptography
 
-**Attractiveness: 3.79/10**
+**Attractiveness: 4.29/10**
 - Market signal strength: 2.8888888888888884
 - Source diversity: 1.25
-- Evidence quality: 4.0 — The set mixes vendor blogs, a procurement announcement, and several arXiv preprints, giving modest credibility but limited authoritative diversity and only peripheral relevance to B2B innovation.
+- Evidence quality: 6.0 — The set mixes credible sources (NVIDIA, Cisco, EU procurement) with many academic arXiv papers and a low‑credibility news site, offering diverse but only partially market‑oriented signals.
 - Novelty / momentum: 9.23
-- Strategic relevance: 5.0 — No specific Orange Business API directly addresses post‑quantum cryptography testing; the closest match is the security portfolio (e.g., API Live Identity Verify) but it does not cover this quantum‑safe use case. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+- Strategic relevance: 5.0 — The opportunity aligns with Orange Business’s security portfolio (e.g., API Incident, API Live Identity Verify) but none of the listed APIs specifically address post‑quantum cryptography testing. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 6.97/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 6.83/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.6/10 [L3]**
-- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Cloud Avenue, API Evolution Platform
-- Orange Business has strong security and cloud assets but lacks quantum‑safe cryptography capabilities, requiring a new offering to address post‑quantum testing. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 2.5/10 [L4]**
+- Matched assets: none
+- Orange Business currently offers security APIs (Live Identity Captcha, Verify, Incident) but none address post‑quantum cryptography testing or quantum‑safe encryption, requiring a new capability beyond the existing portfolio. +1.0 calibration bonus (CRM customer overlap).
 
 **Grounding signals (13):**
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
@@ -1781,20 +1578,20 @@ _131/131 opportunity spaces scored._
 
 ## OS031 — Manufacturing × Strategic Communications & Advertising Consultancy × Generative AI
 
-**Attractiveness: 3.57/10**
-- Market signal strength: 2.2222222222222223
-- Source diversity: 1.25
-- Evidence quality: 4.0 — The set mixes credible sources (RCR Wireless, arXiv, TED procurement notices) with irrelevant or duplicate items, resulting in limited overall relevance for a B2B innovation radar.
-- Novelty / momentum: 9.0
-- Strategic relevance: 5.0 — Broadly aligns with Orange Business AI/IoT capabilities via API M2M for IoT Connect Express (Data, IA & IoT), though no specific product targets strategic communications or generative‑AI advertising services Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+**Attractiveness: 3.49/10**
+- Market signal strength: 2.0
+- Source diversity: 1.0
+- Evidence quality: 6.0 — The set mixes credible sources (RCR Wireless, arXiv, EU procurement) with relevant topics like private 5G, generative AI, and optical communications, but includes duplicate entries and several generic consultancy notices that dilute its overall specificity and relevance.
+- Novelty / momentum: 8.89
+- Strategic relevance: 2.0 — No specific Orange Business API directly supports a generative AI advertising consultancy for manufacturing; only generic cloud (API Cloud Avenue) or IoT AI (API M2M for IoT Connect Express) could be loosely related, but no direct asset matches. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
-**Urgency: 7.08/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 6.88/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 6.5/10 [L3]**
-- Matched assets: API Cloud Avenue, API Evolution Platform
-- Existing cloud and network APIs can support a generative AI service, but Orange lacks a dedicated AI‑content offering, requiring development of a new capability. +1.0 calibration bonus (CRM customer overlap).
+- Matched assets: API Contact Everyone, API Business Talk Digital, API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco
+- Existing communication, cloud, and AI/IoT APIs can be leveraged, but a dedicated generative AI content creation capability and consultancy service are missing, making it an adjacent opportunity. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (10):**
+**Grounding signals (9):**
 - [RCR Wireless News] Private 5G and generative AI in Industry 4.0 – a match made at the edge - RCR Wireless News
 - [TED - EU Public Procurement] Norway-Bergen: Research and development consultancy services
 - [TED - EU Public Procurement] Finland – Research and development consultancy services – Market Intelligence Services
@@ -1804,24 +1601,23 @@ _131/131 opportunity spaces scored._
 - [RCR Wireless News] Private 5G and generative AI in Industry 4.0 – a match made at the edge - RCR Wireless News
 - [rcrwireless.com] Private 5G and generative AI in Industry 4.0 – a match made at the edge - rcrwireless.com
 - [arXiv] Diffractive optical element for super-Gaussian beam shaping on intersatellite optical communications
-- [Barchart.com] Cogent Communications Holdings Securities Fraud Class Action Result of Undisclosed Demand and Backlog Issues and approximately 29% Stock Decline - Investors may Contact Lewis Kahn, Esq, at Kahn Swick & Foti, LLC
 
 ## OS032 — Public Sector × Infrastructure Planning & Management × Digital Twins
 
-**Attractiveness: 6.58/10**
-- Market signal strength: 6.444444444444445
-- Source diversity: 6.5
-- Evidence quality: 8.0 — The list includes diverse, largely credible sources covering sovereign cloud, smart city, AI, and cyber‑resilience topics relevant to B2B innovation, though a few entries are less authoritative or more promotional.
-- Novelty / momentum: 8.97
-- Strategic relevance: 3.0 — No specific Orange Business API directly offers Digital Twin capabilities; the closest match is API M2M for IoT Connect Express which can provide IoT data for twin models, but there is no dedicated product.
+**Attractiveness: 6.12/10**
+- Market signal strength: 5.777777777777777
+- Source diversity: 5.75
+- Evidence quality: 7.0 — The set mixes credible sources (law firm, major tech blogs, WEF, government agency, academic journals) with lower‑credibility or marketing‑heavy items, and overall covers relevant themes of sovereign cloud, smart infrastructure, and AI for B2B innovation.
+- Novelty / momentum: 8.85
+- Strategic relevance: 4.0 — No specific Orange Business API directly addresses digital twins; the closest is API M2M for IoT Connect Express which provides IoT data but does not constitute a digital twin solution.
 
-**Urgency: 4.77/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.59/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.5/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Orange Business lacks a dedicated digital‑twin offering, so a new capability must be built on top of existing IoT, cloud, and network APIs. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 7.5/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
+- Orange Business has IoT, cloud, and network APIs plus public‑sector experience, but no dedicated digital‑twin platform, making the opportunity adjacent and requiring a new capability. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (30):**
+**Grounding signals (26):**
 - [Jones Day] Dutch Government Blocks U.S. Acquisition of Cloud Provider, Signaling Heightened Focus on EU Digital Sovereignty - Jones Day
 - [Microsoft Azure Blog] External key management for Azure Managed HSM is now in public preview
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
@@ -1848,27 +1644,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
 - [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
 - [Yahoo News] Bali embraced digital nomads. Now it's reckoning with the growing pains.
-- [Journal of Risk and Financial Management] Closing the VAT Gap in the EU-27: Business Cloud Accounting and Mandatory Digital Reporting
-- [WebProNews] CISA Red Team Exposes SOC Failures in Critical Infrastructure Tests
-- [FoneArena] Xbox unveils disc-to-digital feature for physical games
-- [TechBullion] Exploring What Makes a Digital Audio Converter Important in a High-End Audio System
 
 ## OS033 — Manufacturing × Industrial Process Optimization × IoT Platforms
 
-**Attractiveness: 9.28/10**
-- Market signal strength: 10.0
-- Source diversity: 9.25
-- Evidence quality: 8.0 — The list mixes credible analyst reports, established industry media, and academic work with a few vendor‑centric pieces, offering specific, relevant signals on industrial AI, private 5G, and OT security.
-- Novelty / momentum: 9.33
-- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express (Data, IA & IoT) which offers an IoT platform suitable for manufacturing process optimization. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 8.56/10**
+- Market signal strength: 9.11111111111111
+- Source diversity: 8.5
+- Evidence quality: 8.0 — The list combines multiple credible sources—analyst reports, established industry media, and academic work—with specific, relevant content on industrial AI, private 5G, and OT security, though a few entries are vendor‑centric.
+- Novelty / momentum: 9.27
+- Strategic relevance: 8.0 — The opportunity aligns with Orange Business's API M2M for IoT Connect Express, which provides IoT connectivity and data services applicable to industrial process optimization in manufacturing. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 7.99/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 7.76/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.3/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
-- Existing IoT, cloud, and network APIs can be combined to deliver an industrial IoT platform, but Orange Business does not yet offer a pre‑packaged solution for manufacturing process optimization. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.5/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
+- Existing IoT connectivity, cloud, and SD‑WAN APIs can be combined to meet the manufacturing IoT platform need, but Orange Business does not yet offer a pre‑packaged solution, requiring a bundled offering. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (50):**
+**Grounding signals (41):**
 - [Qualcomm] Qualcomm Brings On‑Premises Industrial AI and Connectivity to a Siemens Factory Model at MWC Barcelona - Qualcomm
 - [Fierce Network] Industrial AI could be salve for ailing private network market - Fierce Network
 - [ARC Advisory Group] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory Group
@@ -1910,32 +1702,23 @@ _131/131 opportunity spaces scored._
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
 - [ARCweb.com] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARCweb.com
 - [ARC Advisory] Beyond Connectivity: Embedded Security, AI/Edge Computing, Mobile Applications, and 5G/Private Networks Are Transforming the Industrial Cellular Router Market - ARC Advisory
-- [NST Online] Govt explores regulatory framework for e-commerce platforms | New Straits Times
-- [ICTACT Journal on Image and Video Processing] EDGE-AI VIDEO ANALYTICS FOR INDUSTRIAL WORKER SAFETY AND HAZARD DETECTION IN SMART MANUFACTURING ENVIRONMENTS THROUGH DECISION-MAKING FRAMEWORKS
-- [Global Communications Conference] A Novel AI/ML SIEM as Application Function within Private 5G Core Network for Industrial-IoT
-- [IEEE Networking Letters] Closed-Loop Network Control for Industrial Edge Computing: A Telemetry-Driven and AI-Based Approach for Latency-Critical Applications in Private 5G
-- [arXiv] AI Agentic Selective Laser Sintering Process Optimization
-- [arXiv] How Edge of Stability Hinders SCAFFOLD in Federated Optimization
-- [rcrwireless.com] Private 5G in Industry 4.0 – 90% ROI in 12 months, plus big AI/IoT gains - rcrwireless.com
-- [SiliconANGLE] How private 5G is powering the next wave of industrial innovation - SiliconANGLE
-- [NTT, Inc.] The industrial revolution you didn’t see coming — powered by private 5G - NTT, Inc.
 
 ## OS034 — Manufacturing × Manufacturing Process Automation × Agentic AI
 
-**Attractiveness: 7.49/10**
-- Market signal strength: 10.0
+**Attractiveness: 7.67/10**
+- Market signal strength: 9.777777777777777
 - Source diversity: 6.25
-- Evidence quality: 6.0 — The list mixes credible sources (arXiv, Frontiers, analyst reports, reputable industry media) with lower‑credibility vendor blogs and community posts, offering generally relevant but unevenly reliable signals for B2B innovation.
-- Novelty / momentum: 8.44
-- Strategic relevance: 6.0 — The concept aligns with API M2M for IoT Connect Express (Data, IA & IoT), which can be extended to manufacturing process automation using Agentic AI. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+- Evidence quality: 7.0 — The list mixes credible technical (arXiv, Frontiers) and reputable industry sources with vendor‑centric blogs, covering relevant AI and manufacturing topics, yielding a solid but not flawless signal set.
+- Novelty / momentum: 8.41
+- Strategic relevance: 6.0 — The opportunity aligns with API M2M for IoT Connect Express (Data, IA & IoT), which can underpin AI-driven manufacturing process automation, though no dedicated manufacturing-specific API exists. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
 **Urgency: 10.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.5/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Manufacturing process automation with agentic AI needs an autonomous AI orchestration capability that Orange Business currently lacks, though it can leverage its IoT, cloud, and network APIs to build a solution. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 5.6/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco
+- Orange Business can leverage its IoT, cloud, and connectivity APIs for data collection and infrastructure, but lacks a dedicated Agentic AI automation platform, requiring development of a new capability. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (52):**
+**Grounding signals (44):**
 - [NVIDIA Blog] NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI
 - [Cisco Blog] Meet Instant Attack Verification: Agentic AI for Tier-1 and Tier-2 SOC investigation
 - [Hacker News] Industry Brief: Private 5G for Manufacturing and Industrial Sites [pdf]
@@ -1980,29 +1763,21 @@ _131/131 opportunity spaces scored._
 - [consultaelectoral.onpe.gob.pe] Commission Implementing Regulation (EU) 2025/2154 of 17 October 2025 laying down good manufacturing practice for active substan - consultaelectoral.onpe.gob.pe
 - [consultaelectoral.onpe.gob.pe] ►B COMMISSION REGULATION (EC) No 2023/2006 of 22 December 2006 on good manufacturing practice for materials and articles inten - consultaelectoral.onpe.gob.pe
 - [consultaelectoral.onpe.gob.pe] COMMISSION IMPLEMENTING REGULATION (EU) 2025/2091 of 17 October 2025 laying down good manufacturing practice for veterinary medi - consultaelectoral.onpe.gob.pe
-- [ICTACT Journal on Image and Video Processing] EDGE-AI VIDEO ANALYTICS FOR INDUSTRIAL WORKER SAFETY AND HAZARD DETECTION IN SMART MANUFACTURING ENVIRONMENTS THROUGH DECISION-MAKING FRAMEWORKS
-- [Journal of Advances in Developmental Research] The Convergence of Private Wireless with AI and Machine Learning: Investigating how private networks enable real-time data processing at the edge for AI-driven applications in manufacturing, predictive maintenance, and autonomous systems
-- [Journal of Information Systems Engineering & Management] Collaborative Intelligence in Manufacturing: Human-Robot Teams with Edge AI
-- [共同通信PRワイヤー] Biosidus expands biologics manufacturing capacity and strengthens global supply capabilities for agalsidase beta
-- [arXiv] TAU-Agent: An Agentic Retrieval-Augmented Framework for Traffic Anomaly Understanding
-- [arXiv] AI Agentic Selective Laser Sintering Process Optimization
-- [arXiv] Agentic Autoresearch for Cell-Edge Power Control: Radically Redefining the Researcher's Role
-- [2025 International Conference on Innovations and Emerging Technologies In AI & Communication Systems (IETACS)] Adaptive Multi-Sensory Augmented Reality Interface for Operator Training in Smart Manufacturing Cells Using Real-Time Biosignal Feedback and Edge-AI
 
 ## OS035 — Healthcare × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 3.49/10**
+**Attractiveness: 3.89/10**
 - Market signal strength: 2.6666666666666665
 - Source diversity: 0.5
-- Evidence quality: 5.0 — The list mixes credible Cisco blog posts with low‑authority Hacker News summaries, offering relevant topics but limited source diversity and heavy reliance on secondary or vendor‑centric content.
+- Evidence quality: 6.0 — The signals are relevant to cybersecurity and AI trust, coming from a credible corporate blog and a community aggregator, but lack analyst, regulator, or diverse primary sources, limiting overall credibility.
 - Novelty / momentum: 6.67
-- Strategic relevance: 4.5 — The concept loosely aligns with security APIs like API Live Identity Verify and API Incident, but there is no specific Orange Business product that directly addresses a healthcare‑focused zero‑trust or cyber‑defense offering. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
+- Strategic relevance: 5.5 — The concept aligns with Orange Business’s security portfolio (e.g., API Incident, API Live Identity Verify) and its healthcare expertise, but no single existing API/product directly matches this healthcare‑focused zero‑trust cyber‑defense offering. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
 
-**Urgency: 3.53/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.0/10 [L1]**
-- Matched assets: API Evolution Platform, API Flexible SDWAN Cisco, API Incident, API Live Identity Verify, API Live Identity Captcha, API Cloud Avenue, API M2M for IoT Connect Express
-- Orange Business can meet the Healthcare Cyber Defense & Zero Trust need by bundling its SASE/SD‑WAN Evolution Platform, security Incident and identity APIs, and cloud/IoT services, leveraging its proven healthcare customer base and security leadership, though no single pre‑packaged offer exists. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.8/10 [L1]**
+- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Evolution Platform
+- Existing security, identity and SD‑WAN/SASE APIs can be bundled with Orange Business’ healthcare expertise to deliver a cyber‑defense/zero‑trust solution for the sector. +0.5 calibration bonus (CRM customer overlap).
 
 **Grounding signals (12):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
@@ -2020,20 +1795,20 @@ _131/131 opportunity spaces scored._
 
 ## OS036 — Transportation and Logistics × Supply Chain Visibility × IoT Platforms
 
-**Attractiveness: 7.16/10**
-- Market signal strength: 7.111111111111112
-- Source diversity: 6.25
-- Evidence quality: 6.0 — The list mixes credible analyst reports and industry media with several vendor‑centric press releases and broad trend pieces, offering some specific B2B supply‑chain IoT signals but overall uneven depth and relevance.
-- Novelty / momentum: 7.81
-- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express, which provides IoT connectivity and data services suitable for transportation and logistics supply chain visibility. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 7.04/10**
+- Market signal strength: 6.888888888888889
+- Source diversity: 6.0
+- Evidence quality: 6.0 — The list mixes credible analyst reports and reputable industry media with several vendor press releases and generic trend pieces, offering moderate specificity and relevance for a B2B innovation radar.
+- Novelty / momentum: 7.74
+- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express, Orange Business's IoT data platform suitable for transportation and supply chain visibility solutions. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 4.14/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.02/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.3/10 [L1]**
+**Right-to-win: 8.0/10 [L1]**
 - Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
-- Orange already offers IoT connectivity, cloud and network APIs that can be bundled to create a supply‑chain visibility platform, but no single pre‑packaged offering currently exists. +0.5 calibration bonus (CRM customer overlap).
+- Orange already offers IoT connectivity, cloud, and network APIs that can be combined to enable supply‑chain visibility, but no dedicated bundled offering currently exists. +0.5 calibration bonus (CRM customer overlap).
 
-**Grounding signals (32):**
+**Grounding signals (31):**
 - [GlobeNewswire] Supply Chain Technology Innovators Honored in 5th Annual SupplyTech Breakthrough Awards Program - GlobeNewswire
 - [IoT For All] Securing the Aerospace Supply Chain: IoT, Quality Management, and Compliance - IoT For All
 - [IoT Business News] Wialon Brings Fleet Management Queries Into ChatGPT With Native App - IoT Business News
@@ -2065,22 +1840,21 @@ _131/131 opportunity spaces scored._
 - [IoT Business News] AT&T Moves Deeper Into Supply Chain IoT Through Wiliot Collaboration - IoT Business News
 - [Global Market Insights Inc.] AI in Logistics and Supply Chain Market Size & Share 2025 - 2034 - Global Market Insights Inc.
 - [mlive] CEO admits struggling burger chain sacrificed food quality for cost savings
-- [Khmer Times] Phnom Penh scam 'supply stations' busted
 
 ## OS037 — Transportation and Logistics × Predictive Maintenance × Machine Learning
 
 **Attractiveness: 3.92/10**
 - Market signal strength: 1.5555555555555556
 - Source diversity: 1.5
-- Evidence quality: 5.0 — The set mixes credible industry sources (FreightWaves, Precedence Research) with lower‑credibility or niche academic and media items, yielding moderate overall relevance and credibility for a B2B innovation radar.
+- Evidence quality: 5.0 — Mixed credibility and relevance; FreightWaves and Precedence Research provide solid B2B insights, while the job posting, niche blogs, and academic papers are less directly applicable to B2B market trends.
 - Novelty / momentum: 8.57
-- Strategic relevance: 7.0 — Leverages API M2M for IoT Connect Express (Data, IA & IoT) to gather vehicle sensor data and apply ML for predictive maintenance in transportation and logistics. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+- Strategic relevance: 7.0 — Extends API M2M for IoT Connect Express (Data, IA & IoT) by applying its IoT data and AI capabilities to predictive maintenance in transportation and logistics. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 4.54/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.45/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.8/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Satellite, API Evolution Platform, API Maintenance, API Incident
-- Predictive maintenance for transportation can be built by bundling existing IoT, satellite connectivity, network‑as‑a‑service and maintenance/incident APIs, without needing new core capabilities. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.0/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Maintenance, API Cloud Avenue, Evolution Platform
+- Orange Business already offers IoT data ingestion, cloud compute, network connectivity and maintenance workflow APIs that can be bundled to create a predictive‑maintenance solution for transportation and logistics, but no dedicated packaged offering exists yet. +0.5 calibration bonus (CRM customer overlap).
 
 **Grounding signals (7):**
 - [Hacker News] Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer
@@ -2093,20 +1867,20 @@ _131/131 opportunity spaces scored._
 
 ## OS038 — Finance & Insurance × Demand Forecasting × Agentic AI
 
-**Attractiveness: 7.89/10**
-- Market signal strength: 10.0
-- Source diversity: 8.75
-- Evidence quality: 8.0 — The list contains multiple specific, diverse, and credible sources (major cloud providers, consulting firms, regulators, and industry media) directly addressing agentic AI applications in insurance, though a few entries are lower‑credibility market reports or community posts.
-- Novelty / momentum: 6.89
-- Strategic relevance: 3.0 — No specific Orange Business API directly addresses finance demand forecasting or Agentic AI; only generic AI/Cloud assets like API M2M for IoT Connect Express exist, which are not a clear fit. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+**Attractiveness: 8.07/10**
+- Market signal strength: 9.777777777777777
+- Source diversity: 8.5
+- Evidence quality: 8.0 — The list contains multiple specific, credible sources (major cloud providers, consulting firms, regulators, and industry media) covering agentic AI applications in insurance, though a few entries are lower‑credibility market reports or vendor blogs.
+- Novelty / momentum: 6.82
+- Strategic relevance: 5.0 — Broadly aligns with Orange Business AI/Data capabilities such as API M2M for IoT Connect Express (Data, IA & IoT) and API Cloud Avenue, but no specific product directly addresses finance demand forecasting Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
-**Urgency: 3.75/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.54/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.5/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue
-- Orange Business has data and AI‑related APIs plus cloud infrastructure, but lacks a dedicated agentic AI demand‑forecasting solution for finance, requiring a new capability to be built. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 5.5/10 [L3]**
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express
+- Orange Business can leverage its Cloud and IoT data APIs, but lacks a ready‑made agentic AI demand‑forecasting solution, requiring a new AI capability to be built. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (48):**
+**Grounding signals (44):**
 - [Amazon Web Services (AWS)] Build an agentic AI healthcare claims pipeline with Amazon Bedrock and AWS HealthLake | Artificial Intelligence - Amazon Web Services (AWS)
 - [Salesforce] The Complete Guide to Agentic AI in Insurance - Salesforce
 - [Insurance Business] IAG bets on agentic AI where conduct risk is highest - Insurance Business
@@ -2151,25 +1925,21 @@ _131/131 opportunity spaces scored._
 - [Insurance Business] Agentic AI attacks could drive higher cyber claim frequency, experts warn - Insurance Business
 - [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
 - [arXiv] SPO++: Stream-Aligned Policy Optimization for Asynchronous Agentic RL
-- [WebProNews] Bill Gates Sounds Stark AI Alarm: Mass Job Loss, Bioterror Risks Demand Taxes, Human-Only Roles
-- [Vietnam Investment Review - VIR] Duck Creek launches agentic AI platform for insurance - Vietnam Investment Review - VIR
-- [ETTelecom.com] Synopsys raises annual forecasts on AI-driven chip design software demand
-- [Cryptopolitan] Synopsys lifts 2026 outlook as AI chip race drives design-tool demand - Cryptopolitan
 
 ## OS039 — Public Sector × Network Modernization & SD-WAN × 5G
 
-**Attractiveness: 4.67/10**
+**Attractiveness: 5.17/10**
 - Market signal strength: 2.2222222222222223
 - Source diversity: 1.5
-- Evidence quality: 6.0 — The list mixes credible media and vendor blogs covering relevant B2B trends like private 5G, zero‑trust, and AI‑driven networking, but many entries are vendor‑centric or vague, limiting overall depth and diversity.
+- Evidence quality: 8.0 — The signals come from multiple reputable sources (major cloud vendors, analyst firms, industry news) and cover specific, relevant B2B trends like private 5G, zero‑trust, and AI‑driven network modernization, though a few items are redundant or less formal.
 - Novelty / momentum: 7.0
-- Strategic relevance: 10.0 — Extends API Flexible SDWAN Cisco (Internet & Reseaux) by delivering SD‑WAN and 5G network modernization for the public sector. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+- Strategic relevance: 10.0 — Directly aligns with API Flexible SDWAN Cisco (and the Evolution Platform) which provide SD‑WAN and 5G‑enabled network modernization services for enterprise/public‑sector customers. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 3.71/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.63/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.5/10 [L1]**
-- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Mobile Suite
-- Existing SD‑WAN (Flexible SDWAN Cisco/Evolution Platform) and 5G mobile (Mobile Suite) assets can be bundled to meet public‑sector network modernization needs, though they are not currently packaged together. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.5/10 [L1]**
+- Matched assets: API Flexible SDWAN Cisco, API Mobile Suite, API Evolution Platform
+- Orange Business already offers SD‑WAN (Flexible SDWAN Cisco, Evolution Platform) and 5G mobile (Mobile Suite) APIs, which can be bundled to meet public‑sector network modernization needs. +1.0 calibration bonus (CRM customer overlap).
 
 **Grounding signals (10):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
@@ -2185,20 +1955,20 @@ _131/131 opportunity spaces scored._
 
 ## OS040 — Healthcare × Clinical Workflow Automation × Machine Learning
 
-**Attractiveness: 4.73/10**
-- Market signal strength: 3.555555555555556
-- Source diversity: 3.5
-- Evidence quality: 7.0 — The set mixes reputable industry media, analyst reports, and peer‑reviewed research covering AI in clinical workflows, showing specificity and source diversity, though a few items are low‑credibility or tangential (e.g., a hiring post and a particle‑physics paper).
-- Novelty / momentum: 6.88
-- Strategic relevance: 3.5 — No specific Orange Business API directly addresses clinical workflow automation; the closest generic fit is API M2M for IoT Connect Express (Data, IA & IoT), but there is no dedicated healthcare product. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
+**Attractiveness: 3.96/10**
+- Market signal strength: 2.0
+- Source diversity: 1.75
+- Evidence quality: 7.0 — The set mixes highly credible sources (Nature, arXiv) with lower‑credibility ones (Hacker News job post, press release) but overall offers diverse, relevant signals on AI and data innovations in healthcare for B2B insight.
+- Novelty / momentum: 8.89
+- Strategic relevance: 2.5 — None of the listed Orange Business APIs directly address healthcare clinical workflow automation or ML, only generic data/IoT APIs exist which do not specifically match this opportunity +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
 
-**Urgency: 3.64/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.62/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.0/10 [L3]**
-- Matched assets: none
-- Orange Business has AI, IoT, cloud and healthcare expertise but no dedicated clinical workflow automation with machine‑learning offering, so a new capability must be built. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 6.1/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
+- Orange Business has data, cloud and connectivity APIs plus healthcare expertise, but lacks a dedicated clinical workflow automation and ML platform, requiring a new capability to close the gap. +0.5 calibration bonus (CRM customer overlap).
 
-**Grounding signals (16):**
+**Grounding signals (9):**
 - [Hacker News] Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer
 - [Fierce Healthcare] Epic expands AI ambitions with agent platform, Cosmos-powered predictions and workflow automation - Fierce Healthcare
 - [Newswire.com] European EHR/EPR Market Enters Research-Ready Era as Clinical Trials and Real-World Evidence Move Into the Hospital Data Environment - Newswire.com
@@ -2208,28 +1978,21 @@ _131/131 opportunity spaces scored._
 - [Nature] Accelerating AI innovation in healthcare: real-world clinical research applications on the Mayo Clinic Platform - Nature
 - [MarketsandMarkets] Al in Clinical Workflow Market Report 2025-2030, By Offering, Technology, and Geo - MarketsandMarkets
 - [arXiv] Physics-Constrained Deep Learning Model for Contactless Blood Pressure Monitoring from Triaxial Bodyseismography
-- [Risk Management and Healthcare Policy] Clinical Artificial Intelligence Implementation in Routine Care: Real-World Operational Outcomes from a Provincial Health System in China
-- [Journal of Hematopathology] A deep-learning algorithm (AIFORIA) for classification of hematopoietic cells in bone marrow aspirate smears based on nine cell classes—a feasible approach for routine screening?
-- [Metaverse Science, Society and Law] FROM PASSIVE HOSPITAL BEDS TO AI-ENABLED PATIENT MONITORING PLATFORMS: EMBEDDED SENSORS, CLINICAL WORKFLOW INTEGRATION, AND LOCAL LLM EXPLANATION LAYER
-- [BioMedicine] Mini-review of clinical data service platforms in the era of artificial intelligence: A case study of the iHi data platform
-- [Clinical Chemistry] B-214 Migration of a Previously Validated Sequencing Workflow of 4,700 Genes Associated with Clinical Phenotypes to the MGI DNBSEQ-G400 Platform: High-Quality NGS Data with Elevated Concordance to Expected Results
-- [Journal of Clinical Oncology] OncoSphere AI: An agentic AI multidisciplinary clinical workflow support tool.
-- [Blood] Clinical and technological validation of locally-installed, privacy-compliant, and hematology-tailored ambient AI platform for clinical report transcription assistance and clinical trial patient management
 
 ## OS041 — Energy × Employee Experience × Generative AI
 
-**Attractiveness: 2.48/10**
+**Attractiveness: 1.63/10**
 - Market signal strength: 0.4444444444444445
 - Source diversity: 0.5
-- Evidence quality: 4.0 — Both sources are vendor‑centric or press‑release platforms lacking independent analysis, making the signals only moderately relevant but low in credibility.
+- Evidence quality: 3.0 — Both signals are vendor‑originated marketing pieces lacking independent analyst or regulator backing, making them of limited credibility and only loosely relevant to B2B innovation trends.
 - Novelty / momentum: 5.0
-- Strategic relevance: 5.0 — Broadly aligns with API Contact Everyone (Collaboration & Teletravail) and API M2M for IoT Connect Express (Data, IA & IoT) but no specific Orange Business product directly covers Energy‑focused generative AI for employee experience. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+- Strategic relevance: 1.0 — None of the listed Orange Business APIs directly address Energy, Employee Experience, or Generative AI, so the opportunity does not align with a specific existing product Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
 **Urgency: 0.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 4.6/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Contact Everyone, API Evolution Platform
-- The energy employee‑experience use case needs a generative‑AI capability that Orange Business does not yet offer, though existing IoT, cloud, collaboration and network APIs can be combined as a foundation.
+**Right-to-win: 5.5/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Contact Everyone, API Cloud Avenue, API Mobile Suite
+- Existing APIs cover cloud, collaboration, mobility and AI‑enabled IoT, but a dedicated generative AI capability for employee experience in the energy sector is missing, requiring a new offering.
 
 **Grounding signals (2):**
 - [Cisco Blog] Powering the Scale Engine for Cisco: How AI is Revolutionizing Digital Customer Experience
@@ -2237,20 +2000,20 @@ _131/131 opportunity spaces scored._
 
 ## OS042 — Defense × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 6.8/10**
-- Market signal strength: 8.0
-- Source diversity: 5.25
-- Evidence quality: 7.0 — The list mixes credible think‑tank, analyst, and media sources with vendor blogs and duplicated Hacker News summaries, offering specific but unevenly reliable signals that are largely relevant to federal and defense cybersecurity trends.
-- Novelty / momentum: 7.78
-- Strategic relevance: 5.5 — The opportunity aligns with Orange Business security domain (e.g., API Incident, API Live Identity Verify) but no specific API directly addresses Cyber Defense or Zero Trust. +0.5 trust-critical bonus: Orange runs a dedicated Defense division (corporate deck, slide 12-14).
+**Attractiveness: 4.93/10**
+- Market signal strength: 5.111111111111111
+- Source diversity: 2.5
+- Evidence quality: 5.0 — The list mixes credible sources (Atlantic Council, MarketsandMarkets, Cyber Magazine) with vendor blogs and secondary Hacker News summaries, offering some specific insights on zero‑trust and AI trust but overall limited diversity and heavy reliance on low‑credibility reposts.
+- Novelty / momentum: 8.26
+- Strategic relevance: 5.5 — The defense and zero‑trust focus aligns with API Incident (Securite) for security incident handling, though the opportunity is broader than any single existing Orange Business API. +0.5 trust-critical bonus: Orange runs a dedicated Defense division (corporate deck, slide 12-14).
 
-**Urgency: 4.12/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.32/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.2/10 [L1]**
-- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Evolution Platform
-- Several security‑focused APIs (identity, incident response, SD‑WAN/SASE) can be bundled to create a zero‑trust cyber‑defence solution, though no single existing asset delivers the full offering out‑of‑the‑box.
+**Right-to-win: 8.3/10 [L1]**
+- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Live Identity Verify, API Live Identity Captcha, API Incident
+- Orange Business already offers SD‑WAN/SASE, identity verification and incident response APIs that can be combined to deliver a zero‑trust cyber‑defense solution, but they are not yet packaged as a single offering.
 
-**Grounding signals (36):**
+**Grounding signals (24):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
 - [Hacker News] I read the federal government’s Zero-Trust Memo so you don’t have to
 - [Hacker News] Summary of the USA federal government's zero-trust memo
@@ -2275,33 +2038,21 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Cisco AI Defense + Armada: Distributed AI That’s Safe to Run, Wherever the Mission Requires It
 - [arXiv] The boxicity of the compressed zero divisor graph of the ring of integers modulo N
 - [arXiv] Research Methodologies for Cybersecurity in Enterprise Environments: A Narrative Review, Synthesis and Executable Guide
-- [armenpress.am] Defense minister meets outgoing French ambassador
-- [Green Building Africa] Growthpoint's 36 Hans Strijdom becomes net zero carbon flagship in Cape Town
-- [Computer Science Symposium in Russia] Zero-Trust and Reinforcement Learning for Secure Federated Intelligence in 6G Edge Networks
-- [IEEE Journal on Selected Areas in Communications] A Federated Learning-Based Zero-Trust Model With Secure Dynamic Trust Evaluation and Knowledge Transfer
-- [Advanced Information Systems] SEQUENTIAL INTRUSION DETECTION SYSTEM FOR ZERO-TRUST CYBER DEFENSE OF IOT/IIOT NETWORKS
-- [International Journal of Scientific Research and Modern Technology] Secure Routing Algorithms Integrating Zero Trust Edge Computing for Unmanned Aerial Vehicle Networks in Disaster Response Operations
-- [Journal of Sensors] ICEEZT: Zero Trust Secure Energy‐Efficient Method for 6G‐Enabled Underwater Acoustic‐RF Networks With Blockchain Integration
-- [IEEE Journal on Selected Areas in Communications] Cross-Layer Management Framework for Enhancing XR-Based System Security in Zero-Trust Wireless Communications
-- [IEEE wireless communications] Toward Zero-Trust 6GC: A Software Defined Perimeter Approach with Dynamic Moving Target Defense Mechanism
-- [2026 International Conference on Cognitive Computing and Networking Systems (ICC-CNS)] A Multi-Layer Intelligent Cyber Defense Mechanism Integrating Zero-Trust Principles for Secure Digital Payments
-- [Future Internet] Hardware-Anchored ES-SPA: A Dynamic Zero-Trust Architecture for Secure eSIM Provisioning in 6G IoT via Moving Target Defense
-- [IEEE Conference on Communications and Network Security] Trust Threshold Policy for Explainable and Adaptive Zero-Trust Defense in Enterprise Networks
 
 ## OS043 — Automotive × Predictive Maintenance × IoT Platforms
 
 **Attractiveness: 3.98/10**
 - Market signal strength: 0.4444444444444445
 - Source diversity: 0.5
-- Evidence quality: 7.0 — The Microsoft Azure blog citing Gartner is highly credible and relevant to cloud-native platforms, while the IoT Now piece is a moderate‑credibility trade source with broader, less specific relevance to automotive IoT trends.
+- Evidence quality: 7.0 — The Microsoft Azure blog citing a Gartner Magic Quadrant is a highly credible, specific signal, while the IoT Now piece is a less detailed, single-source trend article, lowering the overall score.
 - Novelty / momentum: 5.0
-- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express, which provides IoT connectivity and data/AI capabilities suitable for automotive predictive maintenance. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+- Strategic relevance: 10.0 — Directly extends API M2M for IoT Connect Express, Orange Business's IoT platform enabling data collection and AI for predictive maintenance in automotive. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
 **Urgency: 0.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.2/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
-- Existing IoT connectivity, cloud, and network‑as‑a‑service APIs can be combined to deliver an automotive predictive‑maintenance platform, but Orange does not yet offer them as a pre‑packaged solution. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.3/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
+- Predictive‑maintenance IoT can be delivered by bundling Orange's IoT connectivity, cloud and network services, though no single pre‑packaged product currently exists. +1.0 calibration bonus (CRM customer overlap).
 
 **Grounding signals (2):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
@@ -2309,20 +2060,20 @@ _131/131 opportunity spaces scored._
 
 ## OS044 — Construction × Industrial Digital Twin & Automation × Digital Twins
 
-**Attractiveness: 4.09/10**
-- Market signal strength: 2.8888888888888884
-- Source diversity: 2.25
-- Evidence quality: 5.0 — The set mixes high‑credibility, relevant sources (e.g., Nature papers on digital twins) with several vendor blogs and off‑topic items, yielding moderate overall credibility and relevance for a B2B innovation radar.
-- Novelty / momentum: 7.69
-- Strategic relevance: 5.0 — Broadly aligns with API M2M for IoT Connect Express (Data, IA & IoT) for ingesting sensor data for digital twins, but Orange Business has no dedicated digital twin API.
+**Attractiveness: 3.83/10**
+- Market signal strength: 2.0
+- Source diversity: 1.75
+- Evidence quality: 6.0 — The set mixes high‑credibility sources (Nature) with community posts and vendor blogs, offering relevant construction and digital‑twin topics but includes some less‑relevant or marketing‑heavy items, lowering overall credibility and relevance.
+- Novelty / momentum: 7.78
+- Strategic relevance: 4.0 — No Orange Business API directly targets digital twins; the closest fit is API M2M for IoT Connect Express, which can supply IoT data for twin and automation use cases.
 
-**Urgency: 4.07/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.89/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 5.5/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing IoT, cloud, and network APIs can support data collection and connectivity, but a dedicated digital‑twin modeling and analytics capability is missing, requiring a new offering.
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
+- Existing IoT, cloud, and network APIs can support data ingestion and connectivity, but a dedicated Digital Twin platform must be built, making this an adjacent opportunity.
 
-**Grounding signals (13):**
+**Grounding signals (12):**
 - [Hacker News] Industry Brief: Private 5G for Manufacturing and Industrial Sites [pdf]
 - [Hacker News] "Sovereign cloud"? A Trojan Horse at Europe's digital gates
 - [Cisco Blog] Powering the Scale Engine for Cisco: How AI is Revolutionizing Digital Customer Experience
@@ -2335,24 +2086,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
 - [komatsu.jp] Realizing the safe, highly productive and clean worksite of the future: Launch of “SMARTCONSTRUCTION Digital Transformation” | Newsroom | Komatsu global site - komatsu.jp
 - [MoneyControl] Why your bank may temporarily block digital transactions- Moneycontrol.com
-- [Nature] Implementing digital health transformation policies in Latin America: insights from four national case studies - npj Digital Medicine
 
 ## OS045 — Life Sciences × Data Sovereignty × Cloud
 
-**Attractiveness: 4.97/10**
-- Market signal strength: 6.666666666666666
-- Source diversity: 3.75
-- Evidence quality: 3.0 — The signals are largely duplicated Hacker News links and vendor blog posts, lacking independent analyst or regulator sources and offering limited concrete market data.
-- Novelty / momentum: 8.67
-- Strategic relevance: 4.0 — Only API Cloud Avenue (Cloud) loosely aligns with the cloud aspect, but Orange Business has no specific API/product for life‑sciences or data‑sovereignty. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 4.68/10**
+- Market signal strength: 5.777777777777777
+- Source diversity: 3.0
+- Evidence quality: 3.0 — The signals are largely duplicated Hacker News links and vendor blog posts, offering limited independent verification and heavy marketing bias, reducing their credibility despite moderate relevance to sovereign cloud and AI workload topics.
+- Novelty / momentum: 8.46
+- Strategic relevance: 5.0 — The opportunity aligns with API Cloud Avenue (Cloud) for data‑sovereignty needs, but Orange Business has no specific life‑sciences API in its catalog. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.59/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.39/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.6/10 [L3]**
-- Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API Live Identity Verify, API Incident
-- Needs a sovereign‑cloud offering for life‑sciences data compliance, which Orange does not yet provide, though its cloud, security and network APIs can be extended.
+**Right-to-win: 7.5/10 [L1]**
+- Matched assets: API Cloud Avenue, API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco
+- Existing cloud, security, and networking APIs can be combined to meet data‑sovereignty and life‑sciences needs, but Orange lacks a dedicated life‑sciences compliance offering, so it is a bundle rather than a direct fit.
 
-**Grounding signals (30):**
+**Grounding signals (26):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -2379,27 +2129,23 @@ _131/131 opportunity spaces scored._
 - [Clinical Leader] Understanding And Preserving Data Flow Integrity In AI-Assisted Clinical Trials - Clinical Leader
 - [analyticsindiamag.com] Fragmented Pharmaceuticals: Why Indian Biopharma Does Not Have AI-Ready Data - analyticsindiamag.com
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [Cisco Blog] Cisco IQ: Engineering Sovereignty in the AI Era
-- [Scoop] Cross-Government Plan To Deliver Stronger Data
-- [Market Screener] Australia Q2 business investment falls 3.6% as data centre rush fades
-- [Yahoo! Finance] Australia Q2 business investment falls 3.6% as data centre rush fades
 
 ## OS046 — Wholesale × Supply Chain Visibility × IoT Platforms
 
-**Attractiveness: 5.5/10**
-- Market signal strength: 3.7777777777777777
-- Source diversity: 4.0
-- Evidence quality: 7.0 — The set includes several reputable sources (Gartner, Deloitte, IBM, Verizon, Inbound Logistics) and relevant supply chain topics, but is diluted by vendor‑centric blogs and a few unrelated or low‑credibility items.
-- Novelty / momentum: 7.65
-- Strategic relevance: 7.0 — Matches API M2M for IoT Connect Express (IoT platform) but no specific wholesale or supply‑chain visibility API exists Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 6.07/10**
+- Market signal strength: 3.555555555555556
+- Source diversity: 3.75
+- Evidence quality: 8.0 — The list contains mostly credible, diverse sources (major vendors, analysts, consultancies, and industry media) relevant to B2B supply chain innovation, but includes a few low‑credibility or off‑topic items that lower the overall rating.
+- Novelty / momentum: 7.5
+- Strategic relevance: 10.0 — Extends API M2M for IoT Connect Express (Data, IA & IoT) to deliver supply‑chain visibility for wholesale customers. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 4.05/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.89/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.2/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Evolution Platform, API Flexible SDWAN Cisco
-- Supply‑chain visibility via IoT requires Orange's IoT data platform combined with its network/connectivity services, which exist but are not yet packaged as a single wholesale offering.
+**Right-to-win: 7.8/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
+- Orange already offers IoT connectivity, cloud and network services that can be bundled to create a supply‑chain visibility solution, but no pre‑packaged offering exists yet.
 
-**Grounding signals (17):**
+**Grounding signals (16):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
 - [Verizon] How technology can reshape pharmaceutical supply chain management - Verizon
 - [Supply Chain Digital] CSCO Insights: Choosing Your Supply Chain Technology Partner - Supply Chain Digital
@@ -2416,24 +2162,23 @@ _131/131 opportunity spaces scored._
 - [IBM] Blockchain for Supply Chain - IBM
 - [Inbound Logistics] 2026 Top 100 Logistics & Supply Chain Technology Providers - Inbound Logistics
 - [Cisco Blogs] Winning the Beer Game with The Internet of Things (IoT) - Cisco Blogs
-- [Yahoo! Finance] Oil prices extend losses on expectations talks to ease Middle East supply woes
 
 ## OS047 — Media & Entertainment × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 4.48/10**
-- Market signal strength: 3.333333333333333
-- Source diversity: 1.25
-- Evidence quality: 7.0 — The list mixes credible sources like Cisco and Cyfirma with many low‑credibility Hacker News posts, providing useful but unevenly reliable and relevant B2B innovation signals.
-- Novelty / momentum: 7.33
-- Strategic relevance: 5.0 — Broadly aligns with Orange Business security APIs such as API Live Identity Verify and API Incident, but there is no dedicated Media & Entertainment product in the catalog.
+**Attractiveness: 3.85/10**
+- Market signal strength: 3.111111111111111
+- Source diversity: 1.0
+- Evidence quality: 5.0 — The set mixes vendor‑centric blogs and Hacker News aggregations, offering relevant topics but limited authoritative, diverse sources, reducing overall credibility.
+- Novelty / momentum: 7.14
+- Strategic relevance: 5.0 — Broadly aligns with Orange Business security assets such as API Live Identity Verify or API Incident, but there is no specific Media & Entertainment product in the catalog.
 
-**Urgency: 3.88/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.71/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.2/10 [L1]**
-- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Live Identity Captcha, API Live Identity Verify, API Incident
-- Media & Entertainment cyber‑defense and Zero Trust requirements can be satisfied by bundling existing SD‑WAN/SASE, identity verification and incident‑response APIs, though Orange does not yet offer them as a single packaged solution.
+**Right-to-win: 4.6/10 [L3]**
+- Matched assets: API Live Identity Verify, API Live Identity Captcha, API Flexible SDWAN Cisco, API Incident, API Evolution Platform
+- Existing security‑related APIs (identity verification, SD‑WAN, incident handling) can address parts of the need, but a full Zero‑Trust cyber‑defense offering for Media & Entertainment requires building new capabilities beyond the current portfolio.
 
-**Grounding signals (15):**
+**Grounding signals (14):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
 - [Hacker News] I read the federal government’s Zero-Trust Memo so you don’t have to
 - [Hacker News] Summary of the USA federal government's zero-trust memo
@@ -2448,22 +2193,21 @@ _131/131 opportunity spaces scored._
 - [Hacker News] Would you trust an AI agent to auto-approve low-value insurance claims?
 - [Cyfirma] Cyber Threats Surrounding the FIFA World Cup 2026 - Cyfirma
 - [Cisco Blog] Cisco AI Defense + Armada: Distributed AI That’s Safe to Run, Wherever the Mission Requires It
-- [World Socialist] For the defense of immigrants and the abolition of the immigration Gestapo
 
 ## OS048 — Natural Resources × Operational Excellence × Computer Vision
 
-**Attractiveness: 2.23/10**
+**Attractiveness: 2.43/10**
 - Market signal strength: 0.4444444444444445
 - Source diversity: 0.25
-- Evidence quality: 5.0 — One signal (Google AutoML) is credible and relevant to B2B AI services, but both originate from the same aggregator and the second signal is a niche hobbyist project with limited enterprise relevance.
+- Evidence quality: 4.0 — Both signals come from a single aggregator (Hacker News); while the Google AutoML announcement is credible and B2B‑relevant, the Off Grid project is less authoritative and more consumer‑focused, limiting overall credibility and relevance.
 - Novelty / momentum: 5.0
-- Strategic relevance: 2.0 — No specific Orange Business API/product directly addresses computer vision for natural resources operational excellence; existing assets like API Satellite or M2M IoT are unrelated to this use case. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+- Strategic relevance: 5.0 — The computer‑vision use case aligns with Orange Business’s AI/IoT offering (API M2M for IoT Connect Express), but no listed API directly provides a computer‑vision solution for natural‑resources operational excellence. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
 **Urgency: 0.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.5/10 [L3]**
+**Right-to-win: 6.5/10 [L3]**
 - Matched assets: none
-- Orange Business lacks a native computer‑vision offering, requiring development of new AI/vision capabilities beyond its current IoT, cloud and security APIs.
+- Computer vision for operational excellence in natural resources is not covered by existing APIs, requiring a new capability to be built or acquired.
 
 **Grounding signals (2):**
 - [Hacker News] Google Announces AutoML Vision, NLP, Translation, and Contact Center AI
@@ -2471,20 +2215,20 @@ _131/131 opportunity spaces scored._
 
 ## OS049 — Aerospace & Defense × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 6.84/10**
-- Market signal strength: 8.88888888888889
+**Attractiveness: 6.81/10**
+- Market signal strength: 8.0
 - Source diversity: 6.0
-- Evidence quality: 5.0 — The set mixes some credible market research sources with many low‑credibility, single‑source or vendor‑centric items, yielding moderate overall relevance but limited trustworthiness.
-- Novelty / momentum: 9.0
-- Strategic relevance: 5.5 — Fits Orange Business security domain via APIs such as API Incident and API Live Identity Verify, but no specific aerospace & defense product exists in the catalog +0.5 trust-critical bonus: Orange runs a dedicated Aerospace & Defense division (corporate deck, slide 12-14).
+- Evidence quality: 6.0 — The set mixes credible analyst reports and industry blogs with low‑authority Hacker News summaries, offering specific but unevenly reliable signals that are relevant to B2B cybersecurity innovation.
+- Novelty / momentum: 8.89
+- Strategic relevance: 5.5 — Broadly aligns with Orange Business security offerings such as API Incident and API Live Identity Verify, but there is no specific API/product targeting the Aerospace & Defense vertical. +0.5 trust-critical bonus: Orange runs a dedicated Aerospace & Defense division (corporate deck, slide 12-14).
 
-**Urgency: 4.78/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.63/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.2/10 [L3]**
-- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Live Identity Verify, API Live Identity Captcha, API Incident
-- Existing SD‑WAN/SASE and security APIs provide a foundation, but a dedicated aerospace‑defense zero‑trust cyber‑defense offering must be built or adapted, making it adjacent rather than a direct or bundled solution.
+**Right-to-win: 7.5/10 [L1]**
+- Matched assets: API Flexible SDWAN Cisco, API Live Identity Verify, API Live Identity Captcha, API Incident, API Evolution Platform, API Cloud Avenue
+- Existing security, identity, SD‑WAN and SASE APIs can be combined to form a zero‑trust cyber‑defense offering for aerospace & defense, but no pre‑packaged solution currently exists.
 
-**Grounding signals (41):**
+**Grounding signals (37):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
 - [Hacker News] I read the federal government’s Zero-Trust Memo so you don’t have to
 - [Hacker News] Summary of the USA federal government's zero-trust memo
@@ -2522,25 +2266,21 @@ _131/131 opportunity spaces scored._
 - [arXiv] Stream3Dv2: Geometric-Semantic Fusion Enhanced Streaming Zero-Shot 3D Scene Understanding
 - [Cisco Blog] Cisco AI Defense + Armada: Distributed AI That’s Safe to Run, Wherever the Mission Requires It
 - [arXiv] ICS Cybersecurity Datasets: A Systematic Meta-Review of Coverage, Evaluation Practice, and Structural Gaps
-- [arXiv] DEFUSE: Generalizable Backdoor Defense for Self-Supervised Encoders with Generative Priors
-- [arXiv] RTLGuard: A Lightweight Teacher-Student Defense for Poisoned RTL Code Generation Models
-- [arXiv] A Self-Evolving Multi-Agent Framework Defense against LLM Jailbreak Attacks
-- [Coursera] Cybersecurity Analyst Salary Guide: How Much Can You Make? - Coursera
 
 ## OS050 — Fast Moving Consumer Goods × Demand Forecasting × Machine Learning
 
-**Attractiveness: 3.87/10**
-- Market signal strength: 2.6666666666666665
-- Source diversity: 2.25
-- Evidence quality: 6.0 — The list mixes credible sources (Oracle, IBM, AWS, arXiv, analyst report) with vendor marketing and a few unrelated items, yielding moderate overall credibility and relevance.
-- Novelty / momentum: 6.67
-- Strategic relevance: 3.0 — No specific Orange Business API directly addresses FMCG demand forecasting, though generic assets like API M2M for IoT Connect Express (Data, IA & IoT) or API Cloud Avenue could be loosely leveraged for data and ML workloads.
+**Attractiveness: 3.91/10**
+- Market signal strength: 2.0
+- Source diversity: 2.0
+- Evidence quality: 7.0 — The list mixes credible sources (arXiv, IBM, AWS, market research) with vendor marketing and a job posting, offering relevant but partially biased signals for B2B demand‑forecasting innovation.
+- Novelty / momentum: 5.56
+- Strategic relevance: 4.0 — No specific Orange Business API directly addresses FMCG demand forecasting; the closest is API M2M for IoT Connect Express (Data, IA & IoT) which provides data/AI capabilities but not a dedicated forecasting service
 
-**Urgency: 3.53/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 4.8/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
-- Orange Business has data, AI and cloud infrastructure assets but lacks a ready‑made FMCG demand‑forecasting ML service, requiring a new capability built on existing APIs.
+**Right-to-win: 5.5/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue
+- Orange Business has data, AI and cloud assets but lacks a ready-made demand‑forecasting ML service, requiring development of a new capability.
 
 **Grounding signals (12):**
 - [Hacker News] Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer
@@ -2558,18 +2298,18 @@ _131/131 opportunity spaces scored._
 
 ## OS051 — IT and Services × Cloud Infrastructure Modernization × Cloud
 
-**Attractiveness: 6.77/10**
-- Market signal strength: 8.666666666666668
-- Source diversity: 5.75
-- Evidence quality: 4.0 — The list mixes some credible analyst recognition and vendor blogs with many low‑credibility, duplicate Hacker News links, offering limited specific, independent market insight.
-- Novelty / momentum: 8.21
-- Strategic relevance: 8.0 — Fits the API Cloud Avenue (Cloud) offering, extending its cloud infrastructure modernization capabilities. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 7.18/10**
+- Market signal strength: 8.222222222222221
+- Source diversity: 5.25
+- Evidence quality: 6.0 — The signals are specific and relevant to AI and sovereign cloud trends, but many come from vendor blogs or secondary Hacker News listings, limiting overall credibility.
+- Novelty / momentum: 8.11
+- Strategic relevance: 9.0 — Directly aligns with API Cloud Avenue, Orange Business' specific Cloud infrastructure offering Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.35/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.26/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 8.0/10 [L1]**
 - Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
-- Modernizing cloud infrastructure can be addressed by Orange Business’s Cloud Avenue and Evolution Platform (plus SD‑WAN) assets, which exist but are not yet bundled into a single offering. +0.5 calibration bonus (CRM customer overlap).
+- Existing Cloud Avenue and network‑as‑a‑service assets can meet cloud infrastructure modernization needs, but they are not yet bundled into a dedicated modernization offering. +0.5 calibration bonus (CRM customer overlap).
 
 **Grounding signals (39):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
@@ -2614,20 +2354,20 @@ _131/131 opportunity spaces scored._
 
 ## OS054 — Healthcare × Data Sovereignty × Cloud Data Platform
 
-**Attractiveness: 6.32/10**
-- Market signal strength: 8.88888888888889
-- Source diversity: 5.5
-- Evidence quality: 4.0 — The list relies heavily on Hacker News aggregations and vendor blogs, offering limited independent credibility and many repetitive or vague items, reducing its overall relevance for a B2B innovation radar.
-- Novelty / momentum: 8.75
-- Strategic relevance: 4.5 — The idea aligns loosely with API Cloud Avenue (Cloud) but there is no specific Orange Business API/product for a healthcare‑focused, sovereign cloud data platform. Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
+**Attractiveness: 5.27/10**
+- Market signal strength: 7.333333333333333
+- Source diversity: 4.0
+- Evidence quality: 3.0 — The list is dominated by low‑credibility aggregations (Hacker News) and vendor‑centric blogs, with only a few industry media items, making the signals vague, repetitive, and of limited independent credibility for a B2B innovation radar.
+- Novelty / momentum: 8.48
+- Strategic relevance: 4.5 — The concept aligns broadly with API Cloud Avenue (Cloud) but Orange Business has no specific healthcare data sovereignty or cloud data platform API, so only a generic cloud fit is present. Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
 
-**Urgency: 4.64/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.4/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.7/10 [L1]**
-- Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco, API Live Identity Verify, API Incident
-- Existing cloud, networking, and security APIs can be combined to deliver a sovereign healthcare data platform, but Orange Business does not yet offer this bundled solution as a single product. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.8/10 [L1]**
+- Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API Live Identity Verify, API M2M for IoT Connect Express, API Incident, API Evolution Platform
+- Orange Business can combine its Cloud, SD‑WAN, security and IoT APIs to meet a sovereign‑cloud data platform for healthcare, but no single existing asset delivers the full solution as‑is. +0.5 calibration bonus (CRM customer overlap).
 
-**Grounding signals (40):**
+**Grounding signals (33):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -2661,30 +2401,23 @@ _131/131 opportunity spaces scored._
 - [American Hospital Association] Mayo Clinic Unveils Global Data and Insights Platform to Support Health Systems Worldwide - American Hospital Association
 - [Speedway Media] GPS Tracker for Vehicle: How to Choose the Right Tracking System in 2026 - For most personal vehicles, a GPS tracker provides the core features you need. Businesses managing multiple vehicles may benefit from the additional data offered by telematics. by SM
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [Cisco Blog] Cisco IQ: Engineering Sovereignty in the AI Era
-- [BioMedicine] Mini-review of clinical data service platforms in the era of artificial intelligence: A case study of the iHi data platform
-- [Clinical Chemistry] B-214 Migration of a Previously Validated Sequencing Workflow of 4,700 Genes Associated with Clinical Phenotypes to the MGI DNBSEQ-G400 Platform: High-Quality NGS Data with Elevated Concordance to Expected Results
-- [International Journal of Population Data Science] Hospital Electronic Health Records as a research resource: data linkage, national scale-up, and five-year Impact of the National Centre for Healthy Ageing Data Platform
-- [Journal of Clinical Oncology] AI-driven prediction of prostate cancer risk: A comparative analysis with C the Signs in the Mayo Clinic data platform.
-- [Journal of Medical Internet Research] Artificial Intelligence Platform Architecture for Hospital Systems: Systematic Review
-- [Blood] Clinical and technological validation of locally-installed, privacy-compliant, and hematology-tailored ambient AI platform for clinical report transcription assistance and clinical trial patient management
 
 ## OS055 — Retail × Data Sovereignty × Cloud
 
-**Attractiveness: 5.15/10**
-- Market signal strength: 6.444444444444445
-- Source diversity: 3.5
-- Evidence quality: 3.0 — The signals are largely duplicated Hacker News links and vendor press releases, offering limited independent credibility and only moderate relevance to B2B innovation trends.
-- Novelty / momentum: 8.62
-- Strategic relevance: 6.0 — The retail data‑sovereignty cloud concept aligns with API Cloud Avenue (Cloud), though the sovereignty aspect isn’t covered by a specific Orange Business API. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 4.16/10**
+- Market signal strength: 5.111111111111111
+- Source diversity: 2.25
+- Evidence quality: 3.0 — Mostly vendor‑centric or aggregator headlines with little source detail, making them vague and low‑credibility despite some relevance to cloud/AI trends.
+- Novelty / momentum: 8.26
+- Strategic relevance: 4.0 — Only loosely aligns with API Cloud Avenue (Cloud) for cloud services, but no specific Orange Business API addresses retail or data sovereignty directly Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.57/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.39/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 10.0/10 [L0]**
-- Matched assets: API Cloud Avenue
-- Orange Business already sells cloud services via API Cloud Avenue, leveraging its global data centers to meet retail customers' data sovereignty requirements. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.3/10 [L1]**
+- Matched assets: API Cloud Avenue (Cloud), API Flexible SDWAN Cisco (Internet & Reseaux), API Evolution Platform (Relation client)
+- Retail data‑sovereignty needs cloud hosting plus secure, sovereign connectivity, which can be met by bundling Cloud Avenue with SD‑WAN/Evolution Platform assets. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (29):**
+**Grounding signals (26):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -2711,26 +2444,23 @@ _131/131 opportunity spaces scored._
 - [APAC Media] NTT DATA Partners with AWS to Accelerate Enterprise Cloud and Agentic AI Adoption - APAC Media
 - [Market Screener] Stocks up as eyes on US data, Nvidia results
 - [01net] U.K. Firms Move to AI-Native, Sovereign Cloud Infrastructure - 01net
-- [Cisco Blog] Cisco IQ: Engineering Sovereignty in the AI Era
-- [International Journal of Scientific Research in Computer Science Engineering and Information Technology] Agentic AI in Data Analytics: Transforming Autonomous Insights and Decision-Making
-- [World Journal of Advanced Research and Reviews] Agentic Voice AI in Enterprise Call Centers: Data-Driven Cost-Benefit and Strategic Analysis of RAG-Powered Automation in Financial Services and E-commerce
 
 ## OS056 — Healthcare × Clinical Workflow Automation × Cloud
 
-**Attractiveness: 5.45/10**
-- Market signal strength: 6.222222222222222
-- Source diversity: 4.0
-- Evidence quality: 5.0 — The list mixes low‑credibility, duplicate Hacker News links with a few reputable but peripheral sources, offering some relevance to sovereign cloud and AI but lacking depth, specificity, and diverse authoritative evidence.
-- Novelty / momentum: 8.57
-- Strategic relevance: 4.5 — Only aligns with API Cloud Avenue (Cloud) but lacks a specific Orange Business asset for healthcare clinical workflow automation Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
+**Attractiveness: 4.31/10**
+- Market signal strength: 4.888888888888888
+- Source diversity: 2.5
+- Evidence quality: 4.0 — The list mixes mostly community‑sourced Hacker News links with a few vendor blogs and industry news, offering limited authoritative depth and many duplicate or vague items, reducing overall credibility and relevance for a B2B innovation radar.
+- Novelty / momentum: 8.18
+- Strategic relevance: 3.5 — No specific Orange Business API directly supports clinical workflow automation; only the generic Cloud Avenue (Cloud) could be loosely leveraged, resulting in a low fit. Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
 
-**Urgency: 4.54/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.25/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.8/10 [L1]**
-- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Evolution Platform, API Live Identity Verify, API Live Identity Captcha, API Contact Everyone
-- Orange Business already offers cloud, data/AI, secure connectivity and identity services that can be combined to deliver a healthcare clinical workflow automation solution, though no dedicated bundled product currently exists. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: API Cloud Avenue, API Evolution Platform, API M2M for IoT Connect Express, API Live Identity Verify
+- Existing cloud, connectivity, IoT and security APIs provide core building blocks, but a dedicated clinical workflow automation capability is missing, requiring an adjacent new service. +0.5 calibration bonus (CRM customer overlap).
 
-**Grounding signals (28):**
+**Grounding signals (22):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -2753,29 +2483,23 @@ _131/131 opportunity spaces scored._
 - [Nature] Accelerating AI innovation in healthcare: real-world clinical research applications on the Mayo Clinic Platform - Nature
 - [MarketsandMarkets] Al in Clinical Workflow Market Report 2025-2030, By Offering, Technology, and Geo - MarketsandMarkets
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [Risk Management and Healthcare Policy] Clinical Artificial Intelligence Implementation in Routine Care: Real-World Operational Outcomes from a Provincial Health System in China
-- [Metaverse Science, Society and Law] FROM PASSIVE HOSPITAL BEDS TO AI-ENABLED PATIENT MONITORING PLATFORMS: EMBEDDED SENSORS, CLINICAL WORKFLOW INTEGRATION, AND LOCAL LLM EXPLANATION LAYER
-- [BioMedicine] Mini-review of clinical data service platforms in the era of artificial intelligence: A case study of the iHi data platform
-- [Clinical Chemistry] B-214 Migration of a Previously Validated Sequencing Workflow of 4,700 Genes Associated with Clinical Phenotypes to the MGI DNBSEQ-G400 Platform: High-Quality NGS Data with Elevated Concordance to Expected Results
-- [Journal of Clinical Oncology] OncoSphere AI: An agentic AI multidisciplinary clinical workflow support tool.
-- [Blood] Clinical and technological validation of locally-installed, privacy-compliant, and hematology-tailored ambient AI platform for clinical report transcription assistance and clinical trial patient management
 
 ## OS057 — Automotive × Network Modernization & SD-WAN × 5G
 
-**Attractiveness: 4.82/10**
-- Market signal strength: 2.6666666666666665
-- Source diversity: 2.0
-- Evidence quality: 7.0 — The set mixes credible analyst recognitions and research reports with vendor blogs and aggregator links, offering relevant B2B network innovation themes but varying source authority.
-- Novelty / momentum: 6.67
-- Strategic relevance: 8.0 — Matches API Flexible SDWAN Cisco (Internet & Reseaux) for the SD‑WAN aspect and can leverage Orange Business 5G Private Mobile Network leadership, though no dedicated automotive API exists. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+**Attractiveness: 4.42/10**
+- Market signal strength: 2.444444444444444
+- Source diversity: 1.75
+- Evidence quality: 6.0 — The set mixes credible sources (AWS, Microsoft, Cisco, arXiv) with vendor‑centric blogs and aggregator posts, offering relevant but partially marketing‑biased signals for B2B network innovation.
+- Novelty / momentum: 6.36
+- Strategic relevance: 8.0 — Matches API Flexible SDWAN Cisco, which provides SD‑WAN capabilities that can be applied to automotive network modernization and 5G use cases Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 3.53/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.3/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.2/10 [L3]**
+**Right-to-win: 9.5/10 [L1]**
 - Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API M2M for IoT Connect Express
-- Orange Business already offers SD‑WAN APIs and IoT connectivity, but lacks a packaged 5G private‑network asset in the catalog, requiring a new capability to fully address automotive network modernization. +1.0 calibration bonus (CRM customer overlap).
+- Automotive network modernization needs SD‑WAN, 5G private connectivity and IoT data, which can be satisfied by bundling Orange’s SD‑WAN (Flexible SDWAN Cisco/Evolution Platform) and IoT (M2M for IoT Connect Express) assets, but no single existing offering covers the whole scope. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (12):**
+**Grounding signals (11):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
 - [Cisco Blog] Monitoring beyond SNMP: Turning your network into a sensor
@@ -2787,44 +2511,41 @@ _131/131 opportunity spaces scored._
 - [Tech Times] Verizon’s 5G Standalone Network Now Powers Telematics for All New BMW Group Cars - Tech Times
 - [Global Market Insights Inc.] Network Slicing Market Size & Share, Statistics Report 2034 - Global Market Insights Inc.
 - [arXiv] Design and Empirical Evaluation of a Network-Centric, On-Premises Architecture for Earth Observation Data Access
-- [Android Authority] Lenovo's first Android handheld lets you stream PC games without a network connection
 
 ## OS058 — Construction × Operational Excellence × IoT Platforms
 
-**Attractiveness: 4.68/10**
-- Market signal strength: 1.1111111111111112
-- Source diversity: 1.25
-- Evidence quality: 8.0 — Four signals are from highly credible, diverse sources and directly pertain to cloud, AI, and IoT innovations for construction, while one is unrelated marketing news, reducing the overall relevance.
-- Novelty / momentum: 6.0
-- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express (Data, IA & IoT) as an IoT platform for construction operational excellence Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 4.77/10**
+- Market signal strength: 0.6666666666666666
+- Source diversity: 0.75
+- Evidence quality: 9.0 — The signals are specific, come from highly credible sources (Microsoft, Gartner, Nature), and directly address cloud, AI, and IoT innovations relevant to B2B smart building and construction markets.
+- Novelty / momentum: 6.67
+- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express, Orange Business's IoT connectivity platform that can be leveraged for construction operational excellence. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 3.18/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L1]**
+**Right-to-win: 5.7/10 [L3]**
 - Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing IoT connectivity, cloud and SD‑WAN assets can be bundled to create a construction‑focused operational‑excellence platform, but Orange does not yet offer this packaged solution.
+- Existing IoT connectivity, cloud and network APIs can be combined, but a construction‑specific IoT platform and operational‑excellence analytics must be built, making it an adjacent opportunity.
 
-**Grounding signals (5):**
+**Grounding signals (3):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
 - [Microsoft Azure] Accelerating smart building solutions with cloud, AI, and IoT - Microsoft Azure
 - [Nature] Internet of things (IoT) for safety and efficiency in construction building site operations | Scientific Reports - Nature
-- [IoT For All] IoT Applications in Construction - IoT For All
-- [The Manila times] Home Credit Philippines wins Marketing Excellence Award
 
 ## OS059 — Construction × Cloud Infrastructure Modernization × Cloud
 
-**Attractiveness: 4.53/10**
+**Attractiveness: 5.28/10**
 - Market signal strength: 4.444444444444445
 - Source diversity: 1.25
-- Evidence quality: 4.0 — The list mixes credible vendor blogs and analyst mentions with low‑credibility, duplicate Hacker News links, offering limited specificity and over‑reliance on marketing‑heavy sources.
+- Evidence quality: 7.0 — The set includes credible vendor blogs and a Gartner leadership mention, but relies heavily on duplicated Hacker News posts and lacks broader independent analyst or regulator sources, limiting its overall credibility despite relevance.
 - Novelty / momentum: 7.5
-- Strategic relevance: 8.0 — Leads directly to API Cloud Avenue, Orange Business’s cloud infrastructure offering, which can be applied to modernize construction‑sector workloads. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Strategic relevance: 8.0 — The opportunity aligns with API Cloud Avenue (Cloud), extending Orange Business's cloud infrastructure modernization capabilities for the construction sector. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 3.97/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.89/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.5/10 [L1]**
+**Right-to-win: 7.5/10 [L1]**
 - Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Construction cloud modernization maps directly to Orange Business cloud (API Cloud Avenue) and network services (SD‑WAN and Evolution Platform) which exist but are not yet packaged as a construction‑focused solution.
+- Construction cloud modernization can be addressed by bundling existing Cloud Avenue with SD‑WAN and Evolution Platform networking assets, but no single product currently offers the full solution.
 
 **Grounding signals (20):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
@@ -2850,18 +2571,18 @@ _131/131 opportunity spaces scored._
 
 ## OS060 — Life Sciences × Clinical Workflow Automation × Generative AI
 
-**Attractiveness: 4.32/10**
-- Market signal strength: 2.2222222222222223
-- Source diversity: 2.0
-- Evidence quality: 8.0 — The signals come from a diverse mix of credible industry publications, analyst reports, and an official EU regulation, all directly addressing AI-driven clinical trial innovation, though a few are vendor‑focused or market‑research hype.
-- Novelty / momentum: 8.0
-- Strategic relevance: 3.0 — No specific Orange Business API directly addresses clinical workflow automation or generative AI for life sciences; the closest generic fit is API Cloud Avenue (Cloud), resulting in a low alignment. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+**Attractiveness: 3.89/10**
+- Market signal strength: 2.0
+- Source diversity: 1.75
+- Evidence quality: 7.0 — The signals come from a mix of credible industry publications, official regulation, and market research firms covering AI in clinical trials, though some are vendor‑focused or forecast‑heavy, limiting overall depth and independence.
+- Novelty / momentum: 8.89
+- Strategic relevance: 2.0 — No Orange Business API directly addresses clinical workflow automation or generative AI for life sciences; the closest generic offering is API M2M for IoT Connect Express (Data, IA & IoT) but it does not target this specific domain. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
-**Urgency: 9.54/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 9.35/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 3.5/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
-- Orange Business has AI, data, cloud and connectivity assets but lacks a dedicated clinical workflow automation platform, requiring a new health‑specific capability.
+**Right-to-win: 5.5/10 [L3]**
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Live Identity Verify, API Business Talk Digital, API Evolution Platform
+- Clinical workflow automation with generative AI needs a dedicated platform not currently offered, but can be assembled from existing cloud, AI/IoT, connectivity and security APIs.
 
 **Grounding signals (10):**
 - [Applied Clinical Trials Online] The Data Harmonization Imperative: How AI Is Solving Clinical Research's Biggest Bottleneck - Applied Clinical Trials Online
@@ -2877,20 +2598,20 @@ _131/131 opportunity spaces scored._
 
 ## OS061 — Media & Entertainment × Cloud Infrastructure Modernization × Cloud
 
-**Attractiveness: 5.25/10**
-- Market signal strength: 6.0
-- Source diversity: 2.75
-- Evidence quality: 4.0 — The list mixes some credible vendor blogs and analyst mentions with many low‑credibility, duplicate Hacker News links, offering limited specificity and over‑reliance on marketing‑heavy sources.
-- Novelty / momentum: 8.52
-- Strategic relevance: 7.0 — The opportunity aligns with Orange Business’s API Cloud Avenue (Cloud) which provides cloud infrastructure services, though it is a generic fit rather than a media‑specific extension. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 5.28/10**
+- Market signal strength: 5.333333333333333
+- Source diversity: 2.25
+- Evidence quality: 6.0 — The signals are specific and relevant to AI and sovereign cloud trends, but many come from vendor blogs or secondary Hacker News listings, limiting overall credibility.
+- Novelty / momentum: 8.33
+- Strategic relevance: 6.0 — The opportunity aligns with API Cloud Avenue (Cloud), extending Orange Business's cloud infrastructure offering to media & entertainment customers. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.51/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.32/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.6/10 [L3]**
-- Matched assets: API Cloud Avenue
-- API Cloud Avenue covers the cloud infrastructure need, but media‑specific modernization (e.g., content processing, CDN) is missing, requiring an adjacent capability.
+**Right-to-win: 5.2/10 [L3]**
+- Matched assets: API Cloud Avenue, API Evolution Platform
+- Orange Business offers cloud infrastructure (API Cloud Avenue) and network services (API Evolution Platform) but lacks dedicated media‑entertainment processing or CDN capabilities, requiring an adjacent new offering.
 
-**Grounding signals (27):**
+**Grounding signals (24):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
@@ -2915,26 +2636,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
 - [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
 - [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
-- [Yahoo Finance] What Could Cisco Systems (CSCO) Gain From The Streaming Infrastructure Boom? - Yahoo Finance
-- [Amazon Web Services (AWS)] Amplifying intelligence in ISR Data: Cloud-native streaming for FMV in an agentic AI era | Amazon Web Services - Amazon Web Services (AWS)
-- [IBM] What Is Cloud Computing? - IBM
 
 ## OS062 — Aerospace & Defense × Network Modernization & SD-WAN × Network & SD-WAN
 
-**Attractiveness: 5.04/10**
+**Attractiveness: 4.79/10**
 - Market signal strength: 3.111111111111111
 - Source diversity: 2.0
-- Evidence quality: 6.0 — The set includes a mix of vendor blogs, analyst reports, and a research paper, giving some credibility and relevance, but heavy reliance on marketing‑focused sources limits the overall score.
+- Evidence quality: 5.0 — The list mixes credible analyst reports and an arXiv paper with many vendor‑centric blogs and informal Hacker News links, yielding moderate overall credibility and relevance for a B2B innovation radar.
 - Novelty / momentum: 7.86
 - Strategic relevance: 9.5 — Directly leverages Orange Business' API Flexible SDWAN Cisco (and the Evolution Platform) to modernize aerospace & defense networks with SD-WAN, aligning with a specific sellable asset. Maps to Orange's 'NextGen Secured Connectivity' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Aerospace & Defense division (corporate deck, slide 12-14).
 
-**Urgency: 4.24/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.08/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 9.2/10 [L0]**
 - Matched assets: API Flexible SDWAN Cisco, API Evolution Platform
-- The aerospace & defense network modernization need maps directly to Orange Business' existing SD‑WAN assets (Flexible SDWAN Cisco and Evolution Platform), enabling an as‑is sale.
+- Orange Business already offers SD‑WAN via Flexible SDWAN Cisco and Evolution Platform, aligning directly with network modernization needs in Aerospace & Defense.
 
-**Grounding signals (15):**
+**Grounding signals (14):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
 - [Cisco Blog] Monitoring beyond SNMP: Turning your network into a sensor
@@ -2949,24 +2667,23 @@ _131/131 opportunity spaces scored._
 - [MarketsandMarkets] Managed Network Services Market worth $172.04 billion by 2030 - MarketsandMarkets
 - [Federal News Network] Aerospace and defense: Innovating securely at speed - Federal News Network
 - [MarketsandMarkets] Military Cloud Computing Trends Driving Defense Modernization Through 2031 - MarketsandMarkets
-- [MarketsandMarkets] Mexico Managed Network Services Market Size, Share,Trends, Growth Analysis Report, 2030 - MarketsandMarkets
 
 ## OS063 — Automotive × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 4.05/10**
-- Market signal strength: 3.555555555555556
-- Source diversity: 1.5
-- Evidence quality: 5.0 — The list mixes credible official sources (EUR‑Lex regulation) with vendor blogs and Hacker News reposts, offering some relevance to cybersecurity and AI trust but limited independent analysis and diversity.
-- Novelty / momentum: 6.88
-- Strategic relevance: 5.0 — Broadly aligns with API M2M for IoT Connect Express (Data, IA & IoT) for automotive connectivity, but Orange Business has no dedicated zero‑trust automotive security API. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 3.88/10**
+- Market signal strength: 3.111111111111111
+- Source diversity: 1.0
+- Evidence quality: 6.0 — The set mixes credible sources (EU regulation, TrendMicro, Cisco) with less authoritative Hacker News aggregations, covering relevant topics like zero‑trust and AI trust but lacking consistent primary analysis and diversity beyond vendor and community posts.
+- Novelty / momentum: 6.43
+- Strategic relevance: 4.0 — No specific Orange Business API directly addresses automotive cyber‑defense or zero‑trust, only generic security APIs (e.g., Live Identity Verify) exist, so the fit is limited Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 8.94/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 8.66/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 9.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Evolution Platform, API Cloud Avenue
-- Orange Business already offers IoT connectivity, zero‑trust networking (SD‑WAN/SASE) and security APIs that can be combined to address automotive cyber‑defense, but they are not yet packaged as a dedicated automotive solution. +1.0 calibration bonus (CRM customer overlap).
+- Matched assets: API Live Identity Verify, API Live Identity Captcha, API Incident, API Flexible SDWAN Cisco, API Evolution Platform, API M2M for IoT Connect Express
+- Orange can meet automotive cyber‑defense and zero‑trust needs by bundling its security, SASE/SD‑WAN, identity and IoT APIs, though no single pre‑packaged product currently exists. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (16):**
+**Grounding signals (15):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
 - [Hacker News] I read the federal government’s Zero-Trust Memo so you don’t have to
 - [Hacker News] Summary of the USA federal government's zero-trust memo
@@ -2982,22 +2699,21 @@ _131/131 opportunity spaces scored._
 - [EUR-Lex] UN Regulation No. 155 - Uniform provisions concerning the approval of vehicles with regards to cyber security and cyber security - EUR-Lex
 - [Cisco Blog] Cisco AI Defense + Armada: Distributed AI That’s Safe to Run, Wherever the Mission Requires It
 - [consultaelectoral.onpe.gob.pe] UN Regulation No. 155 - Uniform provisions concerning the approval of vehicles with regards to cyber security and cyber security - consultaelectoral.onpe.gob.pe
-- [arXiv] Robust CurveMoE: Multi-Norm Adversarial Defense for Mixture-of-Experts Models via Mode Connectivity
 
 ## OS064 — Natural Resources × Predictive Maintenance × Edge Computing
 
-**Attractiveness: 4.17/10**
-- Market signal strength: 2.2222222222222223
-- Source diversity: 2.5
-- Evidence quality: 5.0 — The set mixes a few credible, relevant sources (e.g., Manila Times on STMicroelectronics/NUS Edge AI lab) with many low‑credibility market‑research press releases and vendor‑driven reports, resulting in moderate overall credibility and relevance.
-- Novelty / momentum: 7.0
-- Strategic relevance: 7.0 — Matches API M2M for IoT Connect Express (Data, IA & IoT) which can support edge‑based predictive maintenance for natural resources. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 4.72/10**
+- Market signal strength: 2.0
+- Source diversity: 2.25
+- Evidence quality: 6.0 — The signals are moderately credible and relevant, featuring a mix of reputable news outlets and market research firms, but many are press releases or vendor‑focused reports that limit their depth and independence.
+- Novelty / momentum: 6.67
+- Strategic relevance: 10.0 — Directly extends API M2M for IoT Connect Express (Data, IA & IoT) to enable edge-enabled predictive maintenance for natural resources customers. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 3.71/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.63/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.8/10 [L3]**
+**Right-to-win: 5.5/10 [L3]**
 - Matched assets: API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Cloud Avenue, API Evolution Platform
-- Predictive maintenance on edge needs an edge‑compute layer not in the current catalog, though IoT, connectivity and cloud APIs can be combined, making it an adjacent opportunity.
+- Existing IoT, connectivity, and cloud APIs can be combined, but a dedicated edge‑computing capability is missing, requiring a new adjacent offering.
 
 **Grounding signals (10):**
 - [Yahoo Finance] Edge AI Software Market Growth Accelerates as 5G, IoT and Industrial Automation Enable Real-Time Intelligence - Yahoo Finance
@@ -3013,20 +2729,20 @@ _131/131 opportunity spaces scored._
 
 ## OS065 — Energy × Energy Optimization × Cloud
 
-**Attractiveness: 7.2/10**
-- Market signal strength: 10.0
-- Source diversity: 7.0
-- Evidence quality: 5.0 — The set mixes high‑credibility sources (Nature, Fortune Business Insights) with low‑credibility, duplicate Hacker News links and vendor blogs, yielding moderate relevance but only moderate overall credibility.
-- Novelty / momentum: 8.04
-- Strategic relevance: 5.0 — Broadly aligns with API M2M for IoT Connect Express (IoT data) and API Cloud Avenue (cloud) but Orange Business has no dedicated energy‑optimization product. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 5.97/10**
+- Market signal strength: 8.88888888888889
+- Source diversity: 4.75
+- Evidence quality: 5.0 — The list mixes high‑credibility sources (Nature, Microsoft, Cisco, Fortune Business Insights) with low‑credibility aggregators (multiple Hacker News links) and vendor‑centric blogs, yielding moderate overall credibility and relevance for a B2B innovation radar.
+- Novelty / momentum: 8.0
+- Strategic relevance: 2.0 — No specific Orange Business API/product directly addresses energy optimization; only generic cloud services (API Cloud Avenue) exist, which do not constitute a clear fit. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
 **Urgency: 10.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.3/10 [L1]**
-- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing cloud, IoT and SD‑WAN APIs can be combined to address energy‑optimization use‑cases, but no dedicated energy‑optimization offering exists yet.
+**Right-to-win: 8.2/10 [L1]**
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express
+- Orange Business already offers cloud (API Cloud Avenue) and IoT connectivity (API M2M for IoT Connect Express) which together can address energy optimization, but they are not currently bundled as a dedicated energy‑optimization solution.
 
-**Grounding signals (57):**
+**Grounding signals (45):**
 - [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
@@ -3072,35 +2788,23 @@ _131/131 opportunity spaces scored._
 - [consultaelectoral.onpe.gob.pe] Directive - 2009/28 - EN - Renewable Energy Directive - consultaelectoral.onpe.gob.pe
 - [consultaelectoral.onpe.gob.pe] Regulation (EU) No 1227/2011 of the European Parliament and of the Council of 25 October 2011 on wholesale energy market integri - consultaelectoral.onpe.gob.pe
 - [consultaelectoral.onpe.gob.pe] Renewable energy - consultaelectoral.onpe.gob.pe
-- [consultaelectoral.onpe.gob.pe] Emergency intervention to address high energy prices - consultaelectoral.onpe.gob.pe
-- [consultaelectoral.onpe.gob.pe] Energy performance of buildings - consultaelectoral.onpe.gob.pe
-- [appinventiv.com] Technology in Renewable Energy in Australia: Top 10 Innovations - appinventiv.com
-- [Nature] Artificial intelligence based hybrid solar energy systems with smart materials and adaptive photovoltaics for sustainable power generation - Nature
-- [Energies Media] IoT Energy Management in 2025: Real Results from Smart Industries - Energies Media
-- [International Journal of Science, Strategic Management and Technology] Smart EV Charging Infrastructure Using IOT and AI for Intelligent Energy Management and Grid Optimization
-- [Iranian Journal of Science and Technology Transactions of Electrical Engineering] Harnessing Quantum Computing and AI for Enhanced Optimization in Renewable Energy-Driven Smart Grid Systems
-- [Proceedings of the Institution of mechanical engineers. Part D, journal of automobile engineering] Edge AI and IoT for smart sustainable transportation: Real-time renewable energy optimization – A comprehensive review
-- [2024 32nd Southern African Universities Power Engineering Conference (SAUPEC)] Optimization of Internet of Things (IoT) for Smart Grid Energy Management Using Artificial Intelligence (AI) Techniques to Reach SDG7
-- [2025 International Conference on Digital Innovations for Sustainable Solutions (ICDISS)] IoT-Based Renewable Energy Integration and Optimization in Smart Power Grids
-- [Proceedings of the 1st International Conference on Intelligent Methods and Advanced Computer Scientific Innovations] IoT-Integrated Smart Grids for Sustainable Energy Engagement: Optimizing Renewable Resources through Real-Time Monitoring and AI-Powered Predictive Systems
-- [2025 6th International Conference on IoT Based Control Networks and Intelligent Systems (ICICNIS)] A Review on Smart Traffic Light Management and Energy Optimization with Artificial Intelligence(AI) enabled Programmable Logic Controller(PLC) using Internet of Things(IoT)
 
 ## OS066 — Finance & Insurance × Demand Forecasting × Machine Learning
 
-**Attractiveness: 3.61/10**
-- Market signal strength: 2.8888888888888884
-- Source diversity: 2.25
-- Evidence quality: 4.0 — The set mixes a few credible B2B‑relevant sources (J.P. Morgan, Synopsys forecasts) with many low‑credibility or non‑market signals (arXiv papers, vendor‑style news), resulting in moderate overall relevance but limited actionable market insight.
-- Novelty / momentum: 8.46
-- Strategic relevance: 3.0 — No specific Orange Business API directly supports finance demand forecasting; the closest is API M2M for IoT Connect Express (Data, IA & IoT), which is loosely related to AI/ML but not to finance use cases.
+**Attractiveness: 3.28/10**
+- Market signal strength: 1.777777777777778
+- Source diversity: 1.5
+- Evidence quality: 5.0 — The set mixes a credible JP Morgan report relevant to B2B fraud detection with several academic papers and unrelated news, yielding moderate overall credibility and relevance.
+- Novelty / momentum: 7.5
+- Strategic relevance: 3.0 — No Orange Business API directly addresses finance demand‑forecasting; the closest is API M2M for IoT Connect Express (Data, IA & IoT) which is IoT‑focused and not a fit.
 
-**Urgency: 4.48/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.04/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.2/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express (Data, IA & IoT), API Cloud Avenue (Cloud)
-- Demand‑forecasting ML can be delivered by bundling Orange's Cloud Avenue and M2M for IoT (AI/Data) assets, but no dedicated, pre‑packaged solution currently exists. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 7.5/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express (Data, IA & IoT), API Cloud Avenue (Cloud), API Evolution Platform (Relation client)
+- Orange Business has data, AI, and cloud APIs but lacks a dedicated demand‑forecasting ML service, requiring a new capability to be built. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (13):**
+**Grounding signals (9):**
 - [Hacker News] Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer
 - [J.P. Morgan] Kinexys Brings Federated Learning for Fraud Detection - J.P. Morgan
 - [arXiv] Grouping the Stochastic Machine: Precision, Not Capability, as the Frontier Metric for AI Systems
@@ -3110,49 +2814,43 @@ _131/131 opportunity spaces scored._
 - [International Journal of Emerging Research in Engineering and Technology] Explainable Agentic AI-Driven Machine Learning Framework for Property and General Insurance Risk Assessment
 - [The New Indian Express] Kuki body welcomes Census in Manipur; calls NRC demand 'premature'
 - [arXiv] Learning Whom to Trust : Decision-Generated Credibility in Social Learning
-- [WebProNews] Bill Gates Sounds Stark AI Alarm: Mass Job Loss, Bioterror Risks Demand Taxes, Human-Only Roles
-- [ETTelecom.com] Synopsys raises annual forecasts on AI-driven chip design software demand
-- [Cryptopolitan] Synopsys lifts 2026 outlook as AI chip race drives design-tool demand - Cryptopolitan
-- [arXiv] TraceML: An Empirical Analysis of Human-Agent Planning in Machine Learning Development
 
 ## OS067 — Manufacturing × Operational Excellence × 5G
 
-**Attractiveness: 4.32/10**
-- Market signal strength: 1.5555555555555556
-- Source diversity: 1.75
-- Evidence quality: 7.0 — The set includes credible analyst (Omdia) and academic (arXiv) sources and relevant OT/software automation news, but also contains vendor‑centric press releases and an unrelated business awards item, lowering overall consistency.
-- Novelty / momentum: 8.57
-- Strategic relevance: 6.0 — The manufacturing operational excellence use case aligns with API M2M for IoT Connect Express (Data, IA & IoT) for sensor connectivity, and Orange Business’s leadership in 5G private networks supports the 5G aspect, though no dedicated 5G API is listed. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+**Attractiveness: 3.63/10**
+- Market signal strength: 1.1111111111111112
+- Source diversity: 1.25
+- Evidence quality: 6.0 — The set includes specific market data and acquisition news from a mix of vendor press releases and third‑party outlets, with Omdia adding analyst credibility, but reliance on limited sources and some vendor‑centric coverage reduces overall credibility and diversity.
+- Novelty / momentum: 8.0
+- Strategic relevance: 5.0 — The manufacturing 5G operational‑excellence idea aligns with API M2M for IoT Connect Express (Data, IA & IoT) which can be used over 5G, but Orange Business has no specific 5G API in the catalog. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 4.54/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.15/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.8/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Evolution Platform, API Flexible SDWAN Cisco, API Cloud Avenue
-- Existing IoT, cloud, and network‑as‑a‑service APIs can be combined, but Orange Business lacks a dedicated 5G private‑network asset in the catalog, requiring a new capability to meet Manufacturing Operational Excellence with 5G. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.5/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Cloud Avenue, API Mobile Suite
+- Existing IoT, SD‑WAN and cloud APIs can be combined to deliver 5G‑enabled operational excellence for manufacturers, but no single Orange Business product currently offers a ready‑made private‑5G manufacturing solution. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (7):**
+**Grounding signals (5):**
 - [Accenture] Accenture to Strengthen Capabilities for Software and Automation Solutions from Siemens Digital Industries with Acquisition of Industries eXcellence Group - Accenture
 - [Metrology and Quality News] Accenture Strengthen Software and Automation Capabilities with Acquisition of Industries eXcellence Group - Metrology and Quality News
 - [Pulse 2.0] Accenture To Acquire Industries eXcellence Group From Engineering Group - Pulse 2.0
 - [FOCUS ON Business] Operational technology (OT) firewall market projected to reach USD 3.19 billion by 2034 - FOCUS ON Business
 - [Omdia] Omdia Universe: Operational Technology Cybersecurity Services, 2025–26 - Omdia
-- [arXiv] Formal, Executable and Explainable Runtime Monitoring of Spoken Air Traffic Control Operational Procedures
-- [Eden Magnet] Full list: South East business excellence awards finalists revealed
 
 ## OS068 — Healthcare × IT Operations Automation × Cloud
 
-**Attractiveness: 3.99/10**
+**Attractiveness: 3.64/10**
 - Market signal strength: 3.555555555555556
 - Source diversity: 1.25
-- Evidence quality: 5.0 — The list mixes some credible sources (Cisco, Microsoft, Fierce Healthcare) with many low‑credibility, duplicate Hacker News links, offering limited specificity and mixed relevance to B2B innovation.
+- Evidence quality: 3.0 — The signals are largely duplicated Hacker News links lacking primary source detail, with limited credibility and only loosely relevant topics such as sovereign cloud and AI workloads.
 - Novelty / momentum: 7.5
-- Strategic relevance: 4.5 — Broadly aligns with API Cloud Avenue (Cloud) and Evolution Platform (Network/IT automation) but Orange Business has no specific healthcare‑focused API in its catalog. Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
+- Strategic relevance: 5.5 — Aligns with the Cloud domain through API Cloud Avenue, yet no specific Orange Business API addresses healthcare‑focused IT operations automation Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
 
-**Urgency: 3.97/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.89/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.0/10 [L1]**
-- Matched assets: API Cloud Avenue, API Evolution Platform, API Incident, API M2M for IoT Connect Express
-- Existing Cloud, Network‑as‑a‑Service and Incident APIs can be combined to address healthcare IT operations automation, but Orange Business does not yet offer a pre‑packaged solution for this use case. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.0/10 [L1]**
+- Matched assets: API Cloud Avenue, API Incident, API Maintenance
+- Existing Cloud, Incident and Maintenance APIs can be combined to deliver a healthcare IT operations automation solution, but Orange does not yet offer it as a pre‑packaged product. +0.5 calibration bonus (CRM customer overlap).
 
 **Grounding signals (16):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
@@ -3174,20 +2872,20 @@ _131/131 opportunity spaces scored._
 
 ## OS069 — Defense × Data Sovereignty × Cloud Data Platform
 
-**Attractiveness: 4.37/10**
-- Market signal strength: 5.333333333333333
+**Attractiveness: 4.64/10**
+- Market signal strength: 5.111111111111111
 - Source diversity: 2.0
-- Evidence quality: 3.0 — The signals are largely aggregated from Hacker News and vendor blogs, lack primary analyst or regulator sources, and are often repetitive or marketing‑focused, reducing their credibility and relevance for a B2B innovation radar.
-- Novelty / momentum: 7.92
-- Strategic relevance: 5.5 — Broadly aligns with Orange Business security (e.g., API Incident) and cloud (API Cloud Avenue) domains, but no single existing API/product directly matches the defense‑data‑sovereignty‑cloud platform concept. Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Defense division (corporate deck, slide 12-14).
+- Evidence quality: 5.0 — The signals cover relevant topics like sovereign cloud and AI workloads but rely heavily on a single aggregator and vendor blogs, limiting source credibility and diversity.
+- Novelty / momentum: 7.83
+- Strategic relevance: 4.5 — Only loosely aligns with API Cloud Avenue (Cloud) while lacking a specific Orange Business asset for defense or data sovereignty Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Defense division (corporate deck, slide 12-14).
 
-**Urgency: 4.2/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.07/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 4.3/10 [L3]**
-- Matched assets: API Cloud Avenue, API Evolution Platform, API Incident, API Flexible SDWAN Cisco
-- Orange Business has cloud, network and security APIs but lacks a dedicated sovereign‑cloud data platform, requiring a new capability to meet defense‑grade data‑sovereignty requirements.
+**Right-to-win: 5.6/10 [L3]**
+- Matched assets: API Cloud Avenue, API Evolution Platform, API Incident, API Live Identity Verify
+- Existing cloud, network, and security APIs can be extended, but a dedicated defense‑grade sovereign cloud data platform is not currently offered, requiring new capability development.
 
-**Grounding signals (24):**
+**Grounding signals (23):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -3211,24 +2909,23 @@ _131/131 opportunity spaces scored._
 - [MP-IDSA] An Indigenous Unified Defence Cloud: Securing India’s Digital Sovereignty - MP-IDSA
 - [Boston Consulting Group] Sovereign Clouds Are Reshaping National Data Security - Boston Consulting Group
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [Cisco Blog] Cisco IQ: Engineering Sovereignty in the AI Era
 
 ## OS070 — Life Sciences × Clinical Workflow Automation × Cloud Data Platform
 
-**Attractiveness: 5.78/10**
-- Market signal strength: 8.0
-- Source diversity: 4.75
-- Evidence quality: 4.0 — The signals are largely aggregated from Hacker News and vendor blogs, lacking primary analyst or regulator sources and containing many vendor‑centric announcements, reducing overall credibility and relevance for a B2B innovation radar.
-- Novelty / momentum: 8.33
-- Strategic relevance: 4.0 — Only the generic API Cloud Avenue (Cloud) loosely aligns, but Orange Business has no specific life‑sciences or clinical workflow automation product in its catalog. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 5.48/10**
+- Market signal strength: 7.111111111111112
+- Source diversity: 3.75
+- Evidence quality: 4.0 — The signals are largely duplicated Hacker News links and vendor‑authored blogs, offering limited independent verification and many marketing‑focused items, reducing overall credibility despite some relevance to sovereign cloud and AI workloads.
+- Novelty / momentum: 8.44
+- Strategic relevance: 5.0 — The opportunity aligns broadly with the Cloud Avenue API (Cloud) for a data platform, but no specific Orange Business product directly addresses life sciences or clinical workflow automation. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 9.71/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 9.44/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 4.5/10 [L3]**
 - Matched assets: API Cloud Avenue, API Evolution Platform
-- Orange Business can provide cloud and network foundations (Cloud Avenue, Evolution Platform) but lacks a dedicated clinical workflow automation layer for life‑sciences, requiring a new capability.
+- Existing assets provide generic cloud and network connectivity but lack a dedicated clinical workflow automation capability for life sciences, requiring a new domain-specific solution.
 
-**Grounding signals (36):**
+**Grounding signals (33):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -3262,24 +2959,21 @@ _131/131 opportunity spaces scored._
 - [analyticsindiamag.com] Fragmented Pharmaceuticals: Why Indian Biopharma Does Not Have AI-Ready Data - analyticsindiamag.com
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
 - [consultaelectoral.onpe.gob.pe] REGULATION (EU) No 536/•2014 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL - of 16 April 2014 - on clinical - consultaelectoral.onpe.gob.pe
-- [Scoop] Cross-Government Plan To Deliver Stronger Data
-- [Market Screener] Australia Q2 business investment falls 3.6% as data centre rush fades
-- [Yahoo! Finance] Australia Q2 business investment falls 3.6% as data centre rush fades
 
 ## OS071 — Fast Moving Consumer Goods × Cloud Infrastructure Modernization × Cloud
 
-**Attractiveness: 4.86/10**
+**Attractiveness: 5.51/10**
 - Market signal strength: 4.666666666666667
 - Source diversity: 1.5
-- Evidence quality: 4.0 — The list mixes vendor blogs and Hacker News reposts, offering some specific announcements but largely lacks independent analyst or regulator sources and includes many duplicate or low‑credibility items, limiting its overall credibility and relevance.
+- Evidence quality: 6.0 — The list mixes credible vendor and analyst sources with many low‑credibility, duplicate Hacker News links, offering some specific market moves but overall limited diversity and depth.
 - Novelty / momentum: 8.1
-- Strategic relevance: 9.0 — The FMCG cloud infrastructure modernization opportunity aligns directly with Orange Business's API Cloud Avenue (Cloud) offering, providing a clear path to deliver cloud services to this sector. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Strategic relevance: 10.0 — Directly extends API Cloud Avenue (Cloud) to modernize FMCG cloud infrastructure, providing clear enterprise value. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.29/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.21/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L1]**
-- Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
-- Existing Cloud Avenue and network APIs can be bundled to address FMCG cloud infrastructure modernization, but Orange Business does not yet offer them as a single packaged solution.
+**Right-to-win: 9.3/10 [L0]**
+- Matched assets: API Cloud Avenue (Cloud)
+- API Cloud Avenue directly offers cloud infrastructure services that satisfy FMCG cloud modernization requirements.
 
 **Grounding signals (21):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
@@ -3306,18 +3000,18 @@ _131/131 opportunity spaces scored._
 
 ## OS072 — IT and Services × Digital Infrastructure × Edge Computing
 
-**Attractiveness: 4.68/10**
-- Market signal strength: 3.333333333333333
-- Source diversity: 2.5
-- Evidence quality: 6.0 — The list mixes credible sources (arXiv, EUR‑Lex, Grand View Research) with vendor blogs and repetitive stock‑price press releases, yielding moderate overall relevance but limited depth for a B2B innovation radar.
-- Novelty / momentum: 9.33
-- Strategic relevance: 5.0 — Broadly aligns with Orange Business digital infrastructure offerings such as API Cloud Avenue and API Flexible SDWAN Cisco, but there is no specific edge computing API in the current catalog
+**Attractiveness: 4.79/10**
+- Market signal strength: 2.8888888888888884
+- Source diversity: 2.25
+- Evidence quality: 6.0 — The list mixes credible sources (arXiv, EUR‑Lex, Grand View Research) with vendor blogs and repetitive low‑credibility stock tickers, offering some relevant B2B innovation cues but overall uneven depth and objectivity.
+- Novelty / momentum: 9.23
+- Strategic relevance: 7.0 — Extends the Evolution Platform (Network as a Service) which already offers SD‑WAN, SASE and cloud connectivity, a natural base for edge computing services.
 
-**Urgency: 7.59/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 7.44/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.1/10 [L3]**
-- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Cloud Avenue, API M2M for IoT Connect Express
-- Orange Business has strong network (SD‑WAN, SASE) and cloud/IoT APIs but lacks a dedicated edge‑compute offering, requiring a new capability to address the Edge Computing opportunity. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.8/10 [L1]**
+- Matched assets: API Flexible SDWAN Cisco, API Cloud Avenue, API M2M for IoT Connect Express, API Evolution Platform
+- Edge computing can be assembled from existing SD‑WAN, cloud and IoT APIs, but no dedicated edge‑compute API exists, so the offer requires bundling current assets. +0.5 calibration bonus (CRM customer overlap).
 
 **Grounding signals (15):**
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
@@ -3338,20 +3032,20 @@ _131/131 opportunity spaces scored._
 
 ## OS073 — Energy × Energy Optimization × IoT Platforms
 
-**Attractiveness: 8.54/10**
-- Market signal strength: 10.0
-- Source diversity: 8.0
-- Evidence quality: 7.0 — The list includes several high‑credibility sources (Nature, Gartner, IBM) and covers specific AI/IoT energy topics, but is diluted by vendor‑centric and less authoritative items, lowering the overall score.
-- Novelty / momentum: 8.44
-- Strategic relevance: 9.0 — Matches API M2M for IoT Connect Express (Data, IA & IoT) which provides the IoT platform needed for energy optimization. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 6.63/10**
+- Market signal strength: 6.666666666666666
+- Source diversity: 5.0
+- Evidence quality: 7.0 — The list mixes high‑credibility sources (Nature, Gartner, Fortune Business Insights, IBM, ABB) with vendor blogs and less rigorous outlets, offering specific, relevant energy‑AI signals but with some marketing bias.
+- Novelty / momentum: 8.33
+- Strategic relevance: 7.0 — The opportunity leverages Orange Business's API M2M for IoT Connect Express as an IoT platform for energy optimization, directly extending a specific existing asset. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
 **Urgency: 10.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.6/10 [L3]**
+**Right-to-win: 5.2/10 [L3]**
 - Matched assets: API M2M for IoT Connect Express, API Cloud Avenue
-- Orange can provide IoT connectivity and cloud infrastructure, but lacks a dedicated energy‑optimization analytics platform, requiring a new capability to be built.
+- Energy optimization needs IoT connectivity (covered by M2M API) plus an analytics/energy‑management layer that Orange Business does not currently offer, making it an adjacent opportunity.
 
-**Grounding signals (56):**
+**Grounding signals (36):**
 - [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
 - [Fortune Business Insights] AI in Energy Market Size, Share, Trends | Growth Report [2034] - Fortune Business Insights
 - [Nature] IoT-Enhanced virtual power plants with edge computing and blockchain security for sustainable smart grid management - Nature
@@ -3388,43 +3082,23 @@ _131/131 opportunity spaces scored._
 - [consultaelectoral.onpe.gob.pe] Regulation (EU) No 1227/2011 of the European Parliament and of the Council of 25 October 2011 on wholesale energy market integri - consultaelectoral.onpe.gob.pe
 - [consultaelectoral.onpe.gob.pe] Renewable energy - consultaelectoral.onpe.gob.pe
 - [consultaelectoral.onpe.gob.pe] Emergency intervention to address high energy prices - consultaelectoral.onpe.gob.pe
-- [Market Research Future] IoT Telecom Services Market Size, Share & Growth Report 2035 | MRFR - Market Research Future
-- [consultaelectoral.onpe.gob.pe] Energy performance of buildings - consultaelectoral.onpe.gob.pe
-- [appinventiv.com] Technology in Renewable Energy in Australia: Top 10 Innovations - appinventiv.com
-- [Nature] An IoT-enabled AI framework for sustainable product design optimizing eco-efficiency using BiLSTM - Nature
-- [Nature] Artificial intelligence based hybrid solar energy systems with smart materials and adaptive photovoltaics for sustainable power generation - Nature
-- [Energies Media] IoT Energy Management in 2025: Real Results from Smart Industries - Energies Media
-- [International Journal of Science, Strategic Management and Technology] Smart EV Charging Infrastructure Using IOT and AI for Intelligent Energy Management and Grid Optimization
-- [Iranian Journal of Science and Technology Transactions of Electrical Engineering] Harnessing Quantum Computing and AI for Enhanced Optimization in Renewable Energy-Driven Smart Grid Systems
-- [Proceedings of the Institution of mechanical engineers. Part D, journal of automobile engineering] Edge AI and IoT for smart sustainable transportation: Real-time renewable energy optimization – A comprehensive review
-- [2024 32nd Southern African Universities Power Engineering Conference (SAUPEC)] Optimization of Internet of Things (IoT) for Smart Grid Energy Management Using Artificial Intelligence (AI) Techniques to Reach SDG7
-- [2025 International Conference on Digital Innovations for Sustainable Solutions (ICDISS)] IoT-Based Renewable Energy Integration and Optimization in Smart Power Grids
-- [Proceedings of the 1st International Conference on Intelligent Methods and Advanced Computer Scientific Innovations] IoT-Integrated Smart Grids for Sustainable Energy Engagement: Optimizing Renewable Resources through Real-Time Monitoring and AI-Powered Predictive Systems
-- [2025 IEEE World AI IoT Congress (AIIoT)] AI-Driven Smart Grid Optimization: Enhancing Urban Communication Networks
-- [2025 6th International Conference on IoT Based Control Networks and Intelligent Systems (ICICNIS)] A Review on Smart Traffic Light Management and Energy Optimization with Artificial Intelligence(AI) enabled Programmable Logic Controller(PLC) using Internet of Things(IoT)
-- [2025 2nd International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering (RMKMATE)] Green IoT-Based Smart Grid: Implementing Intelligent Demand-Response Systems for Energy Sustainability
-- [2025 IEEE 3rd Global Conference on Wireless Computing and Networking (GCWCN)] AI-Based Power Flow Control for Real-Time Grid Optimization and Load Balancing
-- [asianews.network] Bhutan races to harness solar power to bolster energy security
-- [The Sun Nigeria] Kogi Assembly lauds ECN DG Abdullahi over renewable energy development - The Sun Nigeria
-- [gdnonline.com] UAE Business : Intelligent energy systems : Powering Middle East next transformation
-- [tradearabia.com] Intelligent energy systems : Powering Middle East next transformation
 
 ## OS074 — Defense × Data Sovereignty × Cloud
 
-**Attractiveness: 4.58/10**
-- Market signal strength: 5.111111111111111
+**Attractiveness: 4.01/10**
+- Market signal strength: 4.888888888888888
 - Source diversity: 2.0
-- Evidence quality: 4.0 — The list mixes low‑credibility aggregations (Hacker News links) with vendor‑centric blogs, offering limited independent verification and uneven relevance to B2B innovation trends.
-- Novelty / momentum: 8.26
-- Strategic relevance: 5.5 — Matches API Cloud Avenue (Cloud) and API Incident (Security) but lacks a specific Orange Business defense‑focused asset Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Defense division (corporate deck, slide 12-14).
+- Evidence quality: 2.0 — The signals are largely duplicated Hacker News links and vendor blog posts, lacking diverse independent analyst or regulator sources and offering limited concrete market insight.
+- Novelty / momentum: 8.18
+- Strategic relevance: 5.5 — The opportunity aligns with Orange Business' Cloud (API Cloud Avenue) and security (API Incident) assets, but there is no specific existing API/product dedicated to Defense or Data Sovereignty. Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Defense division (corporate deck, slide 12-14).
 
-**Urgency: 4.38/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.25/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.5/10 [L3]**
-- Matched assets: API Cloud Avenue, API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing cloud, security, and network APIs cover core needs, but a sovereign‑cloud offering for defense data residency must be built, making it an adjacent opportunity.
+**Right-to-win: 7.5/10 [L1]**
+- Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API Live Identity Verify, API Incident
+- Existing cloud, secure networking, and identity/security APIs can be bundled to address a sovereign cloud solution for defense, though no single packaged offer currently exists.
 
-**Grounding signals (23):**
+**Grounding signals (22):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -3447,24 +3121,23 @@ _131/131 opportunity spaces scored._
 - [MP-IDSA] An Indigenous Unified Defence Cloud: Securing India’s Digital Sovereignty - MP-IDSA
 - [Boston Consulting Group] Sovereign Clouds Are Reshaping National Data Security - Boston Consulting Group
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [Cisco Blog] Cisco IQ: Engineering Sovereignty in the AI Era
 
 ## OS075 — Defense × Cyber Defense & Zero Trust × Cloud
 
-**Attractiveness: 6.45/10**
-- Market signal strength: 10.0
-- Source diversity: 5.25
-- Evidence quality: 3.0 — The signals are largely duplicated Hacker News posts and a corporate blog, lacking diverse, authoritative sources and detailed market data, making them vague and of limited credibility for a B2B innovation radar.
-- Novelty / momentum: 8.22
-- Strategic relevance: 5.5 — The opportunity aligns with Orange Business security offerings such as API Incident, API Live Identity Captcha and API Live Identity Verify, but no specific API/product directly addresses a Zero Trust Cloud defense solution. Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Defense division (corporate deck, slide 12-14).
+**Attractiveness: 5.91/10**
+- Market signal strength: 7.777777777777778
+- Source diversity: 3.0
+- Evidence quality: 3.0 — Most signals are duplicate Hacker News posts and vendor blogs lacking independent analyst or regulator sources, making them low‑credibility and only loosely relevant to B2B innovation trends.
+- Novelty / momentum: 8.0
+- Strategic relevance: 9.5 — Extends the Evolution Platform (Network as a Service) which already provides SASE/zero‑trust and cloud connectivity, directly aligning with a Defense/Cyber‑Defense & Zero‑Trust Cloud opportunity Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Defense division (corporate deck, slide 12-14).
 
-**Urgency: 4.4/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.15/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L1]**
-- Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco, API Live Identity Verify, API Live Identity Captcha, API Incident
-- Multiple existing APIs (cloud, SASE/SD‑WAN, identity verification and incident handling) can be combined to deliver a cyber‑defense, zero‑trust cloud offering, but no single packaged product currently exists.
+**Right-to-win: 8.3/10 [L1]**
+- Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco, API Incident, API Live Identity Verify, API Live Identity Captcha
+- Orange Business already offers cloud, SD‑WAN/SASE, identity and incident APIs that together meet the Defense/Cyber‑Defense/Zero‑Trust needs, requiring only a bundled offering.
 
-**Grounding signals (47):**
+**Grounding signals (35):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -3500,33 +3173,21 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Cisco AI Defense + Armada: Distributed AI That’s Safe to Run, Wherever the Mission Requires It
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
 - [arXiv] The boxicity of the compressed zero divisor graph of the ring of integers modulo N
-- [armenpress.am] Defense minister meets outgoing French ambassador
-- [Green Building Africa] Growthpoint's 36 Hans Strijdom becomes net zero carbon flagship in Cape Town
-- [Computer Science Symposium in Russia] Zero-Trust and Reinforcement Learning for Secure Federated Intelligence in 6G Edge Networks
-- [IEEE Journal on Selected Areas in Communications] A Federated Learning-Based Zero-Trust Model With Secure Dynamic Trust Evaluation and Knowledge Transfer
-- [Advanced Information Systems] SEQUENTIAL INTRUSION DETECTION SYSTEM FOR ZERO-TRUST CYBER DEFENSE OF IOT/IIOT NETWORKS
-- [International Journal of Scientific Research and Modern Technology] Secure Routing Algorithms Integrating Zero Trust Edge Computing for Unmanned Aerial Vehicle Networks in Disaster Response Operations
-- [Journal of Sensors] ICEEZT: Zero Trust Secure Energy‐Efficient Method for 6G‐Enabled Underwater Acoustic‐RF Networks With Blockchain Integration
-- [IEEE Journal on Selected Areas in Communications] Cross-Layer Management Framework for Enhancing XR-Based System Security in Zero-Trust Wireless Communications
-- [IEEE wireless communications] Toward Zero-Trust 6GC: A Software Defined Perimeter Approach with Dynamic Moving Target Defense Mechanism
-- [2026 International Conference on Cognitive Computing and Networking Systems (ICC-CNS)] A Multi-Layer Intelligent Cyber Defense Mechanism Integrating Zero-Trust Principles for Secure Digital Payments
-- [Future Internet] Hardware-Anchored ES-SPA: A Dynamic Zero-Trust Architecture for Secure eSIM Provisioning in 6G IoT via Moving Target Defense
-- [IEEE Conference on Communications and Network Security] Trust Threshold Policy for Explainable and Adaptive Zero-Trust Defense in Enterprise Networks
 
 ## OS076 — Life Sciences × Cloud Infrastructure Modernization × Cloud
 
-**Attractiveness: 5.21/10**
-- Market signal strength: 5.555555555555555
-- Source diversity: 2.5
-- Evidence quality: 4.0 — The list mixes some credible vendor blogs and analyst mentions with many low‑credibility, duplicate Hacker News links, offering limited specificity and relevance for a B2B innovation radar.
-- Novelty / momentum: 8.4
-- Strategic relevance: 8.0 — Extends API Cloud Avenue (Cloud) to modernize life‑sciences workloads, leveraging Orange Business' cloud infrastructure offering. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 5.43/10**
+- Market signal strength: 5.333333333333333
+- Source diversity: 2.25
+- Evidence quality: 6.0 — The set mixes credible vendor and analyst sources with many low‑credibility, duplicate Hacker News links, yielding moderate overall relevance but limited depth.
+- Novelty / momentum: 8.33
+- Strategic relevance: 7.0 — Matches API Cloud Avenue (Cloud) as a cloud infrastructure modernization offering for life sciences Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.45/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.36/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.6/10 [L3]**
-- Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Orange can provide cloud and network services but lacks a dedicated, regulated‑cloud offering for life‑sciences compliance, requiring a new capability to close the gap.
+**Right-to-win: 9.5/10 [L0]**
+- Matched assets: API Cloud Avenue (Cloud)
+- Orange Business already provides cloud infrastructure modernization through API Cloud Avenue, directly addressing the Life Sciences cloud modernization opportunity.
 
 **Grounding signals (25):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
@@ -3557,20 +3218,20 @@ _131/131 opportunity spaces scored._
 
 ## OS077 — Media & Entertainment × Network Modernization & SD-WAN × 5G
 
-**Attractiveness: 4.62/10**
-- Market signal strength: 2.444444444444444
+**Attractiveness: 4.37/10**
+- Market signal strength: 2.2222222222222223
 - Source diversity: 1.5
-- Evidence quality: 7.0 — The set mixes credible analyst recognitions (Gartner, Forrester) and diverse topics (private 5G, CDN, AI) with vendor‑centric blogs and press releases, yielding moderate overall credibility and relevance.
-- Novelty / momentum: 6.36
-- Strategic relevance: 8.0 — The opportunity aligns directly with API Flexible SDWAN Cisco for SD‑WAN delivery and leverages Orange Business’s 5G private network leadership, fitting existing sellable assets. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+- Evidence quality: 6.0 — The set mixes credible analyst recognitions and diverse sources with several vendor‑centric blog posts and low‑credibility aggregator items, offering moderate relevance but limited independent validation.
+- Novelty / momentum: 7.0
+- Strategic relevance: 8.0 — The opportunity aligns directly with API Flexible SDWAN Cisco for SD‑WAN network modernization and can leverage Orange Business’s 5G private mobile network leadership, though no dedicated 5G API is listed. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 3.37/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.63/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.5/10 [L1]**
-- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Mobile Suite, API M2M for IoT Connect Express
-- Orange Business already offers SD‑WAN (Flexible SDWAN Cisco, Evolution Platform) and 5G/mobile/IOT APIs, which can be bundled to serve Media & Entertainment network modernization needs, though no dedicated combined product currently exists.
+**Right-to-win: 8.3/10 [L1]**
+- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Mobile Suite
+- Existing SD‑WAN (Flexible SDWAN Cisco, Evolution Platform) and 5G mobile (Mobile Suite) APIs can be combined to meet Media & Entertainment network modernization needs, but no dedicated bundled offering currently exists.
 
-**Grounding signals (11):**
+**Grounding signals (10):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
 - [Cisco Blog] Monitoring beyond SNMP: Turning your network into a sensor
@@ -3581,24 +3242,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Cisco Recognized as a Leader in the 2026 Forrester Wave™ Data Center Network Solutions
 - [Akamai] Content Delivery Network (CDN) Solutions - Akamai
 - [GlobeNewswire] Content Delivery Network (CDN) Global Market Overview - GlobeNewswire
-- [Akamai] Smart DNS for the New Network: Optimizing Content Delivery - Akamai
 
 ## OS078 — Wholesale × Supply Chain Visibility × Cloud
 
-**Attractiveness: 5.34/10**
-- Market signal strength: 6.888888888888889
-- Source diversity: 4.5
-- Evidence quality: 4.0 — The list mixes a few credible sources (Cisco, Microsoft, Verizon, Supply Chain Digital) with many low‑credibility, duplicate Hacker News links that lack original reporting, making the overall signal set only moderately reliable and relevant.
-- Novelty / momentum: 7.74
-- Strategic relevance: 4.0 — Only loosely aligns with API Cloud Avenue (Cloud) but there is no specific Orange Business API/product for wholesale supply chain visibility. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 5.2/10**
+- Market signal strength: 6.222222222222222
+- Source diversity: 4.0
+- Evidence quality: 4.0 — Most signals come from the Hacker News aggregator and vendor‑centric blogs, offering limited independent analysis and relevance, with only a few modestly credible sources.
+- Novelty / momentum: 7.86
+- Strategic relevance: 5.0 — Broadly fits Orange Business cloud and IoT assets (API Cloud Avenue, API M2M for IoT Connect Express) but no specific API directly addresses wholesale supply‑chain visibility. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.1/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.12/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 7.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Supply‑chain visibility requires IoT data ingestion, cloud processing and network connectivity, which are covered by separate Orange Business APIs but not yet bundled into a dedicated offering.
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Evolution Platform
+- Multiple existing Orange Business APIs (cloud, IoT, and SD‑WAN/network) can be combined to create a supply‑chain‑visibility offering for wholesale, though no single packaged product currently exists.
 
-**Grounding signals (31):**
+**Grounding signals (29):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -3628,23 +3288,21 @@ _131/131 opportunity spaces scored._
 - [Inbound Logistics] 2026 Top 100 Logistics & Supply Chain Technology Providers - Inbound Logistics
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
 - [LatestLY] Chicago Sky Bans Enes Kanter Freedom from WNBA Home Games Following Courtside Altercation with Natasha Cloud
-- [Deloitte] Titan International Takes First Step to Industry 4.0 Capabilities with Oracle Cloud Applications - Deloitte
-- [Yahoo! Finance] Oil prices extend losses on expectations talks to ease Middle East supply woes
 
 ## OS079 — Wholesale × Network Modernization & SD-WAN × Network & SD-WAN
 
-**Attractiveness: 4.37/10**
+**Attractiveness: 4.52/10**
 - Market signal strength: 2.0
 - Source diversity: 1.25
-- Evidence quality: 6.0 — The list mixes credible analyst recognitions and vendor blogs with less formal Hacker News and hobbyist posts, offering relevant B2B themes but uneven source authority.
+- Evidence quality: 6.0 — The list mixes highly credible B2B sources (AWS, Microsoft, Cisco, Gartner/Forrester recognitions) with less formal community posts (Hacker News, XDA), yielding moderate overall credibility and relevance for enterprise network innovation.
 - Novelty / momentum: 6.67
-- Strategic relevance: 9.0 — Directly aligns with API Flexible SDWAN Cisco and Evolution Platform (Network as a Service) that provide SD‑WAN and network modernization capabilities. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+- Strategic relevance: 10.0 — Directly aligns with API Flexible SDWAN Cisco and API Evolution Platform, both offering SD‑WAN/network modernization services. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 3.53/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.5/10 [L1]**
+**Right-to-win: 9.4/10 [L0]**
 - Matched assets: API Flexible SDWAN Cisco, API Evolution Platform
-- Orange Business already offers SD‑WAN via the Flexible SDWAN Cisco API and the Evolution Platform, so the wholesale network‑modernisation need can be met by bundling these existing assets.
+- Orange Business already provides SD‑WAN solutions through its Evolution Platform and Flexible SD‑WAN Cisco offering, directly matching a wholesale network modernization and SD‑WAN opportunity.
 
 **Grounding signals (9):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
@@ -3659,20 +3317,20 @@ _131/131 opportunity spaces scored._
 
 ## OS080 — IT and Services × Network Modernization & SD-WAN × Network & SD-WAN
 
-**Attractiveness: 6.01/10**
-- Market signal strength: 4.0
-- Source diversity: 3.5
-- Evidence quality: 8.0 — The list combines diverse, credible sources—including major cloud vendors, reputable media, think tanks, and government sites—covering relevant B2B themes like cloud, AI, network and security modernization, though some entries are redundant or less authoritative (e.g., Hacker News aggregations).
-- Novelty / momentum: 6.11
-- Strategic relevance: 10.0 — Directly aligns with API Flexible SDWAN Cisco (SD‑WAN service) and the Evolution Platform offering SD‑WAN/network modernization. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+**Attractiveness: 5.62/10**
+- Market signal strength: 3.7777777777777777
+- Source diversity: 3.25
+- Evidence quality: 7.0 — The list combines reputable analyst reports, government and think‑tank sources with several vendor‑centric blogs, offering specific but partially marketing‑biased signals that are broadly relevant to B2B cloud and network modernization.
+- Novelty / momentum: 5.88
+- Strategic relevance: 10.0 — Directly aligns with Orange Business' API Flexible SDWAN Cisco (and Evolution Platform) which deliver SD‑WAN services. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 3.35/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.05/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 9.8/10 [L0]**
 - Matched assets: API Flexible SDWAN Cisco, API Evolution Platform
-- Orange Business already provides SD‑WAN solutions through its Evolution Platform and Flexible SD‑WAN Cisco API, directly matching the network modernization & SD‑WAN opportunity. +0.5 calibration bonus (CRM customer overlap).
+- Orange Business already offers SD-WAN through the Flexible SDWAN Cisco API and the Evolution Platform, directly covering network modernization and SD-WAN needs. +0.5 calibration bonus (CRM customer overlap).
 
-**Grounding signals (19):**
+**Grounding signals (17):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
 - [Cisco Blog] Monitoring beyond SNMP: Turning your network into a sensor
@@ -3690,23 +3348,21 @@ _131/131 opportunity spaces scored._
 - [United States Coast Guard (.mil)] Modernization increases cybersecurity challenges in the Marine Transportation System (MTS) - United States Coast Guard (.mil)
 - [The Business Journals] The ultimate guide to IT modernization in 2025 - The Business Journals
 - [U.S. Government Accountability Office (.gov)] Spectrum IT Modernization: NTIA Should Fully Incorporate Cybersecurity and Interoperability Practices - U.S. Government Accountability Office (.gov)
-- [MarketsandMarkets] Kuwait Managed Network Services Market Size, Share,Trends, Growth Analysis Report, 2030 - MarketsandMarkets
-- [MarketsandMarkets] Italy Managed Network Services Market Size, Share,Trends, Growth Analysis Report, 2030 - MarketsandMarkets
 
 ## OS081 — IT and Services × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 4.88/10**
+**Attractiveness: 5.33/10**
 - Market signal strength: 4.888888888888888
 - Source diversity: 3.0
-- Evidence quality: 5.0 — The set mixes credible sources like EUR‑Lex and official FedRAMP updates with many duplicate Hacker News summaries and vendor‑centric blogs, limiting overall authority and diversity.
+- Evidence quality: 5.0 — The list mixes credible sources (EU regulation, Cisco blogs, Business Wire) with low‑credibility, single‑platform items (multiple Hacker News posts), offering moderate relevance but limited diversity and depth.
 - Novelty / momentum: 8.18
-- Strategic relevance: 5.0 — Broadly fits Orange Business security portfolio via APIs such as API Live Identity Verify and API Incident, though no dedicated Zero Trust product exists in the catalog
+- Strategic relevance: 8.0 — Matches Orange Business security APIs such as API Live Identity Verify, API Live Identity Captcha and API Incident, which address identity protection and incident handling central to Zero Trust and cyber defense.
 
-**Urgency: 6.98/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 6.84/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.0/10 [L1]**
-- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing security (Captcha, Verify, Incident) and network (SD‑WAN, Evolution Platform/SASE) APIs can be bundled to address a Zero‑Trust cyber‑defense offering, though no single pre‑packaged product currently exists. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.3/10 [L1]**
+- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Flexible SDWAN Cisco, API Evolution Platform, API Incident
+- Existing security‑related APIs (identity, incident, SD‑WAN/SASE) can be combined to form a Zero‑Trust cyber‑defense offering, but Orange Business does not yet sell it as a single packaged solution. +0.5 calibration bonus (CRM customer overlap).
 
 **Grounding signals (22):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
@@ -3734,20 +3390,20 @@ _131/131 opportunity spaces scored._
 
 ## OS082 — Finance & Insurance × Customer Experience × Agentic AI
 
-**Attractiveness: 7.84/10**
+**Attractiveness: 7.89/10**
 - Market signal strength: 10.0
 - Source diversity: 8.75
-- Evidence quality: 8.0 — The signals include several reputable analysts, consultants, and industry publications offering specific agentic AI use cases in insurance, though many are vendor‑driven press releases, balancing credibility and relevance.
+- Evidence quality: 7.0 — The list mixes reputable sources (AWS, Deloitte, BCG, FICO) with vendor press releases and market‑size reports, offering diverse but partially marketing‑heavy signals that are clearly relevant to agentic AI in insurance.
 - Novelty / momentum: 6.44
-- Strategic relevance: 3.0 — No existing Orange Business API directly addresses Agentic AI for finance/insurance CX; the closest is API Contact Everyone for collaboration, but it does not cover AI-driven agent functionality. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+- Strategic relevance: 5.0 — Broadly aligns with Orange Business' customer‑relationship APIs (e.g., API Contact Everyone, API Core Information) but no specific product directly addresses Agentic AI for finance/insurance. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
-**Urgency: 3.63/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.34/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.8/10 [L3]**
-- Matched assets: API Contact Everyone, API Live Identity Verify, API Cloud Avenue, API Evolution Platform, API Mobile Suite
-- Orange Business has relevant communication, security, cloud and networking APIs plus strong finance customer base, but lacks a dedicated Agentic AI CX offering, requiring a new AI‑agent capability. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 6.5/10 [L3]**
+- Matched assets: API Contact Everyone, API Business Talk Digital, API Mobile Suite, API Cloud Avenue, API Evolution Platform, API M2M for IoT Connect Express, API Satellite, API View Bill, API Ordering et Order Tracking
+- Orange Business has strong CX and communication APIs but lacks a dedicated Agentic AI platform, requiring development of a new AI‑agent capability to meet the finance‑insurance use case. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (51):**
+**Grounding signals (45):**
 - [Amazon Web Services (AWS)] Build an agentic AI healthcare claims pipeline with Amazon Bedrock and AWS HealthLake | Artificial Intelligence - Amazon Web Services (AWS)
 - [Salesforce] The Complete Guide to Agentic AI in Insurance - Salesforce
 - [Insurance Business] IAG bets on agentic AI where conduct risk is highest - Insurance Business
@@ -3793,29 +3449,23 @@ _131/131 opportunity spaces scored._
 - [Sovremennaya nauka i innovatsii] Agentic AI as a tool for automating insurance sales: design and implementation
 - [Journal of Information Systems Engineering & Management] A Multidisciplinary Framework for AI and Data-Driven Transformation in Taxation, Insurance, Mortgage Financing, and Financial Advisory: Integrating Cloud Computing, Deep Learning, and Agentic AI for Community-Centric Economic Development
 - [International Journal of Advanced Research in Computer Science &amp; Technology] Autonomous Insurance Analytics Using Agentic AI for Personalized Coverage and Predictive Risk Intelligence
-- [International Journal of Emerging Research in Engineering and Technology] Explainable Agentic AI-Driven Machine Learning Framework for Property and General Insurance Risk Assessment
-- [Insurance Business] Agentic AI attacks could drive higher cyber claim frequency, experts warn - Insurance Business
-- [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
-- [EXPRESS] Labour's work experience pledge blasted as spin for job-killing tax hike
-- [arXiv] SPO++: Stream-Aligned Policy Optimization for Asynchronous Agentic RL
-- [Vietnam Investment Review - VIR] Duck Creek launches agentic AI platform for insurance - Vietnam Investment Review - VIR
 
 ## OS083 — Finance & Insurance × Operational Excellence × Agentic AI
 
-**Attractiveness: 7.65/10**
+**Attractiveness: 7.4/10**
 - Market signal strength: 10.0
 - Source diversity: 9.0
-- Evidence quality: 7.0 — The list contains several credible, industry‑specific sources (AWS, Salesforce, Deloitte, Insurance Business, Duck Creek) and relevant agentic AI use cases for insurance, but also includes many vendor‑centric press releases and loosely related items that lower overall credibility and focus.
+- Evidence quality: 6.0 — The list mixes credible sources (AWS, Deloitte, Nature) and vendor/press releases with some off‑topic items, giving moderate overall credibility and relevance for a B2B innovation radar.
 - Novelty / momentum: 8.0
-- Strategic relevance: 2.0 — No existing Orange Business API directly addresses Finance & Insurance operational excellence or Agentic AI, only generic AI/IoT offerings such as API M2M for IoT Connect Express, which are not a clear fit. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+- Strategic relevance: 2.0 — No specific Orange Business API/product directly addresses Finance & Insurance operational excellence or Agentic AI, only loosely related generic AI/Cloud assets like API M2M for IoT Connect Express. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
-**Urgency: 4.32/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.15/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Incident, API Business Talk Digital
-- Orange Business has strong AI, cloud and operational APIs but lacks a dedicated Agentic AI platform for finance operational excellence, requiring a new capability to be built. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 6.8/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco, API Live Identity Verify, API Live Identity Captcha, API Business Talk Digital, API Contact Everyone, API Incident
+- Existing data, AI, cloud, security and network assets can be combined for operational excellence in finance, but Orange lacks a dedicated Agentic AI platform, requiring a new capability. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (49):**
+**Grounding signals (45):**
 - [Amazon Web Services (AWS)] Build an agentic AI healthcare claims pipeline with Amazon Bedrock and AWS HealthLake | Artificial Intelligence - Amazon Web Services (AWS)
 - [Salesforce] The Complete Guide to Agentic AI in Insurance - Salesforce
 - [Insurance Business] IAG bets on agentic AI where conduct risk is highest - Insurance Business
@@ -3861,27 +3511,23 @@ _131/131 opportunity spaces scored._
 - [International Journal of Emerging Research in Engineering and Technology] Explainable Agentic AI-Driven Machine Learning Framework for Property and General Insurance Risk Assessment
 - [Insurance Business] Agentic AI attacks could drive higher cyber claim frequency, experts warn - Insurance Business
 - [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
-- [GlobeNewswire] Mplify Reveals Finalists for 2026 NaaS Excellence Awards - GlobeNewswire
-- [arXiv] SPO++: Stream-Aligned Policy Optimization for Asynchronous Agentic RL
-- [News18] HBG Medical Assistance: Connecting the World to India's Healthcare Excellence
-- [Vietnam Investment Review - VIR] Duck Creek launches agentic AI platform for insurance - Vietnam Investment Review - VIR
 
 ## OS084 — Public Sector × Citizen Participation Platforms × IoT Platforms
 
-**Attractiveness: 5.42/10**
-- Market signal strength: 4.0
-- Source diversity: 3.75
-- Evidence quality: 8.0 — The list includes multiple credible, diverse sources (major news, official EU procurement notices, research firms) covering relevant government AI, cloud, and IoT trends, though some entries are vendor‑centric press releases.
-- Novelty / momentum: 7.22
-- Strategic relevance: 5.0 — The IoT aspect aligns with API M2M for IoT Connect Express, but there is no specific Orange Business API for citizen participation platforms. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 4.85/10**
+- Market signal strength: 3.7777777777777777
+- Source diversity: 3.5
+- Evidence quality: 6.0 — The list mixes credible news (CNBC, Ottawa Citizen) and reputable analysis with several vendor press releases and niche publications, offering relevant but unevenly reliable signals for public‑sector AI/IoT innovation.
+- Novelty / momentum: 7.65
+- Strategic relevance: 5.0 — The IoT component aligns with API M2M for IoT Connect Express, but there is no specific Orange Business API for citizen participation platforms, so the fit is only broad. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 3.82/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.97/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Contact Everyone
-- Orange Business already offers IoT connectivity and collaboration APIs that can be bundled to create a citizen participation platform, but no dedicated pre‑packaged solution exists yet. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.5/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Contact Everyone, API Live Identity Verify, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
+- Orange Business already offers IoT connectivity, secure identity, collaboration, cloud and network APIs that can be bundled to create a public‑sector citizen participation platform, though no dedicated packaged offering exists yet. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (18):**
+**Grounding signals (17):**
 - [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
 - [Ottawa Citizen] Government 'dependent' on U.S. companies to meet public service AI needs: study - Ottawa Citizen
 - [Google Cloud Press Corner] DICT and Google Cloud Partner on Multi-Year AI and Cybersecurity Initiatives to Deliver Next-Generation Citizen Services - Google Cloud Press Corner
@@ -3899,22 +3545,21 @@ _131/131 opportunity spaces scored._
 - [StateTech Magazine] How AI Service Hubs Will Redefine Citizen Interactions in 2026 - StateTech Magazine
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
 - [Philippine Canadian Inquirer] CICC warns platforms of geo-blocking over child protection lapses
-- [Journal of Environmental Management] Automated environmental compliance monitoring of rivers with IoT and open government data.
 
 ## OS085 — Natural Resources × Energy Optimization × IoT Platforms
 
-**Attractiveness: 4.9/10**
-- Market signal strength: 2.6666666666666665
-- Source diversity: 2.5
-- Evidence quality: 6.0 — The list mixes credible industry and academic sources with vendor blogs and press releases, offering relevant but unevenly reliable B2B innovation signals.
-- Novelty / momentum: 7.5
-- Strategic relevance: 9.0 — Directly extends API M2M for IoT Connect Express (Data, IA & IoT) to deliver energy optimization solutions for natural resources customers Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 5.0/10**
+- Market signal strength: 2.444444444444444
+- Source diversity: 2.25
+- Evidence quality: 6.0 — The list mixes credible analyst reports and industry publications with vendor blogs and press releases, offering moderate relevance to B2B innovation but limited diversity and some redundancy.
+- Novelty / momentum: 8.18
+- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express, providing IoT connectivity and data/AI services that can be leveraged for energy optimization in natural resources. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 3.97/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.89/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.8/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
-- Orange already offers IoT connectivity (IoT Connect Express) and cloud/edge platforms (Cloud Avenue, Evolution Platform) that can be combined to deliver energy‑optimization solutions for natural‑resource clients, but they are not yet packaged as a dedicated offering.
+**Right-to-win: 8.2/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
+- Energy‑optimization IoT platforms can be built by bundling Orange's existing IoT connectivity, cloud and SD‑WAN/network services, though no dedicated offering is currently packaged.
 
 **Grounding signals (12):**
 - [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
@@ -3932,20 +3577,20 @@ _131/131 opportunity spaces scored._
 
 ## OS086 — Manufacturing × Digital Infrastructure × 5G
 
-**Attractiveness: 6.21/10**
-- Market signal strength: 4.666666666666667
-- Source diversity: 4.25
-- Evidence quality: 8.0 — The list draws from a diverse mix of reputable industry publications, vendor blogs, and analyst sources, all largely centered on digital twins, AI, and private 5G, making it highly credible and relevant for a B2B innovation radar.
-- Novelty / momentum: 9.05
-- Strategic relevance: 7.0 — Extends API M2M for IoT Connect Express (Data, IA & IoT) to manufacturing 5G/IoT use‑cases, providing a clear product fit. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+**Attractiveness: 5.64/10**
+- Market signal strength: 4.0
+- Source diversity: 4.0
+- Evidence quality: 8.0 — The collection draws from several reputable industry publications and analyst‑type sources on digital twins, AI, and private 5G, providing diverse coverage, but includes a few vendor‑centric blogs and peripheral topics that modestly reduce overall credibility.
+- Novelty / momentum: 8.89
+- Strategic relevance: 5.0 — The manufacturing‑5G use case aligns with API M2M for IoT Connect Express (IoT) and API Flexible SDWAN Cisco (network) but there is no specific Orange Business API for 5G private networks in manufacturing Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 6.87/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 6.71/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.5/10 [L1]**
-- Matched assets: API Flexible SDWAN Cisco, API M2M for IoT Connect Express, API Cloud Avenue, API Mobile Suite, Evolution Platform
-- Manufacturing 5G digital infrastructure can be satisfied by bundling Orange Business SD‑WAN, IoT, cloud and mobile APIs, a combination already available but not offered as a single pre‑packaged solution. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.5/10 [L1]**
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Evolution Platform, API Mobile Suite
+- Existing cloud, SD‑WAN, IoT and mobile APIs can be combined to meet a manufacturing digital‑infrastructure + 5G use case, but Orange Business does not yet offer them as a pre‑packaged solution. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (21):**
+**Grounding signals (20):**
 - [Food and Drink Digital] Why is Cargill Deploying Private 5G Across its Sites? - Food and Drink Digital
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
 - [Hacker News] "Sovereign cloud"? A Trojan Horse at Europe's digital gates
@@ -3966,24 +3611,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
 - [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
 - [LatestLY] Business News | IntelliDB Enterprise Partners With Yotta To Deliver Sovereign & AI Database Infrastructure In India
-- [english.newsfirst.lk] Digital Predators Exposed: SLCERT Cracks Down on Exploitative Social Media Groups
 
 ## OS087 — Public Sector × Data Sovereignty × Generative AI
 
-**Attractiveness: 8.09/10**
+**Attractiveness: 8.36/10**
 - Market signal strength: 10.0
-- Source diversity: 10.0
-- Evidence quality: 7.0 — The set includes several high‑credibility, relevant sources on EU cloud sovereignty and public‑sector data (AWS, CNBC, Jones Day, Computerworld, Data Center Dynamics, qz.com), but is diluted by peripheral or low‑credibility items (arXiv physics paper, niche newsletters, unrelated AI/IoT stories) that lower the overall signal quality.
-- Novelty / momentum: 8.94
-- Strategic relevance: 3.0 — No specific Orange Business API directly addresses generative AI with data sovereignty for the public sector; the closest related asset is API M2M for IoT Connect Express (Data, IA & IoT), which does not clearly match the opportunity. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+- Source diversity: 9.75
+- Evidence quality: 7.0 — The set includes several credible, diverse sources directly relevant to EU cloud sovereignty and public‑sector data, though it is diluted by a few unrelated or lower‑credibility items.
+- Novelty / momentum: 9.13
+- Strategic relevance: 5.0 — Orange Business provides AI capabilities via API M2M for IoT Connect Express, but there is no dedicated generative‑AI or data‑sovereignty offering for the public sector in the current catalog. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
 **Urgency: 10.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.6/10 [L3]**
-- Matched assets: none
-- Orange Business has data/AI (M2M for IoT Connect Express) and cloud (Cloud Avenue) assets but lacks a sovereign‑compliant generative AI offering, requiring a new capability to meet public‑sector data‑sovereignty demands. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 6.5/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform, API Live Identity Verify
+- Orange Business has data, cloud, AI‑related and security APIs plus strong public‑sector credentials, but lacks a dedicated generative AI offering that guarantees data‑sovereignty, requiring a new capability to be built or acquired. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (56):**
+**Grounding signals (46):**
 - [Amazon Web Services (AWS)] Safekeeping your data anywhere: How AWS and Expando help European governments protect data from the edge to the cloud - Amazon Web Services (AWS)
 - [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
 - [Jones Day] Dutch Government Blocks U.S. Acquisition of Cloud Provider, Signaling Heightened Focus on EU Digital Sovereignty - Jones Day
@@ -4029,34 +3673,24 @@ _131/131 opportunity spaces scored._
 - [ArkansasOnline] Data leads maternal health progress | Arkansas Democrat Gazette
 - [caithness-business.co.uk] Data Centres, Big Developments and the Planning Question: Should Communities Simply Say No?
 - [wallstreet:online] H1 review: Back on the growth path, data centres pulling
-- [Business Wire] Japan Data Center Market Investment Analysis Report 2026-2031: Growth Opportunities in IT, Electrical, and Mechanical Infrastructure, Cooling Systems, Construction and Tier Standards - ResearchAndMarkets.com - Business Wire
-- [Blockonomi] Federal Reserve Study Reveals How Bitcoin Performance Data Drives Crypto Purchases
 - [Silicon Canals] Europe’s new tech-sovereignty plan doesn’t ban U.S. cloud giants — it sets four levels of “sovereignty” for sensitive government data, and an American law makes the top levels nearly impossible for them to reach - Silicon Canals
-- [Eagle-Tribune] Kelly® Releases 2026 Data Center Salary Guide Highlighting Compensation, Hiring Trends Driven ...
-- [arXiv] FixAnything: 3D-Consistent Rendering Refinement via Video Generative Priors
-- [arXiv] Robustness of Anomaly Detection Models for Industrial Control Systems under Training-Time Data Contamination
-- [AOL.com] Wednesday briefing: How Canada has turned a trade dispute into a defence of its sovereignty - AOL
-- [arXiv] What FID Hides: Detecting, Ranking, and Diagnosing Deviations in Generative Evaluation
-- [arXiv] On the privacy cost for dependent Gaussian data: spectral density estimation under local differential privacy
-- [consultaelectoral.onpe.gob.pe] Open data and the reuse of public-sector information - consultaelectoral.onpe.gob.pe
-- [International Conference on Cyber Conflict] Up in the Air: Ensuring Government Data Sovereignty in the Cloud
 
 ## OS088 — Natural Resources × Industrial Digital Twin & Automation × Digital Twins
 
-**Attractiveness: 4.84/10**
-- Market signal strength: 3.555555555555556
-- Source diversity: 3.5
-- Evidence quality: 7.0 — The list mixes strong, diverse sources like analyst reports and established media with vendor‑centric blogs and less‑credible outlets, yielding overall decent but uneven credibility and relevance.
-- Novelty / momentum: 8.75
-- Strategic relevance: 3.0 — Orange Business has no dedicated digital twin API; the closest match is API M2M for IoT Connect Express (IoT data platform) which could support twin data but does not directly offer a digital twin solution.
+**Attractiveness: 4.49/10**
+- Market signal strength: 2.8888888888888884
+- Source diversity: 3.0
+- Evidence quality: 6.0 — The list mixes credible analyst reports and industry media with less authoritative sources like blogs and press releases, offering relevant but unevenly reliable signals for B2B innovation.
+- Novelty / momentum: 9.23
+- Strategic relevance: 4.0 — While Orange Business offers IoT connectivity via API M2M for IoT Connect Express and cloud services via API Cloud Avenue, it has no dedicated digital‑twin product, so the fit is only indirect.
 
-**Urgency: 4.64/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.5/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 5.8/10 [L3]**
 - Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Orange can leverage its IoT, cloud and connectivity APIs for data ingestion and networking, but it lacks a dedicated digital‑twin/automation platform, requiring a new capability.
+- Existing IoT, cloud, and networking APIs can supply data and connectivity, but a dedicated digital‑twin modeling/automation capability must be built to meet the opportunity.
 
-**Grounding signals (16):**
+**Grounding signals (15):**
 - [Hacker News] Industry Brief: Private 5G for Manufacturing and Industrial Sites [pdf]
 - [Hacker News] "Sovereign cloud"? A Trojan Horse at Europe's digital gates
 - [Cisco Blog] Powering the Scale Engine for Cisco: How AI is Revolutionizing Digital Customer Experience
@@ -4072,22 +3706,21 @@ _131/131 opportunity spaces scored._
 - [Energies Media] The Digital Transformation of Oilfields: From Automation to Smart Oilfields - Energies Media
 - [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
 - [The Northern Miner] Automation & IoT Snapshot: Eight suppliers supporting Industry 4.0 - The Northern Miner
-- [Farmonaut] “In 2026, over 70% of oil well drilling projects in UAE and Qatar will use advanced automation technologies.” - Farmonaut
 
 ## OS089 — IT and Services × IT Operations Automation × Cloud
 
-**Attractiveness: 4.92/10**
-- Market signal strength: 6.222222222222222
-- Source diversity: 4.0
-- Evidence quality: 3.0 — The list is dominated by low‑credibility Hacker News aggregations and vendor‑centric blog posts with limited specificity, offering little diverse, authoritative evidence for B2B innovation trends.
-- Novelty / momentum: 7.5
-- Strategic relevance: 5.0 — The opportunity aligns broadly with Orange Business' Cloud offering (API Cloud Avenue) but there is no specific API/product for IT Operations Automation in the catalog. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 4.79/10**
+- Market signal strength: 6.0
+- Source diversity: 3.75
+- Evidence quality: 3.0 — The list is dominated by Hacker News links and vendor blogs, offering limited primary evidence, duplicate entries, and few independent, high‑credibility sources, making the signals vague and weakly substantiated.
+- Novelty / momentum: 7.41
+- Strategic relevance: 5.0 — The opportunity aligns broadly with Orange Business' cloud offering (API Cloud Avenue) but there is no specific API/product for IT Operations Automation in the catalog. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 3.97/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.89/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 8.0/10 [L1]**
-- Matched assets: API Cloud Avenue, API Incident, API Maintenance, API Evolution Platform
-- Existing cloud and incident/maintenance APIs can be bundled to deliver IT operations automation, but no dedicated packaged offering currently exists. +0.5 calibration bonus (CRM customer overlap).
+- Matched assets: API Cloud Avenue, API Evolution Platform, API Incident, API Maintenance, API Ordering et Order Tracking
+- IT Operations Automation in Cloud can be delivered by bundling existing Cloud, Network‑as‑a‑Service and Ops APIs, requiring no new capability beyond integration. +0.5 calibration bonus (CRM customer overlap).
 
 **Grounding signals (28):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
@@ -4121,18 +3754,18 @@ _131/131 opportunity spaces scored._
 
 ## OS090 — IT and Services × Cybersecurity × Cloud
 
-**Attractiveness: 5.73/10**
-- Market signal strength: 7.555555555555555
-- Source diversity: 4.75
-- Evidence quality: 4.0 — The list mixes self‑promotional vendor blogs with many Hacker News aggregations lacking primary sources, offering limited independent credibility despite being loosely relevant to sovereign cloud and AI workload trends.
-- Novelty / momentum: 7.65
-- Strategic relevance: 5.0 — Broadly aligns with Orange Business cloud and security offerings such as API Cloud Avenue and API Incident, but no single existing API directly matches the combined IT‑services‑cybersecurity‑cloud opportunity Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 5.61/10**
+- Market signal strength: 7.333333333333333
+- Source diversity: 4.5
+- Evidence quality: 4.0 — The signals cover relevant B2B themes like sovereign cloud and AI security, but rely heavily on low‑credibility aggregators and vendor blogs with few independent analyst or regulator sources, limiting their overall credibility.
+- Novelty / momentum: 7.58
+- Strategic relevance: 5.0 — Broadly fits Orange Business cloud (API Cloud Avenue) and security (API Live Identity Verify, API Incident) domains but no single existing API directly matches the combined IT‑services‑cybersecurity‑cloud opportunity. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.05/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.97/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.8/10 [L1]**
-- Matched assets: API Cloud Avenue, API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing cloud and security APIs can be combined into a secure cloud service offering, but no single packaged product currently exists. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.0/10 [L1]**
+- Matched assets: API Cloud Avenue, API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco
+- Orange Business already offers cloud (API Cloud Avenue) and multiple security APIs, which can be bundled to address a secure‑cloud offering, though no single product currently does so. +0.5 calibration bonus (CRM customer overlap).
 
 **Grounding signals (34):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
@@ -4172,20 +3805,20 @@ _131/131 opportunity spaces scored._
 
 ## OS091 — Public Sector × Operational Excellence × IoT Platforms
 
-**Attractiveness: 5.16/10**
-- Market signal strength: 2.8888888888888884
-- Source diversity: 3.0
-- Evidence quality: 6.0 — The list mixes credible, specific B2B‑relevant sources (CNBC, Cybersecurity Dive, CISA, Gartner, arXiv, peer‑review journal) with less authoritative or tangential items, yielding moderate overall credibility and relevance.
-- Novelty / momentum: 8.46
-- Strategic relevance: 9.0 — Directly aligns with API M2M for IoT Connect Express, Orange Business's specific IoT platform offering, which can be extended for public sector operational excellence. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 5.24/10**
+- Market signal strength: 2.444444444444444
+- Source diversity: 2.5
+- Evidence quality: 7.0 — The set mixes high‑credibility sources (CNBC, Cybersecurity Dive, CISA guide, Gartner via Microsoft) with niche or vendor‑biased outlets, covering relevant B2B themes like cloud restrictions, zero‑trust OT, and IoT smart‑city markets, but includes several lower‑credibility or tangential items that prevent a top score.
+- Novelty / momentum: 9.09
+- Strategic relevance: 9.0 — Directly aligns with API M2M for IoT Connect Express, Orange Business's specific IoT platform offering, which can be tailored for public sector operational excellence Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 4.48/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.72/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
-- Existing IoT connectivity, cloud, and network‑as‑a‑service APIs can be combined to meet the public‑sector operational‑excellence IoT platform need, but Orange currently does not sell them as a bundled offering. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.5/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Evolution Platform, API Cloud Avenue
+- Orange Business already offers IoT connectivity (M2M) and a network‑as‑a‑service platform (Evolution) that together can be bundled for public‑sector operational‑excellence use cases, though they are not currently packaged as a single IoT platform offering. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (13):**
+**Grounding signals (11):**
 - [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
 - [Cybersecurity Dive] US agencies promote zero-trust practices for operational technology networks - Cybersecurity Dive
 - [Homeland Security Today] CISA and U.S. Government Partners Unveil Guide to Accelerate Zero Trust Adoption in Operational Technology - Homeland Security Today
@@ -4197,23 +3830,21 @@ _131/131 opportunity spaces scored._
 - [StateTech Magazine] What Is IoT Architecture, and How Does It Enable Smart Cities? - StateTech Magazine
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
 - [Philippine Canadian Inquirer] CICC warns platforms of geo-blocking over child protection lapses
-- [Journal of Environmental Management] Automated environmental compliance monitoring of rivers with IoT and open government data.
-- [arXiv] Torsion balances as operational probes of semiclassical gravity: Matched-filter bounds, torque-diffusion constraints, and quantum-noise benchmarks
 
 ## OS092 — Public Sector × Network Modernization & SD-WAN × Network & SD-WAN
 
 **Attractiveness: 4.67/10**
 - Market signal strength: 2.2222222222222223
 - Source diversity: 1.5
-- Evidence quality: 6.0 — The list mixes credible industry media with vendor‑centric blogs and vague community posts, offering specific but unevenly sourced signals that are moderately relevant to B2B innovation.
+- Evidence quality: 6.0 — The list mixes credible industry media and analyst references with several vendor‑centric blog posts and informal Hacker News items, offering some specific trends but limited independent validation.
 - Novelty / momentum: 7.0
-- Strategic relevance: 10.0 — Directly aligns with API Flexible SDWAN Cisco and the Evolution Platform, both specific Orange Business SD‑WAN/network modernization assets for enterprise and public sector customers. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+- Strategic relevance: 10.0 — Directly aligns with API Flexible SDWAN Cisco and the Evolution Platform (Network‑as‑a‑Service) which provide SD‑WAN and network modernization capabilities for enterprise and public‑sector customers. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 3.71/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.63/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 10.0/10 [L0]**
 - Matched assets: API Flexible SDWAN Cisco, API Evolution Platform
-- Orange Business already offers SD‑WAN via the Flexible SDWAN Cisco API and the Evolution Platform (Network as a Service), backed by proven public‑sector deployments and Gartner WAN leadership. +1.0 calibration bonus (CRM customer overlap).
+- Orange Business already offers SD‑WAN via the Flexible SDWAN Cisco API and Evolution Platform and has proven public‑sector deployments, enabling a direct, as‑is solution. +1.0 calibration bonus (CRM customer overlap).
 
 **Grounding signals (10):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
@@ -4229,20 +3860,20 @@ _131/131 opportunity spaces scored._
 
 ## OS093 — Manufacturing × Supply Chain Visibility × Cloud Data Platform
 
-**Attractiveness: 7.24/10**
+**Attractiveness: 7.59/10**
 - Market signal strength: 10.0
-- Source diversity: 6.75
-- Evidence quality: 5.0 — The set mixes credible industry sources (NTT, RCR Wireless, The National Law Review) with low‑credibility, repetitive Hacker News links, yielding moderate overall credibility and relevance.
+- Source diversity: 7.0
+- Evidence quality: 5.0 — The set mixes credible industry sources and analyst coverage with vendor‑centric press releases and low‑credibility aggregator links, yielding moderate overall credibility and relevance for a B2B innovation radar.
 - Novelty / momentum: 8.89
-- Strategic relevance: 5.0 — The concept can be built on API M2M for IoT Connect Express (Data, IA & IoT) and API Cloud Avenue (Cloud) but Orange Business has no dedicated supply‑chain visibility product. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Strategic relevance: 7.0 — Builds on API M2M for IoT Connect Express (Data, IA & IoT) and API Cloud Avenue (Cloud) to deliver a manufacturing supply‑chain visibility data platform. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 10.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 9.79/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.8/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco
-- Existing IoT, cloud and SD‑WAN APIs can be combined to deliver a supply‑chain visibility platform, but Orange Business does not yet offer them as a pre‑packaged solution. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.5/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
+- Supply‑chain visibility on a cloud data platform can be met by bundling Orange's IoT data ingestion, cloud services and SD‑WAN/network APIs, which exist but are not pre‑packaged as a single offering. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (56):**
+**Grounding signals (45):**
 - [NTT, Inc.] Private 5G: Building AI data centers starts with better wireless - NTT, Inc.
 - [NTT Data] NTT DATA and Ericsson Team Up to Scale Private 5G and Physical AI for Enterprises - NTT Data
 - [AI Magazine] Cargill: Deploying Robotics and Edge AI with NTT Data - AI Magazine
@@ -4288,32 +3919,21 @@ _131/131 opportunity spaces scored._
 - [Business Standard] NTT DATA, Ericsson join hands to scale pvt 5G, AI adoption for enterprises - Business Standard
 - [Bisinfotech] NTT DATA and Ericsson Team Up to Scale Private 5G and Physical AI for Enterprises - Bisinfotech
 - [Brattleboro Reformer] Mowrator Expands Robotic Yard-Care Platform With Multipurpose Outdoor Equipment
-- [Chicago Tribune] Data centers near O'Hare win nearly $100M in local tax breaks, leaving suburban homeowners to cover the gap
-- [Fintech Schweiz Digital Finance News - FintechNewsCH] From a simple frustration to a Top 10 Swiss Fintech: How Happy Pot became the leading crowdfunding platform in Switzerland
-- [arXiv] Maxwell's Demon in Markov Chain Monte Carlo: Cooling Information Flow and Entropy Balance
-- [armenpress.am] Eleveight AI says data center in Armenia uses no water for cooling
-- [Zero Hedge] Nano Nuclear Energy Signs Commercial Framework With Tillman To Enable Nuclear Power For Data Centers
-- [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [Daily Gate City] Supervisors partner with SEIRPC on data centers ordinances
-- [조선일보] Megazone Cloud VP: AI Competition Now About Execution, Not Models
-- [news.metal.com] Central State-Owned Enterprise Procurement Debuts on Platform | CITIC Dicastal 300 mt Aluminum Ingot Competitive Procurement Successfully Settled - Shanghai Metals Market (SMM)
-- [2025 MIPRO 48th ICT and Electronics Convention] Data Transmission of a ROS-Based Autonomous Vehicle Over a Private 5G Network
-- [Journal of Advances in Developmental Research] The Convergence of Private Wireless with AI and Machine Learning: Investigating how private networks enable real-time data processing at the edge for AI-driven applications in manufacturing, predictive maintenance, and autonomous systems
 
 ## OS094 — Defense × Network Modernization & SD-WAN × Network & SD-WAN
 
-**Attractiveness: 4.29/10**
+**Attractiveness: 3.99/10**
 - Market signal strength: 2.0
 - Source diversity: 1.25
-- Evidence quality: 6.0 — The set mixes credible analyst‑backed and regulator sources with vendor‑centric blogs and low‑credibility Hacker News posts, yielding moderate overall credibility and relevance for B2B innovation tracking.
+- Evidence quality: 6.0 — The list mixes specific vendor blog announcements and analyst recognitions with less authoritative Hacker News posts, offering moderate credibility and relevance for B2B innovation but relying heavily on self‑promotional sources.
 - Novelty / momentum: 6.67
-- Strategic relevance: 8.5 — Leverages API Flexible SDWAN Cisco for network modernization/SD‑WAN and API Incident for defense-related security incident handling Maps to Orange's 'NextGen Secured Connectivity' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Defense division (corporate deck, slide 12-14).
+- Strategic relevance: 6.5 — The opportunity aligns with API Flexible SDWAN Cisco (Internet & Reseaux) and the Evolution Platform's SD-WAN offering, though no specific defense‑oriented API exists to directly extend the concept. Maps to Orange's 'NextGen Secured Connectivity' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Defense division (corporate deck, slide 12-14).
 
-**Urgency: 3.53/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.2/10 [L0]**
-- Matched assets: API Evolution Platform
-- Evolution Platform delivers SD‑WAN together with SASE security, directly covering defense‑focused network modernization as‑is.
+**Right-to-win: 7.8/10 [L3]**
+- Matched assets: API Flexible SDWAN Cisco, API Incident, API Live Identity Captcha, API Live Identity Verify
+- Orange Business has strong SD‑WAN and security assets but lacks a dedicated, integrated Defense‑SD‑WAN offering, requiring a new capability to combine cyber‑defense services with network modernization.
 
 **Grounding signals (9):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
@@ -4328,18 +3948,18 @@ _131/131 opportunity spaces scored._
 
 ## OS095 — Natural Resources × Operational Excellence × IoT Platforms
 
-**Attractiveness: 4.86/10**
-- Market signal strength: 2.0
-- Source diversity: 2.25
-- Evidence quality: 7.0 — The set mixes credible analyst (Gartner), reputable industry media and academic sources with vendor blogs and press releases, offering diverse but partially marketing‑heavy signals relevant to B2B IoT/edge AI trends.
-- Novelty / momentum: 5.56
-- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express (Data, IA & IoT) for building IoT platforms in natural resources operational excellence Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+**Attractiveness: 5.06/10**
+- Market signal strength: 1.777777777777778
+- Source diversity: 2.0
+- Evidence quality: 8.0 — The signals come from a diverse mix of credible sources—including analyst reports, industry publications, and a peer‑reviewed journal—and are clearly relevant to B2B IoT/edge AI trends, though a few are duplicate press releases and vendor‑centric.
+- Novelty / momentum: 6.25
+- Strategic relevance: 10.0 — Directly aligns with API M2M for IoT Connect Express, providing the IoT platform needed for operational excellence in natural resources. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 2.95/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 2.89/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.8/10 [L3]**
+**Right-to-win: 7.5/10 [L1]**
 - Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Orange has IoT connectivity, cloud and network assets but no dedicated IoT platform for operational‑excellence in natural resources, requiring a new capability to be built.
+- Existing IoT connectivity, cloud, and SD‑WAN assets can be combined to deliver an operational‑excellence IoT platform for natural resources, but Orange does not yet offer them as a pre‑packaged solution.
 
 **Grounding signals (9):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
@@ -4354,20 +3974,20 @@ _131/131 opportunity spaces scored._
 
 ## OS096 — Life Sciences × Cloud Infrastructure Modernization × Cloud Data Platform
 
-**Attractiveness: 6.35/10**
-- Market signal strength: 8.444444444444445
-- Source diversity: 4.5
-- Evidence quality: 4.0 — The list mixes a few credible analyst recognitions with many vendor‑centric blog posts and redundant Hacker News links, limiting specificity and source diversity for B2B innovation relevance.
-- Novelty / momentum: 8.68
-- Strategic relevance: 7.0 — The opportunity aligns with API Cloud Avenue (Cloud) as a cloud infrastructure and data platform offering, though it is not a dedicated life‑sciences solution. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 5.57/10**
+- Market signal strength: 7.555555555555555
+- Source diversity: 3.5
+- Evidence quality: 4.0 — The list mixes vendor blogs and Hacker News aggregations, offering some relevant themes but limited independent analyst or regulator sources and many marketing‑focused items, reducing overall credibility.
+- Novelty / momentum: 8.53
+- Strategic relevance: 5.0 — The opportunity aligns with API Cloud Avenue (Cloud) for infrastructure modernization, but there is no specific Orange Business asset targeting life sciences data platforms. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.6/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.45/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 6.5/10 [L3]**
+**Right-to-win: 7.5/10 [L1]**
 - Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
-- Orange Business can provide cloud infrastructure and network services, but lacks a dedicated life‑sciences‑focused cloud data platform, requiring development of a new capability.
+- Orange Business already offers cloud, network‑as‑a‑service and SD‑WAN assets that can be bundled to meet a life‑sciences cloud infrastructure and data platform need, but no pre‑packaged solution exists yet.
 
-**Grounding signals (38):**
+**Grounding signals (35):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
@@ -4403,26 +4023,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
 - [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
 - [SiliconANGLE] Agentic web search infrastructure startup Keenable raises $26M
-- [Scoop] Cross-Government Plan To Deliver Stronger Data
-- [Market Screener] Australia Q2 business investment falls 3.6% as data centre rush fades
-- [Yahoo! Finance] Australia Q2 business investment falls 3.6% as data centre rush fades
 
 ## OS097 — Manufacturing × Manufacturing Process Automation × IoT Platforms
 
-**Attractiveness: 8.96/10**
+**Attractiveness: 8.91/10**
 - Market signal strength: 10.0
-- Source diversity: 8.5
-- Evidence quality: 8.0 — The list includes a diverse set of credible industry, academic, and analyst sources covering AI, predictive maintenance, digital twins, and private 5G in manufacturing, making it highly relevant though some entries are vendor‑centric press releases.
+- Source diversity: 8.75
+- Evidence quality: 7.0 — The list includes a mix of credible analyst reports, industry publications, and reputable news sources covering AI and digital twins in manufacturing, though it is weighted toward vendor‑centric announcements and some low‑impact items, limiting its overall strength.
 - Novelty / momentum: 9.11
-- Strategic relevance: 9.0 — Directly aligns with API M2M for IoT Connect Express, Orange Business's IoT connectivity platform, which can be leveraged for manufacturing process automation. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+- Strategic relevance: 10.0 — Extends API M2M for IoT Connect Express, Orange Business’s IoT connectivity platform, to enable manufacturing process automation. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
 **Urgency: 10.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 6.5/10 [L3]**
 - Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Orange Business already offers IoT connectivity, cloud and SD‑WAN services, but lacks a dedicated manufacturing‑process automation IoT platform, requiring the addition of a new capability. +1.0 calibration bonus (CRM customer overlap).
+- Orange Business offers IoT connectivity, cloud and SD‑WAN services but lacks a dedicated manufacturing‑process automation IoT platform, requiring an adjacent capability to be built. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (56):**
+**Grounding signals (45):**
 - [Hacker News] Industry Brief: Private 5G for Manufacturing and Industrial Sites [pdf]
 - [PlasticsToday] AI Predictive Maintenance Gains Traction in Manufacturing Plants - PlasticsToday
 - [MarketsandMarkets] UK Artificial Intelligence in Manufacturing Market Size, Share,Trends, Growth Analysis Report, 2030 - MarketsandMarkets
@@ -4468,32 +4085,21 @@ _131/131 opportunity spaces scored._
 - [EUR-Lex] ►B COMMISSION REGULATION (EC) No 2023/2006 of 22 December 2006 on good manufacturing practice for materials and articles inten - EUR-Lex
 - [EUR-Lex] COMMISSION IMPLEMENTING REGULATION (EU) 2025/2091 of 17 October 2025 laying down good manufacturing practice for veterinary medi - EUR-Lex
 - [NTT Data] Cargill Modernizes Manufacturing Operations with NTT DATA's Private 5G Network - NTT Data
-- [mykxlg.com] Eco Jersey Brings End-to-End Custom Apparel Manufacturing to Global B2B Markets
-- [Eagle-Tribune] IEM Announces $200 Million Manufacturing Facility in San Antonio, Creating Jobs and Expanding ...
-- [consultaelectoral.onpe.gob.pe] COMMISSION REGULATION (EC) No 2023/2006 of 22 December 2006 on good manufacturing practice for materials and articles intended t - consultaelectoral.onpe.gob.pe
-- [consultaelectoral.onpe.gob.pe] Materials and articles in contact with food — good manufacturing practice - consultaelectoral.onpe.gob.pe
-- [consultaelectoral.onpe.gob.pe] Veterinary medicines — good manufacturing practice - consultaelectoral.onpe.gob.pe
-- [consultaelectoral.onpe.gob.pe] Commission Implementing Regulation (EU) 2025/2154 of 17 October 2025 laying down good manufacturing practice for active substan - consultaelectoral.onpe.gob.pe
-- [consultaelectoral.onpe.gob.pe] ►B COMMISSION REGULATION (EC) No 2023/2006 of 22 December 2006 on good manufacturing practice for materials and articles inten - consultaelectoral.onpe.gob.pe
-- [consultaelectoral.onpe.gob.pe] COMMISSION IMPLEMENTING REGULATION (EU) 2025/2091 of 17 October 2025 laying down good manufacturing practice for veterinary medi - consultaelectoral.onpe.gob.pe
-- [NST Online] Govt explores regulatory framework for e-commerce platforms | New Straits Times
-- [ICTACT Journal on Image and Video Processing] EDGE-AI VIDEO ANALYTICS FOR INDUSTRIAL WORKER SAFETY AND HAZARD DETECTION IN SMART MANUFACTURING ENVIRONMENTS THROUGH DECISION-MAKING FRAMEWORKS
-- [Global Communications Conference] A Novel AI/ML SIEM as Application Function within Private 5G Core Network for Industrial-IoT
 
 ## OS098 — Life Sciences × Operational Excellence × Machine Learning
 
-**Attractiveness: 2.68/10**
+**Attractiveness: 2.58/10**
 - Market signal strength: 0.4444444444444445
 - Source diversity: 0.5
-- Evidence quality: 6.0 — One signal (ET CIO article) is a credible, relevant industry analysis, while the Hacker News hiring post is low‑credibility and only marginally relevant, lowering the overall score.
+- Evidence quality: 5.0 — One signal is a low‑credibility, vague hiring post on Hacker News, while the other is a credible ET CIO analysis on Pharma 4.0 that is directly relevant to B2B innovation.
 - Novelty / momentum: 5.0
-- Strategic relevance: 3.0 — Only loosely aligns with API M2M for IoT Connect Express (Data, IA & IoT) for ML, but no specific Orange Business product targets Life Sciences or Operational Excellence.
+- Strategic relevance: 4.0 — The idea loosely aligns with API M2M for IoT Connect Express (Data, IA & IoT) for AI-driven data handling, but Orange Business has no dedicated Life Sciences or Operational Excellence product, so the fit is limited.
 
 **Urgency: 0.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
-- The life‑sciences operational‑excellence ML use‑case can be met by bundling existing cloud, AI/IoT and network APIs, though Orange does not currently offer a pre‑packaged life‑sciences ML solution.
+**Right-to-win: 5.5/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
+- Existing IoT, cloud and network APIs give a foundation for data and connectivity, but life‑science operational‑excellence ML requires new domain‑specific capabilities beyond the current portfolio.
 
 **Grounding signals (2):**
 - [Hacker News] Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer
@@ -4501,20 +4107,20 @@ _131/131 opportunity spaces scored._
 
 ## OS099 — Aerospace & Defense × Cloud Infrastructure Modernization × Cloud
 
-**Attractiveness: 5.09/10**
-- Market signal strength: 5.555555555555555
-- Source diversity: 2.5
-- Evidence quality: 4.0 — The list mixes vendor blogs and Hacker News reposts, offering some specific announcements but largely lacks independent analyst or regulator sources and includes many duplicate or low‑credibility items, limiting its overall credibility and relevance.
-- Novelty / momentum: 8.0
-- Strategic relevance: 7.5 — Matches API Cloud Avenue (Cloud), the specific Orange Business cloud infrastructure product that can be leveraged for Aerospace & Defense cloud modernization Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Aerospace & Defense division (corporate deck, slide 12-14).
+**Attractiveness: 5.37/10**
+- Market signal strength: 5.333333333333333
+- Source diversity: 2.25
+- Evidence quality: 5.0 — The list mixes credible vendor blogs and a Gartner MQ mention with low‑authority Hacker News reposts, offering moderate relevance to B2B cloud/AI trends but limited independent verification.
+- Novelty / momentum: 7.92
+- Strategic relevance: 8.5 — The opportunity aligns with API Cloud Avenue (Cloud), extending Orange Business's cloud infrastructure capabilities to the aerospace & defense sector Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Aerospace & Defense division (corporate deck, slide 12-14).
 
-**Urgency: 4.24/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.11/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.3/10 [L1]**
-- Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco, API Live Identity Verify
-- Aerospace & Defense cloud modernization can be addressed by bundling the existing Cloud Avenue cloud services with network (Evolution Platform, Flexible SDWAN) and security (Live Identity Verify) APIs, though no single asset covers the full scope.
+**Right-to-win: 7.8/10 [L1]**
+- Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform, API Live Identity Verify, API Incident
+- Orange Business can meet A&D cloud modernization needs by bundling its Cloud Avenue offering with networking (SD‑WAN), security and management APIs, though no single pre‑packaged solution exists yet.
 
-**Grounding signals (25):**
+**Grounding signals (24):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
@@ -4539,22 +4145,21 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
 - [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
 - [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
-- [arXiv] Slasher: Power Flexibility for Cloud Datacenters
 
 ## OS100 — Healthcare × Digital Infrastructure × Cloud
 
-**Attractiveness: 5.11/10**
-- Market signal strength: 5.333333333333333
+**Attractiveness: 5.03/10**
+- Market signal strength: 5.111111111111111
 - Source diversity: 1.75
-- Evidence quality: 6.0 — The list mixes credible sources (Gartner, Microsoft, Cisco, NVIDIA) with vendor‑centric blogs and repeated Hacker News aggregations, offering moderate relevance but limited depth and diversity for a B2B innovation radar.
-- Novelty / momentum: 8.33
-- Strategic relevance: 5.5 — Broadly fits the Cloud Avenue API for cloud infrastructure but no healthcare‑specific API exists. Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
+- Evidence quality: 6.0 — The list mixes credible analyst and vendor sources (Gartner, Microsoft, Cisco) with lower‑credibility aggregations (Hacker News) and repeats, offering relevant but unevenly reliable B2B innovation signals.
+- Novelty / momentum: 8.26
+- Strategic relevance: 5.5 — No API is healthcare‑specific; the closest fit is the generic cloud offering API Cloud Avenue, which only broadly aligns with the digital‑infrastructure‑cloud angle. Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
 
-**Urgency: 4.41/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.32/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.0/10 [L1]**
-- Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing cloud and SD‑WAN/network assets can be combined to meet the healthcare digital‑infrastructure need, but Orange does not yet offer a pre‑packaged solution for this specific vertical. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.0/10 [L1]**
+- Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco, API M2M for IoT Connect Express
+- Existing Cloud, SD‑WAN, and IoT APIs can be combined to deliver a healthcare digital infrastructure, but Orange does not yet offer a pre‑packaged healthcare‑cloud bundle. +0.5 calibration bonus (CRM customer overlap).
 
 **Grounding signals (24):**
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
@@ -4584,20 +4189,20 @@ _131/131 opportunity spaces scored._
 
 ## OS101 — Wholesale × Cloud Infrastructure Modernization × Cloud
 
-**Attractiveness: 4.72/10**
-- Market signal strength: 5.111111111111111
-- Source diversity: 2.0
-- Evidence quality: 4.0 — The list mixes vendor blogs and Hacker News reposts, offering some specific announcements but largely lacks independent analyst or regulator sources and includes many duplicate or low‑credibility items, limiting its overall credibility and relevance.
-- Novelty / momentum: 7.39
-- Strategic relevance: 7.0 — Fits the API Cloud Avenue (Cloud) offering and can be extended via the Evolution Platform for cloud connectivity, aligning with Orange Business' cloud portfolio Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 4.86/10**
+- Market signal strength: 4.666666666666667
+- Source diversity: 1.5
+- Evidence quality: 6.0 — The set mixes credible vendor and analyst sources with many low‑credibility, duplicate Hacker News links, yielding moderate specificity and relevance but limited authoritative depth.
+- Novelty / momentum: 7.62
+- Strategic relevance: 6.0 — The opportunity aligns with API Cloud Avenue (Cloud) as a potential extension into wholesale cloud infrastructure modernization, though no dedicated wholesale API currently exists. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 3.91/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.01/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.5/10 [L1]**
-- Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
-- Wholesale cloud infrastructure modernization can be addressed by bundling Orange Business' existing Cloud Avenue, Evolution Platform (NaaS) and Flexible SDWAN assets, requiring no new capability.
+**Right-to-win: 8.2/10 [L1]**
+- Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
+- Orange Business already offers cloud, SD‑WAN and Network‑as‑a‑Service APIs that together meet wholesale cloud‑infrastructure modernization needs, but they are not yet packaged as a single solution.
 
-**Grounding signals (23):**
+**Grounding signals (22):**
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
@@ -4620,24 +4225,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
 - [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
 - [LatestLY] Chicago Sky Bans Enes Kanter Freedom from WNBA Home Games Following Courtside Altercation with Natasha Cloud
-- [Deloitte] Titan International Takes First Step to Industry 4.0 Capabilities with Oracle Cloud Applications - Deloitte
 
 ## OS102 — Media & Entertainment × Digital Infrastructure × Cloud
 
-**Attractiveness: 4.79/10**
-- Market signal strength: 6.222222222222222
-- Source diversity: 3.0
-- Evidence quality: 3.0 — The list is dominated by vendor blogs and Hacker News aggregations with limited independent analyst or regulator sources, offering mostly duplicate or marketing‑focused signals rather than specific, credible B2B innovation insights.
-- Novelty / momentum: 8.21
-- Strategic relevance: 5.0 — Broadly aligns with Orange Business’s cloud offering via API Cloud Avenue, though no specific Media & Entertainment product exists in the catalog Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 4.96/10**
+- Market signal strength: 5.111111111111111
+- Source diversity: 2.25
+- Evidence quality: 5.0 — The list mixes credible vendor blogs and a Gartner citation with many low‑credibility, duplicate Hacker News links, yielding moderate overall relevance but limited authoritative diversity.
+- Novelty / momentum: 8.26
+- Strategic relevance: 6.0 — The opportunity aligns with API Cloud Avenue (Cloud) for delivering media & entertainment workloads, but Orange Business has no dedicated media-specific API/product. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.35/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.32/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.3/10 [L1]**
+**Right-to-win: 7.5/10 [L1]**
 - Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Media & Entertainment cloud and digital infrastructure needs can be satisfied by bundling existing Cloud Avenue, Flexible SDWAN and Evolution Platform APIs, though Orange Business does not yet offer them as a single packaged solution.
+- Orange Business already offers cloud (API Cloud Avenue) and network connectivity (API Flexible SDWAN Cisco, API Evolution Platform) that can be bundled to meet Media & Entertainment digital infrastructure needs, though no dedicated pre‑packaged offering exists yet.
 
-**Grounding signals (28):**
+**Grounding signals (24):**
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
@@ -4662,49 +4266,44 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
 - [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
 - [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
-- [Yahoo Finance] What Could Cisco Systems (CSCO) Gain From The Streaming Infrastructure Boom? - Yahoo Finance
-- [Amazon Web Services (AWS)] Amplifying intelligence in ISR Data: Cloud-native streaming for FMV in an agentic AI era | Amazon Web Services - Amazon Web Services (AWS)
-- [IBM] What Is Cloud Computing? - IBM
-- [Cisco Newsroom] Cisco, Qwilt and Digital Alpha Define the Future of Content Delivery - Cisco Newsroom
 
 ## OS103 — Aerospace & Defense × Industrial Digital Twin & Automation × Digital Twins
 
-**Attractiveness: 3.36/10**
-- Market signal strength: 1.5555555555555556
-- Source diversity: 1.25
-- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
-- Novelty / momentum: 7.14
-- Strategic relevance: 4.5 — Only loosely aligns with API M2M for IoT Connect Express (Data, IA & IoT) for data ingestion, but Orange Business has no dedicated digital twin product. +0.5 trust-critical bonus: Orange runs a dedicated Aerospace & Defense division (corporate deck, slide 12-14).
+**Attractiveness: 3.06/10**
+- Market signal strength: 1.1111111111111112
+- Source diversity: 1.0
+- Evidence quality: 5.0 — The set mixes moderately credible sources (Cisco blog, industry press releases) with less authoritative ones (Hacker News posts) and covers relevant B2B themes, but overall lacks consistent depth, diversity, and independent analyst validation.
+- Novelty / momentum: 6.0
+- Strategic relevance: 4.5 — The closest fit is API M2M for IoT Connect Express (Data, IA & IoT), which can support data ingestion for digital twins, but Orange Business has no dedicated digital‑twin product. +0.5 trust-critical bonus: Orange runs a dedicated Aerospace & Defense division (corporate deck, slide 12-14).
 
-**Urgency: 3.78/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform, API Live Identity Verify, API Incident
-- A digital‑twin solution for aerospace & defense can be assembled from Orange Business' IoT, cloud, SD‑WAN and security APIs, but no single existing asset delivers the end‑to‑end offering.
+**Right-to-win: 5.2/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Live Identity Verify, API Incident
+- A dedicated Digital Twin platform is missing, but existing IoT, cloud, connectivity and security APIs can be bundled, making the opportunity adjacent and requiring one new capability.
 
-**Grounding signals (7):**
+**Grounding signals (6):**
 - [Hacker News] Industry Brief: Private 5G for Manufacturing and Industrial Sites [pdf]
 - [Hacker News] "Sovereign cloud"? A Trojan Horse at Europe's digital gates
 - [Cisco Blog] Powering the Scale Engine for Cisco: How AI is Revolutionizing Digital Customer Experience
 - [Leonardo S.p.A.] NATO Announces Major Contract with Accenture to Help Advance Towards a More Agile and Resilient Digital Infrastructure - Leonardo S.p.A.
 - [Industrial Cyber] Iranian espionage group Subtle Snail targets European telecom, aerospace, defense firms - Industrial Cyber
 - [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
-- [The Cool Down] In Bastrop, Texas, data centers could lose automatic approval in industrial zones
 
 ## OS104 — Natural Resources × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 4.1/10**
+**Attractiveness: 2.6/10**
 - Market signal strength: 3.111111111111111
 - Source diversity: 1.0
-- Evidence quality: 6.0 — Mixed credibility with several vendor‑blog and community‑sourced items, but overall relevant to zero‑trust and AI‑trust trends.
+- Evidence quality: 0.0 — No signals collected yet for this vertical.
 - Novelty / momentum: 7.14
-- Strategic relevance: 5.0 — Broadly aligns with Orange Business security offerings (e.g., API Incident for cyber‑defense) but no specific API targets natural‑resources or zero‑trust use‑cases.
+- Strategic relevance: 5.0 — Broadly fits Orange Business security portfolio (e.g., API Incident, Live Identity Verify) but no specific natural‑resources‑focused asset matches the opportunity
 
-**Urgency: 3.78/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.71/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.3/10 [L1]**
-- Matched assets: API Live Identity Verify, API Live Identity Captcha, API Incident, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing security, SD‑WAN and SASE APIs can be combined to deliver a Zero‑Trust cyber‑defense solution for natural‑resources clients, but they are not yet packaged as a single offering.
+**Right-to-win: 8.2/10 [L1]**
+- Matched assets: API Evolution Platform, API Flexible SDWAN Cisco, API Live Identity Captcha, API Live Identity Verify, API Incident
+- Existing security, networking and identity APIs can be bundled to deliver a Zero Trust cyber‑defense offering for the natural resources sector, requiring only a packaged solution rather than new capabilities.
 
 **Grounding signals (14):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
@@ -4724,20 +4323,20 @@ _131/131 opportunity spaces scored._
 
 ## OS105 — Manufacturing × Digital Infrastructure × Cloud
 
-**Attractiveness: 6.66/10**
-- Market signal strength: 8.0
-- Source diversity: 5.0
-- Evidence quality: 6.0 — The set mixes reputable industry publications and vendor sources with many secondary Hacker News reposts, yielding moderate credibility but good relevance to B2B innovation trends.
-- Novelty / momentum: 8.61
-- Strategic relevance: 6.0 — The manufacturing digital infrastructure cloud concept aligns with API M2M for IoT Connect Express (Data, IA & IoT) and API Cloud Avenue (Cloud), but does not map to a dedicated manufacturing‑specific Orange Business API. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 4.63/10**
+- Market signal strength: 7.111111111111112
+- Source diversity: 4.5
+- Evidence quality: 0.0 — No signals collected yet for this vertical.
+- Novelty / momentum: 8.44
+- Strategic relevance: 5.0 — The opportunity aligns broadly with Orange Business' cloud offering through API Cloud Avenue, though no specific manufacturing-focused asset exists. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 6.64/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 6.47/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.5/10 [L1]**
+**Right-to-win: 9.3/10 [L1]**
 - Matched assets: API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform, API M2M for IoT Connect Express
-- Manufacturing digital infrastructure and cloud needs can be satisfied by bundling Orange's Cloud, SD‑WAN, Network‑as‑a‑Service and IoT APIs, all already in the portfolio. +1.0 calibration bonus (CRM customer overlap).
+- Manufacturing digital‑infrastructure and cloud needs map to existing Cloud, SD‑WAN, NaaS and IoT APIs, but Orange Business does not yet offer them as a pre‑packaged manufacturing solution. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (36):**
+**Grounding signals (34):**
 - [Food and Drink Digital] Why is Cargill Deploying Private 5G Across its Sites? - Food and Drink Digital
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
@@ -4772,25 +4371,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
 - [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
 - [LatestLY] Business News | IntelliDB Enterprise Partners With Yotta To Deliver Sovereign & AI Database Infrastructure In India
-- [조선일보] Megazone Cloud VP: AI Competition Now About Execution, Not Models
-- [english.newsfirst.lk] Digital Predators Exposed: SLCERT Cracks Down on Exploitative Social Media Groups
 
 ## OS106 — Healthcare × Digital Infrastructure × Cloud Data Platform
 
-**Attractiveness: 6.81/10**
-- Market signal strength: 10.0
-- Source diversity: 5.5
-- Evidence quality: 4.0 — The list mixes low‑credibility aggregations (Hacker News repeats) and vendor blogs with a few reputable industry sources, offering limited specificity and diverse, trustworthy insight.
-- Novelty / momentum: 8.89
-- Strategic relevance: 5.5 — Broadly aligns with API Cloud Avenue (Cloud) but no specific Orange Business asset targets healthcare data platforms Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
+**Attractiveness: 5.27/10**
+- Market signal strength: 8.88888888888889
+- Source diversity: 4.5
+- Evidence quality: 0.0 — No signals collected yet for this vertical.
+- Novelty / momentum: 8.75
+- Strategic relevance: 5.5 — Broadly aligns with API Cloud Avenue (Cloud) but no specific healthcare data platform API exists in the current portfolio Maps to Orange's 'Secure Cloud Orchestration' value proposition. +0.5 trust-critical bonus: Orange runs a dedicated Healthcare division (corporate deck, slide 12-14).
 
-**Urgency: 4.74/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.56/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.0/10 [L1]**
+**Right-to-win: 8.7/10 [L1]**
 - Matched assets: API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco, API Live Identity Verify, API M2M for IoT Connect Express
-- Orange Business can meet the healthcare cloud data platform need by bundling its Cloud Avenue, Evolution Platform (SD‑WAN/SASE), security and IoT APIs, but no single pre‑packaged offering exists yet. +0.5 calibration bonus (CRM customer overlap).
+- Multiple existing assets (cloud, networking, security and IoT APIs) can be combined to deliver a healthcare digital‑infrastructure data platform, but no single offering currently exists as‑is. +0.5 calibration bonus (CRM customer overlap).
 
-**Grounding signals (47):**
+**Grounding signals (41):**
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
@@ -4832,29 +4429,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
 - [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
 - [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
-- [BioMedicine] Mini-review of clinical data service platforms in the era of artificial intelligence: A case study of the iHi data platform
-- [Clinical Chemistry] B-214 Migration of a Previously Validated Sequencing Workflow of 4,700 Genes Associated with Clinical Phenotypes to the MGI DNBSEQ-G400 Platform: High-Quality NGS Data with Elevated Concordance to Expected Results
-- [International Journal of Population Data Science] Hospital Electronic Health Records as a research resource: data linkage, national scale-up, and five-year Impact of the National Centre for Healthy Ageing Data Platform
-- [Journal of Clinical Oncology] AI-driven prediction of prostate cancer risk: A comparative analysis with C the Signs in the Mayo Clinic data platform.
-- [Journal of Medical Internet Research] Artificial Intelligence Platform Architecture for Hospital Systems: Systematic Review
-- [Blood] Clinical and technological validation of locally-installed, privacy-compliant, and hematology-tailored ambient AI platform for clinical report transcription assistance and clinical trial patient management
 
 ## OS107 — Transportation and Logistics × Supply Chain Visibility × Edge Computing
 
-**Attractiveness: 4.88/10**
-- Market signal strength: 3.333333333333333
-- Source diversity: 3.5
-- Evidence quality: 5.0 — The set mixes moderately credible industry sources on IoT/AI supply‑chain topics with many vendor press releases and unrelated items, yielding only average credibility and relevance for a B2B innovation radar.
-- Novelty / momentum: 7.33
-- Strategic relevance: 8.0 — Leverages API M2M for IoT Connect Express to deliver edge‑enabled sensor data and connectivity for transport and logistics supply‑chain visibility.
+**Attractiveness: 3.05/10**
+- Market signal strength: 3.111111111111111
+- Source diversity: 3.25
+- Evidence quality: 0.0 — No signals collected yet for this vertical.
+- Novelty / momentum: 7.14
+- Strategic relevance: 5.0 — Broadly fits Orange Business IoT domain via API M2M for IoT Connect Express for edge devices, but no specific logistics or supply‑chain visibility API exists.
 
-**Urgency: 3.88/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.71/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.1/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Cloud Avenue, API Evolution Platform
-- Orange Business can supply IoT connectivity and network/cloud services, but lacks a dedicated edge‑computing offering, making the solution adjacent and requiring a new capability. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 8.8/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
+- Existing IoT, cloud, and SD‑WAN APIs can be combined to deliver edge‑enabled supply‑chain visibility, but Orange Business does not yet offer a packaged solution for this use case. +0.5 calibration bonus (CRM customer overlap).
 
-**Grounding signals (15):**
+**Grounding signals (14):**
 - [GlobeNewswire] Supply Chain Technology Innovators Honored in 5th Annual SupplyTech Breakthrough Awards Program - GlobeNewswire
 - [IoT For All] Securing the Aerospace Supply Chain: IoT, Quality Management, and Compliance - IoT For All
 - [Farmonaut] AI Edge & IoT Based Smart Agriculture: Top Trends For The Future - Farmonaut
@@ -4869,24 +4460,23 @@ _131/131 opportunity spaces scored._
 - [IoT Business News] AT&T Moves Deeper Into Supply Chain IoT Through Wiliot Collaboration - IoT Business News
 - [Global Market Insights Inc.] AI in Logistics and Supply Chain Market Size & Share 2025 - 2034 - Global Market Insights Inc.
 - [mlive] CEO admits struggling burger chain sacrificed food quality for cost savings
-- [Khmer Times] Phnom Penh scam 'supply stations' busted
 
 ## OS108 — Energy × Energy Optimization × Cloud Data Platform
 
-**Attractiveness: 7.35/10**
+**Attractiveness: 5.23/10**
 - Market signal strength: 10.0
-- Source diversity: 6.5
-- Evidence quality: 6.0 — The set mixes credible corporate blogs and market research with many low‑credibility Hacker News reposts, offering some relevant B2B innovation cues but limited depth and source diversity.
-- Novelty / momentum: 8.04
-- Strategic relevance: 5.0 — The concept aligns broadly with API Cloud Avenue (Cloud) and possibly API M2M for IoT Connect Express (Data, IA & IoT), but Orange Business has no specific energy optimization product. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Source diversity: 5.0
+- Evidence quality: 0.0 — No signals collected yet for this vertical.
+- Novelty / momentum: 7.78
+- Strategic relevance: 3.0 — Only loosely aligns with API Cloud Avenue (Cloud) as a generic cloud data platform, but Orange Business has no specific energy optimization product. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
 **Urgency: 10.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L1]**
-- Matched assets: API Cloud Avenue (Cloud), API M2M for IoT Connect Express (Data, IA & IoT), API Flexible SDWAN Cisco (Internet & Reseaux), API Evolution Platform (Relation client)
-- Energy optimization on a cloud data platform can be met by bundling existing Cloud, IoT and connectivity APIs, but Orange Business does not yet offer a single packaged solution for this use case.
+**Right-to-win: 8.2/10 [L1]**
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Flexible SDWAN Cisco
+- Energy optimization on a cloud data platform can be assembled from existing Cloud, IoT and SD‑WAN APIs, but Orange does not yet offer them as a pre‑packaged energy solution.
 
-**Grounding signals (56):**
+**Grounding signals (45):**
 - [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
@@ -4932,32 +4522,21 @@ _131/131 opportunity spaces scored._
 - [Precedence Research] Agentic AI in Energy Market Size to Hit USD 14,907.31 Million by 2035 - Precedence Research
 - [arXiv] High-Energy Neutrino Constraints on memory burdened Bardeen and Kerr Primordial Black Holes
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [Kuensel Online] Bhutan races to harness solar power to bolster energy security
-- [consultaelectoral.onpe.gob.pe] Directive - 2009/28 - EN - Renewable Energy Directive - consultaelectoral.onpe.gob.pe
-- [consultaelectoral.onpe.gob.pe] Regulation (EU) No 1227/2011 of the European Parliament and of the Council of 25 October 2011 on wholesale energy market integri - consultaelectoral.onpe.gob.pe
-- [consultaelectoral.onpe.gob.pe] Renewable energy - consultaelectoral.onpe.gob.pe
-- [consultaelectoral.onpe.gob.pe] Emergency intervention to address high energy prices - consultaelectoral.onpe.gob.pe
-- [International Journal of Science, Strategic Management and Technology] Smart EV Charging Infrastructure Using IOT and AI for Intelligent Energy Management and Grid Optimization
-- [Iranian Journal of Science and Technology Transactions of Electrical Engineering] Harnessing Quantum Computing and AI for Enhanced Optimization in Renewable Energy-Driven Smart Grid Systems
-- [Proceedings of the Institution of mechanical engineers. Part D, journal of automobile engineering] Edge AI and IoT for smart sustainable transportation: Real-time renewable energy optimization – A comprehensive review
-- [2024 32nd Southern African Universities Power Engineering Conference (SAUPEC)] Optimization of Internet of Things (IoT) for Smart Grid Energy Management Using Artificial Intelligence (AI) Techniques to Reach SDG7
-- [2025 International Conference on Digital Innovations for Sustainable Solutions (ICDISS)] IoT-Based Renewable Energy Integration and Optimization in Smart Power Grids
-- [2025 6th International Conference on IoT Based Control Networks and Intelligent Systems (ICICNIS)] A Review on Smart Traffic Light Management and Energy Optimization with Artificial Intelligence(AI) enabled Programmable Logic Controller(PLC) using Internet of Things(IoT)
 
 ## OS109 — Fast Moving Consumer Goods × Operational Excellence × Cloud
 
-**Attractiveness: 3.82/10**
+**Attractiveness: 2.82/10**
 - Market signal strength: 3.555555555555556
 - Source diversity: 1.25
-- Evidence quality: 4.0 — The list mixes mostly aggregator posts and vendor‑centric blogs/press releases, offering limited original, diverse, and authoritative evidence despite being on relevant topics like sovereign cloud and AI contact‑center solutions.
+- Evidence quality: 0.0 — No signals collected yet for this vertical.
 - Novelty / momentum: 7.5
-- Strategic relevance: 5.0 — Broadly aligns with API Cloud Avenue (Cloud) but no specific Orange Business API directly addresses FMCG operational excellence Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Strategic relevance: 5.0 — Matches the generic API Cloud Avenue (Cloud) but no FMCG‑specific or operational‑excellence‑specific Orange Business asset Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 3.97/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.89/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.3/10 [L1]**
-- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Contact Everyone, API Evolution Platform
-- Operational‑excellence for FMCG can be satisfied by bundling Cloud Avenue with IoT, collaboration and network‑as‑a‑service APIs, which exist but are not yet packaged as a single offering.
+**Right-to-win: 7.5/10 [L1]**
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express
+- FMCG operational‑excellence on cloud can be addressed by bundling the Cloud Avenue offering with the IoT/Data API, but Orange currently has no pre‑packaged solution for this use‑case.
 
 **Grounding signals (16):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
@@ -4979,20 +4558,20 @@ _131/131 opportunity spaces scored._
 
 ## OS110 — Media & Entertainment × Customer Experience × Cloud
 
-**Attractiveness: 4.31/10**
-- Market signal strength: 5.111111111111111
-- Source diversity: 2.25
-- Evidence quality: 3.0 — The signals rely heavily on aggregator (Hacker News) and vendor blogs, offering limited independent credibility and mixed relevance to B2B innovation.
-- Novelty / momentum: 8.26
-- Strategic relevance: 5.0 — Fits Orange Business’s cloud and CX capabilities via API Cloud Avenue (Cloud) and API Contact Everyone (Collaboration & Teletravail) but lacks a dedicated Media & Entertainment product. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 4.11/10**
+- Market signal strength: 4.666666666666667
+- Source diversity: 2.0
+- Evidence quality: 3.0 — The list is dominated by low‑credibility Hacker News aggregations and vendor blogs, with limited concrete data or diverse authoritative sources, making the signals vague and only loosely relevant to B2B innovation.
+- Novelty / momentum: 8.1
+- Strategic relevance: 5.0 — Broadly aligns with API Cloud Avenue (Cloud) and API Contact Everyone (Collaboration & Teletravail) but there is no specific Orange Business API for Media & Entertainment CX Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.38/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.21/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.8/10 [L3]**
-- Matched assets: API Cloud Avenue, API Contact Everyone, API Evolution Platform, API Flexible SDWAN Cisco
-- Existing cloud, collaboration and network APIs can be combined to support CX, but no media‑specific streaming or content‑delivery capability exists, requiring a new asset.
+**Right-to-win: 5.5/10 [L3]**
+- Matched assets: API Cloud Avenue, API Contact Everyone, API Business Talk Digital, API Evolution Platform
+- Orange Business can bundle its Cloud and CX APIs, but lacks a dedicated Media & Entertainment capability, requiring a new media‑specific service to close the gap.
 
-**Grounding signals (23):**
+**Grounding signals (21):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -5014,25 +4593,23 @@ _131/131 opportunity spaces scored._
 - [FinancialContent] Amazon (AMZN): Navigating the Future of E-commerce, Cloud, and AI - FinancialContent
 - [Akamai] Harmonic Innovated Media Workflows in the Cloud - Akamai
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [Amazon Web Services (AWS)] Amplifying intelligence in ISR Data: Cloud-native streaming for FMV in an agentic AI era | Amazon Web Services - Amazon Web Services (AWS)
-- [IBM] What Is Cloud Computing? - IBM
 
 ## OS111 — Media & Entertainment × Network Modernization & SD-WAN × Network & SD-WAN
 
-**Attractiveness: 3.97/10**
-- Market signal strength: 2.444444444444444
+**Attractiveness: 4.77/10**
+- Market signal strength: 2.2222222222222223
 - Source diversity: 1.5
-- Evidence quality: 5.0 — The list is dominated by vendor blogs and aggregator posts with few independent analyst or media sources, offering moderate credibility and relevance for a B2B innovation radar.
-- Novelty / momentum: 6.36
-- Strategic relevance: 7.0 — The opportunity aligns with Orange Business' SD-WAN offerings, specifically API Flexible SDWAN Cisco and the Evolution Platform (Network as a Service) which provide network modernization for enterprise verticals such as Media & Entertainment. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+- Evidence quality: 7.0 — The signals are fairly specific and come from a mix of credible vendor blogs, analyst recognitions, and industry news, though some are marketing‑focused or secondary sources, reducing overall credibility.
+- Novelty / momentum: 7.0
+- Strategic relevance: 9.0 — The Media & Entertainment network modernization need directly leverages Orange Business' API Flexible SDWAN Cisco (Internet & Reseaux) for enterprise SD-WAN delivery. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 3.37/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.63/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.3/10 [L1]**
+**Right-to-win: 9.2/10 [L0]**
 - Matched assets: API Flexible SDWAN Cisco, API Evolution Platform
-- Existing SD‑WAN assets (Flexible SDWAN Cisco and Evolution Platform) can be bundled to meet Media & Entertainment network modernization needs, though no dedicated M&E service currently exists.
+- Orange Business already offers SD‑WAN via Flexible SDWAN Cisco and Evolution Platform, matching the network modernization needs of Media & Entertainment customers.
 
-**Grounding signals (11):**
+**Grounding signals (10):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
 - [Cisco Blog] Monitoring beyond SNMP: Turning your network into a sensor
@@ -5043,24 +4620,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Cisco Recognized as a Leader in the 2026 Forrester Wave™ Data Center Network Solutions
 - [Akamai] Content Delivery Network (CDN) Solutions - Akamai
 - [GlobeNewswire] Content Delivery Network (CDN) Global Market Overview - GlobeNewswire
-- [Akamai] Smart DNS for the New Network: Optimizing Content Delivery - Akamai
 
 ## OS112 — Retail × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 3.85/10**
-- Market signal strength: 3.111111111111111
-- Source diversity: 1.0
-- Evidence quality: 5.0 — The list mixes credible journal articles and a vendor blog with many redundant Hacker News summaries, offering limited source diversity and specificity for B2B innovation insight.
-- Novelty / momentum: 7.14
-- Strategic relevance: 5.0 — Broadly aligns with Orange Business security offerings like API Incident and API Live Identity Verify, but no specific API directly addresses a retail‑focused Zero Trust solution
+**Attractiveness: 4.07/10**
+- Market signal strength: 2.6666666666666665
+- Source diversity: 0.5
+- Evidence quality: 7.0 — The signals are relevant to B2B cybersecurity and AI trust, include credible corporate blog posts and multiple community‑curated summaries, but many Hacker News items are secondary, non‑authoritative sources, limiting overall credibility.
+- Novelty / momentum: 6.67
+- Strategic relevance: 5.0 — The retail cyber‑defense & zero‑trust concept aligns with Orange Business security offerings such as API Incident, API Live Identity Captcha and API Live Identity Verify, but no single existing API directly matches the zero‑trust retail use‑case.
 
-**Urgency: 3.78/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 9.3/10 [L1]**
-- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Evolution Platform, API Cloud Avenue
-- Retail cyber‑defense/Zero‑Trust can be built by bundling Orange Business security APIs (identity, incident) with its network‑as‑a‑service and cloud assets, but no single pre‑packaged offer exists yet. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.2/10 [L1]**
+- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Flexible SDWAN Cisco, API Evolution Platform, API Incident
+- Existing security and network APIs can be combined to deliver a retail‑focused zero‑trust cyber‑defense solution, but Orange does not yet offer them as a packaged offering. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (14):**
+**Grounding signals (12):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
 - [Hacker News] I read the federal government’s Zero-Trust Memo so you don’t have to
 - [Hacker News] Summary of the USA federal government's zero-trust memo
@@ -5073,23 +4649,21 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] AI Workforce Consortium: Building a cybersecurity workforce ready for what’s next
 - [Hacker News] Would you trust an AI agent to auto-approve low-value insurance claims?
 - [Cisco Blog] Cisco AI Defense + Armada: Distributed AI That’s Safe to Run, Wherever the Mission Requires It
-- [Journal of AI, Robotics &amp; Workplace Automation] AI in retail: Operationalising agentic AI with trust and transparency
-- [European Modern Studies Journal] Retail Cybersecurity in the Agentic Age: Securing Autonomous Shopping Agents in E-Commerce
 
 ## OS113 — Life Sciences × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 3.66/10**
+**Attractiveness: 3.71/10**
 - Market signal strength: 2.8888888888888884
 - Source diversity: 0.75
-- Evidence quality: 6.0 — The list mixes credible corporate and news sources (Cisco Blog, Bloomberg via Investing.com) with low‑credibility aggregations from Hacker News, offering relevant but unevenly reliable signals on federal zero‑trust and AI trust trends.
+- Evidence quality: 5.0 — The list mixes credible corporate blogs and news with low‑credibility aggregator posts that largely repeat the same federal zero‑trust memo, yielding moderate specificity and relevance but limited source diversity and originality.
 - Novelty / momentum: 6.92
-- Strategic relevance: 3.0 — Only generic security APIs such as API Incident exist, with no specific Orange Business asset targeting Life Sciences cyber defense or Zero Trust, resulting in a low fit.
+- Strategic relevance: 5.0 — Broadly aligns with Orange Business security assets like API Live Identity Verify and API Incident, but there is no specific Life Sciences‑focused product in the catalog.
 
-**Urgency: 3.67/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.59/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L1]**
-- Matched assets: API Live Identity Captcha, API Live Identity Verify, API Incident, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing security, identity, incident and SD‑WAN/SASE APIs can be bundled to address Life Sciences cyber‑defense and Zero Trust needs, but no single pre‑packaged offer currently exists.
+**Right-to-win: 6.5/10 [L1]**
+- Matched assets: API Flexible SDWAN Cisco, API Live Identity Verify, API Live Identity Captcha, API Incident, API Evolution Platform
+- Existing networking, identity, and incident APIs can be combined to build a zero‑trust cyber‑defense offering for Life Sciences, but Orange Business does not currently package them as a single solution.
 
 **Grounding signals (13):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
@@ -5108,20 +4682,20 @@ _131/131 opportunity spaces scored._
 
 ## OS114 — Fast Moving Consumer Goods × Supply Chain Visibility × Cloud Data Platform
 
-**Attractiveness: 5.69/10**
-- Market signal strength: 7.555555555555555
-- Source diversity: 4.25
-- Evidence quality: 4.0 — The signals are largely aggregated from Hacker News and vendor blogs, lacking primary analyst or regulator sources and containing many vendor‑centric announcements, reducing overall credibility and relevance for a B2B innovation radar.
-- Novelty / momentum: 8.24
-- Strategic relevance: 5.0 — The opportunity aligns with API Cloud Avenue (Cloud) and API M2M for IoT Connect Express (Data, IA & IoT) for a cloud data platform and IoT data collection, but Orange Business has no dedicated supply‑chain visibility product. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 5.75/10**
+- Market signal strength: 7.111111111111112
+- Source diversity: 4.0
+- Evidence quality: 5.0 — The list mixes low‑credibility aggregator posts (Hacker News) with vendor‑centric blogs, offering relevant but largely non‑independent signals that lack strong analyst or regulator backing.
+- Novelty / momentum: 8.12
+- Strategic relevance: 5.0 — The opportunity aligns with API Cloud Avenue (Cloud) and API M2M for IoT Connect Express (Data, IA & IoT) for visibility, but Orange Business has no specific supply‑chain visibility API to extend directly. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.37/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.22/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 7.5/10 [L1]**
-- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Evolution Platform
-- Supply‑chain visibility on a cloud data platform can be assembled from Orange Business' cloud (Cloud Avenue), IoT data (M2M for IoT Connect Express) and network connectivity (Flexible SDWAN Cisco/Evolution Platform) assets, but they are not currently packaged as a single offering.
+- Matched assets: API Cloud Avenue (Cloud), API M2M for IoT Connect Express (Data, IA & IoT), API Flexible SDWAN Cisco (Internet & Reseaux)
+- Existing cloud, IoT connectivity, and network APIs can be combined to deliver a supply‑chain visibility platform for FMCG, but Orange Business does not yet offer this as a bundled solution.
 
-**Grounding signals (34):**
+**Grounding signals (32):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -5154,25 +4728,23 @@ _131/131 opportunity spaces scored._
 - [Newswire.com] OMP Positioned Highest for Both Completeness of Vision and Ability to Execute in the 2026 Gartner(R) Magic Quadrant(TM) for Supply Chain Planning Solutions: Process Industries - Newswire.com
 - [SNS Insider] Unilever And Google Cloud Partnership Driving The Future Of AI In Consumer Goods - SNS Insider
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [KX NEWS] Data center tax savings, Rugby flood assistance, SWC drought funding
-- [IBM] The intuitive, AI-powered supply chain - IBM
 
 ## OS115 — IT and Services × Data Sovereignty × Cloud Data Platform
 
-**Attractiveness: 6.05/10**
-- Market signal strength: 8.444444444444445
+**Attractiveness: 6.22/10**
+- Market signal strength: 8.222222222222221
 - Source diversity: 5.0
-- Evidence quality: 4.0 — The signals are largely aggregated from Hacker News and vendor blogs, lacking independent analyst or regulator sources and containing several marketing‑focused items, which limits their credibility and relevance for a B2B innovation radar.
-- Novelty / momentum: 7.63
-- Strategic relevance: 5.0 — Broadly aligns with API Cloud Avenue (Cloud) but lacks a specific Orange Business asset for data‑sovereignty, so only a generic cloud fit. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Evidence quality: 5.0 — The list mixes low‑credibility aggregator posts (Hacker News) with vendor‑centric blogs, offering relevant but largely non‑independent signals that lack strong analyst or regulator backing.
+- Novelty / momentum: 7.57
+- Strategic relevance: 5.0 — Broadly aligns with API Cloud Avenue (Cloud) but there is no specific Orange Business API/product dedicated to data‑sovereignty or a cloud data platform Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.04/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.93/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.0/10 [L3]**
-- Matched assets: API Cloud Avenue, API Live Identity Verify, API Live Identity Captcha
-- Orange Business can leverage its Cloud Avenue and security APIs, but lacks a dedicated sovereign cloud data platform, requiring development of a new capability. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 6.0/10 [L3]**
+- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Live Identity Verify
+- Orange Business has cloud (API Cloud Avenue) and data/AI (API M2M) capabilities, but lacks a dedicated sovereign cloud data platform, requiring a new offering to meet data residency requirements. +0.5 calibration bonus (CRM customer overlap).
 
-**Grounding signals (38):**
+**Grounding signals (37):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -5210,22 +4782,21 @@ _131/131 opportunity spaces scored._
 - [FedScoop] How the U.S. Census Bureau leveraged cloud services to modernize security - FedScoop
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
 - [arXiv] Deep Learning Super Resolution for Satellite Cloud Mask Downscaling
-- [Cisco Blog] Cisco IQ: Engineering Sovereignty in the AI Era
 
 ## OS116 — Wholesale × Cyber Defense & Zero Trust × Cybersecurity
 
-**Attractiveness: 3.43/10**
+**Attractiveness: 3.73/10**
 - Market signal strength: 2.8888888888888884
 - Source diversity: 0.75
-- Evidence quality: 6.0 — The set mixes credible corporate blogs (Cisco) with low‑credibility aggregator posts (Hacker News), covering relevant trust/zero‑trust themes but many entries are redundant, vendor‑centric, or lack authoritative sourcing.
+- Evidence quality: 6.0 — The set mixes credible Cisco blog posts and community‑curated Hacker News links, but relies heavily on secondary summaries and lacks diverse analyst or regulator sources, limiting its overall market signal strength.
 - Novelty / momentum: 6.15
-- Strategic relevance: 2.0 — No specific Orange Business API directly covers wholesale cyber defense or Zero Trust; the closest security asset is API Incident, which does not address wholesale or Zero Trust capabilities
+- Strategic relevance: 4.0 — No specific Orange Business API directly addresses wholesale cyber‑defense or zero‑trust; only generic security assets like API Incident exist, so the fit is weak.
 
-**Urgency: 3.26/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.19/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L3]**
-- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Incident, API Live Identity Captcha, API Live Identity Verify
-- Existing SD‑WAN, SASE, and security APIs can be combined, but a dedicated wholesale provisioning and integrated Zero‑Trust service must be built to address the opportunity.
+**Right-to-win: 6.5/10 [L3]**
+- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Live Identity Verify, API Live Identity Captcha, API Incident
+- Orange Business has strong SD‑WAN, security and incident‑response APIs, but lacks a dedicated wholesale offering, requiring a new capability to bridge network wholesale with zero‑trust cyber‑defense.
 
 **Grounding signals (13):**
 - [Cisco Blog] Elevating Federal Cybersecurity: Cisco’s Path from FedRAMP Certified Class C (Moderate) to Certified Class D (High)
@@ -5244,18 +4815,18 @@ _131/131 opportunity spaces scored._
 
 ## OS117 — Natural Resources × Predictive Maintenance × Machine Learning
 
-**Attractiveness: 2.97/10**
+**Attractiveness: 3.07/10**
 - Market signal strength: 0.6666666666666666
 - Source diversity: 0.75
-- Evidence quality: 3.0 — The signals are a mix of low‑credibility hiring news, a modestly credible market report, and an education‑focused story, offering limited specific, diverse, and B2B‑relevant insight.
+- Evidence quality: 4.0 — Mixed sources with limited B2B relevance; only the predictive‑maintenance report offers modest market insight, while the other two are low‑credibility or off‑topic.
 - Novelty / momentum: 6.67
-- Strategic relevance: 8.0 — Extends API M2M for IoT Connect Express (Data, IA & IoT) by leveraging its IoT connectivity and AI capabilities for predictive maintenance in natural resources. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
+- Strategic relevance: 7.0 — Leverages API M2M for IoT Connect Express (Data, IA & IoT) to ingest sensor data for ML‑driven predictive maintenance in natural resources Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
 
-**Urgency: 3.53/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.2/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform
-- Predictive maintenance can be delivered by bundling Orange's IoT connectivity (M2M), cloud/AI platform (Cloud Avenue) and network services (Evolution Platform), though no standalone offering currently exists.
+**Right-to-win: 7.8/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express (Data, IA & IoT), API Cloud Avenue (Cloud)
+- Predictive maintenance for natural resources can be addressed by bundling Orange's IoT connectivity and cloud platforms, though a dedicated offering is not yet packaged.
 
 **Grounding signals (3):**
 - [Hacker News] Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer
@@ -5264,20 +4835,20 @@ _131/131 opportunity spaces scored._
 
 ## OS118 — Manufacturing × Operational Excellence × Cloud
 
-**Attractiveness: 4.96/10**
-- Market signal strength: 5.111111111111111
-- Source diversity: 3.0
-- Evidence quality: 5.0 — The set mixes credible analyst sources (Omdia, Gartner) and relevant topics, but is dominated by low‑credibility, single‑source or vendor‑centric Hacker News items and press releases, limiting overall trustworthiness.
-- Novelty / momentum: 8.26
-- Strategic relevance: 5.0 — Broadly aligns with API Cloud Avenue (Cloud) but there is no specific Orange Business API for manufacturing operational excellence Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 4.48/10**
+- Market signal strength: 4.444444444444445
+- Source diversity: 2.25
+- Evidence quality: 4.0 — The list mixes low‑credibility aggregator posts and vendor press releases with a few reputable analyst sources, resulting in limited specificity and uneven relevance for a B2B innovation radar.
+- Novelty / momentum: 8.0
+- Strategic relevance: 6.0 — The opportunity aligns with API Cloud Avenue (Cloud) as a generic cloud offering, though no specific manufacturing or operational excellence API exists in the catalog. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 4.38/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.15/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.5/10 [L1]**
-- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Evolution Platform
-- Manufacturing operational‑excellence in the cloud can be addressed by bundling Orange Business' Cloud, IoT and SD‑WAN APIs, though no dedicated pre‑packaged offer currently exists. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.1/10 [L3]**
+- Matched assets: API Evolution Platform, API Cloud Avenue
+- Needs one new capability to be built or acquired, as Orange Business already offers Network as a Service (SASE) and Cloud connectivity, but lacks a strong focus on Manufacturing and Operational Excellence in its portfolio. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (23):**
+**Grounding signals (20):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -5298,26 +4869,23 @@ _131/131 opportunity spaces scored._
 - [Hacker News] Google Cloud launches coronavirus response program with Contact Center AI
 - [Nokia] Combining network slicing with edge cloud unlocks opportunities for enterprises and CSPs - Nokia
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [조선일보] Megazone Cloud VP: AI Competition Now About Execution, Not Models
-- [arXiv] Formal, Executable and Explainable Runtime Monitoring of Spoken Air Traffic Control Operational Procedures
-- [Eden Magnet] Full list: South East business excellence awards finalists revealed
 
 ## OS119 — Transportation and Logistics × Supply Chain Visibility × Machine Learning
 
-**Attractiveness: 4.84/10**
-- Market signal strength: 3.7777777777777777
-- Source diversity: 3.75
-- Evidence quality: 6.0 — The set mixes credible B2B sources on IoT/AI supply‑chain innovation with several low‑relevance or vendor‑centric items, yielding moderate overall credibility and relevance.
-- Novelty / momentum: 7.06
-- Strategic relevance: 5.0 — The idea aligns with Orange Business’s API M2M for IoT Connect Express (Data, IA & IoT) for device data and ML, but there is no dedicated supply‑chain visibility product in the catalog.
+**Attractiveness: 4.45/10**
+- Market signal strength: 3.555555555555556
+- Source diversity: 3.5
+- Evidence quality: 5.0 — The list mixes credible industry sources (e.g., Supply Chain Brain, IoT Business News, Global Market Insights) with less relevant or low‑credibility items (press releases, viral news, and niche academic papers), yielding moderate overall relevance and credibility.
+- Novelty / momentum: 6.88
+- Strategic relevance: 5.0 — The innovation opportunity broadly fits the Orange Business domain of IoT, specifically through the API M2M for IoT Connect Express, which offers data and AI capabilities for IoT applications, but does not directly extend a specific existing asset.
 
-**Urgency: 3.74/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.57/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.0/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Flexible SDWAN Cisco
-- Orange Business can combine its IoT connectivity, cloud, and network APIs to build a supply‑chain visibility solution with machine‑learning analytics, but no pre‑packaged offering currently exists. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 6.9/10 [L1]**
+- Matched assets: API M2M for IoT Connect Express (Data, IA & IoT), API Eligibility (Internet & Reseaux)
+- Opportunity space requires the combination of existing IoT and data connectivity assets to provide Supply Chain Visibility, a capability that is currently part of the broader IoT Connect Express offering. +0.5 calibration bonus (CRM customer overlap).
 
-**Grounding signals (17):**
+**Grounding signals (16):**
 - [Hacker News] Vital (YC W20) Is Hiring a Front End, Machine Learning and Support Engineer
 - [GlobeNewswire] Supply Chain Technology Innovators Honored in 5th Annual SupplyTech Breakthrough Awards Program - GlobeNewswire
 - [IoT For All] Securing the Aerospace Supply Chain: IoT, Quality Management, and Compliance - IoT For All
@@ -5334,24 +4902,23 @@ _131/131 opportunity spaces scored._
 - [IoT Business News] AT&T Moves Deeper Into Supply Chain IoT Through Wiliot Collaboration - IoT Business News
 - [Global Market Insights Inc.] AI in Logistics and Supply Chain Market Size & Share 2025 - 2034 - Global Market Insights Inc.
 - [mlive] CEO admits struggling burger chain sacrificed food quality for cost savings
-- [Khmer Times] Phnom Penh scam 'supply stations' busted
 
 ## OS120 — Wholesale × Operational Excellence × Cloud Data Platform
 
-**Attractiveness: 4.32/10**
-- Market signal strength: 5.333333333333333
-- Source diversity: 2.25
-- Evidence quality: 4.0 — The signals are largely aggregated from Hacker News and vendor blogs, lacking primary analyst or regulator sources and containing many vendor‑centric announcements, reducing overall credibility and relevance for a B2B innovation radar.
-- Novelty / momentum: 6.67
-- Strategic relevance: 4.0 — Partially aligns with API Cloud Avenue (Cloud) for the cloud data platform aspect, but no specific Orange Business API addresses the wholesale operational‑excellence focus. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+**Attractiveness: 3.88/10**
+- Market signal strength: 5.111111111111111
+- Source diversity: 2.0
+- Evidence quality: 5.0 — The list mixes low‑credibility aggregator posts (Hacker News) with vendor‑centric blogs, offering relevant but largely non‑independent signals that lack strong analyst or regulator backing.
+- Novelty / momentum: 6.96
+- Strategic relevance: 0.0 — The innovation opportunity does not match any specific Orange Business API or product, and none of the provided signals suggest a connection to Orange Business's wholesale, operational excellence, or cloud data platform domains. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 8.83/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 8.81/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.6/10 [L3]**
-- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Evolution Platform, API Incident, API Maintenance
-- The need for a Cloud Data Platform exceeds current API offerings, but existing Cloud, data‑ingestion and network APIs can be combined, requiring a new capability to be built, making it an adjacent opportunity.
+**Right-to-win: 8.1/10 [L1]**
+- Matched assets: API Evolution Platform, API Cloud Avenue
+- Two existing assets (Network as a Service and Cloud) exist but are not packaged together yet to address the Wholesale x Operational Excellence x Cloud Data Platform opportunity space.
 
-**Grounding signals (24):**
+**Grounding signals (23):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -5375,24 +4942,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
 - [LatestLY] Chicago Sky Bans Enes Kanter Freedom from WNBA Home Games Following Courtside Altercation with Natasha Cloud
 - [consultaelectoral.onpe.gob.pe] COMMISSION IMPLEMENTING REGULATION (EU) No 1348/•2014 - of 17 December 2014 - on data reporting implementing A - consultaelectoral.onpe.gob.pe
-- [Deloitte] Titan International Takes First Step to Industry 4.0 Capabilities with Oracle Cloud Applications - Deloitte
 
 ## OS121 — Retail × Operational Excellence × Agentic AI
 
-**Attractiveness: 6.94/10**
-- Market signal strength: 8.666666666666668
-- Source diversity: 8.0
-- Evidence quality: 7.0 — The list mixes credible analyst and mainstream media sources with several vendor blogs and community posts, offering decent diversity and clear relevance to B2B agentic AI, though many entries are marketing‑focused.
-- Novelty / momentum: 5.38
-- Strategic relevance: 3.0 — No specific Orange Business API directly addresses retail operational excellence with agentic AI; the closest is API M2M for IoT Connect Express (Data, IA & IoT) but it does not target retail Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+**Attractiveness: 5.75/10**
+- Market signal strength: 6.666666666666666
+- Source diversity: 5.75
+- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
+- Novelty / momentum: 6.0
+- Strategic relevance: 5.0 — The innovation opportunity fits into the Retail domain, which is part of Orange Business's product portfolio, but no specific asset matches well with the provided details. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
-**Urgency: 2.85/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.12/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.8/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Contact Everyone, API Cloud Avenue, API Evolution Platform, API Satellite
-- Retail operational‑excellence use‑cases that need autonomous AI agents are not covered by a dedicated Orange Business product, but existing IoT, cloud, communication and CRM APIs can be combined, making the opportunity adjacent and requiring a new Agentic‑AI capability. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.7/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Contact Everyone, API Live Identity Verify, API Business Talk Digital
+- Opportunity space falls short of existing Orange Business capabilities, requiring an additional AI capability to be built or acquired. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (39):**
+**Grounding signals (30):**
 - [NVIDIA Blog] NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI
 - [Cisco Blog] Meet Instant Attack Verification: Agentic AI for Tier-1 and Tier-2 SOC investigation
 - [Hacker News] Show HN: Agentic interface for mainframes and COBOL
@@ -5423,30 +4989,21 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
 - [APAC Media] NTT DATA Partners with AWS to Accelerate Enterprise Cloud and Agentic AI Adoption - APAC Media
 - [arXiv] Structurally-bounded Agentic Graph Exploration for Evidence-Grounded Scholarly DeepSearch
-- [International Research Journal of Modernization in Engineering Technology &amp; Science] A PROACTIVE AGENTIC AI APPROACH TO REDUCE REPEAT CALLERS IN RETAIL CONTACT CENTERS
-- [arXiv.org] Flowr - Scaling Up Retail Supply Chain Operations Through Agentic AI in Large Scale Supermarket Chains
-- [Journal of AI, Robotics &amp; Workplace Automation] AI in retail: Operationalising agentic AI with trust and transparency
-- [HCAIep] Human-Centred Research Automation: Agentic AI Framework for Literature Discovery, Filtering, and Gap Identification
-- [International Journal of Scientific Research in Computer Science Engineering and Information Technology] Agentic AI in Data Analytics: Transforming Autonomous Insights and Decision-Making
-- [World Journal of Advanced Research and Reviews] Agentic Voice AI in Enterprise Call Centers: Data-Driven Cost-Benefit and Strategic Analysis of RAG-Powered Automation in Financial Services and E-commerce
-- [International Journal of Engineering Science and Information Technology] AI Governance Across the Structured-to-Fluid Automation Spectrum: Deterministic and Agentic Architectures in Modern Contact Centres
-- [European Modern Studies Journal] Retail Cybersecurity in the Agentic Age: Securing Autonomous Shopping Agents in E-Commerce
-- [Narooma News] Full list: South East business excellence awards finalists revealed
 
 ## OS122 — Transportation and Logistics × Network Modernization & SD-WAN × 5G
 
-**Attractiveness: 4.24/10**
+**Attractiveness: 2.74/10**
 - Market signal strength: 2.444444444444444
 - Source diversity: 1.75
-- Evidence quality: 6.0 — The list mixes credible sources (AWS, Microsoft, Cisco blogs, Gartner/Forrester recognitions, EUR‑Lex) with vendor‑centric press releases and duplicate Hacker News items, offering moderate relevance but limited diversity and depth for a B2B innovation radar.
+- Evidence quality: 0.0 — Hacker News signals are anecdotal and lack credibility, while EUR-Lex mentions a generic transport network unrelated to B2B innovation
 - Novelty / momentum: 4.55
-- Strategic relevance: 8.0 — Directly aligns with API Flexible SDWAN Cisco for network modernization and SD-WAN, and can leverage Orange Business leadership in 5G private mobile network services for transportation and logistics. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+- Strategic relevance: 8.0 — API M2M for IoT Connect Express (Data, IA & IoT) and API Satellite (Relation client) can be combined to provide a robust solution for Transportation and Logistics companies to modernize their networks and improve their IoT connectivity, leveraging Orange Business's extensive global presence and expertise in 5G. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 7.71/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 7.55/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.0/10 [L1]**
-- Matched assets: API Flexible SDWAN Cisco, API Mobile Suite
-- Orange already offers SD‑WAN (API Flexible SDWAN Cisco) and mobile connectivity (API Mobile Suite) which together meet the network modernization and 5G needs of transport & logistics, but they are not yet packaged as a single solution. +0.5 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.0/10 [L3]**
+- Matched assets: API M2M for IoT Connect Express, API Evolution Platform, API Flexible SDWAN Cisco
+- Needs one new capability to be built or acquired, specifically a 5G private mobile network service, which is missing from the current portfolio but closely related to the existing IoT and SD-WAN capabilities. +0.5 calibration bonus (CRM customer overlap).
 
 **Grounding signals (11):**
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
@@ -5463,20 +5020,20 @@ _131/131 opportunity spaces scored._
 
 ## OS123 — Construction × Infrastructure Planning & Management × Digital Twins
 
-**Attractiveness: 4.38/10**
-- Market signal strength: 3.555555555555556
+**Attractiveness: 3.6/10**
+- Market signal strength: 3.333333333333333
 - Source diversity: 2.75
-- Evidence quality: 6.0 — The set mixes highly credible sources (Microsoft, NVIDIA, Cisco, Nature) with vendor blogs and lower‑credibility media, offering moderate relevance to B2B innovation but diluted by marketing‑heavy and loosely related items.
-- Novelty / momentum: 8.12
-- Strategic relevance: 3.0 — No Orange Business API directly targets construction digital twins; the closest fit is API M2M for IoT Connect Express which could provide sensor data, but the opportunity does not extend a specific existing product.
+- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
+- Novelty / momentum: 8.0
+- Strategic relevance: 0.0 — The innovation opportunity does not relate to any of the existing Orange Business products or services, such as API Satellite, API Mobile Suite, API M2M for IoT Connect Express, etc.
 
-**Urgency: 4.3/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 4.15/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.8/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing IoT, cloud, and network APIs can supply data and connectivity for digital twins, but Orange lacks a dedicated digital‑twin platform, making the opportunity adjacent.
+**Right-to-win: 0.5/10 [L4]**
+- Matched assets: none
+- No plausible path from the current portfolio, as Orange Business does not have a direct offering in Construction, Infrastructure Planning & Management or Digital Twins.
 
-**Grounding signals (16):**
+**Grounding signals (15):**
 - [Microsoft Azure Blog] External key management for Azure Managed HSM is now in public preview
 - [NVIDIA Blog] Securing the Infrastructure of Intelligence
 - [Hacker News] "Sovereign cloud"? A Trojan Horse at Europe's digital gates
@@ -5492,24 +5049,23 @@ _131/131 opportunity spaces scored._
 - [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
 - [komatsu.jp] Realizing the safe, highly productive and clean worksite of the future: Launch of “SMARTCONSTRUCTION Digital Transformation” | Newsroom | Komatsu global site - komatsu.jp
 - [MoneyControl] Why your bank may temporarily block digital transactions- Moneycontrol.com
-- [Nature] Implementing digital health transformation policies in Latin America: insights from four national case studies - npj Digital Medicine
 
 ## OS124 — Manufacturing × Network Modernization & SD-WAN × Network & SD-WAN
 
-**Attractiveness: 6.29/10**
-- Market signal strength: 5.111111111111111
-- Source diversity: 4.25
-- Evidence quality: 7.0 — The set mixes reputable analyst reports, carrier announcements and academic work with vendor blogs and press releases, giving a fairly credible but partially marketing‑heavy picture.
-- Novelty / momentum: 6.52
-- Strategic relevance: 10.0 — Directly aligns with API Flexible SDWAN Cisco and the Evolution Platform (Network as a Service) which deliver SD-WAN and network modernization for enterprise customers such as manufacturers. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
+**Attractiveness: 5.53/10**
+- Market signal strength: 3.7777777777777777
+- Source diversity: 3.25
+- Evidence quality: 7.0 — The set mixes credible industry sources (Cisco, Nokia, Deutsche Telekom, Gartner/Forrester) and relevant private‑5G/AI networking topics, but also includes vendor‑centric blogs and market‑forecast press releases that lower overall reliability.
+- Novelty / momentum: 6.47
+- Strategic relevance: 9.0 — Directly aligns with API Flexible SDWAN Cisco (Internet & Reseaux), Orange Business' SD‑WAN offering that can be extended to manufacturing network modernization. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
 
-**Urgency: 3.53/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.36/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
 **Right-to-win: 10.0/10 [L0]**
 - Matched assets: API Flexible SDWAN Cisco, API Evolution Platform
-- Orange Business already provides SD‑WAN and network‑as‑a‑service capabilities through the Flexible SD‑WAN Cisco API and Evolution Platform, directly meeting manufacturing network modernization requirements. +1.0 calibration bonus (CRM customer overlap).
+- Orange Business already offers SD‑WAN via Flexible SDWAN Cisco and Evolution Platform and is a Gartner leader in WAN services, directly matching the manufacturing network modernization need. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (24):**
+**Grounding signals (17):**
 - [Fierce Network] Industrial AI could be salve for ailing private network market - Fierce Network
 - [AWS News Blog] AWS Weekly Roundup: AWS Builder Center at 1 year, Network Scanning in Security Hub, Loom for AWS, and more (July 13, 2026)
 - [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools
@@ -5527,47 +5083,39 @@ _131/131 opportunity spaces scored._
 - [Nokia] Combining network slicing with edge cloud unlocks opportunities for enterprises and CSPs - Nokia
 - [NTT Data] Cargill Modernizes Manufacturing Operations with NTT DATA's Private 5G Network - NTT Data
 - [The Citizen] Knysna shooting: Police pursue leads after three killed in 24 hours - LNN - Network News
-- [Journal of Advanced Research in Applied Sciences and Engineering Technology] Empowering Innovation: Private 5G Network Integration with Edge AI
-- [Global Communications Conference] A Novel AI/ML SIEM as Application Function within Private 5G Core Network for Industrial-IoT
-- [IEEE Networking Letters] Closed-Loop Network Control for Industrial Edge Computing: A Telemetry-Driven and AI-Based Approach for Latency-Critical Applications in Private 5G
-- [2025 MIPRO 48th ICT and Electronics Convention] Data Transmission of a ROS-Based Autonomous Vehicle Over a Private 5G Network
-- [arXiv] A Hybrid Security Framework for Mini-Programs: Visual UI Compliance and Network Risk Assessment
-- [arXiv] Neural-Network and Reduced-order Modeling Workflows for AI-Driven CFD: Fast Response Surfaces, Reduced Dynamics and Jet in Cross-flow Examples
-- [SDxCentral] Telecom titans Verizon, Vodafone, Telefónica topped Gartner’s private network ranking bin - SDxCentral
 
 ## OS125 — Construction × Operational Excellence × Generative AI
 
-**Attractiveness: 2.03/10**
-- Market signal strength: 0.4444444444444445
-- Source diversity: 0.5
-- Evidence quality: 4.0 — Hitachi's worksite-augmenting metaverse is a credible, relevant B2B innovation, but the Home Credit marketing award is unrelated, lowering the overall relevance.
+**Attractiveness: 2.62/10**
+- Market signal strength: 0.22222222222222224
+- Source diversity: 0.25
+- Evidence quality: 8.0 — Signal is from a credible company, Hitachi Global, and mentions both a specific technology (Worksites-Augmenting Metaverse) and an emerging trend (generative AI) relevant to B2B innovation.
 - Novelty / momentum: 5.0
-- Strategic relevance: 2.0 — No existing Orange Business API directly addresses construction or generative AI for operational excellence; the closest generic offering (e.g., API M2M for IoT Connect Express) does not target this use‑case. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
+- Strategic relevance: 0.0 — The innovation opportunity space of Construction, Operational Excellence, and Generative AI does not match any specific Orange Business API or product, such as API Satellite, API M2M for IoT Connect Express, or API Contact Everyone, which are more focused on telecommunications, IoT, and collaboration. Maps to Orange's 'GenAI Empowered Workforce' value proposition.
 
 **Urgency: 0.0/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 5.5/10 [L3]**
-- Matched assets: API Cloud Avenue, API M2M for IoT Connect Express, API Evolution Platform
-- Construction operational‑excellence use cases with generative AI require a new AI‑generation capability beyond existing cloud, IoT and network APIs, making it an adjacent opportunity.
+**Right-to-win: 0.4/10 [L4]**
+- Matched assets: none
+- No plausible path from the current portfolio to address the opportunity space of Construction x Operational Excellence x Generative AI.
 
-**Grounding signals (2):**
+**Grounding signals (1):**
 - [Hitachi Global] Hitachi develops Worksite-Augmenting Metaverse, a fusion of worksite data-collection technology and generative AI - Hitachi Global
-- [The Manila times] Home Credit Philippines wins Marketing Excellence Award
 
 ## OS126 — Aerospace & Defense × IT Operations Automation × Edge Computing
 
-**Attractiveness: 3.79/10**
+**Attractiveness: 4.12/10**
 - Market signal strength: 1.3333333333333333
 - Source diversity: 1.5
-- Evidence quality: 7.0 — The set contains several credible, B2B‑relevant defense and technology signals (BAE, DefenseScoop, MarketsandMarkets, arXiv, Cisco) but also an unrelated sports story, reducing the overall rating.
+- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
 - Novelty / momentum: 6.67
-- Strategic relevance: 4.5 — The opportunity loosely aligns with edge‑focused services like API M2M for IoT Connect Express or API Evolution Platform, but no specific Orange Business API targets aerospace‑defense IT‑automation, so fit is limited. +0.5 trust-critical bonus: Orange runs a dedicated Aerospace & Defense division (corporate deck, slide 12-14).
+- Strategic relevance: 10.0 — API M2M for IoT Connect Express directly extends the IoT capabilities of Orange Business, providing AI and data services that align with the company's existing strengths in IoT operations, making it a clear enterprise value extension. +0.5 trust-critical bonus: Orange runs a dedicated Aerospace & Defense division (corporate deck, slide 12-14).
 
-**Urgency: 3.53/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 3.46/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 7.5/10 [L1]**
-- Matched assets: API Flexible SDWAN Cisco, API Evolution Platform, API Cloud Avenue, API M2M for IoT Connect Express, API Live Identity Verify, API Incident, API Maintenance
-- The aerospace & defense edge computing and IT ops automation need can be met by bundling existing SD‑WAN, cloud, IoT and security APIs, though no single offering currently delivers the full solution.
+**Right-to-win: 0.2/10 [L4]**
+- Matched assets: none
+- No plausible path from the current portfolio, as Orange Business lacks capabilities in aerospace, defense, and edge computing.
 
 **Grounding signals (6):**
 - [UrduPoint] Pakistan Edge Japan 4-3 In Thrilling FIH Hockey World Cup Encounter
@@ -5579,20 +5127,20 @@ _131/131 opportunity spaces scored._
 
 ## OS127 — Automotive × Data Sovereignty × Cloud
 
-**Attractiveness: 5.03/10**
-- Market signal strength: 6.444444444444445
+**Attractiveness: 5.65/10**
+- Market signal strength: 6.222222222222222
 - Source diversity: 2.75
-- Evidence quality: 4.0 — The signals are mostly aggregated from Hacker News and vendor blogs, lacking independent analyst or regulator sources and containing several marketing‑focused items, reducing overall credibility and relevance for a B2B innovation radar.
-- Novelty / momentum: 7.93
-- Strategic relevance: 5.0 — Matches API M2M for IoT Connect Express (Data, IA & IoT) and API Cloud Avenue (Cloud) but lacks a dedicated automotive‑specific product. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
+- Evidence quality: 5.0 — LLM scoring unavailable -- neutral default used.
+- Novelty / momentum: 7.86
+- Strategic relevance: 8.0 — API Evolution Platform (Relation client) closely matches the automotive use case through its Network as a Service capabilities, specifically SD-WAN and SASE, which can be leveraged to ensure data sovereignty and cloud connectivity for automotive applications. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
 
-**Urgency: 9.5/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
+**Urgency: 9.27/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
 
-**Right-to-win: 8.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Automotive data sovereignty and cloud needs can be met by bundling Orange's IoT connectivity, cloud and network services without building new capabilities. +1.0 calibration bonus (CRM customer overlap).
+**Right-to-win: 9.7/10 [L0]**
+- Matched assets: API Contact Everyone, API Cloud Avenue, API Eligibility
+- Existing assets in data sovereignty and cloud capabilities make Orange Business a strong contender for automotive data sovereignty solutions. +1.0 calibration bonus (CRM customer overlap).
 
-**Grounding signals (29):**
+**Grounding signals (28):**
 - [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
 - [Hacker News] SAP splashes €20B on Euro sovereign cloud push
 - [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
@@ -5621,234 +5169,3 @@ _131/131 opportunity spaces scored._
 - [Yahoo! Finance] Alibaba Says AI Now Drives More Than One-Third of Cloud Revenue
 - [arXiv] Next-generation O-RAN Edge: Energy-aware Joint Placement and Migration of Cloud-Native Functions
 - [consultaelectoral.onpe.gob.pe] Communication from the Commission – Guidance on vehicle data, accompanying Regulation (EU) 2023/2854 of the European Parliam - consultaelectoral.onpe.gob.pe
-- [Cisco Blog] Cisco IQ: Engineering Sovereignty in the AI Era
-
-## OS128 — Transportation and Logistics × Predictive Maintenance × IoT Platforms
-
-**Attractiveness: 6.17/10**
-- Market signal strength: 4.285714285714286
-- Source diversity: 4.25
-- Evidence quality: 8.0 — The list draws from a mix of reputable industry media, analyst reports, and vendor announcements covering IoT, AI, and supply chain applications, offering specific and relevant insights despite some marketing‑heavy entries.
-- Novelty / momentum: 8.33
-- Strategic relevance: 8.0 — Matches API M2M for IoT Connect Express, which provides IoT connectivity that can be leveraged for predictive maintenance in transportation and logistics. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
-
-**Urgency: 4.41/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
-
-**Right-to-win: 8.7/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Evolution Platform, API Maintenance
-- Existing IoT connectivity, cloud, network‑as‑a‑service and maintenance APIs can be combined to deliver a predictive‑maintenance platform for logistics, but Orange does not yet offer them as a pre‑packaged solution. +0.5 calibration bonus (CRM customer overlap).
-
-**Grounding signals (24):**
-- [IoT For All] Securing the Aerospace Supply Chain: IoT, Quality Management, and Compliance - IoT For All
-- [IoT Business News] Wialon Brings Fleet Management Queries Into ChatGPT With Native App - IoT Business News
-- [FreightWaves] How IoT and AI are shifting freight from reactive to predictive - FreightWaves
-- [AIMultiple] 40 IoT Applications & Use Cases - AIMultiple
-- [Bisinfotech] From Tracking to Predictive Intelligence: Pushpank Kaushik on the IoT–AI Revolution in Fleet Management - Bisinfotech
-- [Fleet Equipment Magazine] Sensolus Launches IoT Tracking in North America - Fleet Equipment Magazine
-- [IoT Business News] Telit Cinterion’s NExT eSIM Supports FleetSafe.ai Video Telematics in British Truck Racing - IoT Business News
-- [Farmonaut] AI Edge & IoT Based Smart Agriculture: Top Trends For The Future - Farmonaut
-- [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
-- [Precedence Research] Telecom Internet of Things (IoT) Market Size to Hit USD 563.30 Billion by 2035 - Precedence Research
-- [IOT Insider] What is Vodafone’s Internet of Things Business and why has it set up an American division? - IOT Insider
-- [IoT Analytics] 7 most notable IoT and telco networking trends – as seen at MWC 2026 - IoT Analytics
-- [Omdia] Market Landscape: Alternative IoT Operators - Omdia
-- [Supply Chain Brain] How IoT and AI Are Modernizing Rail Efficiency and Asset Tracking - Supply Chain Brain
-- [Supply Chain Digital] Top 10: IoT Solutions - Supply Chain Digital
-- [Manufacturing Today India] The future of EV manufacturing: Integrating AI, IoT, and Automation in fleet production - Manufacturing Today India
-- [Omdia] Satellite IoT Market Landscape – 2025 - Omdia
-- [IoT Business News] Wiliot Unveils Next-Generation IoT Pixel, Powering the Data Layer Behind Physical AI - IoT Business News
-- [Amazon Web Services (AWS)] AWS IoT: A 10-year foundation for an intelligent, connected future - Amazon Web Services (AWS)
-- [IoT Business News] Edge AI for IoT: Use Cases, Benefits and Deployment Challenges - IoT Business News
-- [Farmonaut] IoT for Smart Farming: 7 Game-Changing Systems for 2026 - Farmonaut
-- [vinanet.vn] Samsara (IOT) Introduces AI-Powered Smart Label to Enhance Real-Time Shipment Tracking - Revenue Surprise History - vinanet.vn
-- [Omdia] Mobile World Congress 2025 – Key IoT takeaways - Omdia
-- [IoT Business News] AT&T Moves Deeper Into Supply Chain IoT Through Wiliot Collaboration - IoT Business News
-
-## OS129 — Energy × Grid Optimization × IoT
-
-**Attractiveness: 6.81/10**
-- Market signal strength: 6.428571428571429
-- Source diversity: 5.5
-- Evidence quality: 7.0 — The list mixes high‑credibility, relevant sources (Nature, IBM, ABB, Microsoft Azure) with several low‑credibility, less relevant Hacker News posts, yielding a moderately strong but uneven signal set.
-- Novelty / momentum: 8.33
-- Strategic relevance: 8.0 — Extends API M2M for IoT Connect Express by applying its IoT data and AI capabilities to energy grid optimization Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
-
-**Urgency: 7.06/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
-
-**Right-to-win: 5.5/10 [L3]**
-- Matched assets: API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Cloud Avenue
-- Orange Business can leverage its IoT connectivity and network/cloud assets, but lacks a dedicated grid‑optimization analytics capability, requiring an adjacent development.
-
-**Grounding signals (36):**
-- [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
-- [Nature] IoT-Enhanced virtual power plants with edge computing and blockchain security for sustainable smart grid management - Nature
-- [ABB] The role of AI in energy optimization - ABB
-- [Nature] AI-driven smart grid optimization for hospital energy systems integrating renewable generation, predictive maintenance, and resilient infrastructure - Nature
-- [Nature] Energy efficient cyber-physical control of renewable microgrids using edge-AI enabled IoT and secure blockchain coordination - Nature
-- [Frontiers] Role of artificial intelligence in smart grid – a mini review - Frontiers
-- [IoT For All] How IoT and AI Are Transforming Energy Management - IoT For All
-- [IBM] Power grid modernization—Strategies and tactics for resilience and energy transition - IBM
-- [Hacker News] Ditch the Batteries: Off-Grid Compressed Air Energy Storage
-- [Hacker News] Show HN: Off Grid – Run AI text, image gen, vision offline on your phone
-- [Hacker News] Grid: AI platform from the makers of PyTorch Lightning
-- [Hacker News] Ditch the Batteries: Off-Grid Compressed Air Energy Storage (2018)
-- [Hacker News] “The Grid” AI website builder disappears with millions of dollars in member fees
-- [Hacker News] The Need for an Independent AI Grid
-- [Hacker News] Grid AI (from the maker of PyTorch Lightning), launches with an $18.6m Series A
-- [Hacker News] AgentFM – A single Go binary that turns idle GPUs into a P2P AI grid
-- [Hacker News] The Grid - AI websites that design themselves
-- [EUR-Lex] Commission notice on a guidance on the establishment of areas for grid and storage infrastructure necessary to integrate renewab - EUR-Lex
-- [Market Research Future] IoT Telecom Services Market Size, Share and Industry Trends 2035 - Market Research Future
-- [Frontiers] AI-driven smart home optimization for sustainable energy and water management: a systematic review - Frontiers
-- [TheJournal.ie] Half of Ireland's grid-scale electricity generated last year came from renewable sources
-- [Market Research Future] IoT Telecom Services Market Size, Share & Growth Report 2035 | MRFR - Market Research Future
-- [Frontiers] Environment sustainability with smart grid sensor - Frontiers
-- [Nature] An IoT-enabled AI framework for sustainable product design optimizing eco-efficiency using BiLSTM - Nature
-- [StartUs Insights] 10 Top Smart Grid Solutions to Watch (2025) - StartUs Insights
-- [Energies Media] IoT Energy Management in 2025: Real Results from Smart Industries - Energies Media
-- [International Journal of Science, Strategic Management and Technology] Smart EV Charging Infrastructure Using IOT and AI for Intelligent Energy Management and Grid Optimization
-- [Iranian Journal of Science and Technology Transactions of Electrical Engineering] Harnessing Quantum Computing and AI for Enhanced Optimization in Renewable Energy-Driven Smart Grid Systems
-- [Proceedings of the Institution of mechanical engineers. Part D, journal of automobile engineering] Edge AI and IoT for smart sustainable transportation: Real-time renewable energy optimization – A comprehensive review
-- [2024 32nd Southern African Universities Power Engineering Conference (SAUPEC)] Optimization of Internet of Things (IoT) for Smart Grid Energy Management Using Artificial Intelligence (AI) Techniques to Reach SDG7
-- [2025 International Conference on Digital Innovations for Sustainable Solutions (ICDISS)] IoT-Based Renewable Energy Integration and Optimization in Smart Power Grids
-- [Proceedings of the 1st International Conference on Intelligent Methods and Advanced Computer Scientific Innovations] IoT-Integrated Smart Grids for Sustainable Energy Engagement: Optimizing Renewable Resources through Real-Time Monitoring and AI-Powered Predictive Systems
-- [2025 IEEE World AI IoT Congress (AIIoT)] AI-Driven Smart Grid Optimization: Enhancing Urban Communication Networks
-- [2025 6th International Conference on IoT Based Control Networks and Intelligent Systems (ICICNIS)] A Review on Smart Traffic Light Management and Energy Optimization with Artificial Intelligence(AI) enabled Programmable Logic Controller(PLC) using Internet of Things(IoT)
-- [2025 2nd International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering (RMKMATE)] Green IoT-Based Smart Grid: Implementing Intelligent Demand-Response Systems for Energy Sustainability
-- [2025 IEEE 3rd Global Conference on Wireless Computing and Networking (GCWCN)] AI-Based Power Flow Control for Real-Time Grid Optimization and Load Balancing
-
-## OS130 — Automotive × Digital Infrastructure × 5G
-
-**Attractiveness: 3.5/10**
-- Market signal strength: 1.0714285714285714
-- Source diversity: 0.75
-- Evidence quality: 4.0 — The set is largely vendor‑generated blog content with limited independent verification, offering moderate relevance but low source diversity and credibility.
-- Novelty / momentum: 8.33
-- Strategic relevance: 8.0 — The opportunity aligns with API M2M for IoT Connect Express, which provides 5G‑enabled IoT connectivity that can be applied to automotive digital infrastructure. Maps to Orange's 'NextGen Secured Connectivity' value proposition.
-
-**Urgency: 4.41/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
-
-**Right-to-win: 9.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Flexible SDWAN Cisco, API Evolution Platform, API Mobile Suite
-- Orange Business can meet the automotive digital‑infrastructure + 5G need by bundling its IoT connectivity, SD‑WAN/SASE and network‑as‑a‑service APIs, leveraging its proven 5G private‑network leadership. +1.0 calibration bonus (CRM customer overlap).
-
-**Grounding signals (6):**
-- [NVIDIA Blog] Securing the Infrastructure of Intelligence
-- [Hacker News] "Sovereign cloud"? A Trojan Horse at Europe's digital gates
-- [Cisco Blog] Powering the Scale Engine for Cisco: How AI is Revolutionizing Digital Customer Experience
-- [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
-- [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
-- [Cisco Blog] Pakistan Instructors & Partners Summit 2026: How Khyber Pakhtunkhwa is Building Digital Skills at Scale
-
-## OS131 — Life Sciences × Data Sovereignty × Cloud Data Platform
-
-**Attractiveness: 5.02/10**
-- Market signal strength: 5.892857142857143
-- Source diversity: 4.0
-- Evidence quality: 4.0 — The signals are largely aggregated from Hacker News and vendor blogs, lacking independent analyst or regulator sources and containing several marketing‑focused items, which limits their credibility and relevance for a B2B innovation radar.
-- Novelty / momentum: 8.48
-- Strategic relevance: 4.0 — Broadly aligns with API Cloud Avenue (Cloud) for a data platform, but Orange Business has no specific life‑sciences or data‑sovereignty API/product. Maps to Orange's 'Secure Cloud Orchestration' value proposition.
-
-**Urgency: 4.49/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
-
-**Right-to-win: 5.5/10 [L3]**
-- Matched assets: API Cloud Avenue, API Evolution Platform, API Live Identity Verify
-- Existing cloud, network and security APIs can be combined, but a dedicated sovereign‑cloud offering for life‑sciences compliance must be built, so the opportunity is adjacent.
-
-**Grounding signals (33):**
-- [Hacker News] Airbus to migrate critical apps to a sovereign Euro cloud
-- [Hacker News] SAP splashes €20B on Euro sovereign cloud push
-- [Hacker News] AWS European Sovereign Cloud to be operated by EU citizens
-- [Hacker News] Opening the AWS European Sovereign Cloud
-- [Hacker News] AWS European Sovereign Cloud
-- [Hacker News] "Sovereign cloud"? A Trojan Horse at Europe's digital gates
-- [Hacker News] SAP to invest over 20B euros in 'sovereign cloud'
-- [Hacker News] In the Works – AWS European Sovereign Cloud
-- [Cisco Blog] Meet “The Data Center Lens” video series: Clear answers for modernizing and scaling for AI
-- [Cisco Blog] Cloud or On-Premises? New Report Shows Why AI Workload Placement Matters
-- [Cisco Blog] How sustainability data is informing customer decisions
-- [Cisco Blog] Cisco Recognized as a Leader in the 2026 Forrester Wave™ Data Center Network Solutions
-- [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
-- [Hacker News] Verizon has turned to Google Cloud’s Contact Center AI to automate phone calls
-- [Hacker News] Contact Center AI Solution – Google Cloud
-- [Hacker News] Google Cloud launches coronavirus response program with Contact Center AI
-- [Hacker News] Grid: AI platform from the makers of PyTorch Lightning
-- [Applied Clinical Trials Online] The Data Harmonization Imperative: How AI Is Solving Clinical Research's Biggest Bottleneck - Applied Clinical Trials Online
-- [HIT Consultant] Aily Labs Partners with Google Cloud to Scale AI Decision Intelligence for Pharma and Biotech - HIT Consultant
-- [PharmTech.com] From Warehouse to Lakehouse: A Life Sciences Playbook for Regulated, AI-Ready Data Modernization - PharmTech.com
-- [drugdiscoverytrends.com] SAS launches clinical trial analytics software built on its Viya cloud native analytics platform - drugdiscoverytrends.com
-- [BioSpace] Life Science Cloud Computing Market Accelerates as AI and Digital Transformation Redefine R&D and Clinical Operations - BioSpace
-- [Applied Clinical Trials Online] Evinova Expands AI-Native Clinical Platform Through Strategic Pharma Collaborations - Applied Clinical Trials Online
-- [Future Market Insights] Clinical Trial Data Management Service Market | Global Market Analysis Report - 2035 - Future Market Insights
-- [TradingView] Veeva Systems : The Industry Cloud for Life Sciences Amid AI Revolution and CRM Evolution - TradingView
-- [IT Brief UK] Veeva launches Falcon AI platform for drug development - IT Brief UK
-- [Clinical Leader] Understanding And Preserving Data Flow Integrity In AI-Assisted Clinical Trials - Clinical Leader
-- [analyticsindiamag.com] Fragmented Pharmaceuticals: Why Indian Biopharma Does Not Have AI-Ready Data - analyticsindiamag.com
-- [Cisco Blog] A new chapter for IT operations: Cisco Cloud Control is now generally available for U.S. customers
-- [Cisco Blog] Cisco IQ: Engineering Sovereignty in the AI Era
-- [Scoop] Cross-Government Plan To Deliver Stronger Data
-- [Market Screener] Australia Q2 business investment falls 3.6% as data centre rush fades
-- [Yahoo! Finance] Australia Q2 business investment falls 3.6% as data centre rush fades
-
-## OS132 — Public Sector × Infrastructure Planning & Management × IoT Platforms
-
-**Attractiveness: 5.93/10**
-- Market signal strength: 3.75
-- Source diversity: 4.75
-- Evidence quality: 7.0 — The set includes several high‑credibility sources (CNBC, WEF, Gartner, Homeland Security Today) and relevant topics on cloud, AI, and smart‑city infrastructure, but also contains vendor‑centric blogs and lower‑quality market forecasts, yielding a solid but not perfect signal quality.
-- Novelty / momentum: 9.05
-- Strategic relevance: 8.0 — API M2M for IoT Connect Express (Data, IA & IoT) matches the Public Sector and IoT Platforms opportunity space, and API Cloud Avenue (Cloud) can support infrastructure planning and management, but no single asset directly extends a specific asset above with clear enterprise value. Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
-
-**Urgency: 4.79/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
-
-**Right-to-win: 9.2/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Evolution Platform, API Cloud Avenue
-- Existing IoT connectivity, network‑as‑a‑service and cloud APIs can be combined to meet public‑sector infrastructure planning needs, but Orange does not yet offer a single pre‑packaged solution. +1.0 calibration bonus (CRM customer overlap).
-
-**Grounding signals (21):**
-- [CNBC] EU weighs restricting use of U.S. cloud platforms to process sensitive government data, sources tell CNBC - CNBC
-- [Microsoft Azure Blog] External key management for Azure Managed HSM is now in public preview
-- [NVIDIA Blog] Securing the Infrastructure of Intelligence
-- [The World Economic Forum] Why AI needs digital public infrastructure to deliver for citizens - The World Economic Forum
-- [Frontiers] Integrating sustainable urban governance and smart infrastructure for resilient cities - Frontiers
-- [IoT For All] How Cellular IoT Connectivity Is Transforming Smart Cities: Market Trends and Forecast to 2035 - IoT For All
-- [Homeland Security Today] IoT Devices Make Municipal Infrastructure an Easy Target for Cyberattackers - Homeland Security Today
-- [Microsoft] How cities build resilient infrastructure with trusted AI - Microsoft
-- [Fact.MR] 5G IoT Market Size, Share & Forecast to 2036 - Fact.MR
-- [IOT Insider] Nigeria signs smart cities IoT deal for 50,000 AI-enabled solar streetlights doubling as distributed AI data centres - IOT Insider
-- [Shoolini University] IoT Careers: Bridging the Physical and Digital World - Shoolini University
-- [Precedence Research] Smart City ICT Infrastructure Market Size to Hit USD 494.81 Billion by 2035 - Precedence Research
-- [StateTech Magazine] What Is IoT Architecture, and How Does It Enable Smart Cities? - StateTech Magazine
-- [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
-- [caithness-business.co.uk] Data Centres, Big Developments and the Planning Question: Should Communities Simply Say No?
-- [Philippine Canadian Inquirer] CICC warns platforms of geo-blocking over child protection lapses
-- [Business Wire] Japan Data Center Market Investment Analysis Report 2026-2031: Growth Opportunities in IT, Electrical, and Mechanical Infrastructure, Cooling Systems, Construction and Tier Standards - ResearchAndMarkets.com - Business Wire
-- [Cisco Blog] Identity Everywhere: Bringing Infrastructure Identity to Agentic IT
-- [Cisco Blog] Rev Up to Recert: Stack Your AI Infrastructure and Ops Knowledge
-- [Journal of Environmental Management] Automated environmental compliance monitoring of rivers with IoT and open government data.
-- [WebProNews] CISA Red Team Exposes SOC Failures in Critical Infrastructure Tests
-
-## OS133 — Wholesale × Energy Optimization × IoT Platforms
-
-**Attractiveness: 3.48/10**
-- Market signal strength: 1.4285714285714284
-- Source diversity: 1.5
-- Evidence quality: 6.0 — The set mixes credible sources (The Guardian, analyst recognition) with vendor blogs and aggregator posts, offering relevant but unevenly reliable B2B innovation signals.
-- Novelty / momentum: 5.0
-- Strategic relevance: 5.0 — Leverages API M2M for IoT Connect Express for IoT data collection, but Orange Business has no specific energy‑optimization or wholesale product to extend directly Maps to Orange's 'Smart Manufacturing & Operations' value proposition.
-
-**Urgency: 2.65/10** — deterministic, +2 per regulation/buying_signal signal linked to this OS (is there a real deadline, separate from attractiveness).
-
-**Right-to-win: 7.5/10 [L1]**
-- Matched assets: API M2M for IoT Connect Express, API Cloud Avenue, API Flexible SDWAN Cisco, API Evolution Platform
-- Existing IoT connectivity, cloud and SD‑WAN APIs can be combined to deliver an energy‑optimization platform, but Orange Business currently has no packaged solution for this use case.
-
-**Grounding signals (8):**
-- [Microsoft Azure Blog] The Economics of Agent Optimization: From pilots to measurable returns
-- [Microsoft Azure Blog] Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms
-- [Hacker News] Ditch the Batteries: Off-Grid Compressed Air Energy Storage
-- [Hacker News] Ditch the Batteries: Off-Grid Compressed Air Energy Storage (2018)
-- [IoT For All] Amazon Global Online Retail Operations - IoT For All
-- [Cisco Blogs] Winning the Beer Game with The Internet of Things (IoT) - Cisco Blogs
-- [Investing News Network] Nano One Advances Global LFP Cathode Strategy as Demand from Energy Storage, EV and Defence Applications Accelerates
-- [The Guardian] Albanese backs down on states powering AI datacentres using sustainable energy

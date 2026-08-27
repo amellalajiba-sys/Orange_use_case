@@ -440,7 +440,7 @@ def _keywords(text):
 # ENRICHMENT_SAMPLE_SIZE in scoring.py, which cap the LLM-facing slice
 # separately from this for exactly that cost reason.
 #
-# Sieg 26/08 (2h du matin, veille de la présentation) -- 45 -> 56. La valeur
+# Sieg 26/08 -- 45 -> 56. La valeur
 # de 45 avait été calibrée le 23/08 avec GDELT cassé (rate-limit non
 # résolu) et un keyword-matching qui laissait passer du bruit non filtré
 # (voir NON_TECH_SOURCES ci-dessus) -- donc calibrée sur MOINS de signaux

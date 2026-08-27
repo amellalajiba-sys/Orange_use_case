@@ -245,11 +245,6 @@ python radar_cli.py summary        # write opportunity_spaces_summary.md
 python radar_cli.py summary --top 10   # same, keeping only the 10 highest-attractiveness OS
 ```
 
-python -c "import sqlite3; c=sqlite3.connect('radar.db'); r=c.execute('SELECT vertical, use_case, technology, COUNT(*) c FROM opportunity_spaces GROUP BY vertical, use_case, technology HAVING c > 1').fetchall(); print('Doublons trouvés:', len(r)); [print(x) for x in r]"
-
-
-git commit -m "recalibrate top_n/MARKET_SIGNAL_CAP
-
 **Keeping existing OS fresh (no re-ingest needed, just re-score what's there):**
 
 ```bash
@@ -527,5 +522,4 @@ same week, but not worth the regression risk of touching working files 3 days ou
 Built as part of the BeCode AI & Data Science bootcamp, in collaboration with Orange Business.
 
 ---
-
 

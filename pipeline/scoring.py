@@ -120,7 +120,7 @@ WEIGHTS = {
 # same category of risk as EVIDENCE_QUALITY_MAX_SIGNALS/ENRICHMENT_SAMPLE_SIZE
 # above needing a check whenever top_n moves.
 #
-# Sieg 26/08 (2h du matin, veille de la présentation) -- 45 -> 56, pour
+# Sieg 26/08 -- 45 -> 56, pour
 # suivre EXACTEMENT `radar_cli.py cmd_link`'s nouveau top_n=56 (voir le
 # commentaire complet à cet endroit dans radar_cli.py pour le detail du
 # calcul -- même 90e percentile, mesuré sur 125 OS réels après le fix GDELT
