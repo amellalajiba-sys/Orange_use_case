@@ -465,7 +465,7 @@ with col4:
 
 st.subheader("Opportunity Radar")
 
-# Slider temporale (basato su Created At)
+# Time slider (based on Created At)
 if "Created At" in filtered_df.columns:
     min_date = pd.to_datetime(filtered_df["Created At"]).min()
     max_date = pd.to_datetime(filtered_df["Created At"]).max()
