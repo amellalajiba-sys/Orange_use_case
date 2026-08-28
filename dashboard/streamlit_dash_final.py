@@ -160,28 +160,28 @@ st.markdown("""
     
     /* Boxes */
     .orange-box {
-        background-color: #FF7900;
-        color: white;
-        padding: 15px;
-        padding-bottom: 45px;
-        border-radius: 10px;
-        border-left: 5px solid #002244;
-        margin-bottom: 10px;
-        position: relative;
-        height: 300px;
-        overflow: hidden;
+    background-color: #FF7900;
+    color: white;
+    padding: 15px;
+    padding-bottom: 50px;   /* space for the lower rectangle */
+    border-radius: 10px;
+    border-left: 5px solid #002244;
+    margin-bottom: 10px;
+    position: relative;
+    min-height: 300px;      /* <-- min-height, not height */
+    overflow: hidden;
     }
     .orange-box::after {
-        content: "";
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 500px;
-        height: 20px;
-        background: white;
-        border-radius: 2px;
-    }
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 10%;            
+    width: 80%;
+    height: 20px;
+    background: white;
+    border-radius: 2px;
+    transform: none;      
+}
 
     .os-line {
         font-size: 1.3rem;
