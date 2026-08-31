@@ -108,63 +108,11 @@ trimmed to 4 of 32 for length — the real file lists every one):
 
 ```
 Orange_use_case/
-├── pipeline/
-│   ├── config.py              # verticals, taxonomy (+ taxonomy_extensions.json loading),
-│   │                           # real Orange Business asset catalog, references, geography grouping
-│   │                           # (9 clearly `# ====`-delimited sections -- see its header comment)
-│   ├── db.py                  # SQLite schema and data access, opportunity-space dedupe + uniqueness
-│   ├── ingest.py               # 9-source signal collection, TED API, NewsAPI.ai, GDELT retry+cooldown
-│   ├── analyze.py              # theme extraction (LLM) + recurring-theme tracking
-│   ├── theme_promotion.py      # recurring valid theme tracking (feeds `promote`)
-│   ├── extend_taxonomy.py      # teammate's watchlist -> proposal -> taxonomy_extensions.json flow
-│   └── scoring.py              # attractiveness + right-to-win scoring, per linked OS
-├── llm/
-│   └── llm_client.py           # provider-agnostic LLM client (Groq -> Ollama fallback)
-├── dashboard/                  # both dashboard deliverables live together (25/8, was app/ + dashboard/ split)
-│   ├── streamlit_app.py        # interactive Streamlit dashboard
-│   └── innovation_radar_dashboard_excel.pbix   # Power BI report, client-facing deliverable
-├── radar_cli.py                 # create, promote, review, watchlist, calibrate, dedupe,
-│                                 # link, themes, scores (--top N), summary, all
-├── check_dupes.py               # TODO: move to scripts/ -- one-off diagnostic, UNIQUE index now does the real job
-├── taxonomy_extensions.json     # approved taxonomy terms (created automatically if missing)
-├── requirements.txt
-├── .env.example
-└── README.md
-```
-
-## Setup
-
-```bash
-pip install -r requirements.txt
-```
-
-Create a `.env` file at the project root:
-
-```env
-LLM_PROVIDER=auto            # auto (Groq -> Cerebras -> SambaNova -> Ollama) | groq | cerebras | sambanova | ollama
-GROQ_API_KEY=your-key-here       # free tier: https://console.groq.com
-CEREBRAS_API_KEY=                # optional, free tier: https://cloud.cerebras.ai (14,400 req/day)
-SAMBANOVA_API_KEY=               # optional, free tier: https://cloud.sambanova.ai (unlimited, slower)
-NEWSAPI_AI_KEY=                  # optional, free tier: https://newsapi.ai
-```
-
-Any of the 3 cloud LLM keys can be left blank -- `auto` mode just skips that step of the chain
-and moves to the next one (see `llm/llm_client.py`'s docstring). Only `GROQ_API_KEY` is
-effectively required for a useful `auto` run; the rest raise the pipeline's actual daily quota
-ceiling as you add them.
-
-If none of the cloud providers are reachable (all quotas exhausted, no keys at all), install
-Ollama and pull a local model -- the true last-resort fallback, free and offline:
-
-```bash
-ollama pull llama3.2:3b
-```
-
-Orange_use_case/
 ├── .githooks/                    # post-merge hook running check_no_streamlit_leak.py
 ├── dashboard/                    # client-facing deliverables
 │   ├── dashboard.py
-│   ├── streamlit_app_sieg.py             # interactive Streamlit dashboard
+│   ├── streamlit_dash_final.py           # interactive Streamlit dashboard
+│   ├── streamlit_app_sieg.py
 │   ├── innovation_radar_dashboard.pbix   # Power BI report
 │   ├── radar_powerbi_model.xlsx
 │   └── radar_powerbi_tables.xlsx
@@ -199,7 +147,37 @@ Orange_use_case/
 ├── radar.db / radar_g.db
 ├── requirements.txt
 ├── score_breakdown.png
-└── taxonomy_extensions.json      # approved taxonomy terms (auto-created if missing)
+├── taxonomy_extensions.json      # approved taxonomy terms (auto-created if missing)
+└── README.md
+```
+
+## Setup
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a `.env` file at the project root:
+
+```env
+LLM_PROVIDER=auto            # auto (Groq -> Cerebras -> SambaNova -> Ollama) | groq | cerebras | sambanova | ollama
+GROQ_API_KEY=your-key-here       # free tier: https://console.groq.com
+CEREBRAS_API_KEY=                # optional, free tier: https://cloud.cerebras.ai (14,400 req/day)
+SAMBANOVA_API_KEY=               # optional, free tier: https://cloud.sambanova.ai (unlimited, slower)
+NEWSAPI_AI_KEY=                  # optional, free tier: https://newsapi.ai
+```
+
+Any of the 3 cloud LLM keys can be left blank -- `auto` mode just skips that step of the chain
+and moves to the next one (see `llm/llm_client.py`'s docstring). Only `GROQ_API_KEY` is
+effectively required for a useful `auto` run; the rest raise the pipeline's actual daily quota
+ceiling as you add them.
+
+If none of the cloud providers are reachable (all quotas exhausted, no keys at all), install
+Ollama and pull a local model -- the true last-resort fallback, free and offline:
+
+```bash
+ollama pull llama3.2:3b
+```
 
 ## External dependencies & costs
 
