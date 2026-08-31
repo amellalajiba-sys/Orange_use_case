@@ -1,0 +1,97 @@
+# Innovation Radar – Project Status Overview
+
+## 1. Taxonomy Extension: Implementation Summary
+
+### What it does?
+The taxonomy (use cases & technologies) is no longer static. When `analyze.py` detects terms that don't fit the official lists, they go into `watchlist_terms`. Once a term reaches the frequency threshold, `extend_taxonomy.py` creates a proposal. The team reviews it via `radar_cli.py review`. Approved terms are written to `taxonomy_extensions.json` and automatically merged into the taxonomy on the next run. No manual `config.py` editing needed anymore.
+
+### Why a JSON file?
+The JSON file (`taxonomy_extensions.json`) serves as a lightweight, human-readable store for approved terms. It keeps the core taxonomy logic in `config.py` untouched and avoids schema changes or migrations. However, the same logic could be implemented by adding a table (e.g., `taxonomy_extensions`) and updating it in the database. That approach would offer better querying, versioning, and consistency with the rest of the pipeline, but it requires more DB code. The JSON approach is simpler and sufficient for now; the logic is easily portable to a DB table later without changing the flow.
+
+### Pipeline order
+`db → ingest → analyze → extend_taxonomy → create → promote → scoring → link → summary`
+
+### New CLI command
+- `python radar_cli.py review` – shows pending proposals and lets you approve/reject interactively.
+
+### Files changed
+- `pipeline/extend_taxonomy.py` – new: reads watchlist_terms, creates proposals, handles approval/rejection, writes to JSON.
+- `pipeline/config.py` – loads approved terms from `taxonomy_extensions.json` and extends the taxonomy lists.
+- `radar_cli.py` – added `review` command; included `extend_taxonomy` in `cmd_all`.
+- `taxonomy_extensions.json` – created automatically if missing; stores `{term, category}` entries.
+
+### Usage
+```bash
+python radar_cli.py all     # full pipeline (non-interactive)
+python radar_cli.py review  # approve/reject proposals manually
+```
+
+---
+
+## Gaps
+
+### Refresh Logic for already existing OSs
+
+**We don't have a complete refresh yet.** We have a process that adds new data and promotes new OSes, but it **doesn't update the scores of existing OSes**. This is a gap with Orange's requirements ("freshness: recent signals and last refresh date").
+Scores for existing OSs are not recalculated unless you run `scoring --force`.
+So, if you already scored OS001 on Monday with 100 signals, and another 50 arrive on Tuesday, `radar_cli.py all` will not update OS001's score; it will remain 7.5, even though the context has changed.
+This means **the radar does not reflect the current market state for already known OSs**. The "last refresh" in the summary simply indicates when the file was generated, but the scores themselves could be days old.
+
+#### Update only the deterministic metrics
+Add a **function that recalculates `market_signal_strength`, `source_diversity`, `novelty_momentum`, and `urgency` for all OSs**, and **updates the records in `scores` without altering the LLM scores**. This allows the total score to update with the new data at no additional cost.
+
+The scores consist of two components:
+* Deterministic (market_signal_strength, source_diversity, novelty_momentum, urgency): these depend solely on the number of signals and are quick to recalculate.
+* LLM-based (evidence_quality, strategic_relevance, right_to_win): these are computationally expensive and require API calls.
+
+You can create an `update_all_deterministic_scores()` function that recalculates only the deterministic scores for all OS entries. The LLM-based scores remain unchanged until you decide to re-score them using the `--force` flag.
+
+```python
+def update_all_deterministic_scores(conn):
+    """Recalculate the deterministic sub-scores for all OSs."""
+    spaces = get_all_opportunity_spaces(conn)
+    for space in spaces:
+        signals = get_signals_for_vertical(conn, space["vertical"])
+        # Calculate only the deterministic ones.
+        sub_scores = {
+            "market_signal_strength": market_signal_strength(signals),
+            "source_diversity": source_diversity(signals),
+            "novelty_momentum": novelty_momentum(signals),
+            "urgency_score": urgency_score(signals),
+        }
+        # Update only those fields in the database (without touching the LLM).
+        # ... (UPDATE scores SET ...)
+```
+
+### Other Gaps requiring **backend** work (not blockers)
+
+* **Persona + vertical ranking**
+The logic for sorting OSs based on the persona + vertical combination. Currently, the backend returns all OSs without role-specific sorting. You can either implement this on the frontend (sorting results by role) or create a backend endpoint/query that accepts persona and vertical parameters and returns a sorted list. For a demo, frontend-side sorting is likely sufficient.
+
+* **Differentiation of the `next_action` message by user type**
+Currently, `next_action` is generic text generated by the LLM. If you want different messages for Strategists versus Sales, you need to:
+	- Add a field (e.g., `next_action_sales`, `next_action_strategist`) to the DB and generate multiple variants during enrichment (`scoring.py`), or
+	- Generate the message dynamically on the frontend based on the role, using the same base text but with a different tone (e.g., "Start a conversation with the client" for Sales vs. "Evaluate the opportunity" for Strategists). This is simpler and requires no DB changes.
+
+### Gaps on the **Frontend/UI** side (to be developed this week)
+
+* **Persona filtering** – The `buyer_persona` field exists in `opportunity_spaces` and is populated. The dashboard filter is simply missing.
+
+* **Geography filtering** – The `geography` field is already saved. The filter is missing.
+
+* **Signal type taxonomy filtering** – Signal types are in the DB. The filter is missing from the view.
+
+* **Persona-specific acceptance criteria** – Displaying different messages/actions based on the user role (though this can be handled on either the frontend or the backend; see below).
+
+* **Time horizon logic (Now/Next/Later)** – Already in the DB (`horizon`). Only the dashboard display and filter are missing.
+
+---
+
+## How to handle LLM rate limits (the best strategy)
+The smartest approach is to set up a fallback chain using providers that are all compatible with the OpenAI API. Instead of relying on just one, you can configure three and automatically switch to the next one if the first hits a rate limit.
+
+* Provider 1 (Primary): **Groq** – your current choice, offering high speed and a limit of 1,000 requests/day.
+
+* Provider 2 (Fallback): **Cerebras** – with a higher limit of 14,400 requests/day.
+
+* Provider 3 (Final Fallback): **SambaNova** – offering unlimited access, albeit at slower speeds.
