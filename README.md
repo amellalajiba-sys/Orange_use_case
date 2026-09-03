@@ -7,7 +7,7 @@ independent axes, **Attractiveness** and **Right-to-win**, so a Strategist, Sale
 team can decide where to focus next.
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://orange-radar.streamlit.app)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://orange-use-case-becode-team4.streamlit.app/?topic=OS001)
 [![LLM](https://img.shields.io/badge/LLM-Groq%2FCerebras%2FSambaNova-f34e3a?style=flat&logo=groq&logoColor=white)](https://groq.com/)
 [![Database](https://img.shields.io/badge/Database-SQLite-003B57?style=flat&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=flat)
