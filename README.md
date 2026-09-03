@@ -18,7 +18,7 @@ team can decide where to focus next.
 </p>
 
 <p align="center">
-  <a href="https://orange-radar.streamlit.app/" target="_blank">
+  <a href="https://orange-use-case-becode-team4.streamlit.app/?topic=OS001" target="_blank">
     <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Streamlit App"/>
   </a>
 </p>
@@ -228,6 +228,6 @@ python -m streamlit run dashboard/streamlit_app.py --server.address=127.0.0.1
 [AI & Data Science](https://becode.org/en/job-seekers/trainings/ai-data-science) Trainee at [BeCode Belgium](https://becode.org/) *(Specializing in Generative AI)*  
 [![LinkedIn Profile](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](http://www.linkedin.com/in/siegried-camus) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Siegried81) 
 
-**Hiba Amellal** (Data Architect)
+**Hiba Amellal** (Git Manager)
 [AI & Data Science](https://becode.org/en/job-seekers/trainings/ai-data-science) Trainee at [BeCode Belgium](https://becode.org/) *(Specializing in Data Engineering)*  
 [![LinkedIn Profile](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/amellal-hiba-7a636940a/) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/amellalajiba-sys)
